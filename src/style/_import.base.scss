@@ -1,0 +1,49 @@
+
+@import "./_import.reset.scss";
+
+$avatarWidth: 9%;
+$mobileAvatarWidth: 13%;
+$ipadAvatarWidth: 9%;
+$changeGirlAvatarWidth: 14.5%;
+
+body{
+  line-height: 1.5;
+  font-size: 16px;
+  color:#333;
+  background: url(../img/bg.jpg) center bottom fixed no-repeat;
+  background-size: cover;
+}
+input[type=text],
+textarea{
+  background-color: rgba(#fff, .5);
+  border: 1px solid rgba(#000, .2);
+  border-radius: 4px;
+}
+
+.bg{
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: url(../img/bg.jpg) no-repeat;
+  background-size: cover;
+}
+.main{
+  max-width: 1280px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  // transform: translateZ(0);
+}
+
+.copyright{
+  font-size: 12px;
+  color: #222;
+  padding: 10px 0;
+
+  &__version{
+    font-weight: 700;
+  }
+}

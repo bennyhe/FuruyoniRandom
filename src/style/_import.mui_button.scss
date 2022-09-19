@@ -1,0 +1,61 @@
+button{
+  border: 0;
+  border-radius: 0;
+  background: none;
+}
+.btn{
+  white-space: nowrap;
+  padding: 0 10px;
+  height: 55px;
+  overflow: hidden;
+  font-size: 16px;
+  margin: 0 2px 5px;
+  background: none;
+  border: 2px solid #333;
+  display: inline-block;
+  vertical-align: middle;
+  border-radius: 4px;
+  cursor: pointer;
+  background-color: #303134;
+  color: #e8eaed;
+
+  &.disabled{
+    opacity: .3;
+    cursor: default;
+  }
+
+  &-small{
+    height: 40px !important;
+    padding: 0 10px;
+  }
+
+  &-xs{
+    height: 30px !important;
+    padding: 0 5px;
+    font-size: 12px !important;
+  }
+
+  &-main{
+    border-color: darken($color: #6190E8, $amount: 5%);
+    background: #6190E8;
+  }
+
+  &-main-brd{
+    color: #409eff;
+    background: #ecf5ff;
+    border-color: #b3d8ff;
+  }
+
+  &-cancel{
+    border-color: darken($color: #909399, $amount: 5%);
+    background-color: #909399;
+  }
+}//手机端
+@media screen and (max-width: 660px) {
+
+  .btn{
+    padding: 0 5px;
+    font-size: 14px;
+    height: 46px;
+  }
+}

@@ -1,0 +1,96 @@
+$tabMainColor: #ff92b1;
+.panel-tab{
+  text-align: left;
+  height: 37px;
+  line-height: 36px;
+  margin-bottom: 5px;
+  white-space: nowrap;
+
+  span{
+    display: inline-block;
+    vertical-align: middle;
+    padding: 0 20px;
+    height: 100%;
+    background-color: $tabMainColor;
+    color: #fff;
+    font-weight: 700;
+    font-size: 16px;
+    cursor: pointer;
+
+    &.cur{
+      color: $tabMainColor;
+      background: none;
+      position: relative;
+      height: 36px;
+    }
+  }
+
+  &--sub{
+    span{
+      font-size: 13px;
+      color: #333;
+      background: none;
+      border-bottom: 2px solid #333;
+      // padding: 0 10px;
+      box-sizing: border-box;
+
+      &.cur{
+        height: 100%;
+        border-bottom-color: $tabMainColor;
+        // border-bottom-color: darken($color: $tabMainColor, $amount: 10%);
+        // color: darken($color: $tabMainColor, $amount: 10%);
+      }
+    }
+  }
+}
+.panel-item{
+  display: none;
+  position: relative;
+
+  &__child{
+    display: none;
+  }
+
+  &.cur,
+  &__child.cur{
+    display: block;
+  }
+}
+
+//手机
+@media screen and (max-width: 660px) {
+  .panel-tab{
+    height: 26px;
+    line-height: 26px;
+    span{
+      padding: 0 8px;
+      font-size: 14px;
+
+      &.cur{
+        height: 26px;
+      }
+    }
+  }
+  .panel-tab--sub{
+    span{
+      // padding: 0 10px;
+      font-size: 13px;
+
+      &.cur{
+        height: 100%;
+      }
+    }
+  }
+}
+//暗夜模式下的css样式
+// @media (prefers-color-scheme: dark) { 
+  // .panel-tab{
+  //   span{
+  //     background: #303134;
+  //     border-color: #303134;
+
+  //     &.cur{
+  //     }
+  //   }
+  // }
+// }

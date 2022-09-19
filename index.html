@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" name="viewport">
+    <meta content="telephone=no" name="format-detection">
+    <meta name="description" content="散樱乱武组卡器和散樱乱武卡组广场">
+    <meta name="keywords" content="散樱乱武,散樱乱武新幕,组卡器,桜降る代に決闘を,ふるよに">
+    <meta name="google" value="notranslate">
+    <title>桜降る代に決闘を/散樱乱武组卡器</title>
+    <link rel="shortcut icon" type="image/x-icon" href="/icon128.png">
+    <link rel="apple-touch-icon-precomposed" href="/icon128.png">
+    <link rel="apple-touch-icon" href="/icon128.png">
+  </head>
+  <body>
+    <div id="app"></div>
+    <i class="bg"></i>
+    <script>
+      // 季节赛
+      window.seasonGirls = {
+        ch: [],
+        nextCh: [],
+        default: []
+      }
+      // 起源赛
+      window.qiyuanGirls = {
+        ch: ["刀", "薙刀", "铳", "扇", "忍", "伞/簪", "书", "锤", "毒", "络缲", "骑", "爪", "梿枷", "衣"],
+        default: ["刀", "薙刀", "铳", "扇", "忍", "伞/簪", "书", "锤", "毒", "络缲", "镜", "桨", "兜", "剑"]
+      }
+      //赛季配置
+      window.seasonVersion = {
+        cn: {
+          vername: 'S7',
+          // changeCards: [
+          //   [1, 0, 'normal', 0],
+          //   [1, 0, 'normal', 2],
+          //   [1, 0, 'normal', 3],
+          //   [1, 0, 'special', 2],
+          //   [1, 1, 'special', 1],
+          //   [1, 2, 'special', 2],
+          //   [2, 1, 'special', 1],
+          //   [3, 0, 'normal', 6],
+          //   [7, 0, 'normal', 3],
+          //   [8, 1, 'special', 3],
+          //   [15, 0, 'special', 1],
+          //   [17, 0, 'extra', 4]
+          // ],
+          // forbidCards: [
+          //   [19, 0, 'normal', 6],
+          //   [13, 1, 'normal', 5],
+          // ],
+          // forbidGroupCards: [
+          //   {
+          //     f1: [2, 0],
+          //     f2: [19, 0],
+          //     cards: [
+          //       [0, 'normal', 4]
+          //     ]
+          //   }
+          // ]
+          changeCards: [
+            [13, 1, 'special', 0],
+            [19, 0, 'normal', 6],
+            [19, 0, 'special', 1],
+            [19, 0, 'special', 2]
+          ],
+          forbidCards: [
+            [20, 0, 'normal', 3]
+          ],
+          forbidGroupCards: [
+            {
+              f1: [4, 0],
+              f2: [20, 0],
+              cards: [
+                [0, 'special', 3]
+              ]
+            }
+          ]
+        },
+        jp: {
+          vername: 'S7-2',
+          changeCards: [
+            [1, 2, 'normal', 6],
+            [7, 0, 'normal', 6],
+            [9, 0, 'normal', 4],
+            [12, 0, 'normal', 0],
+            [13, 0, 'normal', 0],
+            [13, 0, 'extra', 1],
+            [14, 0, 'normal', 4],
+            [15, 1, 'special', 0],
+            [16, 0, 'normal', 4],
+            [17, 0, 'special', 2],
+            [19, 0, 'normal', 1],
+            [20, 0, 'normal', 3],
+            [20, 0, 'special', 0],
+            [20, 0, 'special', 1],
+          ]
+        }
+      }
+    </script>
+    <script type="module" src="/src/js/roll-other-data.js"></script>
+    <script type="module" src="/src/js/roll-cards-faq.js"></script>
+    <script type="module" src="/src/main.js"></script>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-158870219-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() { dataLayer.push(arguments); }
+      gtag('js', new Date());
+
+      gtag('config', 'UA-158870219-1');
+    </script>
+  </body>
+</html>

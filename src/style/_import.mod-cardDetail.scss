@@ -1,0 +1,122 @@
+@import '_import.mixin.scss';
+.panel-item--1{
+  .card-detail{
+    @include iconCircleInCardDetail();
+  }
+}
+.card-detail{
+  background: rgba(#fff, .5);
+  text-align: left;
+  padding: 15px 15px 10px;
+  position: relative;
+  font-size: 14px;
+  margin: 10px auto;
+  width: 330px;
+  border-radius: 8px;
+  border: 1px solid #fff;
+
+  @include iconCircle();
+  @include iconCirclePosition();
+
+  .i-circle.cost,
+  .i-circle.range{
+    top: -10px;
+  }
+
+  &.reaction,
+  &.special.reaction {
+    background: linear-gradient(to bottom, #f4e6ff 0%,rgba(255,255,255,0.5) 100%);
+  }
+
+  &.fullpower,
+  &.special.fullpower {
+    background: linear-gradient(to bottom, #fffcdc 0%,rgba(255,255,255,0.5) 100%);
+  }
+
+  &.action{
+    border-color: $action;
+  }
+
+  &.attack{
+    border-color: $attack;
+  }
+
+  &.enhance{
+    border-color: $enhance;
+  }
+
+  pre{
+    font-size: 14px;
+    margin-top: 10px;
+  }
+
+  .id{
+    opacity: .3;
+  }
+
+  &-ft{
+    font-size: 12px;
+    text-align: center;
+    margin-top: 15px;
+    line-height: 1.2;
+  }
+
+  .name{
+    font-size: 17px;
+    font-weight: 700;
+    color: #1f1f1f;
+    margin-right: 2em;
+  }
+
+  .hd{
+    position: relative;
+  }
+
+  .cardwho{
+    position: absolute;
+    top: 5px;
+    right: 0;
+  }
+
+  .ra{
+    padding: 5px 0;
+    
+    .r{
+      color: #ff7b00;
+      font-weight: 700;
+    }
+    .a{
+      color: red;
+      font-weight: 700;
+    }
+  }
+
+  &__strong{
+    position: absolute;
+    right: 8px;
+    top: 39px;
+  }
+
+  .returngroup{
+    text-align: center;
+    margin: 5px 0;
+    position: relative;
+
+    &:before{
+      content: '';
+      position: absolute;
+      left: 20px;
+      right: 20px;
+      top: 50%;
+      height: 2px;
+      background: #d0d0d0;
+    }
+    .avatar{
+      position: relative;
+      z-index: 2;
+    }
+    .avatar:not(:last-child){
+      margin-right: 5px;
+    }
+  }
+}
