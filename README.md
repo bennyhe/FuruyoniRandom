@@ -7,7 +7,9 @@ This template should help get you started developing with Vue 3 in Vite. The tem
 - [VS Code](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=johnsoncodehk.volar)
 
 # 历史
-2019-06-24 vue2.0
-2022-04-17 升级成vue3.0
+- 2019-06-24 vue2.0  
+- 2022-04-17 升级成vue3.0
 
+# 组卡器更新日志
+见同目录下的random-update.html文件
 # 引用插件
