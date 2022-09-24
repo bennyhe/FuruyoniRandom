@@ -5237,8 +5237,112 @@ const Sakura = [{
       textjp: '【使用済】あなたが剣舞により基本動作《纏い》を行うならば、代わりに基本動作《宿し》を行ってもよい。\n【使用済】あなたがこのターンに3回目の剣舞を行った時、このカードを使用してもよい。（消費を支払う）'
     }]
   }]
-}
-]
+},
+{
+  name: 'AKINA 安岐那',
+  namejp: 'アキナ',
+  list: [{
+    name: '算盘',
+    namejp: '算盤',
+    isSelect: false,
+    // pic: 'twiicon_sa_46.jpg',
+    // picq: 'sd_akina.png',
+    normal: [{
+      id: '23-akina-o-n-1',
+      namejp: '算盤玉',
+      baseType: 'normal',
+      types: ['attack'],
+      range: '1-6',
+      damage: '1/0',
+      text: '（卡文文本待补充）',
+      textjp: '（日本語テキストはもう少しお待ちください）'
+    }, {
+      id: '23-akina-o-n-2',
+      namejp: '恫喝',
+      baseType: 'normal',
+      types: ['attack'],
+      range: '4-5',
+      damage: '-/0',
+      text: '（卡文文本待补充）',
+      textjp: '（日本語テキストはもう少しお待ちください）'
+    }, {
+      id: '23-akina-o-n-3',
+      namejp: '交易',
+      baseType: 'normal',
+      types: ['attack'],
+      range: '1-5',
+      damage: '2/0',
+      text: '（卡文文本待补充）',
+      textjp: '（日本語テキストはもう少しお待ちください）'
+    }, {
+      id: '23-akina-o-n-4',
+      namejp: '投機',
+      baseType: 'normal',
+      types: ['action'],
+      text: '（卡文文本待补充）',
+      textjp: '（日本語テキストはもう少しお待ちください）'
+    }, {
+      id: '23-akina-o-n-5',
+      namejp: '算法',
+      baseType: 'normal',
+      types: ['action', 'reaction'],
+      text: '（卡文文本待补充）',
+      textjp: '（日本語テキストはもう少しお待ちください）'
+    }, {
+      id: '23-akina-o-n-6',
+      namejp: '盤狂わせ',
+      baseType: 'normal',
+      types: ['enhance'],
+      capacity: '2',
+      text: '（卡文文本待补充）',
+      textjp: '（日本語テキストはもう少しお待ちください）'
+    }, {
+      id: '23-akina-o-n-7',
+      namejp: '直接金融',
+      baseType: 'normal',
+      types: ['enhance', 'fullpower'],
+      capacity: '2',
+      text: '（卡文文本待补充）',
+      textjp: '（日本語テキストはもう少しお待ちください）'
+    }],
+    special: [{
+      id: '23-akina-o-s-1',
+      namejp: '開方冥式切取法',
+      baseType: 'special',
+      cost: '時価',
+      types: ['action'],
+      text: '（卡文文本待补充）',
+      textjp: '（日本語テキストはもう少しお待ちください）'
+    }, {
+      id: '23-akina-o-s-2',
+      namejp: '大衍算顆手打表',
+      baseType: 'special',
+      cost: '0',
+      types: ['attack', 'reaction'],
+      range: '0-10',
+      damage: '2/0',
+      text: '（卡文文本待补充）',
+      textjp: '（日本語テキストはもう少しお待ちください）'
+    }, {
+      id: '23-akina-o-s-3',
+      namejp: '衰垜逐肘守料術',
+      baseType: 'special',
+      cost: '1',
+      types: ['enhance'],
+      capacity: '1',
+      text: '（卡文文本待补充）',
+      textjp: '（日本語テキストはもう少しお待ちください）'
+    }, {
+      id: '23-akina-o-s-4',
+      namejp: '源上安岐那の御明算',
+      baseType: 'special',
+      cost: '時価',
+      types: ['action'],
+      text: '（卡文文本待补充）',
+      textjp: '（日本語テキストはもう少しお待ちください）'
+    }]
+  }]
+}]
 
 //为了chrome插件输出需要数据
 // Sakura.forEach(a=>{

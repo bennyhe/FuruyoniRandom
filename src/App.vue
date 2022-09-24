@@ -1655,7 +1655,7 @@ import {
   getCounts
 } from './utils/export.js'
 
-import sakuraData from './js/sub/sakura/carddata/sakura-s7-2'
+import sakuraData from './js/sub/sakura/carddata/sakura-s8'
 import sakuraDataCh from './js/sub/sakura/carddata/sakura-s7-ch'
 import sakuraDataOldVer from './js/sub/sakura/carddata/sakura-old'
 

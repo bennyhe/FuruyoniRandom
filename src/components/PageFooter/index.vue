@@ -60,6 +60,11 @@
       <span>sakuratool@qq.com</span>
     </p>
     <p>
+      <a href="https://github.com/bennyhe/FuruyoniRandom" target="_blank"
+        >Github-FuruyoniRandom
+      </a>
+    </p>
+    <p>
       <a href="//sdrice.name/random-update.html"
         >SakuraTool
         {{ lang[curlang].changeLog }}
