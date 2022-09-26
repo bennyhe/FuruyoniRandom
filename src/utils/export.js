@@ -3,7 +3,7 @@
  * @param  {[type]} data [description]
  * @return {[type]}      [description]
  */
-export function findCard(data, cardid, kw) {
+function findCard(data, cardid, kw) {
   // console.log(data);
   kw = kw === undefined ? 'name' : kw
   let _result = ''
@@ -178,7 +178,7 @@ export function formatDefaultCardData(data, changeCards) {
 /**
  * 计算豆子的2个函数
  */
-export function getItemColors(item) {
+function getItemColors(item) {
   const matchReg2 = /(?=<).*?(?=>)/gi
   const _matchResult2 = item.textjp.match(matchReg2)
   // console.log(_matchResult2)
@@ -224,17 +224,6 @@ export function getKrrDouzi(data) {
     })
   }
   return data
-}
-/**
- * 解析加密的卡
- */
-export function getCard(data, str) {
-  const _arr = str.split('|')
-  let _cardType = ''
-  if (_arr[2] == 'n') _cardType = 'normal'
-  else if (_arr[2] == 's') _cardType = 'special'
-
-  return data[_arr[0]].list[_arr[1]][_cardType][_arr[3]]
 }
 
 export function ajax(options) {
@@ -383,70 +372,6 @@ export function getCardSum(cardData) {
   return _cardSum
 }
 
-/**
- * 中文名转化
- * @param {string} name 
- * @returns 
- */
-export function fnChangeNewName(name) {
-  const newName = name.replace(/\s*/g, '')
-  switch (newName) {
-  case '薙刀':
-  case '薙':
-    return '薙刀'
-    break
-  case '盔':
-    return '兜'
-    break
-  case '战':
-    return '战略'
-    break
-  case '火枪':
-    return '铳'
-    break
-  case '信':
-    return '信赖'
-    break
-  case '络':
-  case '机关':
-    return '络缲'
-    break
-  case '探':
-  case '机器':
-    return '机器'
-    break
-  case '棹':
-    return '桨'
-    break
-  case '拒':
-  case '拒绝':
-    return '拒'
-    break
-  case '橇':
-  case '冰刀':
-    return '橇'
-    break
-  case '连枷':
-  case '唐棹':
-    return '梿枷'
-    break
-  case '金床':
-    return '铁砧'
-    break
-  case '面':
-  case '假面':
-    return '面具'
-    break
-  case '恐惧':
-  case '恐怖':
-    return '恐怖'
-    break
-  default:
-    return newName
-    break
-  }
-}
-
 export function get(path, parent, num) {
   if (typeof parent !== 'object') {
     parent = this
@@ -461,45 +386,7 @@ export function get(path, parent, num) {
   return res
 }
 
-
-// Polyfill-Object.keys
-export function BasicPolyfillObjectKeys() {
-  if (!Object.keys) {
-    Object.keys = (function () {
-      const hasOwnProperty = Object.prototype.hasOwnProperty,
-        hasDontEnumBug = !({ toString: null }).propertyIsEnumerable('toString'),
-        dontEnums = [
-          'toString',
-          'toLocaleString',
-          'valueOf',
-          'hasOwnProperty',
-          'isPrototypeOf',
-          'propertyIsEnumerable',
-          'constructor'
-        ],
-        dontEnumsLength = dontEnums.length
-
-      return function (obj) {
-        if (typeof obj !== 'object' && typeof obj !== 'function' || obj === null) throw new TypeError('Object.keys called on non-object')
-
-        const result = []
-
-        for (const prop in obj) {
-          if (hasOwnProperty.call(obj, prop)) result.push(prop)
-        }
-
-        if (hasDontEnumBug) {
-          for (let i = 0; i < dontEnumsLength; i++) {
-            if (hasOwnProperty.call(obj, dontEnums[i])) result.push(dontEnums[i])
-          }
-        }
-        return result
-      }
-    })()
-  };
-}
-
-export function sortByKey(array, key, updown) {
+function sortByKey(array, key, updown) {
   updown = updown || 'up'
   return array.sort( (a, b) => {
     // if (key == 'time') { 
@@ -550,7 +437,7 @@ export function getCounts(val) {
     sumCount: sumCount
   }
 }
-export function getAllRange(cardItem, val, pointVal) {
+function getAllRange(cardItem, val, pointVal) {
   val = val || 'range'
   let range = pointVal || cardItem[val] || []
   const orginRange = range
@@ -590,7 +477,7 @@ export function getAllRange(cardItem, val, pointVal) {
   // console.log('---',cardItem.name, range)
   return range
 }
-export function getRangeFrom(item, val) {
+function getRangeFrom(item, val) {
   val = val || 'textjp'
   let range = []
   if (item[val] && item[val].indexOf('『適正距離') > -1) {
@@ -690,60 +577,6 @@ export function paintRange(data) {
     }
   }
   return data
-}
-
-export const echartDefaultOptions = {
-  title: {
-    left: 'center'
-  },
-  tooltip: {
-    trigger: 'item',
-    formatter: '{a} <br/>{b} : {c} ({d}%)'
-  },
-  toolbox: {
-    show: true,
-    feature: {
-      dataView: { show: true, readOnly: true }
-    }
-  },
-  legend: {
-    orient: 'vertical',
-    left: 'left'
-  },
-  series: [
-    {
-      name: '',
-      type: 'pie',
-      radius: '55%',
-      center: ['50%', '60%'],
-      label: {
-        formatter: '  {b|{b}} {c}个 {per|{d}%}  ',
-        backgroundColor: '#eee',
-        borderColor: '#aaa',
-        borderWidth: 1,
-        borderRadius: 4,
-        rich: {
-          b: {
-            fontSize: 16,
-            lineHeight: 33
-          },
-          per: {
-            color: '#eee',
-            backgroundColor: '#334455',
-            padding: [2, 4],
-            borderRadius: 2
-          }
-        }
-      },
-      emphasis: {
-        itemStyle: {
-          shadowBlur: 10,
-          shadowOffsetX: 0,
-          shadowColor: 'rgba(0, 0, 0, 0.5)'
-        }
-      }
-    }
-  ]
 }
 
 export function sortInObjectOptions(arr, options, updown) {
