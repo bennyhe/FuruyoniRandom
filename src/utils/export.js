@@ -571,22 +571,22 @@ export function getAllRange(cardItem, val, pointVal) {
   }
 
   // 输出被桨a影响的所有带攻击的卡
-  if (range.length > 2) {
-    // console.log('---', cardItem.name, cardItem.namejp, range)
-    if (!window.aaaaaaa) {
-      window.aaaaaaa = {}
-    }
-    if (!window.aaaaaaa[cardItem.namejp + '-' + val + '-' + orginRange]) {
-      window.aaaaaaa[cardItem.namejp + '-' + val + '-' + orginRange] = `${cardItem.name}, ${range.join(',')}`
-    }
-  } else {
-    if (!window.bbbbbbb) {
-      window.bbbbbbb = {}
-    }
-    if (!window.bbbbbbb[cardItem.namejp + '-' + val + '-' + orginRange]) {
-      window.bbbbbbb[cardItem.namejp + '-' + val + '-' + orginRange] = `${cardItem.name}, ${range.join(',')}`
-    }
-  }
+  // if (range.length > 2) {
+  //   // console.log('---', cardItem.name, cardItem.namejp, range)
+  //   if (!window.atkHatsumiA) {
+  //     window.atkHatsumiA = {}
+  //   }
+  //   if (!window.atkHatsumiA[cardItem.namejp + '-' + val + '-' + orginRange]) {
+  //     window.atkHatsumiA[cardItem.namejp + '-' + val + '-' + orginRange] = `${cardItem.name}, ${range.join(',')}`
+  //   }
+  // } else {
+  //   if (!window.atkHatsumiB) {
+  //     window.atkHatsumiB = {}
+  //   }
+  //   if (!window.atkHatsumiB[cardItem.namejp + '-' + val + '-' + orginRange]) {
+  //     window.atkHatsumiB[cardItem.namejp + '-' + val + '-' + orginRange] = `${cardItem.name}, ${range.join(',')}`
+  //   }
+  // }
   // console.log('---',cardItem.name, range)
   return range
 }
