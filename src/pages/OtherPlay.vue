@@ -230,6 +230,7 @@
             </div>
           </div>
         </div>
+        <a :href="panelTab[3].child[0].link" target="_blank">Download Link &gt;&gt;</a>
         <div class="story__item">
           <div class="card-wrap card-wrap--noscrollinm">
             <!-- <p>{{getCardKeyValInLang(sakuraCMData[curCMIndex])}}</p> -->
@@ -336,7 +337,7 @@ export default defineComponent({
       isLXVs: 0,
       lxVsResultList: [],
       curStoryIndex: 0, //故事模式
-      curCMIndex: 0 //原初模式
+      curCMIndex: 5 //原初模式
     }
   },
   setup(props, context) {

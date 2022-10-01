@@ -23,6 +23,7 @@ export default [{
   child: [{
     name: '新幕原初挑战',
     namejp: 'メガミへの挑戦',
+    link: 'https://main-bakafire.ssl-lolipop.jp//furuyoni/na/jitaku.html',
     show: 1
   }, {
     name: 'Story',

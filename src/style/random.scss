@@ -1178,6 +1178,7 @@
     white-space: nowrap;
     transition: 0.3s all linear;
     width: 30px;
+    margin-bottom: 2px;
 
     &.cur {
       background: $tabMainColor;

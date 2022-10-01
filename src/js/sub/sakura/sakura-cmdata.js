@@ -13,6 +13,7 @@ export default [{
       namejp: '仙人呼法',
       baseType: 'normal',
       types: ['action'],
+      cardwho: '原初',
       cardwhojp: '原初',
       text: '获得1点集中力，盖伏你的牌库顶牌。\n【常时】若此牌位于弃牌区，则计算盖牌区的牌张数时此牌也视为盖牌区中的牌。\n【常时】若此牌位于弃牌区，则你不会受到因重铸牌库造成的命伤。',
       textjp: '集中力を1得て、あなたの山札の一番上を伏せ札にする。\n【常時】このカードは捨て札にあるならば、伏せ札の枚数に数える。\n【常時】このカードは捨て札にあるならば、あなたは再構成によるダメージを受けない。'
@@ -23,6 +24,7 @@ export default [{
       namejp: '朧霞',
       baseType: 'special',
       types: ['action'],
+      cardwho: '原初',
       cardwhojp: '原初',
       cost: '2',
       text: '【使用后】每回合内，每当你第一次从盖牌区中使用非《攻击》的牌时，该牌结算完毕后你可以执行1次基本动作。',
@@ -38,12 +40,15 @@ export default [{
       namejp: '仙人呼法',
       baseType: 'normal',
       types: ['action'],
+      cardwho: '原初',
       cardwhojp: '原初',
       text: '获得1点集中力，盖伏你的牌库顶牌。\n【常时】若此牌位于弃牌区，则计算盖牌区的牌张数时此牌也视为盖牌区中的牌。\n【常时】若此牌位于弃牌区，则你不会受到因重铸牌库造成的命伤。',
       textjp: '集中力を1得て、あなたの山札の一番上を伏せ札にする。\n【常時】このカードは捨て札にあるならば、伏せ札の枚数に数える。\n【常時】このカードは捨て札にあるならば、あなたは再構成によるダメージを受けない。'
     },
     {
       id: 'na-05-oboro-o-n-β',
+      cardwho: '扩张',
+      cardwhojp: '拡張',
       name: '绯色手里剑',
       namejp: '緋色手裏剣',
       baseType: 'normal',
@@ -59,6 +64,7 @@ export default [{
       namejp: '朧霞・血桜開花',
       baseType: 'special',
       types: ['action'],
+      cardwho: '原初',
       cardwhojp: '原初',
       cost: '2',
       text: '【使用后】每回合内，每当你第一次从盖牌区中使用非《攻击》的牌时，该牌结算完毕后你可以执行1次基本动作。\n【使用后】你从盖牌区中使用的《攻击》牌生成的《攻击》获得+0/+1。',
@@ -81,6 +87,7 @@ export default [{
       namejp: '歪の眼',
       baseType: 'normal',
       types: ['action', 'reaction'],
+      cardwho: '原初',
       cardwhojp: '原初',
       text: '检视对手手牌中的所有毒牌，你可以选择其中1张，将其移回你的毒袋。若如此做，则被对应的《攻击》获得-2/-1，将此牌置入手牌。',
       textjp: '相手の手札にある毒カード全てを見て、その中から1枚選び、あなたの毒袋に戻してもよい。そうした場合、対応した《攻撃》を-2/-1し、このカードを手札に戻す。'
@@ -92,12 +99,15 @@ export default [{
       baseType: 'special',
       types: ['action'],
       cost: '2',
+      cardwho: '原初',
       cardwhojp: '原初',
       text: '从毒袋中选择1张『雪灯毒』，将其置于对手的牌库顶。\n【使用后】每当你的准备阶段开始时，你可以将此牌变为未使用状态。若如此做，则进行一次“攻击距离0-2 伤害X/X 【常时】X等于对手的手牌中毒牌的张数。”的攻击。',
       textjp: '毒袋から「雪灯毒」を1枚選び、相手の山札の一番上に置く。\n【使用済】あなたの開始フェイズの開始時にこのカードを未使用に戻してもよい。そうした場合、攻撃『適正距離0-2、X/X、【常時】Xは相手の手札にある毒カードの枚数に等しい』を行う。'
     }],
     poison: [{
       id: 'na-09-chikage-o-p-α',
+      cardwho: '扩张',
+      cardwhojp: '拡張',
       name: '灭灯毒',
       namejp: '滅灯毒',
       baseType: 'normal',
@@ -107,6 +117,8 @@ export default [{
     },
     {
       id: 'na-09-chikage-o-p-α',
+      cardwho: '扩张',
+      cardwhojp: '拡張',
       name: '灭灯毒',
       namejp: '滅灯毒',
       baseType: 'normal',
@@ -118,6 +130,7 @@ export default [{
       id: 'na-09-chikage-o-p-β',
       name: '雪灯毒',
       namejp: '雪灯毒',
+      cardwho: '原初',
       cardwhojp: '原初',
       baseType: 'normal',
       types: ['action'],
@@ -136,12 +149,15 @@ export default [{
       types: ['attack', 'reaction'],
       range: '0-10',
       damage: '1/2',
+      cardwho: '原初',
       cardwhojp: '原初',
       text: '检视对手手牌中的所有毒牌，你可以选择其中1张，将其移回你的毒袋。若如此做，则被对应的《攻击》获得-2/-1，将此牌置入手牌。',
       textjp: '【攻撃後】相手の手札にある毒カード全てを見て、その中から1枚選び、あなたの毒袋に戻してもよい。そうした場合、対応した《攻撃》を-2/-1し、このカードを手札に戻す。'
     },
     {
       id: 'na-09-chikage-o-n-γ',
+      cardwho: '扩张',
+      cardwhojp: '拡張',
       name: '结缘油纸伞',
       namejp: '結び番傘',
       baseType: 'normal',
@@ -158,12 +174,15 @@ export default [{
       baseType: 'special',
       types: ['action'],
       cost: '2',
+      cardwho: '原初',
       cardwhojp: '原初',
       text: '从毒袋中选择1张『雪灯毒』，将其置于对手的牌库顶。\n【使用后】每当你的准备阶段开始时，你可以将此牌变为未使用状态。若如此做，则进行一次“攻击距离0-2 伤害X/X 【常时】X等于对手的手牌中毒牌的张数。”的攻击。',
       textjp: '毒袋から「雪灯毒」を1枚選び、相手の山札の一番上に置く。\n【使用済】あなたの開始フェイズの開始時にこのカードを未使用に戻してもよい。そうした場合、攻撃『適正距離0-2、X/X、【常時】Xは相手の手札にある毒カードの枚数に等しい』を行う。'
     }],
     poison: [{
       id: 'na-09-chikage-o-p-α',
+      cardwho: '扩张',
+      cardwhojp: '拡張',
       name: '灭灯毒',
       namejp: '滅灯毒',
       baseType: 'normal',
@@ -173,6 +192,8 @@ export default [{
     },
     {
       id: 'na-09-chikage-o-p-α',
+      cardwho: '扩张',
+      cardwhojp: '拡張',
       name: '灭灯毒',
       namejp: '滅灯毒',
       baseType: 'normal',
@@ -184,6 +205,7 @@ export default [{
       id: 'na-09-chikage-o-p-β',
       name: '雪灯毒',
       namejp: '雪灯毒',
+      cardwho: '原初',
       cardwhojp: '原初',
       baseType: 'normal',
       types: ['action'],
@@ -207,6 +229,7 @@ export default [{
       types: ['attack'],
       range: '1-8',
       damage: '1/1',
+      cardwho: '原初',
       cardwhojp: '原初',
       textjp: '終端\n【攻撃後】手札の《全力》カード1枚を使用してもよい。'
     }],
@@ -218,11 +241,14 @@ export default [{
       types: ['enhance'],
       capacity: '5',
       cost: '1',
+      cardwho: '原初',
       cardwhojp: '原初',
       textjp: '【展開中】あなたがカードを使用するたびに風神ゲージと雷神ゲージを1上げてもよい。\n【破棄時】嵐の力を好きなだけ使用する。'
     }],
     extra: [{
       id: '12-raira-a1-st',
+      cardwho: '扩张',
+      cardwhojp: '拡張',
       name: '【岚之力】',
       namejp: '【嵐の力】',
       baseType: '',
@@ -241,10 +267,13 @@ export default [{
       types: ['attack', 'reaction'],
       range: '1-8',
       damage: '2/1',
+      cardwho: '原初',
       cardwhojp: '原初',
       textjp: '対応不可\n【攻撃後】手札のカード1枚を使用してもよい。（全力でもよい）'
     }, {
       id: '12-raira-o-n-γ',
+      cardwho: '扩张',
+      cardwhojp: '拡張',
       name: '原初暴风',
       namejp: '原初暴風',
       baseType: 'normal',
@@ -261,11 +290,14 @@ export default [{
       types: ['enhance'],
       capacity: '5',
       cost: '1',
+      cardwho: '原初',
       cardwhojp: '原初',
       textjp: '【展開中】あなたがカードを使用するたびに風神ゲージと雷神ゲージを1上げてもよい。\n【破棄時】嵐の力を好きなだけ使用する。'
     }],
     extra: [{
       id: '12-raira-a1-st',
+      cardwho: '扩张',
+      cardwhojp: '拡張',
       name: '【岚之力】',
       namejp: '【嵐の力】',
       baseType: '',
@@ -287,6 +319,7 @@ export default [{
       id: '19-megumi-o-n-α',
       namejp: '宿木',
       baseType: 'normal',
+      cardwho: '原初',
       cardwhojp: '原初',
       types: ['enhance'],
       capacity: '0',
@@ -295,6 +328,8 @@ export default [{
       textjp: '生育 2\n（日本語テキストはもう少しお待ちください）'
     }, {
       id: '19-megumi-o-n-β',
+      cardwho: '扩张',
+      cardwhojp: '拡張',
       namejp: '片喰',
       baseType: 'normal',
       types: ['enhance'],
@@ -306,6 +341,7 @@ export default [{
       id: '19-megumi-o-s-α',
       namejp: 'その先の青空',
       baseType: 'special',
+      cardwho: '原初',
       cardwhojp: '原初',
       types: ['enhance'],
       capacity: '3',
@@ -317,6 +353,7 @@ export default [{
       id: '19-megumi-o-n-ε',
       namejp: '英雄の一撃',
       baseType: 'normal',
+      cardwho: '原初',
       cardwhojp: '原初',
       types: ['attack'],
       range: '4-5',
@@ -332,6 +369,7 @@ export default [{
       id: '19-megumi-o-n-γ',
       namejp: '勇者の杖',
       baseType: 'normal',
+      cardwho: '原初',
       cardwhojp: '原初',
       types: ['enhance'],
       capacity: '1',
@@ -340,6 +378,8 @@ export default [{
       textjp: '生育 2\n（日本語テキストはもう少しお待ちください）'
     }, {
       id: '19-megumi-o-n-δ',
+      cardwho: '扩张',
+      cardwhojp: '拡張',
       namejp: '魔女の杖',
       baseType: 'normal',
       types: ['enhance'],
@@ -351,6 +391,7 @@ export default [{
       id: '19-megumi-o-s-α',
       namejp: 'その先の青空',
       baseType: 'special',
+      cardwho: '原初',
       cardwhojp: '原初',
       types: ['enhance'],
       capacity: '3',
@@ -362,6 +403,7 @@ export default [{
       id: '19-megumi-o-n-ε',
       namejp: '英雄の一撃',
       baseType: 'normal',
+      cardwho: '原初',
       cardwhojp: '原初',
       types: ['attack'],
       range: '4-5',
@@ -379,10 +421,12 @@ export default [{
   list: [{
     name: '通常战',
     namejp: '通常戦',
+    normalOrg: ['1|1'],
     normal: [{
       id: '07-shinra-o-n-α',
       namejp: '啓発',
       baseType: 'normal',
+      cardwho: '原初',
       cardwhojp: '原初',
       types: ['enhance'],
       capacity: '3',
@@ -393,6 +437,7 @@ export default [{
       id: '07-shinra-o-n-α',
       namejp: '不在証明',
       baseType: 'normal',
+      cardwho: '原初',
       cardwhojp: '原初',
       types: ['enhance'],
       capacity: '3',
@@ -408,6 +453,7 @@ export default [{
       id: '07-shinra-o-n-β',
       namejp: '啓蒙',
       baseType: 'normal',
+      cardwho: '原初',
       cardwhojp: '原初',
       types: ['enhance'],
       capacity: '3',
@@ -415,6 +461,8 @@ export default [{
       textjp: '（日本語テキストはもう少しお待ちください）'
     },{
       id: '07-shinra-o-n-γ',
+      cardwho: '扩张',
+      cardwhojp: '拡張',
       namejp: '福音',
       baseType: 'normal',
       types: ['action', 'reaction'],
@@ -425,10 +473,395 @@ export default [{
       id: '07-shinra-o-n-α',
       namejp: '不在証明',
       baseType: 'normal',
+      cardwho: '原初',
       cardwhojp: '原初',
       types: ['enhance'],
       capacity: '3',
       cost: '1',
+      text: '（卡文文本待补充）',
+      textjp: '（日本語テキストはもう少しお待ちください）'
+    }]
+  }]
+},
+{
+  name: '第六回 VS 常世（7扩限定）',
+  namejp: '第6回：トコヨへの挑戦（第七拡張限定収録）',
+  index: 3,
+  subIndex: 0,
+  list: [{
+    name: '通常战',
+    namejp: '通常戦',
+    normal: [{
+      id: '04-tokoyo-o-n-α',
+      namejp: '審美眼',
+      baseType: 'normal',
+      cardwho: '原初',
+      cardwhojp: '原初',
+      types: ['enhance', 'reaction'],
+      capacity: '3',
+      text: '（卡文文本待补充）',
+      textjp: '（日本語テキストはもう少しお待ちください）'
+    }, {
+      id: '04-tokoyo-o-n-β',
+      namejp: '蝶の舞',
+      baseType: 'normal',
+      cardwho: '扩张',
+      cardwhojp: '拡張',
+      types: ['enhance'],
+      capacity: '2',
+      text: '（卡文文本待补充）',
+      textjp: '（日本語テキストはもう少しお待ちください）'
+    }],
+    special: [{
+      id: '04-tokoyo-o-s-α',
+      namejp: '花鳥風月常世郷',
+      baseType: 'normal',
+      cardwho: '原初',
+      cardwhojp: '原初',
+      types: ['action'],
+      cost: '1',
+      text: '（卡文文本待补充）',
+      textjp: '（日本語テキストはもう少しお待ちください）'
+    }]
+  },
+  {
+    name: '英雄战',
+    namejp: '英雄戦',
+    normal: [{
+      id: '04-tokoyo-o-n-α',
+      namejp: '審美眼',
+      baseType: 'normal',
+      cardwho: '原初',
+      cardwhojp: '原初',
+      types: ['enhance', 'reaction'],
+      capacity: '3',
+      text: '（卡文文本待补充）',
+      textjp: '（日本語テキストはもう少しお待ちください）'
+    }, {
+      id: '04-tokoyo-o-n-β',
+      namejp: '蝶の舞',
+      baseType: 'normal',
+      cardwho: '扩张',
+      cardwhojp: '拡張',
+      types: ['enhance'],
+      capacity: '2',
+      text: '（卡文文本待补充）',
+      textjp: '（日本語テキストはもう少しお待ちください）'
+    }],
+    special: [{
+      id: '04-tokoyo-o-s-α',
+      namejp: '花鳥風月常世郷',
+      baseType: 'normal',
+      cardwho: '原初',
+      cardwhojp: '原初',
+      types: ['action'],
+      cost: '1',
+      text: '（卡文文本待补充）',
+      textjp: '（日本語テキストはもう少しお待ちください）'
+    }, {
+      id: '04-tokoyo-o-s-β',
+      namejp: '永遠のメガミ',
+      baseType: 'normal',
+      cardwho: '原初',
+      cardwhojp: '原初',
+      types: ['enhance', 'fullpower'],
+      capacity: '2',
+      cost: '8',
+      text: '（卡文文本待补充）',
+      textjp: '（日本語テキストはもう少しお待ちください）'
+    }]
+  }]
+},
+{
+  name: '第七回 VS 凝努',
+  namejp: '第7回：コルヌへの挑戦',
+  index: 14,
+  subIndex: 0,
+  list: [{
+    name: '通常战',
+    namejp: '通常戦',
+    normal: [{
+      id: '15-korunu-o-n-α',
+      namejp: '永久凍土',
+      baseType: 'normal',
+      cardwho: '原初',
+      cardwhojp: '原初',
+      types: ['enhance'],
+      capacity: '4',
+      text: '（卡文文本待补充）',
+      textjp: '（日本語テキストはもう少しお待ちください）'
+    }],
+    special: [{
+      id: '15-korunu-o-s-α',
+      namejp: 'コルヌコラムヌカラ',
+      baseType: 'special',
+      cardwho: '原初',
+      cardwhojp: '原初',
+      types: ['action', 'reaction'],
+      cost: '3',
+      text: '（卡文文本待补充）',
+      textjp: '（日本語テキストはもう少しお待ちください）'
+    }]
+  },
+  {
+    name: '英雄战',
+    namejp: '英雄戦',
+    normal: [{
+      id: '15-korunu-o-n-β',
+      namejp: '永久凍土',
+      baseType: 'normal',
+      cardwho: '原初',
+      cardwhojp: '原初',
+      types: ['enhance'],
+      capacity: '4',
+      text: '（卡文文本待补充）',
+      textjp: '（日本語テキストはもう少しお待ちください）'
+    }, {
+      id: '15-korunu-o-n-γ',
+      namejp: '霧氷',
+      baseType: 'normal',
+      cardwho: '扩张',
+      cardwhojp: '拡張',
+      types: ['attack', 'reaction'],
+      range: '4-9',
+      damage: '1/-',
+      text: '（卡文文本待补充）',
+      textjp: '（日本語テキストはもう少しお待ちください）'
+    }],
+    special: [{
+      id: '15-korunu-o-s-α',
+      namejp: 'コルヌコラムヌカラ',
+      baseType: 'special',
+      cardwho: '原初',
+      cardwhojp: '原初',
+      types: ['action', 'reaction'],
+      cost: '3',
+      text: '（卡文文本待补充）',
+      textjp: '（日本語テキストはもう少しお待ちください）'
+    }]
+  }]
+},
+{
+  name: '第八回 VS 破钟',
+  namejp: '第8回：ハガネへの挑戦',
+  index: 7,
+  subIndex: 0,
+  list: [{
+    name: '通常战',
+    namejp: '通常戦',
+    normal: [{
+      id: '08-hagane-o-n-α',
+      namejp: '大跳ね',
+      baseType: 'normal',
+      cardwho: '原初',
+      cardwhojp: '原初',
+      types: ['action'],
+      text: '（卡文文本待补充）',
+      textjp: '（日本語テキストはもう少しお待ちください）'
+    }],
+    special: [{
+      id: '08-hagane-o-s-α',
+      namejp: '大旋空ストリ一ム',
+      baseType: 'special',
+      cardwho: '原初',
+      cardwhojp: '原初',
+      types: ['action'],
+      cost: '3',
+      text: '（卡文文本待补充）',
+      textjp: '（日本語テキストはもう少しお待ちください）'
+    }]
+  },
+  {
+    name: '英雄战',
+    namejp: '英雄戦',
+    normal: [{
+      id: '08-hagane-o-n-β',
+      namejp: '土砂雪崩',
+      baseType: 'normal',
+      cardwho: '原初',
+      cardwhojp: '原初',
+      types: ['action'],
+      text: '（卡文文本待补充）',
+      textjp: '（日本語テキストはもう少しお待ちください）'
+    }],
+    special: [{
+      id: '08-hagane-o-s-β',
+      namejp: '大旋空エクストリ一ム',
+      baseType: 'special',
+      cardwho: '原初',
+      cardwhojp: '原初',
+      types: ['action'],
+      cost: '3',
+      text: '（卡文文本待补充）',
+      textjp: '（日本語テキストはもう少しお待ちください）'
+    }]
+  }]
+},
+{
+  name: '第9回 VS 雪灯',
+  namejp: '第9回：ユキヒの挑戦',
+  index: 5,
+  subIndex: 0,
+  list: [{
+    name: '通常战',
+    namejp: '通常戦',
+    normal: [{
+      id: '06-yukihi-o-n-α',
+      namejp: 'こころがさね',
+      baseType: 'normal',
+      cardwho: '原初',
+      cardwhojp: '原初',
+      types: ['action', 'reaction'],
+      text: '（卡文文本待补充）',
+      textjp: '（日本語テキストはもう少しお待ちください）'
+    }],
+    special: [{
+      id: '06-yukihi-o-s-α-1',
+      namejp: 'こころがさね',
+      baseType: 'normal',
+      cardwho: '原初',
+      cardwhojp: '原初',
+      types: ['attack'],
+      range: '4-6',
+      damage: '2/1',
+      cost: '2',
+      text: '（卡文文本待补充）',
+      textjp: '（日本語テキストはもう少しお待ちください）'
+    }, {
+      id: '06-yukihi-o-s-α-2',
+      namejp: '滅灯淀路',
+      baseType: 'normal',
+      cardwho: '原初',
+      cardwhojp: '原初',
+      types: ['action'],
+      cost: '0',
+      text: '终端\n（卡文文本待补充）',
+      textjp: '終端\n（日本語テキストはもう少しお待ちください）'
+    }]
+  },
+  {
+    name: '英雄战',
+    namejp: '英雄戦',
+    normal: [{
+      id: '06-yukihi-o-n-α',
+      namejp: 'こころがさね',
+      baseType: 'normal',
+      cardwho: '原初',
+      cardwhojp: '原初',
+      types: ['action', 'reaction'],
+      text: '（卡文文本待补充）',
+      textjp: '（日本語テキストはもう少しお待ちください）'
+    }],
+    special: [{
+      id: '06-yukihi-o-s-α-1',
+      namejp: 'こころがさね',
+      baseType: 'normal',
+      cardwho: '原初',
+      cardwhojp: '原初',
+      types: ['attack'],
+      range: '4-6',
+      damage: '2/1',
+      cost: '2',
+      text: '（卡文文本待补充）',
+      textjp: '（日本語テキストはもう少しお待ちください）'
+    }, {
+      id: '06-yukihi-o-s-α-2',
+      namejp: '滅灯淀路',
+      baseType: 'normal',
+      cardwho: '原初',
+      cardwhojp: '原初',
+      types: ['action'],
+      cost: '0',
+      text: '终端\n（卡文文本待补充）',
+      textjp: '終端\n（日本語テキストはもう少しお待ちください）'
+    }]
+  }]
+},
+{
+  name: '第十回 VS 初海',
+  namejp: '第10回：ハツミへの挑戦',
+  index: 16,
+  subIndex: 0,
+  list: [{
+    name: '通常战',
+    namejp: '通常戦',
+    normal: [{
+      id: '17-hatsumi-o-n-α',
+      namejp: '大瀑布',
+      baseType: 'normal',
+      cardwho: '原初',
+      cardwhojp: '原初',
+      types: ['attack'],
+      range: '2-7',
+      damage: '7/4',
+      text: '（卡文文本待补充）',
+      textjp: '（日本語テキストはもう少しお待ちください）'
+    }, {
+      id: '17-hatsumi-o-n-β',
+      namejp: '大潮',
+      baseType: 'normal',
+      cardwho: '扩张',
+      cardwhojp: '拡張',
+      types: ['enhance'],
+      capacity: '1',
+      text: '（卡文文本待补充）',
+      textjp: '（日本語テキストはもう少しお待ちください）'
+    }],
+    special: [{
+      id: '17-hatsumi-o-s-α',
+      namejp: '天ツ水道七標',
+      baseType: 'special',
+      cardwho: '原初',
+      cardwhojp: '原初',
+      types: ['action'],
+      cost: 'X',
+      text: '（卡文文本待补充）',
+      textjp: '（日本語テキストはもう少しお待ちください）'
+    }]
+  },
+  {
+    name: '英雄战',
+    namejp: '英雄戦',
+    normal: [{
+      id: '17-hatsumi-o-n-α',
+      namejp: '大瀑布',
+      baseType: 'normal',
+      cardwho: '原初',
+      cardwhojp: '原初',
+      types: ['attack'],
+      range: '2-7',
+      damage: '7/4',
+      text: '（卡文文本待补充）',
+      textjp: '（日本語テキストはもう少しお待ちください）'
+    }, {
+      id: '17-hatsumi-o-n-β',
+      namejp: '大潮',
+      baseType: 'normal',
+      cardwho: '扩张',
+      cardwhojp: '拡張',
+      types: ['enhance'],
+      capacity: '1',
+      text: '（卡文文本待补充）',
+      textjp: '（日本語テキストはもう少しお待ちください）'
+    }],
+    special: [{
+      id: '17-hatsumi-o-s-α',
+      namejp: '天ツ水道七標',
+      baseType: 'special',
+      cardwho: '原初',
+      cardwhojp: '原初',
+      types: ['action'],
+      cost: 'X',
+      text: '（卡文文本待补充）',
+      textjp: '（日本語テキストはもう少しお待ちください）'
+    }, {
+      id: '17-hatsumi-o-s-β',
+      namejp: '海神の天運',
+      baseType: 'special',
+      cardwho: '原初',
+      cardwhojp: '原初',
+      types: ['action', 'reaction'],
+      cost: '2',
       text: '（卡文文本待补充）',
       textjp: '（日本語テキストはもう少しお待ちください）'
     }]
