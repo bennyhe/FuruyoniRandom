@@ -337,7 +337,7 @@ export default defineComponent({
       isLXVs: 0,
       lxVsResultList: [],
       curStoryIndex: 0, //故事模式
-      curCMIndex: 5 //原初模式
+      curCMIndex: 0 //原初模式
     }
   },
   setup(props, context) {
