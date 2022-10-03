@@ -539,7 +539,7 @@ const sakuraDataOldVer = [{
       rangeOpened: '0-2',
       damage: '1/1',
       damageOpened: '1/1',
-      text: '闭伞：【攻击后】虚（1）→距 \n开伞：【攻击后】距（1）→虚】'
+      text: '闭伞：【攻击后】虚（1）→距 \n开伞：【攻击后】距（1）→虚'
     },
     {
       id: '05-yukihi-o-n-3',
@@ -822,7 +822,7 @@ const sakuraDataOldVer = [{
       baseType: 'special',
       types: ['action', 'fullpower'],
       cost: '1',
-      text: '选择一张手牌并将其盖放在本牌之下进行封印\n【使用后】在我方主要阶段开始时，可以选择吧封印的卡牌加入手牌。\n【再起】本牌之下没有封印任何卡牌'
+      text: '选择一张手牌并将其盖放在本牌之下进行封印\n【使用后】在我方主要阶段开始时，可以选择把封印的卡牌加入手牌。\n【再起】本牌之下没有封印任何卡牌'
     }]
   }]
 },
