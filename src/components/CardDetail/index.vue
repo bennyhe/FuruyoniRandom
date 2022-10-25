@@ -29,7 +29,10 @@
       >
     </div>
     <div class="i-circle cost" v-if="item.cost">
-      <span>{{ item.cost }}</span>
+      <span
+        ><em class="laceration" v-if="item.isLacerationCost">{</em>{{ item.cost
+        }}<em class="laceration" v-if="item.isLacerationCost">}</em></span
+      >
     </div>
     <template v-if="item.rangeOpened">
       <div class="ra">
@@ -98,13 +101,16 @@
             : item.range
         }}</span
         >， {{ lang[$parent.curlang].typeAttack
-        }}<span class="a">{{
-          item.baseType === "normal" &&
-          item.types.includes("attack") &&
-          item.beStrong > 0
-            ? $parent.getNewDamage(item)
-            : item.damage
-        }}</span>
+        }}<span class="a"
+          ><em class="laceration" v-if="item.isLacerationDamage">{</em
+          >{{
+            item.baseType === "normal" &&
+            item.types.includes("attack") &&
+            item.beStrong > 0
+              ? $parent.getNewDamage(item)
+              : item.damage
+          }}<em class="laceration" v-if="item.isLacerationDamage">}</em></span
+        >
         <span
           v-if="
             item.baseType === 'normal' &&
@@ -130,9 +136,15 @@
     }}</span>
     <span class="i-circle cardattack" v-if="item.damage">
       <i>
-        <span>{{ item.damage.split("/")[0] }}</span>
+        <span
+          ><em class="laceration" v-if="item.isLacerationDamage">{</em
+          >{{ item.damage.split("/")[0] }}</span
+        >
         <span>/</span>
-        <span>{{ item.damage.split("/")[1] }}</span>
+        <span
+          >{{ item.damage.split("/")[1]
+          }}<em class="laceration" v-if="item.isLacerationDamage">}</em></span
+        >
       </i>
     </span>
     <span class="i-circle cardattack cardattack--open" v-if="item.damageOpened">
