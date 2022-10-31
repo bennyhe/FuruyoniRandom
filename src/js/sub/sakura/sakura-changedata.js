@@ -1,5 +1,145 @@
 export default [
   {
+    id: 'S8',
+    name: 'S7-2 -> S8赛季更新',
+    namejp: 'シーズン７ー２→８カード更新',
+    link: 'http://bfpblog.bakafire.main.jp/?eid=609',
+    list: [{
+      id: '06-yukihi-o-s-1',
+      from: {
+        cardwhojp: 'S7-2',
+        id: '06-yukihi-o-s-1',
+        name: '纷扬如雪',
+        namejp: 'はらりゆき',
+        baseType: 'special',
+        types: ['attack'],
+        range: '3-5',
+        rangeOpened: '0-1',
+        damage: '3/1',
+        damageOpened: '0/0',
+        cost: '2',
+        text: '【即再起】进行伞的开合操作。',
+        textjp: '【即再起】あなたが傘の開閉を行う。'
+      },
+      to: {
+        cardwhojp: 'S8',
+        id: '06-yukihi-o-s-1',
+        name: '纷扬如雪',
+        namejp: 'はらりゆき',
+        baseType: 'special',
+        types: ['attack'],
+        range: '3-6',
+        rangeOpened: '0-2',
+        damage: '3/1',
+        damageOpened: '0/0',
+        cost: '2',
+        text: '闭伞：【攻击后】获得1点集中力。\n开伞：无。\n----\n【即再起】进行伞的开合操作。',
+        textjp: '閉；【攻撃後】あなたは集中力を1得る。\n開；无。\n----\n【即再起】あなたが傘の開閉を行う。'
+      }
+    },{
+      id: '08-hagane-o-n-6',
+      from: {
+        cardwhojp: 'S7-2',
+        id: '08-hagane-o-n-6',
+        name: '大鸣钟',
+        namejp: '鐘鳴らし',
+        baseType: 'normal',
+        types: ['action'],
+        text: '远心 \n选择1项：\n1.本回合内，你的下一次《攻击》获得不可被对应；\n2.本回合内，若你的下一次《攻击》对装伤害大于等于3，则该《攻击》获得+0/+1，否则获得+2/+0。',
+        textjp: '遠心 \n以下から１つを選ぶ。\n・このターンにあなたが次に行う《攻撃》は対応不可を得る。\n・このターンにあなたが次に行う《攻撃》はオーラへのダメージが3以上ならば+0/+1、そうでないならば+2/+0となる。'
+      },
+      to: {
+        cardwhojp: 'S8',
+        id: '08-hagane-o-n-6',
+        name: '大鸣钟',
+        namejp: '鐘鳴らし',
+        baseType: 'normal',
+        types: ['action'],
+        // text: '远心 \n选择1项：\n1.本回合内，你的下一次《攻击》获得不可被对应；\n2.本回合内，若你的下一次《攻击》对装伤害大于等于3，则该《攻击》获得+0/+1，否则获得+2/+0。',
+        textjp: '遠心\n以下から1つを選ぶ。このターンにあなたが次に行う《攻撃》にそれを与える。\n・+2/+1\n・対応不可と距離拡大（遠1）'
+      }
+    },{
+      id: '16-yatsuha-a1-s-4',
+      from: {
+        cardwhojp: 'S7-2',
+        id: '16-yatsuha-a1-s-4',
+        name: '八叶镜的徒樱',
+        namejp: '八葉鏡の徒桜',
+        baseType: 'special',
+        cost: 1,
+        types: ['attack'],
+        range: '0-8',
+        damage: '1/0',
+        text: '终端 不可被对应\n【攻击后/使用后】攻击后或每当你将要重铸牌库时，你可以从弃牌或手牌中选择1张八叶的牌，展示该牌，然后将其变为完全态。\n（例如，若你展示了手牌中的『星之爪』，则将其与追加牌区中的『星尘之利爪』交换，并加入手牌。）',
+        textjp: '終端 対応不可\n【攻撃後/使用済】攻撃後とあなたが山札を再構成する直前に、あなたの捨て札または手札にあるヤツハのカード1枚を公開し、完全態にしてもよい。\n（例えば手札の「星の爪」を公開したならば追加札の「星辰の鈎爪」と交換され、手札に加わる。）'
+      },
+      to: {
+        cardwhojp: 'S8',
+        id: '16-yatsuha-a1-s-4',
+        name: '八叶镜的徒樱',
+        namejp: '八葉鏡の徒桜',
+        baseType: 'special',
+        cost: 1,
+        types: ['action'],
+        // text: '终端 不可被对应\n【攻击后/使用后】攻击后或每当你将要重铸牌库时，你可以从弃牌或手牌中选择1张八叶的牌，展示该牌，然后将其变为完全态。\n（例如，若你展示了手牌中的『星之爪』，则将其与追加牌区中的『星尘之利爪』交换，并加入手牌。）',
+        textjp: '終端　間合制限（0-7）\n【使用時/使用済】使用時とあなたが山札を再構築する直前に、あなたの捨て札または手札にあるヤツハのカード1枚を公開し、完全態にしてもよい。そうした場合、あなたは畏縮する。\n（「星の爪」なら「星辰の鉤爪」が同じ領域に加える）'
+      }
+    },{
+      id: '17-hatsumi-o-n-7',
+      from: {
+        cardwhojp: 'S7-2',
+        id: '17-hatsumi-o-n-7',
+        namejp: '波呼び',
+        name: '唤潮',
+        baseType: 'normal',
+        types: ['enhance'],
+        capacity: '1',
+        text: '破绽\n【展开中】仅当你的回合内你处于顺风状态时可以移除此牌上的樱花结晶。\n【破弃时】进行一次“攻击距离2-7 伤害1/- 【攻击后】盖伏对手的牌库。”的攻击。',
+        textjp: '隙\n【展開中】あなたのターンかつ順風である場合のみ、このカードの上の桜花結晶は移動する。\n【破棄時】攻撃『適正距離2-7、1/-、【攻撃後】相手は山札をすべて伏せ札にする。』を行う。'
+      },
+      to: {
+        cardwhojp: 'S8',
+        id: '17-hatsumi-o-n-7',
+        namejp: '波呼び',
+        name: '唤潮',
+        baseType: 'normal',
+        types: ['enhance'],
+        capacity: '1',
+        // text: '破绽\n【展开中】仅当你的回合内你处于顺风状态时可以移除此牌上的樱花结晶。\n【破弃时】进行一次“攻击距离2-7 伤害1/- 【攻击后】盖伏对手的牌库。”的攻击。',
+        textjp: '【展開中】あなたのターンかつ順風である場合のみこのカードの上の桜花結晶は移動する。\n【展開中/破棄時】あなたの開始フェイズの開始時と破棄時に伏せ札を1枚選び、山札の上に置いてもよい。\n【破棄時】基本動作を1回まで行い、攻撃『適正距離2-7、1/-』を行う。'
+      }
+    },{
+      id: '19-megumi-o-s-2',
+      from: {
+        cardwhojp: 'S7-2',
+        id: '19-megumi-o-s-2',
+        namejp: '可能性の枝',
+        name: '可能性之枝',
+        baseType: 'special',
+        types: ['attack', 'reaction'],
+        range: '0-10',
+        damage: '0/1',
+        cost: '3',
+        textjp: '【常時】Xはあなたの付与札にある種結晶の個数の合計に等しい。\n【常時】この〈攻撃》は +X/+0 となる。\n【攻撃後】対応した《攻撃》は -X/+0 となる。',
+        text: '【常时】X等于置于你的展开中的《付与》牌上种子结晶的总数。\n【常时】此《攻击》获得+X/+0。\n【攻击后】被对应的《攻击》获得-X/+0。'
+      },
+      to: {
+        cardwhojp: 'S8',
+        id: '19-megumi-o-s-2',
+        namejp: '可能性の枝',
+        name: '可能性之枝',
+        baseType: 'special',
+        cost: '3',
+        types: ['enhance', 'reaction'],
+        capacity: '2',
+        capacityGrowup: '1',
+        textjp: '生育1\n【常時】Xは《付与》カードの上にあるあなたの種結晶の個数の合計に等しい。\n【展開時】対応した《攻撃》は-X/+0となる。\n【展開中】相手の開始フェイズの開始時に攻撃『1ｰ5、0/1、【常時】この攻撃は+X/+0となる』を行う。'
+        // text: '【常时】X等于置于你的展开中的《付与》牌上种子结晶的总数。\n【常时】此《攻击》获得+X/+0。\n【攻击后】被对应的《攻击》获得-X/+0。'
+      }
+    }
+    ]
+  },
+  {
     id: 'S7-2',
     name: 'S7 -> S7-2赛季更新',
     namejp: 'シーズン７→７－２カード更新',
@@ -8,7 +148,6 @@ export default [
       id: '02-saine-a2-n-7',
       from: {
         cardwhojp: 'S7',
-        changeIndex: '7',
         id: '02-saine-a2-n-7',
         name: '遗响壁',
         namejp: '遺響壁',
@@ -20,7 +159,6 @@ export default [
       },
       to: {
         cardwhojp: 'S7-2',
-        changeIndex: '7',
         id: '02-saine-a2-n-7',
         name: '遗响壁',
         namejp: '遺響壁',
@@ -85,7 +223,6 @@ export default [
         id: '10-kururu-o-n-5',
         name: '回嗖利用',
         namejp: 'りげいなー',
-        namekr: '리게이너',
         baseType: 'normal',
         types: ['action', 'fullpower'],
         text: '机巧：绿紫～你可以从弃牌、盖牌或使用后的王牌中选择并使用1张其他女神的非《全力》牌，而无需支付其费用。此时你可以从该牌的攻击距离中含有的所有值、对装伤害、对命伤害或纳中选择一项，所选择的所有值增大或减小1。\n----\n【常时】你可以从盖牌区由主要阶段的规则效果使用此牌。',
@@ -207,7 +344,6 @@ export default [
       id: '16-yatsuha-a1-s-4',
       from: {
         cardwhojp: 'S7',
-        changeIndex: '4',
         id: '16-yatsuha-a1-s-4',
         name: '八叶镜的徒樱',
         namejp: '八葉鏡の徒桜',
@@ -221,7 +357,6 @@ export default [
       },
       to: {
         cardwhojp: 'S7-2',
-        changeIndex: '4',
         id: '16-yatsuha-a1-s-4',
         name: '八叶镜的徒樱',
         namejp: '八葉鏡の徒桜',
