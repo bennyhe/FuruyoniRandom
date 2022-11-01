@@ -5354,8 +5354,8 @@ const Sakura = [{
 {
   name: 'SHISUI 志水',
   namejp: 'シスイ',
-  desc: '?',
-  descjp: '',
+  // desc: '?',
+  descjp: '裂傷～あなたの開始フェイズの開始時に各領域にあるあなたの裂傷トークンを任意の順でダメージ化する。',
   list: [{
     name: '锯',
     namejp: '鋸',
