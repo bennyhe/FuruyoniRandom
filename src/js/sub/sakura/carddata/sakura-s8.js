@@ -5448,7 +5448,7 @@ const Sakura = [{
       types: ['attack'],
       range: '1-4',
       damage: '2/1',
-      text: '?',
+      // text: '?',
       textjp: '【攻撃後】相手がライフへのダメージを選んだならば、このターンにあなたが次に行うオーラへのダメージが2以下の《攻撃》のダメージは裂傷化する。\n----\n【再起】あなたのオーラとライフの合計が6以下である。',
       isLacerationDamage: true,
       isLacerationCost: true
