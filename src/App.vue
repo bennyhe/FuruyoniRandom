@@ -142,7 +142,7 @@
           <!-- S 抽取结果 -->
           <div
             class="result"
-            :class="{ hide: !isShowResultGirls && !(resultGirls.length > 0) }"
+            v-if="isShowResultGirls && (resultGirls.length > 0)"
           >
             <div
               class="result__list"
