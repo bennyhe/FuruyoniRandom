@@ -5243,7 +5243,7 @@ const Sakura = [{
     namejp: '算盤',
     isSelect: false,
     // pic: 'twiicon_sa_46.jpg',
-    // picq: 'sd_akina.png',
+    picq: 'sd_akina.png',
     normal: [{
       id: '23-akina-o-n-1',
       name: '算盘珠',
@@ -5361,7 +5361,7 @@ const Sakura = [{
     namejp: '鋸',
     isSelect: false,
     // pic: 'twiicon_sa_46.jpg',
-    // picq: 'sd_akina.png',
+    picq: 'sd_shisui.png',
     normal: [{
       id: '24-shisui-o-n-1',
       // name: '?',
