@@ -11,31 +11,21 @@
       <template v-else>{{ seasonVersion["jp"].vername }}</template>
     </p>
     <template
-      v-if="!isOldVer && isChVer && seasonVersion['cn'].vername === 'S7'"
+      v-if="!isOldVer && !isChVer && seasonVersion['jp'].vername === 'S8'"
     >
       <p v-if="lang[curlang].id === 'cn'">
         {{
           `${new Date().getFullYear()}年${
             new Date().getMonth() + 1
           }月禁卡表:${$parent.getCardKeyValInLang(
-            chData[20].list[0].normal[3]
-          )}（全员禁止）、${$parent.getCardKeyValInLang(
-            chData[4].list[0].special[3]
-          )}（${$parent.getCardKeyValInLang(
-            chData[4].list[0]
-          )}/${$parent.getCardKeyValInLang(chData[20].list[0])}组合禁止）`
+            defaultData[23].list[0].normal[6]
+          )}（全员禁止）`
         }}
       </p>
       <p v-else>
         {{
           `全体で禁止:${$parent.getCardKeyValInLang(
-            chData[20].list[0].normal[3]
-          )}、${$parent.getCardKeyValInLang(
-            chData[4].list[0]
-          )}/${$parent.getCardKeyValInLang(
-            chData[20].list[0]
-          )}で禁止${$parent.getCardKeyValInLang(
-            chData[4].list[0].special[3]
+            defaultData[23].list[0].normal[6]
           )}——${new Date().getFullYear()}年${
             new Date().getMonth() + 1
           }月禁止カード`

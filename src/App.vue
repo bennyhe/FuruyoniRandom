@@ -1656,7 +1656,7 @@ import {
 } from './utils/export.js'
 
 import sakuraData from './js/sub/sakura/carddata/sakura-s8'
-import sakuraDataCh from './js/sub/sakura/carddata/sakura-s7-ch'
+import sakuraDataCh from './js/sub/sakura/carddata/sakura-s7-2-ch'
 import sakuraDataOldVer from './js/sub/sakura/carddata/sakura-old'
 
 import PageFooter from './components/PageFooter/index.vue'
@@ -1721,9 +1721,9 @@ console.log(
 )
 // 新幕中文的牌数
 const chDataSum = getCardSum(chData)
-chDataSum.other += 17
+chDataSum.other += 18
 console.log(
-  '新幕中文牌数，other:伞面，5毒，6transform，4兵牌，岚之力，2集中力，6幕任务，2潜水，5伪证',
+  '新幕中文牌数，other:伞面，5毒，6transform，4兵牌，岚之力，2集中力，6幕任务，2潜水，5伪证，1镜aa1任务牌',
   chDataSum
 )
 cardSum = {
@@ -1731,42 +1731,45 @@ cardSum = {
   ch: chDataSum
 }
 
-//a旗复制原来的卡
-defaultData[13].list[1].changeExtra.unshift(defaultData[13].list[0].extra[4])
-defaultData[13].list[1].changeExtra.unshift(defaultData[13].list[0].extra[3])
+const copyCards = wantData => {
+  //a旗复制原来的卡
+  wantData[13].list[1].changeExtra.unshift(wantData[13].list[0].extra[4])
+  wantData[13].list[1].changeExtra.unshift(wantData[13].list[0].extra[3])
 
-chData[13].list[1].changeExtra.unshift(chData[13].list[0].extra[4])
-chData[13].list[1].changeExtra.unshift(chData[13].list[0].extra[3])
-// s7
-// a2krr如果存在复制粘贴
-if (
-  defaultData[9].list[2] &&
-  defaultData[9].list[2].special[2].namejp === 'いんだすとりあ'
-) {
-  defaultData[9].list[2].extra = defaultData[9].list[0].extra
-}
+  // s7
+  // a2krr如果存在复制粘贴
+  if (
+    wantData[9].list[2] &&
+    wantData[9].list[2].special[2].namejp === 'いんだすとりあ'
+  ) {
+    wantData[9].list[2].extra = wantData[9].list[0].extra
+  }
 
-// 衣 3张参考卡
-// if (defaultData[21].list[0]) {
-//   defaultData[21].list[0].extra = [
-//     ...defaultData[21].list[0].extra,
-//     {...defaultData[3].list[0].special[0]},
-//     {...defaultData[6].list[0].special[0]},
-//     {...defaultData[12].list[1].changeExtra[0]},
-//   ]
-// }
-// a1镜去掉s1-s3
-if (defaultData[15].list[1]) {
-  defaultData[15].list[1].special = [defaultData[15].list[1].special[3]]
+  // 衣 3张参考卡
+  // if (wantData[21].list[0]) {
+  //   wantData[21].list[0].extra = [
+  //     ...wantData[21].list[0].extra,
+  //     {...wantData[3].list[0].special[0]},
+  //     {...wantData[6].list[0].special[0]},
+  //     {...wantData[12].list[1].changeExtra[0]},
+  //   ]
+  // }
+
+  // a1镜去掉s1-s3
+  if (wantData[15].list[1]) {
+    wantData[15].list[1].special = [wantData[15].list[1].special[3]]
+  }
+  // aa1镜去掉s1-s3 复制a1镜的n1-n6的ex
+  if (wantData[15].list[2]) {
+    wantData[15].list[2].special = [wantData[15].list[2].special[3]]
+    wantData[15].list[2].changeExtra = [
+      ...wantData[15].list[2].changeExtra,
+      ...wantData[15].list[1].changeExtra.slice(0, 6)
+    ]
+  }
 }
-// aa1镜去掉s1-s3 复制a1镜的n1-n6的ex
-if (defaultData[15].list[2]) {
-  defaultData[15].list[2].special = [defaultData[15].list[2].special[3]]
-  defaultData[15].list[2].changeExtra = [
-    ...defaultData[15].list[2].changeExtra,
-    ...defaultData[15].list[1].changeExtra.slice(0, 6)
-  ]
-}
+copyCards(defaultData)
+copyCards(chData)
 
 // 补充标记赛季变更卡
 addSSTagInCards(
@@ -2162,7 +2165,7 @@ export default {
       this.shareLink = location.href
     }
 
-    // this.searchCard('s7-2'); //debug
+    this.searchCard('s7-2') //debug
 
     // window.localStorage.setItem('sakuraSaveFAQ', '')
     // window.localStorage.setItem('sakuraSaveFAQ201012', '')
