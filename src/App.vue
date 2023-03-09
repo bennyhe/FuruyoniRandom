@@ -1915,7 +1915,7 @@ export default {
           special: []
         },
         {
-          ss: 'S7-2',
+          ss: 'S8',
           all: [],
           normal: [],
           special: []
@@ -2165,7 +2165,7 @@ export default {
       this.shareLink = location.href
     }
 
-    this.searchCard('s7-2') //debug
+    // this.searchCard('s7-2') //debug
 
     // window.localStorage.setItem('sakuraSaveFAQ', '')
     // window.localStorage.setItem('sakuraSaveFAQ201012', '')
