@@ -4041,7 +4041,7 @@ export default {
         if (this.isChVer) {
           this.changePanelData.forEach((aItem, aKey) => {
             aItem.list.forEach((item, key) => {
-              if (key === 0 && aKey <= 17) {
+              if (key === 0 && (this.qiyuanGirls.ch.includes(item.name))) {
                 item.isInArea = true
               } else {
                 item.isInArea = false
@@ -4051,7 +4051,7 @@ export default {
         } else {
           this.changePanelData.forEach((aItem, aKey) => {
             aItem.list.forEach((item, key) => {
-              if ((key === 0 && aKey <= 11) || aKey === 18 || aKey === 21) {
+              if (key === 0 && (this.qiyuanGirls.default.includes(item.name))) {
                 item.isInArea = true
               } else {
                 item.isInArea = false
