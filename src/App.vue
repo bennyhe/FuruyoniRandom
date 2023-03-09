@@ -142,7 +142,7 @@
           <!-- S 抽取结果 -->
           <div
             class="result"
-            v-if="isShowResultGirls && (resultGirls.length > 0)"
+            v-if="isShowResultGirls && resultGirls.length > 0"
           >
             <div
               class="result__list"
@@ -1652,7 +1652,8 @@ import {
   paintRange,
   findAllRangeFromCards,
   sortInObjectOptions,
-  getCounts
+  getCounts,
+  get
 } from './utils/export.js'
 
 import sakuraData from './js/sub/sakura/carddata/sakura-s8'
@@ -1706,6 +1707,20 @@ defaultData = formatDefaultCardData(
   SCCDATA.allChangeCards.resultList
 )
 
+if (
+  get('qiyuanGirls.default', window, 1) &&
+  window.qiyuanGirls.setDefaultNeedChangeCn
+) {
+  for (let i = 0; i < defaultData.length; i++) {
+    for (let si = 0; si < window.qiyuanGirls.default.length; si++) {
+      const item = window.qiyuanGirls.default[si]
+      if (item === defaultData[i].namejp) {
+        window.qiyuanGirls.default[si] = defaultData[i].list[0].name
+      }
+    }
+  }
+}
+
 //格式化旧幕数据
 const oldData = formatDefaultCardData(sakuraDataOldVer)
 // 旧幕的牌数
@@ -1731,7 +1746,7 @@ cardSum = {
   ch: chDataSum
 }
 
-const copyCards = wantData => {
+const fnCopyCards = wantData => {
   //a旗复制原来的卡
   wantData[13].list[1].changeExtra.unshift(wantData[13].list[0].extra[4])
   wantData[13].list[1].changeExtra.unshift(wantData[13].list[0].extra[3])
@@ -1768,8 +1783,8 @@ const copyCards = wantData => {
     ]
   }
 }
-copyCards(defaultData)
-copyCards(chData)
+fnCopyCards(defaultData)
+fnCopyCards(chData)
 
 // 补充标记赛季变更卡
 addSSTagInCards(
@@ -2375,7 +2390,6 @@ export default {
             this.deckAvatarList.push({
               name: item2.name || '',
               namejp: item2.namejp || '',
-              namekr: item2.namekr || '',
               pic: item2.pic || '',
               isSelect: true,
               index: item2.index,
@@ -2634,11 +2648,7 @@ export default {
         this.deckAvatarList.forEach(item => {
           if (
             item.subIndex === 0 &&
-            (item.index <= 9 ||
-              item.index === 15 ||
-              item.index === 16 ||
-              item.index === 17 ||
-              item.index === 20)
+            (this.qiyuanGirls.default.includes(item.name))
           ) {
             item.isSelect = true
           }
