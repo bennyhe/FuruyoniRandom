@@ -1657,7 +1657,7 @@ import {
 } from './utils/export.js'
 
 import sakuraData from './js/sub/sakura/carddata/sakura-s8'
-import sakuraDataCh from './js/sub/sakura/carddata/sakura-s7-2-ch'
+import sakuraDataCh from './js/sub/sakura/carddata/sakura-s8-ch'
 import sakuraDataOldVer from './js/sub/sakura/carddata/sakura-old'
 
 import PageFooter from './components/PageFooter/index.vue'
