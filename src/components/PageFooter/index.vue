@@ -17,14 +17,14 @@
         {{
           `${new Date().getFullYear()}年${
             new Date().getMonth() + 1
-          }月禁卡表:${$parent.getCardKeyValInLang(
+          }月禁卡表:${getCardKeyValInLang(
             defaultData[23].list[0].normal[6]
           )}（全员禁止）`
         }}
       </p>
       <p v-else>
         {{
-          `全体で禁止:${$parent.getCardKeyValInLang(
+          `全体で禁止:${getCardKeyValInLang(
             defaultData[23].list[0].normal[6]
           )}——${new Date().getFullYear()}年${
             new Date().getMonth() + 1
@@ -76,7 +76,8 @@ export default defineComponent({
     'curlang',
     'cardSum',
     'seasonVersion',
-    'showPanelIndex'
+    'showPanelIndex',
+    'getCardKeyValInLang'
   ],
   setup(props, context) {
     return {

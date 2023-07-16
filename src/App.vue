@@ -1381,6 +1381,13 @@
           :sakuraCMData="sakuraCMData"
           :panelTab="panelTab"
           :cardDetail="cardDetail"
+          :toChzh="toChzh"
+          :getCardKeyValInLang="getCardKeyValInLang"
+          :tabChangedInChild="tabChangedInChild"
+          :getCardClass="getCardClass"
+          :getTypeName="getTypeName"
+          :getCardDetail="getCardDetail"
+          :getCanBeStrong="getCanBeStrong"
         />
       </div>
       <!-- E 扩展玩法 -->
@@ -1579,6 +1586,20 @@
           :resDecks="resDecks"
           :cardDetailInDeck="cardDetailInDeck"
           :deckSum="deckSum"
+          :toChzh="toChzh"
+          :randomGetDeck="randomGetDeck"
+          :getCardKeyValInLang="getCardKeyValInLang"
+          :handleClickCancelDeckAvatar="handleClickCancelDeckAvatar"
+          :handleClickResetDeckAvatar="handleClickResetDeckAvatar"
+          :tabChangedInChild="tabChangedInChild"
+          :getCardClass="getCardClass"
+          :getTypeName="getTypeName"
+          :selectedCancel="selectedCancel"
+          :deckSortBy="deckSortBy"
+          :getCardDetailInDeck="getCardDetailInDeck"
+          :formatTime="formatTime"
+          :selectedDeckShow="selectedDeckShow"
+          :getCanBeStrong="getCanBeStrong"
         />
       </div>
       <!-- E 卡组广场 -->
@@ -1590,6 +1611,12 @@
         <PageScc
           :curlang="curlang"
           :sakuraChangeCardsData="sakuraChangeCardsData"
+          :toChzh="toChzh"
+          :getCardKeyValInLang="getCardKeyValInLang"
+          :getCardClass="getCardClass"
+          :getTypeName="getTypeName"
+          :getCanBeStrong="getCanBeStrong"
+          :getNewRange="getNewRange"
         />
       </div>
       <!-- E 赛季更新卡 -->
@@ -1610,6 +1637,7 @@
       :showPanelIndex="showPanelIndex"
       :defaultData="defaultData"
       :chData="chData"
+      :getCardKeyValInLang="getCardKeyValInLang"
     />
     <!-- E footer&copyright -->
     <!-- S 悬浮导航:带语言和返回顶部 -->
@@ -2648,7 +2676,7 @@ export default {
         this.deckAvatarList.forEach(item => {
           if (
             item.subIndex === 0 &&
-            (this.qiyuanGirls.default.includes(item.name))
+            this.qiyuanGirls.default.includes(item.name)
           ) {
             item.isSelect = true
           }
@@ -4041,7 +4069,7 @@ export default {
         if (this.isChVer) {
           this.changePanelData.forEach((aItem, aKey) => {
             aItem.list.forEach((item, key) => {
-              if (key === 0 && (this.qiyuanGirls.ch.includes(item.name))) {
+              if (key === 0 && this.qiyuanGirls.ch.includes(item.name)) {
                 item.isInArea = true
               } else {
                 item.isInArea = false
@@ -4051,7 +4079,7 @@ export default {
         } else {
           this.changePanelData.forEach((aItem, aKey) => {
             aItem.list.forEach((item, key) => {
-              if (key === 0 && (this.qiyuanGirls.default.includes(item.name))) {
+              if (key === 0 && this.qiyuanGirls.default.includes(item.name)) {
                 item.isInArea = true
               } else {
                 item.isInArea = false

@@ -330,7 +330,14 @@ export default defineComponent({
     'storyCardData',
     'sakuraOtherData',
     'sakuraCMData',
-    'cardDetail'
+    'cardDetail',
+    'toChzh',
+    'getCardKeyValInLang',
+    'tabChangedInChild',
+    'getCardClass',
+    'getTypeName',
+    'getCardDetail',
+    'getCanBeStrong'
   ],
   data() {
     return {
@@ -341,27 +348,6 @@ export default defineComponent({
     }
   },
   setup(props, context) {
-    function toChzh(cc) {
-      return this.$parent.toChzh(cc)
-    }
-    function getCardKeyValInLang(item, val) {
-      return this.$parent.getCardKeyValInLang(item, val)
-    }
-    function tabChangedInChild(fatherIndex, index) {
-      return this.$parent.tabChangedInChild(fatherIndex, index)
-    }
-    function getCardClass(item, isCheckExtra) {
-      return this.$parent.getCardClass(item, isCheckExtra)
-    }
-    function getTypeName(typeItem, isAll) {
-      return this.$parent.getTypeName(typeItem, isAll)
-    }
-    function getCardDetail(item, girlItem, cardIndex) {
-      return this.$parent.getCardDetail(item, girlItem, cardIndex)
-    }
-    function getCanBeStrong(item) {
-      return this.$parent.getCanBeStrong(item)
-    }
     function randomGetLx(count) {
       const dataCopy = JSON.parse(JSON.stringify(this.sakuraWithData[0].list))
       this.lxVsResultList = []
@@ -383,13 +369,6 @@ export default defineComponent({
 
     return {
       lang: configLang,
-      toChzh,
-      getCardKeyValInLang,
-      tabChangedInChild,
-      getCardClass,
-      getTypeName,
-      getCardDetail,
-      getCanBeStrong,
       randomGetLx,
       handleClickSA
     }

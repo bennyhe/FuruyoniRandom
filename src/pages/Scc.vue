@@ -127,7 +127,16 @@ export default defineComponent({
     CardItem,
     CardDetail
   },
-  props: ['curlang', 'sakuraChangeCardsData'],
+  props: [
+    'curlang',
+    'sakuraChangeCardsData',
+    'toChzh',
+    'getCardKeyValInLang',
+    'getCardClass',
+    'getTypeName',
+    'getCanBeStrong',
+    'getNewRange'
+  ],
   data() {
     return {
       isShowChangeGirl: 0,
@@ -136,24 +145,6 @@ export default defineComponent({
     }
   },
   setup(props, context) {
-    function toChzh(cc) {
-      return this.$parent.toChzh(cc)
-    }
-    function getCardKeyValInLang(item, val) {
-      return this.$parent.getCardKeyValInLang(item, val)
-    }
-    function getCardClass(item, isCheckExtra) {
-      return this.$parent.getCardClass(item, isCheckExtra)
-    }
-    function getTypeName(typeItem, isAll) {
-      return this.$parent.getTypeName(typeItem, isAll)
-    }
-    function getCanBeStrong(item) {
-      return this.$parent.getCanBeStrong(item)
-    }
-    function getNewRange(cardItem, range) {
-      return this.$parent.getNewRange(cardItem, range)
-    }
     function getCardDetail(item) {
       this.cardDetail = item
     }
@@ -163,13 +154,7 @@ export default defineComponent({
 
     return {
       lang: configLang,
-      toChzh,
-      getCardKeyValInLang,
-      getCardClass,
-      getTypeName,
       getCardDetail,
-      getCanBeStrong,
-      getNewRange,
       handleClickChangeGirlBtn
     }
   }

@@ -26,7 +26,7 @@
           <span class="faq-about__date"
             >Last Updated:
             {{
-              $parent.formatTime(sakuraPlayerDeckData[0].date, "YYYY-MM-DD")
+              formatTime(sakuraPlayerDeckData[0].date, "YYYY-MM-DD")
             }}</span
           >
         </p>
@@ -483,67 +483,25 @@ export default defineComponent({
     'deckAvatarListBackup',
     'resDecks',
     'cardDetailInDeck',
-    'deckSum'
+    'deckSum',
+    'toChzh',
+    'randomGetDeck',
+    'getCardKeyValInLang',
+    'handleClickCancelDeckAvatar',
+    'handleClickResetDeckAvatar',
+    'tabChangedInChild',
+    'getCardClass',
+    'getTypeName',
+    'selectedCancel',
+    'deckSortBy',
+    'getCardDetailInDeck',
+    'formatTime',
+    'selectedDeckShow',
+    'getCanBeStrong'
   ],
   setup(props, context) {
-    function toChzh(cc) {
-      return this.$parent.toChzh(cc)
-    }
-    function randomGetDeck(count) {
-      return this.$parent.randomGetDeck(count)
-    }
-    function getCardKeyValInLang(item, val) {
-      return this.$parent.getCardKeyValInLang(item, val)
-    }
-    function handleClickCancelDeckAvatar() {
-      return this.$parent.handleClickCancelDeckAvatar()
-    }
-    function handleClickResetDeckAvatar() {
-      return this.$parent.handleClickResetDeckAvatar()
-    }
-    function tabChangedInChild(fatherIndex, index) {
-      return this.$parent.tabChangedInChild(fatherIndex, index)
-    }
-    function getCardClass(item, isCheckExtra) {
-      return this.$parent.getCardClass(item, isCheckExtra)
-    }
-    function getTypeName(typeItem, isAll) {
-      return this.$parent.getTypeName(typeItem, isAll)
-    }
-    function selectedCancel(girlItem) {
-      return this.$parent.selectedCancel(girlItem)
-    }
-    function deckSortBy(type, disabled) {
-      return this.$parent.deckSortBy(type, disabled)
-    }
-    function getCardDetailInDeck(item) {
-      return this.$parent.getCardDetailInDeck(item)
-    }
-    function formatTime(datetime, formatStr) {
-      return this.$parent.formatTime(datetime, formatStr)
-    }
-    function selectedDeckShow(index) {
-      return this.$parent.selectedDeckShow(index)
-    }
-    function getCanBeStrong(item) {
-      return this.$parent.getCanBeStrong(item)
-    }
     return {
-      lang: configLang,
-      toChzh,
-      randomGetDeck,
-      getCardKeyValInLang,
-      handleClickCancelDeckAvatar,
-      handleClickResetDeckAvatar,
-      tabChangedInChild,
-      getCardClass,
-      getTypeName,
-      selectedCancel,
-      deckSortBy,
-      getCardDetailInDeck,
-      formatTime,
-      selectedDeckShow,
-      getCanBeStrong
+      lang: configLang
     }
   }
 })
