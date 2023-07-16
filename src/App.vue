@@ -1684,7 +1684,7 @@ import {
   get
 } from './utils/export.js'
 
-import sakuraData from './js/sub/sakura/carddata/sakura-s8'
+import sakuraData from './js/sub/sakura/carddata/sakura-s8-2'
 import sakuraDataCh from './js/sub/sakura/carddata/sakura-s8-ch'
 import sakuraDataOldVer from './js/sub/sakura/carddata/sakura-old'
 
