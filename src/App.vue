@@ -3831,8 +3831,8 @@ export default {
         //新幕
         this.shareLink = `${this.shareUrl}?ver=${
           this.isChVer
-            ? `ch${seasonVersion['cn'].vername.replace(' Preview', '')}`
-            : seasonVersion['jp'].vername.replace(' Preview', '')
+            ? `ch${seasonVersion['cn'].vername.replace(' Preview', 'pre')}`
+            : seasonVersion['jp'].vername.replace(' Preview', 'pre')
         }&lang=${this.lang[this.curlang].id}&isShow=1&girls=${
           this.shareGirls
         }&girlscard1=${_arr3[0]}&girlscard2=${_arr3[1]}`
