@@ -4718,8 +4718,57 @@ const Sakura = [{
     isSelect: false,
     pic: '',
     picq: '',
-    normal: [],
-    special: []
+    changenormal: [{
+      changeIndex: 2,
+      id: '22-renri-a1-n-2',
+      namejp: '欺瞞の霧',
+      baseType: 'normal',
+      types: ['variable'],
+      textjp: '【常時】このカードを、相手が眼前構築で選びうる他のメガミの《付与》でない通常札として通常の方法で使用を宣言してもよい。そうした場合、相手は相手の手札、伏せ札、捨て札からそのカードを公開できる。公開されたならば、このカードは使用されずに捨て札となる。'
+    }, {
+      changeIndex: 5,
+      id: '22-renri-a1-n-5',
+      namejp: '神授',
+      baseType: 'normal',
+      types: ['action'],
+      textjp: 'この「神授」を山札の上に置き、その後に遺物にある通常札1枚と交換する。\n【常時】山札を再構成する直前にこの「神授」が捨て札にあるならば、このカードを使用してもよい。'
+    }],
+    changespecial: [{
+      changeIndex: 1,
+      id: '22-renri-a1-s-1',
+      namejp: '神授',
+      baseType: 'special',
+      cost: '0',
+      types: ['enhance'],
+      capacity: '0',
+      textjp: '【使用済】あなたの終了フェイズに納3として、そのうちの1つをライフから納める形でこのカードを使用してもよい。\n【展開中】あなたのメインフェイズの開始時にカードを1枚引いてもよい。\n【展開中】相手が焦燥で受けるダメージが2/1になる。\n【展開中】あなたの偽証が反証されなかったならば、そのカードを公開してもよい。それが偽物だったならば、集中力を1得る。'
+    }],
+    changeExtra: [{
+      id: '22-renri-a1-n-5-ex1',
+      extraFrom: '22-renri-a1-n-5',
+      namejp: '偽りの武器',
+      baseType: 'normal',
+      types: ['attack'],
+      range: '2-4',
+      damage: '1/1',
+      textjp: '偽証設置　偽証　回帰\n【攻撃後】偽火-あなたがこのターンで3枚目に使うカードが《攻撃》カードならば、その《攻撃》は+0/+1となる。'
+    }, {
+      id: '22-renri-a1-x2',
+      extraFrom: '22-renri-a1-n-5',
+      namejp: '刃の本質',
+      baseType: 'normal',
+      types: ['attack'],
+      range: '3-4',
+      damage: '3/1',
+      textjp: '偽証　回帰\n【常時】奉納-「ロルレロラルロ」の上に桜花結晶があるならば、この《攻撃》は+0/+1となる。\n【常時】このカードを回帰した時、相手の集中力は0になる。\n（このカードはザンカのカードとして扱う）'
+    }, {
+      id: '22-renri-a1-x3',
+      extraFrom: '22-renri-a1-n-5',
+      namejp: '最初の桜鈴',
+      baseType: 'normal',
+      types: ['action'],
+      textjp: '偽証　回帰\n基本動作を1回行う。このカードが反証されていないならば、さらにもう1回行う。\n光輝-ダストが5以下ならば伏せ札からカードを1枚選び、山札の一番下に置く。\n【常時】このカードを回帰した時、ダスト→自ライフ：1\n（このカードはヲウカのカードとして扱う）'
+    }]
   }]
 },
 {
