@@ -25,9 +25,7 @@
         <p>
           <span class="faq-about__date"
             >Last Updated:
-            {{
-              formatTime(sakuraPlayerDeckData[0].date, "YYYY-MM-DD")
-            }}</span
+            {{ formatTime(sakuraPlayerDeckData[0].date, "YYYY-MM-DD") }}</span
           >
         </p>
       </blockquote>
@@ -356,29 +354,59 @@
       </div>
     </div>
     <!-- E 页面tab：卡组分析 -->
-    <div :class="{'hide': panelTab[4].childTabIndex!==0}">
-      <DeckCount :deckcount="resDecks.length"></DeckCount>
-      <div class="allcards-list__item" v-for="(item, index) in resDecks" v-bind:key="index">
+    <div :class="{ hide: panelTab[4].childTabIndex !== 0 }">
+      <DeckCount
+        :curlang="curlang"
+        :toChzh="toChzh"
+        :deckSum="deckSum"
+        :deckcount="resDecks.length"
+      ></DeckCount>
+      <div
+        class="allcards-list__item"
+        v-for="(item, index) in resDecks"
+        v-bind:key="index"
+      >
         <div class="allcards-tab" @click="selectedDeckShow(index)">
-          <div class="allcards-tab__item allcards-item" :class="{'show': item.isSelect}">
+          <div
+            class="allcards-tab__item allcards-item"
+            :class="{ show: item.isSelect }"
+          >
             <DeckTitle :item="item"></DeckTitle>
           </div>
         </div>
-        <div class="allcards__content" :class="{'hide': !item.isSelect}">
+        <div class="allcards__content" :class="{ hide: !item.isSelect }">
           <DeckInfo :item="item"></DeckInfo>
           <div class="cgroup cgroup--old">
             <!-- S 头像 -->
-            <div class="select-group" :class="'select-group--' + item.groupCardData.length">
-              <div class="select-group__item" v-for="(item,index) in item.groupCardData" v-bind:key="index">
+            <div
+              class="select-group"
+              :class="'select-group--' + item.groupCardData.length"
+            >
+              <div
+                class="select-group__item"
+                v-for="(item, index) in item.groupCardData"
+                v-bind:key="index"
+              >
                 <div class="random-item">
                   <span class="random-item__pic">
-                    <img :src="`../img/avatar/${item.pic}`">
+                    <img :src="`../img/avatar/${item.pic}`" />
                   </span>
-                  <p class="random-item__name" v-if="getCardKeyValInLang(item)">{{getCardKeyValInLang(item)}}</p>
-                  <p class="realname" v-if="getCardKeyValInLang(item, 'realname')">{{getCardKeyValInLang(item, 'realname')}}</p>
+                  <p class="random-item__name" v-if="getCardKeyValInLang(item)">
+                    {{ getCardKeyValInLang(item) }}
+                  </p>
+                  <p
+                    class="realname"
+                    v-if="getCardKeyValInLang(item, 'realname')"
+                  >
+                    {{ getCardKeyValInLang(item, "realname") }}
+                  </p>
                   <!-- <GirlRange :item="item"></GirlRange> -->
                   <div class="spdesc-wrap">
-                    <p class="spdesc" v-if="lang[curlang].id === 'cn' && item.desc" v-html="toChzh(item.desc)"></p>
+                    <p
+                      class="spdesc"
+                      v-if="lang[curlang].id === 'cn' && item.desc"
+                      v-html="toChzh(item.desc)"
+                    ></p>
                     <p class="spdesc" v-else v-html="item.descjp"></p>
                   </div>
                 </div>
@@ -386,59 +414,110 @@
             </div>
             <!-- E 头像 -->
             <div class="cgroup__girlpic cgroup__girlpic--2">
-              <img v-lazy="`../img/furuyoni/mini/${item.picq}`" v-for="(item,index) in item.groupCardData" v-bind:key="index">
+              <img
+                v-lazy="`../img/furuyoni/mini/${item.picq}`"
+                v-for="(item, index) in item.groupCardData"
+                v-bind:key="index"
+              />
             </div>
             <div class="card-wrap">
               <div class="card-list pcsee">
-                <div class="card-list__item normal" :class="getCardClass(cardItem)" v-for="(cardItem,cardIndex) in item.deck.normal"
-                  @click="getCardDetailInDeck(cardItem)" v-bind:key="cardIndex">
+                <div
+                  class="card-list__item normal"
+                  :class="getCardClass(cardItem)"
+                  v-for="(cardItem, cardIndex) in item.deck.normal"
+                  @click="getCardDetailInDeck(cardItem)"
+                  v-bind:key="cardIndex"
+                >
                   <CardItem :item="cardItem"></CardItem>
                 </div>
               </div>
               <div class="card-list msee">
-                <template v-for="(cardItem,cardIndex) in item.deck.normal">
-                  <div class="card-list__item normal" :class="getCardClass(cardItem)" v-bind:key="cardIndex"
-                    @click="getCardDetailInDeck(cardItem)" v-if="cardIndex<3">
+                <template v-for="(cardItem, cardIndex) in item.deck.normal">
+                  <div
+                    class="card-list__item normal"
+                    :class="getCardClass(cardItem)"
+                    v-bind:key="cardIndex"
+                    @click="getCardDetailInDeck(cardItem)"
+                    v-if="cardIndex < 3"
+                  >
                     <CardItem :item="cardItem"></CardItem>
                   </div>
                 </template>
               </div>
               <div class="card-list msee">
-                <template v-for="(cardItem,cardIndex) in item.deck.normal">
-                  <div class="card-list__item normal" :class="getCardClass(cardItem)"  v-bind:key="cardIndex"
-                    @click="getCardDetailInDeck(cardItem)" v-if="cardIndex>=3">
+                <template v-for="(cardItem, cardIndex) in item.deck.normal">
+                  <div
+                    class="card-list__item normal"
+                    :class="getCardClass(cardItem)"
+                    v-bind:key="cardIndex"
+                    @click="getCardDetailInDeck(cardItem)"
+                    v-if="cardIndex >= 3"
+                  >
                     <CardItem :item="cardItem"></CardItem>
                   </div>
                 </template>
               </div>
               <div class="card-list">
                 <span class="card-list__name">切</span>
-                <div class="card-list__item special" :class="getCardClass(cardItem)" v-for="(cardItem,cardIndex) in item.deck.special" v-bind:key="cardIndex"
-                  @click="getCardDetailInDeck(cardItem)">
+                <div
+                  class="card-list__item special"
+                  :class="getCardClass(cardItem)"
+                  v-for="(cardItem, cardIndex) in item.deck.special"
+                  v-bind:key="cardIndex"
+                  @click="getCardDetailInDeck(cardItem)"
+                >
                   <CardItem :item="cardItem"></CardItem>
                 </div>
               </div>
               <!-- S 追加 -->
               <div class="card-wrap card-wrap--extra card-wrap--2">
                 <div class="card-list">
-                  <div class="card-list__item" :class="getCardClass(cardItem, 1)" v-for="(cardItem,cardIndex) in item.deck.girlBoard" v-bind:key="cardIndex"
-                    @click="getCardDetailInDeck(cardItem)">
+                  <div
+                    class="card-list__item"
+                    :class="getCardClass(cardItem, 1)"
+                    v-for="(cardItem, cardIndex) in item.deck.girlBoard"
+                    v-bind:key="cardIndex"
+                    @click="getCardDetailInDeck(cardItem)"
+                  >
                     <CardItem :item="cardItem"></CardItem>
                   </div>
-                  <div class="card-list__item" :class="getCardClass(cardItem, 1)" :data-extrafrom="cardItem.extraFrom" v-bind:key="cardIndex"
-                    v-for="(cardItem,cardIndex) in item.deck.extra" @click="getCardDetailInDeck(cardItem)">
+                  <div
+                    class="card-list__item"
+                    :class="getCardClass(cardItem, 1)"
+                    :data-extrafrom="cardItem.extraFrom"
+                    v-bind:key="cardIndex"
+                    v-for="(cardItem, cardIndex) in item.deck.extra"
+                    @click="getCardDetailInDeck(cardItem)"
+                  >
                     <CardItem :item="cardItem"></CardItem>
                   </div>
-                  <div class="card-list__item" :class="getCardClass(cardItem)" v-for="(cardItem,cardIndex) in item.deck.poison" v-bind:key="cardIndex"
-                    @click="getCardDetailInDeck(cardItem)">
+                  <div
+                    class="card-list__item"
+                    :class="getCardClass(cardItem)"
+                    v-for="(cardItem, cardIndex) in item.deck.poison"
+                    v-bind:key="cardIndex"
+                    @click="getCardDetailInDeck(cardItem)"
+                  >
                     <CardItem :item="cardItem"></CardItem>
                   </div>
-                  <div class="card-list__item" :class="getCardClass(cardItem)" v-for="(cardItem,cardIndex) in item.deck.transform" v-bind:key="cardIndex"
-                    @click="getCardDetailInDeck(cardItem)">
+                  <div
+                    class="card-list__item"
+                    :class="getCardClass(cardItem)"
+                    v-for="(cardItem, cardIndex) in item.deck.transform"
+                    v-bind:key="cardIndex"
+                    @click="getCardDetailInDeck(cardItem)"
+                  >
                     <CardItem :item="cardItem"></CardItem>
                   </div>
-                  <div class="card-list__item" :data-extrafrom="cardItem.extraFrom" :class="getCardClass(cardItem, 1)" v-bind:key="cardIndex"
-                    v-for="(cardItem,cardIndex) in item.deck.changeExtra" @click="getCardDetailInDeck(cardItem)">
+                  <div
+                    class="card-list__item"
+                    :data-extrafrom="cardItem.extraFrom"
+                    :class="getCardClass(cardItem, 1)"
+                    v-bind:key="cardIndex"
+                    v-for="(cardItem, cardIndex) in item.deck.changeExtra"
+                    @click="getCardDetailInDeck(cardItem)"
+                  >
                     <CardItem :item="cardItem"></CardItem>
                   </div>
                 </div>
@@ -447,11 +526,17 @@
             </div>
           </div>
           <!-- S 卡片详情 -->
-          <CardDetail :item="cardDetailInDeck" v-if="cardDetailInDeck && (cardDetailInDeck.name || cardDetailInDeck.namejp)" />
+          <CardDetail
+            :item="cardDetailInDeck"
+            v-if="
+              cardDetailInDeck &&
+              (cardDetailInDeck.name || cardDetailInDeck.namejp)
+            "
+          />
           <!-- E 卡片详情 -->
         </div>
       </div>
-      <div :class="{'hide': resDecks.length!==0}">No Result.</div>
+      <div :class="{ hide: resDecks.length !== 0 }">No Result.</div>
     </div>
   </div>
 </template>
@@ -460,7 +545,7 @@ import { defineComponent } from 'vue'
 import configLang from '../config/lang.js'
 import CardItem from '../components/CardItem/index.vue'
 import CardDetail from '../components/CardDetail/index.vue'
-import DeckCount from '../components/Deck/count.vue'
+import DeckCount from '../components/Deck/DeckCount.vue'
 import DeckTitle from '../components/Deck/title.vue'
 import DeckInfo from '../components/Deck/info.vue'
 

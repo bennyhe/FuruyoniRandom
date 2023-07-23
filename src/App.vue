@@ -761,7 +761,12 @@
             "
             style="max-width: 1024px; margin: 0 auto"
           >
-            <DeckCount :deckcount="beGroupDeck.length"></DeckCount>
+            <DeckCount
+              :curlang="curlang"
+              :toChzh="toChzh"
+              :deckSum="deckSum"
+              :deckcount="beGroupDeck.length"
+            ></DeckCount>
             <!-- <div style="max-height: 600px; overflow-y:auto;"> -->
             <div
               class="allcards-list__item"
@@ -1693,7 +1698,7 @@ import CardItem from './components/CardItem/index.vue'
 import CardDetail from './components/CardDetail/index.vue'
 import GirlRange from './components/GirlRange/index.vue'
 import FaqItem from './components/FaqItem/index.vue'
-import DeckCount from './components/Deck/count.vue'
+import DeckCount from './components/Deck/DeckCount.vue'
 import DeckTitle from './components/Deck/title.vue'
 import DeckInfo from './components/Deck/info.vue'
 import PageDecks from './pages/Decks.vue'
