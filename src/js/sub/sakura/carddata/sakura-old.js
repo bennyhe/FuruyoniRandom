@@ -931,7 +931,7 @@ const sakuraDataOldVer = [{
     poison: [{
       id: '09-chikage-o-p-1',
       name: '麻痹毒',
-      baseType: 'normal',
+      baseType: 'poison',
       extra: true,
       types: ['action'],
       text: '【常时】若本回合内你执行过基本动作，则你不能使用此牌。\n将此牌移回对手的毒袋。结束当前阶段。'
@@ -939,7 +939,7 @@ const sakuraDataOldVer = [{
     {
       id: '09-chikage-o-p-2',
       name: '幻觉毒',
-      baseType: 'normal',
+      baseType: 'poison',
       extra: true,
       types: ['action'],
       text: '将此牌移回对手的毒袋。 自气（2）→虚'
@@ -947,7 +947,7 @@ const sakuraDataOldVer = [{
     {
       id: '09-chikage-o-p-3',
       name: '迟缓毒',
-      baseType: 'normal',
+      baseType: 'poison',
       extra: true,
       types: ['enhance'],
       capacity: '3',
@@ -956,7 +956,7 @@ const sakuraDataOldVer = [{
     {
       id: '09-chikage-o-p-4',
       name: '灭灯毒',
-      baseType: 'normal',
+      baseType: 'poison',
       extra: true,
       types: ['action', 'fullpower'],
       text: '自装（1）→虚'
@@ -964,7 +964,7 @@ const sakuraDataOldVer = [{
     {
       id: '09-chikage-o-p-4',
       name: '灭灯毒',
-      baseType: 'normal',
+      baseType: 'poison',
       extra: true,
       types: ['action', 'fullpower'],
       text: '自装（1）→虚'

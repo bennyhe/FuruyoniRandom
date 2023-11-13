@@ -1635,7 +1635,7 @@ const sakuraDataCh = [{
       id: '09-chikage-o-p-1',
       name: '麻痹毒',
       namejp: '麻痺毒',
-      baseType: 'normal',
+      baseType: 'poison',
       types: ['action'],
       text: '【常时】如果本回合我方已经执行过基本动作则无法使用本卡牌。\n将本卡牌返还至对方的毒袋。随后结束当前阶段。',
       textjp: '毒（このカードは伏せ札にできない） \n【常時】このターン中にあなたが基本動作を行ったならば、このカードは使用できない。 \nこのカードを相手の毒袋に戻す。その後、このフェイズを終了する。'
@@ -1644,7 +1644,7 @@ const sakuraDataCh = [{
       id: '09-chikage-o-p-2',
       name: '幻觉毒',
       namejp: '幻覚毒',
-      baseType: 'normal',
+      baseType: 'poison',
       types: ['action'],
       text: '将本卡牌返还至对方的毒袋。我方气（2）→虚',
       textjp: '毒（このカードは伏せ札にできない） \nこのカードを相手の毒袋に戻す。 \n自フレア→ダスト：2'
@@ -1653,7 +1653,7 @@ const sakuraDataCh = [{
       id: '09-chikage-o-p-3',
       name: '迟缓毒',
       namejp: '弛緩毒',
-      baseType: 'normal',
+      baseType: 'poison',
       types: ['enhance'],
       capacity: '3',
       text: '【展开中】我方无法使用《攻击》牌。 \n【弃置时】将本卡牌返还至对方的毒袋。',
@@ -1663,7 +1663,7 @@ const sakuraDataCh = [{
       id: '09-chikage-o-p-4',
       name: '灭灯毒',
       namejp: '滅灯毒',
-      baseType: 'normal',
+      baseType: 'poison',
       types: ['action'],
       text: '我方装（3）→虚',
       textjp: '毒（このカードは伏せ札にできない） \n自オーラ→ダスト：3'
@@ -1672,7 +1672,7 @@ const sakuraDataCh = [{
       id: '09-chikage-o-p-4',
       name: '灭灯毒',
       namejp: '滅灯毒',
-      baseType: 'normal',
+      baseType: 'poison',
       types: ['action'],
       text: '我方装（3）→虚',
       textjp: '毒（このカードは伏せ札にできない） \n自オーラ→ダスト：3'

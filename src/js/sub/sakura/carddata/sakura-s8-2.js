@@ -342,7 +342,7 @@ const Sakura = [{
       baseType: 'normal',
       types: ['enhance', 'fullpower'],
       capacity: '5',
-      text: '【展开中】当你结算对装伤害时，此牌上的樱花结晶视为在自装中。',
+      text: '【展开中】当你结算伤害时，此牌上的樱花结晶视为在自装中。（此牌上的樱花结晶不会因此占据自装的空位）',
       textjp: '【展開中】あなたへのダメージを解決するに際し、このカードの上に置かれた桜花結晶をあなたのオーラにあるかのように扱う。'
     }],
     special: [{
@@ -457,7 +457,7 @@ const Sakura = [{
       baseType: 'normal',
       types: ['enhance'],
       capacity: '2',
-      text: '【展开中】当你结算对装伤害时，此牌上的樱花结晶视为在自装中。\n【破弃时】八相～若当前为你的回合，且自装中的樱花结晶的数目小于等于1，则进行一次“攻击距离0-5 伤害0/0 【攻击后】对敌装造成2点伤害，本回合内你进行的下一次《攻击》获得+0/+1。”的攻击。',
+      text: '【展开中】当你结算伤害时，此牌上的樱花结晶视为在自装中。（此牌上的樱花结晶不会因此占据自装的空位）\n【破弃时】八相～若当前为你的回合，且自装中的樱花结晶的数目小于等于1，则进行一次“攻击距离0-5 伤害0/0 【攻击后】对敌装造成2点伤害，本回合内你进行的下一次《攻击》获得+0/+1。”的攻击。',
       textjp: '【展開中】あなたへのダメージを解決するに際し、このカードの上に\n置かれた桜花結晶をあなたのオーラにあるかのように扱う。\n【破棄時】八相-あなたのオーラが1以下かつ現在のターンがあなたのターンならば、攻撃『適正距離0-5、0/0、【攻撃後】相手のオーラに2ダメージを与え、このターンにあなたが次に行う<攻撃>は+0/+1となる』を行う。'
     }],
     changespecial: [{
@@ -1280,7 +1280,7 @@ const Sakura = [{
       types: ['attack', 'reaction'],
       range: '2-7',
       damage: '1/-',
-      text: '【攻击后】若被对应的《攻击》非王牌且对装伤害大于等于3，则打消其将造成的所有伤害。\n【攻击后】对手抓1张牌。',
+      text: '【攻击后】若被对应的《攻击》非王牌且对装伤害大于等于3，则打消该《攻击》的伤害。（不影响效果伤害）\n【攻击后】对手抓1张牌。',
       textjp: '【攻撃後】対応した切札でなく、オーラへのダメージが3以上である《攻撃》のダメージを打ち消す。 \n【攻撃後】相手はカードを1枚引く。'
     },
     {
@@ -1840,7 +1840,7 @@ const Sakura = [{
       id: '09-chikage-o-p-1',
       name: '麻痹毒',
       namejp: '麻痺毒',
-      baseType: 'normal',
+      baseType: 'poison',
       types: ['action'],
       text: '【常时】若本回合内你执行过基本动作，则你不能使用此牌。\n将此牌置入对手的毒袋。结束当前阶段。',
       textjp: '毒（このカードは伏せ札にできない） \n【常時】このターン中にあなたが基本動作を行ったならば、このカードは使用できない。 \nこのカードを相手の毒袋に戻す。その後、このフェイズを終了する。'
@@ -1849,7 +1849,7 @@ const Sakura = [{
       id: '09-chikage-o-p-2',
       name: '幻觉毒',
       namejp: '幻覚毒',
-      baseType: 'normal',
+      baseType: 'poison',
       types: ['action'],
       text: '将此牌置入对手的毒袋。自气（2）→虚',
       textjp: '毒（このカードは伏せ札にできない） \nこのカードを相手の毒袋に戻す。 \n自フレア→ダスト：2'
@@ -1858,7 +1858,7 @@ const Sakura = [{
       id: '09-chikage-o-p-3',
       name: '迟缓毒',
       namejp: '弛緩毒',
-      baseType: 'normal',
+      baseType: 'poison',
       types: ['enhance'],
       capacity: '3',
       text: '【展开中】你不能使用《攻击》牌。 \n【破弃时】将此牌置入对手的毒袋。',
@@ -1868,7 +1868,7 @@ const Sakura = [{
       id: '09-chikage-o-p-4',
       name: '灭灯毒',
       namejp: '滅灯毒',
-      baseType: 'normal',
+      baseType: 'poison',
       types: ['action'],
       text: '自装（3）→虚',
       textjp: '毒（このカードは伏せ札にできない） \n自オーラ→ダスト：3'
@@ -1877,7 +1877,7 @@ const Sakura = [{
       id: '09-chikage-o-p-4',
       name: '灭灯毒',
       namejp: '滅灯毒',
-      baseType: 'normal',
+      baseType: 'poison',
       types: ['action'],
       text: '自装（3）→虚',
       textjp: '毒（このカードは伏せ札にできない） \n自オーラ→ダスト：3'
@@ -5098,16 +5098,16 @@ const Sakura = [{
 //       })
 //       b.changeExtra = a
 //     }
-//     if (b.posion) {
+//     if (b.poison) {
 //       var a = [];
-//       b.posion.map(item => {
+//       b.poison.map(item => {
 //         a.push({
 //           id: item.id,
 //           name: item.name,
 //           namejp: item.namejp,
 //         })
 //       })
-//       b.posion = a
+//       b.poison = a
 //     }
 //     if (b.transform) {
 //       var a = [];
