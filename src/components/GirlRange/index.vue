@@ -19,7 +19,12 @@
             ? item.girlExtra.ranges.find((item) => item.name === keys).count
             : 'none'
         }`"
-        >{{ keys }}</i
+        >{{ keys
+        }}{{
+          keys === 10 && item.girlExtra.ranges.find((item) => item.name === 11)
+            ? "+"
+            : ""
+        }}</i
       >
     </div>
     <div
