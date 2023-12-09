@@ -61,7 +61,7 @@ function findChangeCartAndSetCount(data, listName, changeCards) {
       const res = changeCards.filter(item2 => item2.name === item.id)
       if (res.length > 0) {
         item.changeCardCount = res[0].count
-        // console.log(item.id, item.changeCardCount)
+        // console.log(item.id, item.changeCardCount, res[0])
       }
     })
   }
@@ -199,8 +199,8 @@ function getItemColors(item) {
 }
 export function getKrrDouzi(data) {
   const krr = data[9].list || []
-  if (krr.length>0){
-    krr.forEach(item=>{
+  if (krr.length > 0) {
+    krr.forEach(item => {
       if (item.normal && item.normal.length > 0) {
         item.normal.forEach(sitem => {
           sitem.colors = getItemColors(sitem)
@@ -388,7 +388,7 @@ export function get(path, parent, num) {
 
 function sortByKey(array, key, updown) {
   updown = updown || 'up'
-  return array.sort( (a, b) => {
+  return array.sort((a, b) => {
     // if (key == 'time') { 
     //   console.log(+new Date(a[key]))
     // }

@@ -81,7 +81,9 @@ export function initChangeCardsData(sakuraChangeCardsData) {
             item.to
           ]
         }
-        allChangeCards.push(item.id)
+        if (get('to.isCancel', item) !== true) {
+          allChangeCards.push(item.id)
+        }
 
         if (item.clist) {
           if (allccData.filter(sitem => sitem.id === item.id).length === 0) {
