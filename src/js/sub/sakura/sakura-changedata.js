@@ -3,6 +3,14 @@
  */
 export default [
   {
+    id: 'S9-2',
+    name: 'S8-2 -> S9赛季更新',
+    namejp: 'シーズン８ー２→9カード更新',
+    link: 'http://bfpblog.bakafire.main.jp/?eid=675',
+    list: [
+    ]
+  },
+  {
     id: 'S8-2',
     name: 'S8 -> S8-2赛季更新',
     namejp: 'シーズン8→８ー２カード更新',
