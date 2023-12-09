@@ -75,6 +75,7 @@ export default [
         textjp: '閉；【攻撃後】このカードを手札に戻し、傘の開閉を行う。\n開；无'
       },
       to: {
+        isCancel: true,
         cardwhojp: 'S8-2',
         id: '06-yukihi-o-n-2',
         name: '预演/猫骗',
@@ -412,6 +413,7 @@ export default [
         textjp: '偽証（偽証は対応では行えない）\n間合→ダスト：1。'
       },
       to: {
+        isCancel: true,
         cardwhojp: 'S8-2',
         id: '22-renri-o-n-6',
         name: '辜毒谄言',

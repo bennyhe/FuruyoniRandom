@@ -3896,6 +3896,9 @@ export default {
       if (item.selected !== undefined && item.selected) {
         _classname += ' cur'
       }
+      if (item.isCancel) {
+        _classname += ' cancel-card'
+      }
       if (this.debug) {
         _classname += ' haspic'
       }

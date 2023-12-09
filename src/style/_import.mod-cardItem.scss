@@ -55,6 +55,25 @@
       filter: grayscale(1);
       opacity: .3;
     }
+
+    &.cancel-card{
+
+      .card-item {
+        opacity: .5;
+      }
+
+      &::before{
+        content: 'CANCEL';
+        position: absolute;
+        font-weight: bold;
+        top: 3em;
+        left: 0;
+        right: 0;
+        text-align: center;
+        color: #ff92b1;
+        text-shadow: 1px 1px 0.5px #333;
+      }
+    }
   }
 }
 
