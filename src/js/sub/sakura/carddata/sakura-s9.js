@@ -5142,7 +5142,9 @@ const Sakura = [{
       baseType: 'normal',
       types: ['attack'],
       range: '4-7',
-      damage: '2/1'
+      damage: '2/1',
+      text: '',
+      textjp: '【常時】照準が合っているならば、この《攻撃》のオーラへのダメージは「ｰ」になる。\n【攻撃後】現在の間合と照準が等しいならば、ダスト→自オーラ：1'
     }, {
       id: '25-misora-o-n-2',
       name: '',
@@ -5150,7 +5152,9 @@ const Sakura = [{
       baseType: 'normal',
       types: ['attack'],
       range: '2-4',
-      damage: '2/1'
+      damage: '2/1',
+      text: '',
+      textjp: '【攻撃後】あなたの照準を1増加させるか、1減少させてもよい。'
     }, {
       id: '25-misora-o-n-3',
       name: '',
@@ -5158,7 +5162,9 @@ const Sakura = [{
       baseType: 'normal',
       types: ['attack', 'reaction'],
       range: '2-5',
-      damage: '1/1'
+      damage: '1/1',
+      text: '',
+      textjp: '【攻撃後】現在の間合と照準を比べて以下のいずれかを行う。\n・現在の間合＞照準…間合→ダスト：１\n・現在の間合＝照準…ダスト→自オーラ：１\n・現在の間合＜照準…ダスト→間合：１'
     }, {
       id: '25-misora-o-n-4',
       name: '',
@@ -5166,26 +5172,34 @@ const Sakura = [{
       baseType: 'normal',
       types: ['attack', 'fullpower'],
       range: '5-15',
-      damage: '5/1'
+      damage: '5/1',
+      text: '',
+      textjp: '追尾\n【攻撃後】相手は手札から《攻撃》カード1枚を捨て札にする。それが行えない場合、相手は手札を公開し、相手の山札の上から3枚を伏せ札にする。'
     }, {
       id: '25-misora-o-n-5',
       name: '',
       namejp: '精密化',
       baseType: 'normal',
-      types: ['action']
+      types: ['action'],
+      text: '',
+      textjp: '集中力を1得る。\nこのターンにあなたが次に行う他のメガミの通常札によるオーラのダメージが「ｰ」でない《攻撃》は、照準が合っているならば+1/+1となる。'
     }, {
       id: '25-misora-o-n-6',
       name: '',
       namejp: '追尾撃',
       baseType: 'normal',
-      types: ['action']
+      types: ['action'],
+      text: '',
+      textjp: '眼前構築で選んでいない他のメガミのカードまたは伏せ札のカードから、《全力》でない《攻撃》の通常札1枚を選び、それに追尾を与えて使用する。ゲーム外から使用したそのカードが領域を移動するならば、代わりに裏向きで取り除く。\n（眼前構築で選んでいない状態に戻る）'
     }, {
       id: '25-misora-o-n-7',
       name: '',
       namejp: '空の翼',
       baseType: 'normal',
       types: ['enhance'],
-      capacity: '2'
+      capacity: '2',
+      text: '',
+      textjp: '終端　間合制限（0ｰ3）\n【展開時】相オーラ→間合：２\n【破棄時】このターン中、現在の間合は1増加し、達人の間合は1大きくなる。'
     }],
     special: [{
       id: '25-misora-o-s-1',
@@ -5195,7 +5209,9 @@ const Sakura = [{
       cost: '2',
       types: ['attack'],
       range: 'X',
-      damage: '-/1'
+      damage: '-/1',
+      text: '',
+      textjp: '追尾　対応不可\n【常時】Xは3にこのカードの上の桜花結晶の数の2倍を加えた値に等しい。\n【攻撃後】Xが7以上ならば、相手の山札を全て伏せ札にする。\n【使用済】あなたの終了フェイズにこのカードの上にダストから1つ桜花結晶を置き、このカードを未使用に戻す。'
     }, {
       id: '25-misora-o-s-2',
       name: '',
@@ -5203,7 +5219,9 @@ const Sakura = [{
       baseType: 'special',
       cost: '1',
       types: ['enhance'],
-      capacity: '1'
+      capacity: '1',
+      text: '',
+      textjp: '【展開中】照準があるならば、現在の間合は照準に等しくなる。\n【展開中】あなたは基本動作《前進》と《離脱》を行えない。'
     }, {
       id: '25-misora-o-s-3',
       name: '',
@@ -5211,7 +5229,9 @@ const Sakura = [{
       baseType: 'special',
       cost: '2',
       types: ['enhance', 'reaction'],
-      capacity: '3'
+      capacity: '3',
+      text: '',
+      textjp: '【展開時】対応した通常札による《攻撃》の適正距離があなたの照準を含むならば、対応した《攻撃》を打ち消し、そのカードをこのカードの下に封印する。\n【破棄時】このカードに封印されたカードを相手の捨て札に戻す。'
     }, {
       id: '25-misora-o-s-4',
       name: '',
@@ -5219,7 +5239,9 @@ const Sakura = [{
       baseType: 'special',
       cost: '5',
       types: ['enhance', 'fullpower'],
-      capacity: '2'
+      capacity: '2',
+      text: '',
+      textjp: '【展開中】現在の間合は5増加する。\n【破棄時】相ライフ→間合：１\n　　　　　相オーラ→間合：１\n　　　　　相フレア→間合：１\n【使用済】このカードは使用できない。'
     }]
   }]
 }
