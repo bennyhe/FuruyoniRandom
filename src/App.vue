@@ -1762,9 +1762,10 @@ oldDataSum.other += 3
 console.log('旧幕牌数，other:伞面，5毒，3transform，2集中力', oldDataSum)
 // 新幕的牌数
 let cardSum = getCardSum(defaultData)
-cardSum.other += 18
+cardSum.nomarl-- // 合奏减1
+cardSum.other += 25
 console.log(
-  '新幕牌数，other:伞面，5毒，6transform，4兵牌，岚之力，2集中力，6幕任务，2潜水，5伪证，1镜aa1任务牌',
+  '新幕牌数，other:伞面，5毒，6transform，4兵牌，岚之力，2集中力，6幕任务，2潜水，5伪证，1镜aa1任务牌，7张电子追加',
   cardSum
 )
 // 新幕中文的牌数

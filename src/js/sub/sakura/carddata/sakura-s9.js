@@ -398,14 +398,16 @@ const Sakura = [{
     pic: 'twiicon_sa_17.jpg',
     picq: 'sd_saine_a1.png',
     changenormal: [{
-      changeIndex: '3',
-      id: '02-saine-a1-n-3',
-      name: '冰之音',
-      namejp: '氷の音',
+      changeIndex: '1',
+      id: '02/04-saine/tokoyo-a1-n-1/4',
+      name: '',
+      namejp: '合奏',
       baseType: 'normal',
-      types: ['action', 'reaction'],
-      text: '敌装（1）→虚\n若此牌作为对应使用，则敌装（1）→虚',
-      textjp: '相オーラ→ダスト：1\nこのカードを対応で使用したならば、さらに\n相オーラ→ダスト：1'
+      types: ['attack', 'reaction'],
+      range: '2-5',
+      damage: '3/0'
+      // text: '',
+      // textjp: ''
     },
     {
       changeIndex: '6',
@@ -802,19 +804,20 @@ const Sakura = [{
       textjp: '【常時】あなたのトコヨの切札が1枚以上使用済ならば、この《攻撃》は対応不可を得る。 \n【攻撃後】境地-あなたの集中力が2かつ、あなたの他のメガミの切札が1枚以上使用済ならば、このカードを山札の上に置く。'
     },
     {
-      changeIndex: '5',
-      id: '04-tokoyo-a1-n-5',
-      name: '阳之音',
-      namejp: '陽の音',
+      changeIndex: '4',
+      id: '02/04-saine/tokoyo-a1-n-1/4',
+      name: '',
+      namejp: '合奏',
       baseType: 'normal',
-      types: ['enhance'],
-      capacity: '2',
-      text: '【展开中】每当你使用具《对应》副类别的牌时，该牌结算完毕后虚（1）→自装\n【展开中】对手的回合内不能移除此牌上的樱花结晶。',
-      textjp: '【展開中】あなたが《対応》カードを使用した時、その解決後にダスト→自オーラ：1 \n【展開中】相手のターンにこのカードの上の桜花結晶は移動しない。'
+      types: ['attack', 'reaction'],
+      range: '2-5',
+      damage: '3/0'
+      // text: '',
+      // textjp: ''
     }],
     changespecial: [{
-      changeIndex: '2',
-      id: '04-tokoyo-a1-s-2',
+      changeIndex: '3',
+      id: '04-tokoyo-a1-s-3',
       name: '二重奏：吹弹阳明',
       namejp: '二重奏：吹弾陽明',
       baseType: 'special',
@@ -1050,6 +1053,100 @@ const Sakura = [{
       text: '【常时】此牌不能以正常方法使用。仅当你将第一次输掉本局游戏时，可以防止此次失败，将自命中的所有樱花结晶移至虚，并立即使用此牌（仍需支付费用）。\n盖伏1张手牌，虚（1）→自命',
       textjp: '【常時】このカードはこの効果でのみ使用できる。あなたが初めて敗北するならば、代わりにあなたのライフ全てをダストに送り、このカードを使用してもよい(消費は支払う)。 \n手札を1枚伏せ札にし、ダスト→自ライフ：1'
     }]
+  },
+  {
+    name: '电子',
+    namejp: '電子',
+    isSelect: false,
+    // pic: 'twiicon_sa_19.jpg',
+    // picq: 'sd_oboro_a1.png',
+    changenormal: [{
+      changeIndex: '1',
+      id: '05-oboro-a2-n-1',
+      name: '',
+      namejp: 'ホロ苦無',
+      baseType: 'normal',
+      types: ['attack'],
+      range: '1,3,5',
+      damage: '1/1'
+      // text: '',
+      // textjp: ''
+    }],
+    changespecial: [{
+      changeIndex: '1',
+      id: '05-oboro-a2-s-1',
+      name: '',
+      namejp: 'ギガ介',
+      baseType: 'special',
+      types: ['attack'],
+      range: '3-4',
+      damage: '2/1',
+      cost: '16'
+      // text: '',
+      // textjp: ''
+    }, {
+      changeIndex: '3',
+      id: '05-oboro-a2-s-3',
+      name: '',
+      namejp: '朧文書・電子神渉',
+      baseType: 'special',
+      types: ['action', 'fullpower'],
+      cost: '0'
+      // text: '',
+      // textjp: ''
+    }],
+    changeExtra: [{
+      id: '05-oboro-a2-mp-1',
+      name: '',
+      namejp: 'メインパーツX',
+      types: ['attack'],
+      range: '4-5',
+      damage: '2/2'
+      // text: '',
+      // textjp: ''
+    }, {
+      id: '05-oboro-a2-mp-2',
+      name: '',
+      namejp: 'メインパーツY',
+      types: ['attack'],
+      range: '3,6',
+      damage: '2/1'
+      // text: '',
+      // textjp: ''
+    }, {
+      id: '05-oboro-a2-mp-3',
+      name: '',
+      namejp: 'メインパーツZ',
+      types: ['attack'],
+      range: '0-2',
+      damage: '1/0'
+      // text: '',
+      // textjp: ''
+    }, {
+      id: '05-oboro-a2-cp1',
+      name: '',
+      namejp: 'カスタムパーツA'
+      // text: '',
+      // textjp: ''
+    }, {
+      id: '05-oboro-a2-cp-2',
+      name: '',
+      namejp: 'カスタムパーツB'
+      // text: '',
+      // textjp: ''
+    }, {
+      id: '05-oboro-a2-cp-3',
+      name: '',
+      namejp: 'カスタムパーツC'
+      // text: '',
+      // textjp: ''
+    }, {
+      id: '05-oboro-a2-cp-4',
+      name: '',
+      namejp: 'カスタムパーツD'
+      // text: '',
+      // textjp: ''
+    }]
   }]
 },
 {
@@ -1153,7 +1250,7 @@ const Sakura = [{
       namejp: 'はらりゆき',
       baseType: 'special',
       types: ['attack'],
-      range: '3-6',
+      range: '4-5',
       rangeOpened: '0-2',
       damage: '3/1',
       damageOpened: '0/0',
@@ -1492,7 +1589,7 @@ const Sakura = [{
       capacity: '2',
       text: '【展开时】你可以支付1点集中力，并重新准备计略。\n【展开时/破弃时】实行当前计略，准备下个计略。\n神算：进行一次“攻击距离0,2,4 伤害2/1 不可被闪避 【攻击后】对手从手牌中选择1张牌，从弃牌区或盖牌区中选择1张牌，然后将所选择的牌以任意顺序置于牌库底。”的攻击。\n鬼谋：进行一次“攻击距离1,3,5 伤害2/2 不可被闪避 【攻击后】弃置对手牌库顶的1张牌，然后盖伏对手牌库顶的1张牌。”的攻击。',
       textjp: '【展開時】集中力を1支払い、計略を準備してもよい。\n【展開時/破棄時】計略を実行し、次の計略を準備する。\n[神算] 攻撃『適正距離0,2,4、2/1、不可避、【攻撃後】相手は手札から1枚と捨て札か伏せ札から1枚を選び、それらを山札の底に任意の順番で置く』を行う。\n[鬼謀] 攻撃『適正距離1,3,5、2/2、不可避、【攻撃後】相手の山札の上から1枚を捨て札にして、1枚を伏せ札にする』を行う。',
-      textkururu : [{  
+      textkururu: [{
         ctn: '【展开时】你可以支付1点集中力，并重新准备计略。\n【展开时/破弃时】实行当前计略，准备下个计略。'
       }, {
         if: '<i class="i-bean i-bean--plan-blue"></i>',
@@ -4731,8 +4828,8 @@ const Sakura = [{
       text: '【常时】你可以声称此牌为对手眼前构筑时能够选择的其他女神的非《付与》的牌并宣告将要由主要阶段的规则效果使用此牌。若如此做，对手可以从其手牌、盖牌区或弃牌区中展示所声称的牌。若对手展示了该牌，则不使用此牌，而改为将此牌置入弃牌区。',
       textjp: '【常時】このカードを、相手が眼前構築で選びうる他のメガミの《付与》でない通常札として通常の方法で使用を宣言してもよい。そうした場合、相手は相手の手札、伏せ札、捨て札からそのカードを公開できる。公開されたならば、このカードは使用されずに捨て札となる。'
     }, {
-      changeIndex: 5,
-      id: '22-renri-a1-n-5',
+      changeIndex: 6,
+      id: '22-renri-a1-n-6',
       name: '神授',
       namejp: '神授',
       baseType: 'normal',
@@ -4860,7 +4957,7 @@ const Sakura = [{
       types: ['enhance', 'fullpower'],
       capacity: '2',
       text: '破绽 投资券\n【展开时】敌装（1）→自装。你可以支付你的所有集中力。若以此法支付了至少1点集中力，则再结算上述箭头效果1次。\n【破弃时】你可以进行一次“攻击距离2-5 伤害1/0”的攻击。',
-      textjp: '隙　投資券\n【展開時】相オーラ→自オーラ：1、1以上の集中力を全て支払ってもよい。そうした場合、この矢印効果をもう1回行う。\n【破棄時】攻撃『適正距離2-5、1/0』を行ってもよい。'
+      textjp: '隙　投資券\n【展開時】相オーラ→自オーラ：1以上の集中力を全て支払ってもよい。そうした場合、この矢印効果をもう1回行う。\n【破棄時】攻撃『適正距離2-5、1/0』を行ってもよい。'
     }],
     special: [{
       id: '23-akina-o-s-1',
@@ -4899,8 +4996,8 @@ const Sakura = [{
       baseType: 'special',
       cost: '時価',
       types: ['action'],
-      text: '距离限制（0-6） 投资券\n你可以进行一次回收。若如此做，则你可以执行至多2次基本动作《装附》，然后将此牌移出游戏。\n【使用后】每当你的主要阶段开始时，你可以不进行回收，而改为执行1次基本动作《聚气》。',
-      textjp: '間合制限（0‐6）　投資券\n回収を行ってもよい。そうした場合、基本動作《纏い》を2回まで行い、このカードを取り除く。\n【使用済】あなたのメインフェイズの開始時、あなたは回収を行う代わりに基本動作《宿し》を1回行ってもよい。'
+      text: '距离限制（0-7） 投资券\n你可以进行一次回收。若如此做，则你可以执行至多2次基本动作《装附》，然后将此牌移出游戏。\n【使用后】每当你的主要阶段开始时，你可以不进行回收，而改为执行1次基本动作《聚气》。',
+      textjp: '間合制限（0‐7）　投資券\n回収を行ってもよい。そうした場合、基本動作《纏い》を2回まで行い、このカードを取り除く。\n【使用済】あなたのメインフェイズの開始時、あなたは回収を行う代わりに基本動作《宿し》を1回行ってもよい。'
     }]
   }]
 },
@@ -4998,7 +5095,7 @@ const Sakura = [{
       baseType: 'special',
       cost: '2',
       types: ['attack'],
-      range: '1-4',
+      range: '3',
       damage: '2/1',
       text: '【攻击后】若对手选择由命承受此次伤害，则本回合内你进行的下一次对装伤害小于等于2的《攻击》的伤害裂伤化。\n----\n【再起】自装与自气中樱花结晶的数目之和小于等于6。',
       textjp: '【攻撃後】相手がライフへのダメージを選んだならば、このターンにあなたが次に行うオーラへのダメージが2以下の《攻撃》のダメージは裂傷化する。\n----\n【再起】あなたのオーラとフレアの合計が6以下である。',
@@ -5011,8 +5108,8 @@ const Sakura = [{
       baseType: 'special',
       cost: '2',
       types: ['action', 'reaction'],
-      text: '打消被对应的《攻击》的伤害。若以此法打消了《攻击》，则你受到一次{X/Y}的裂伤，X和Y分别等于该《攻击》的对装伤害和对命伤害。\n----\n【即再起】你受到了本回合内第3次伤害。',
-      textjp: '対応した《攻撃》のダメージを打ち消す。そうしたあなたは{X/Y}の裂傷を受ける。X/Yは打ち消したダメージの値に等しい。\n----\n【即再起】あなたがこのターンに3回目のダメージを受ける。'
+      text: '打消被对应的《攻击》的伤害。若以此法打消了《攻击》的伤害，则你受到一次{X/Y}的裂伤，X和Y分别等于该《攻击》的对装伤害和对命伤害。\n----\n【即再起】你受到了本回合内第3次伤害。',
+      textjp: '対応した《攻撃》のダメージを打ち消す。そうした場合、あなたは{X/Y}の裂傷を受ける。X/Yは打ち消したダメージの値に等しい。\n----\n【即再起】あなたがこのターンに3回目のダメージを受ける。'
     }, {
       id: '24-shisui-o-s-4',
       name: '桑畑志水的埋骨地',
@@ -5039,32 +5136,86 @@ const Sakura = [{
     // pic: 'twiicon_sa_46_b.jpg',
     // picq: 'sd_akina.png',
     normal: [{
+      id: '25-misora-o-n-1',
+      name: '',
+      namejp: '弓流し',
+      baseType: 'normal',
+      types: ['attack'],
+      range: '4-7',
+      damage: '2/1'
+    }, {
+      id: '25-misora-o-n-2',
+      name: '',
+      namejp: '狙い蹴り',
+      baseType: 'normal',
+      types: ['attack'],
+      range: '2-4',
+      damage: '2/1'
+    }, {
+      id: '25-misora-o-n-3',
+      name: '',
+      namejp: '風孔',
+      baseType: 'normal',
+      types: ['attack', 'reaction'],
+      range: '2-5',
+      damage: '1/1'
+    }, {
       id: '25-misora-o-n-4',
-      name: '//',
-      namejp: '//',
+      name: '',
+      namejp: '甲矢乙矢',
       baseType: 'normal',
       types: ['attack', 'fullpower'],
       range: '5-15',
       damage: '5/1'
     }, {
       id: '25-misora-o-n-5',
-      name: '//',
-      namejp: '//',
+      name: '',
+      namejp: '精密化',
       baseType: 'normal',
       types: ['action']
+    }, {
+      id: '25-misora-o-n-6',
+      name: '',
+      namejp: '追尾撃',
+      baseType: 'normal',
+      types: ['action']
+    }, {
+      id: '25-misora-o-n-7',
+      name: '',
+      namejp: '空の翼',
+      baseType: 'normal',
+      types: ['enhance'],
+      capacity: '2'
     }],
     special: [{
+      id: '25-misora-o-s-1',
+      name: '',
+      namejp: 'ミハテヌハテ',
+      baseType: 'special',
+      cost: '2',
+      types: ['attack'],
+      range: 'X',
+      damage: '-/1'
+    }, {
+      id: '25-misora-o-s-2',
+      name: '',
+      namejp: 'ツクモノクモ',
+      baseType: 'special',
+      cost: '1',
+      types: ['enhance'],
+      capacity: '1'
+    }, {
       id: '25-misora-o-s-3',
-      name: '//',
-      namejp: '//',
+      name: '',
+      namejp: 'カカゲルカゲ',
       baseType: 'special',
       cost: '2',
       types: ['enhance', 'reaction'],
       capacity: '3'
     }, {
-      id: '25-misora-o-s-3',
-      name: '//',
-      namejp: '//',
+      id: '25-misora-o-s-4',
+      name: '',
+      namejp: 'ミソラノソラ',
       baseType: 'special',
       cost: '5',
       types: ['enhance', 'fullpower'],
