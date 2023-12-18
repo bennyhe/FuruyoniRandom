@@ -3593,6 +3593,19 @@ export default {
       //   })
       // }
 
+      // 琵琶&笛组合时，《合奏》只显示1张
+      if (!this.isOldVer && this.groupCardData.length > 1) {
+        if (
+          this.groupCardData[0].index === 1 &&
+          this.groupCardData[0].subIndex === 1 &&
+          this.groupCardData[1].index === 3 &&
+          this.groupCardData[1].subIndex === 1 &&
+          this.groupCardData[1].normal[3].id === '02/04-saine/tokoyo-a1-n-1/4'
+        ) {
+          this.groupCardData[1].normal.splice(3, 1)
+        }
+      }
+
       if (!this.isOldVer && !this.isChVer) {
         this.beGroupDeck = this.findDeck(
           this.groupCardData,

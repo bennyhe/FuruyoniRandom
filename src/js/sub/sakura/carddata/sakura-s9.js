@@ -5128,7 +5128,7 @@ const Sakura = [{
   name: 'MISORA 御空',
   namejp: 'ミソラ',
   desc: '',
-  descjp: '照準',
+  descjp: '照準～終了フェイズに現在の間合を照準として記録できる。あなたのターンに《攻撃》を行ったらメインフェイズの終了時に照準が外れる。',
   list: [{
     name: '弓',
     namejp: '弓',
