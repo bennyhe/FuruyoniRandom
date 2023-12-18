@@ -1058,7 +1058,7 @@ const Sakura = [{
     name: '电子',
     namejp: '電子',
     isSelect: false,
-    // pic: 'twiicon_sa_19.jpg',
+    pic: 'twiicon_sa_48_b.jpg',
     // picq: 'sd_oboro_a1.png',
     changenormal: [{
       changeIndex: '1',
@@ -4816,7 +4816,7 @@ const Sakura = [{
     name: '遗物',
     namejp: '遺物',
     isSelect: false,
-    pic: '',
+    pic: 'twiicon_sa_49_b.jpg',
     picq: '',
     changenormal: [{
       changeIndex: 2,
@@ -5125,7 +5125,7 @@ const Sakura = [{
   }]
 },
 {
-  name: 'MISORA 美空',
+  name: 'MISORA 御空',
   namejp: 'ミソラ',
   desc: '',
   descjp: '照準',
@@ -5133,7 +5133,7 @@ const Sakura = [{
     name: '弓',
     namejp: '弓',
     isSelect: false,
-    // pic: 'twiicon_sa_46_b.jpg',
+    pic: 'twiicon_sa_50_b.jpg',
     // picq: 'sd_akina.png',
     normal: [{
       id: '25-misora-o-n-1',
