@@ -442,7 +442,7 @@ function getAllRange(cardItem, val, pointVal) {
   let range = pointVal || cardItem[val] || []
   const orginRange = range
   // console.log(cardItem.name, range)
-  if (range.length > 0) {
+  if (range !== 'X' && range.length > 0) {
     if (range.indexOf('-') > -1) {
       range = range.split('-')
       range = range.map(Number)
