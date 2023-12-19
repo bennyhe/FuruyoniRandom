@@ -1121,7 +1121,7 @@ const Sakura = [{
       range: '0-2',
       damage: '1/0',
       // text: '',
-      textjp: 'デジ設置'
+      textjp: 'デジ設置\n【攻撃後】相手がライフへのダメージを選んだならば、相手を畏縮させる。'
     }, {
       id: '05-oboro-a2-cp1',
       name: '',
