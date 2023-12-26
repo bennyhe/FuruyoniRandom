@@ -4519,7 +4519,7 @@ const sakuraDataCh = [{
     name: '算盘',
     namejp: '算盤',
     isSelect: false,
-    pic: 'twiicon_sa_46_b.jpg',
+    pic: 'twiicon_sa_46.jpg',
     picq: 'sd_akina.png',
     normal: [{
       id: '23-akina-o-n-1',
@@ -4637,7 +4637,7 @@ const sakuraDataCh = [{
     name: '锯',
     namejp: '鋸',
     isSelect: false,
-    pic: 'twiicon_sa_47_b.jpg',
+    pic: 'twiicon_sa_47.jpg',
     picq: 'sd_shisui.png',
     normal: [{
       id: '24-shisui-o-n-1',

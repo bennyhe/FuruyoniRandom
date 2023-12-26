@@ -1058,8 +1058,8 @@ const Sakura = [{
     name: '电子',
     namejp: '電子',
     isSelect: false,
-    pic: 'twiicon_sa_48_b.jpg',
-    // picq: 'sd_oboro_a1.png',
+    pic: 'twiicon_sa_50.jpg',
+    picq: 'sd_oboro_a2.png',
     changenormal: [{
       changeIndex: '1',
       id: '05-oboro-a2-n-1',
@@ -4816,8 +4816,8 @@ const Sakura = [{
     name: '遗物',
     namejp: '遺物',
     isSelect: false,
-    pic: 'twiicon_sa_49_b.jpg',
-    picq: '',
+    pic: 'twiicon_sa_49.jpg',
+    picq: 'sd_renri_a1.png',
     changenormal: [{
       changeIndex: 2,
       id: '22-renri-a1-n-2',
@@ -4892,7 +4892,7 @@ const Sakura = [{
     name: '算盘',
     namejp: '算盤',
     isSelect: false,
-    pic: 'twiicon_sa_46_b.jpg',
+    pic: 'twiicon_sa_46.jpg',
     picq: 'sd_akina.png',
     normal: [{
       id: '23-akina-o-n-1',
@@ -5010,7 +5010,7 @@ const Sakura = [{
     name: '锯',
     namejp: '鋸',
     isSelect: false,
-    pic: 'twiicon_sa_47_b.jpg',
+    pic: 'twiicon_sa_47.jpg',
     picq: 'sd_shisui.png',
     normal: [{
       id: '24-shisui-o-n-1',
@@ -5133,8 +5133,8 @@ const Sakura = [{
     name: '弓',
     namejp: '弓',
     isSelect: false,
-    pic: 'twiicon_sa_50_b.jpg',
-    // picq: 'sd_akina.png',
+    pic: 'twiicon_sa_48.jpg',
+    picq: 'sd_misora.png',
     normal: [{
       id: '25-misora-o-n-1',
       name: '弓流',
