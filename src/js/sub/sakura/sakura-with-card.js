@@ -523,7 +523,7 @@ const sakuraStoryData = [{
         namejp: '執念',
         baseType: 'normal',
         types: ['action'],
-        text: '对手畏缩。\n奉纳～若你赌上了自己的意志，则对手弃1张牌。',
+        text: '对手畏缩。\n奉纳～若你赌上了自己的意志，则对手从手牌中弃1张牌。',
         textjp: '相手を畏縮させる。\n奉納―あなたが意思を賭しているならば、相手は手札を1枚捨て札にする。'
       },
       {
