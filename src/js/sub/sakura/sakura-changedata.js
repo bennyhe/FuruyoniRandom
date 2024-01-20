@@ -3,9 +3,9 @@
  */
 export default [
   {
-    id: 'S9 Remake',
+    id: 'S9 Rework',
     name: 'S9重制女神',
-    namejp: 'S9 Remake',
+    namejp: 'S9 Rework',
     // link: 'http://bfpblog.bakafire.main.jp/?eid=675',
     list: [
       {

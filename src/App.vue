@@ -3939,15 +3939,22 @@ export default {
       return this.lang[this.curlang][`${qstr}${word}`]
     },
     getImgUrl(item) {
+      const imgBeforeUrl = '../img/card/na_'
       if (item !== undefined) {
         let _id = item.id
+        if(_id === '02/04-saine/tokoyo-a1-n-1/4') {
+          return `${imgBeforeUrl}02_saine_a1_n_1.png`
+        }
         _id = _id.replace(/\-/g, '_')
-        return `../img/card/na_${_id}.png`
+        return `${imgBeforeUrl}${_id}.png`
       }
       if (this.cardDetail && this.cardDetail.namejp) {
         let _id = this.cardDetail.id
+        if(_id === '02/04-saine/tokoyo-a1-n-1/4') {
+          return `${imgBeforeUrl}02_saine_a1_n_1.png`
+        }
         _id = _id.replace(/\-/g, '_')
-        return `../img/card/na_${_id}.png`
+        return `${imgBeforeUrl}${_id}.png`
       }
     },
     getImgUrlWill(item) {
