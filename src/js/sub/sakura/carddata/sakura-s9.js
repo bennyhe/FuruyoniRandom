@@ -5251,103 +5251,103 @@ const Sakura = [{
 // Sakura.forEach(a=>{
 //   a.list.forEach(b => {
 //     if (b.normal) {
-//       var a = [];
-//       b.normal.map(item => {
-//         a.push({
+//       const ca1 = []
+//       b.normal.forEach(item => {
+//         ca1.push({
 //           id: item.id,
 //           name: item.name,
-//           namejp: item.namejp,
+//           namejp: item.namejp
 //         })
 //       })
-//       b.normal = a
+//       b.normal = ca1
 //     }
 //     if (b.special) {
-//       var a = [];
-//       b.special.map(item => {
-//         a.push({
+//       const ca2 = []
+//       b.special.forEach(item => {
+//         ca2.push({
 //           id: item.id,
 //           name: item.name,
-//           namejp: item.namejp,
+//           namejp: item.namejp
 //         })
 //       })
-//       b.special = a
+//       b.special = ca2
 //     }
 //     if (b.changenormal) {
-//       var a = [];
-//       b.changenormal.map(item => {
-//         a.push({
+//       const ca3 = []
+//       b.changenormal.forEach(item => {
+//         ca3.push({
 //           id: item.id,
 //           name: item.name,
-//           namejp: item.namejp,
+//           namejp: item.namejp
 //         })
 //       })
-//       b.changenormal = a
+//       b.changenormal = ca3
 //     }
 //     if (b.changespecial) {
-//       var a = [];
-//       b.changespecial.map(item => {
-//         a.push({
+//       const ca4 = []
+//       b.changespecial.forEach(item => {
+//         ca4.push({
 //           id: item.id,
 //           name: item.name,
-//           namejp: item.namejp,
+//           namejp: item.namejp
 //         })
 //       })
-//       b.changespecial = a
+//       b.changespecial = ca4
 //     }
 //     if (b.extra) {
-//       var a = [];
-//       b.extra.map(item => {
-//         a.push({
+//       const ca5 = []
+//       b.extra.forEach(item => {
+//         ca5.push({
 //           id: item.id,
 //           name: item.name,
-//           namejp: item.namejp,
+//           namejp: item.namejp
 //         })
 //       })
-//       b.extra = a
+//       b.extra = ca5
 //     }
 //     if (b.changeExtra) {
-//       var a = [];
-//       b.changeExtra.map(item => {
-//         a.push({
+//       const ca6 = []
+//       b.changeExtra.forEach(item => {
+//         ca6.push({
 //           id: item.id,
 //           name: item.name,
-//           namejp: item.namejp,
+//           namejp: item.namejp
 //         })
 //       })
-//       b.changeExtra = a
+//       b.changeExtra = ca6
 //     }
 //     if (b.poison) {
-//       var a = [];
-//       b.poison.map(item => {
-//         a.push({
+//       const ca7 = []
+//       b.poison.forEach(item => {
+//         ca7.push({
 //           id: item.id,
 //           name: item.name,
-//           namejp: item.namejp,
+//           namejp: item.namejp
 //         })
 //       })
-//       b.poison = a
+//       b.poison = ca7
 //     }
 //     if (b.transform) {
-//       var a = [];
-//       b.transform.map(item => {
-//         a.push({
+//       const ca8 = []
+//       b.transform.forEach(item => {
+//         ca8.push({
 //           id: item.id,
 //           name: item.name,
-//           namejp: item.namejp,
+//           namejp: item.namejp
 //         })
 //       })
-//       b.transform = a
+//       b.transform = ca8
 //     }
 //     if (b.changeTransform) {
-//       var a = [];
-//       b.changeTransform.map(item => {
-//         a.push({
+//       const ca9 = []
+//       b.changeTransform.forEach(item => {
+//         ca9.push({
 //           id: item.id,
 //           name: item.name,
-//           namejp: item.namejp,
+//           namejp: item.namejp
 //         })
 //       })
-//       b.changeTransform = a
+//       b.changeTransform = ca9
 //     }
 //   })
 // })

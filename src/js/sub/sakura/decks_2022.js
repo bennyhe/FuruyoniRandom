@@ -2648,5 +2648,75 @@ export default [{
   'name': '快乐贴贴镜恐',
   'desc': '娱乐性强。前期试探进攻，开寄花与八叶镜后风舞台前进4脱兔前进2主打一个贴脸，依靠寄花和八叶入血。扇回旋可换意志，双叶镜可换六叶镜',
   'decklink': 'https://sdrice.name/random/?ver=S8&lang=cn&isShow=1&girls=3+2,15+0&girlscard1=2,4,5+2&girlscard2=0,1,2,3+0,3'
+},
+{
+  'date': '2023-04-05',
+  'author': '猫猫w',
+  'name': '伞花 卡0灭灯',
+  'desc': '八叶镜就为了契约换盟约，意志不换，幻影步建议也不要换，问就是大诱导。不想对应也可以换镜之恶魔，洗牌的时候偷一下。对面无后退对应幻影步可以换猫骗，对面有高气王牌也可以带星云爪（换潜进）变了偷气（这样建议幻影步也变掉）。前期可以契约选聚气，后期反向聚气。这套实测了五六把，灯几乎都能打到5血（最后一局被枢式开了，悲），前期31刮1，突刺打2，洗牌两次就结束了。',
+  'decklink': 'https://sdrice.name/random/?ver=S8&lang=cn&isShow=1&girls=5+0,15+1&girlscard1=0,2,3,5+1,3&girlscard2=3,4,5+0'
+},
+{
+  'date': '2023-04-14',
+  'author': 'kk',
+  'name': '锯信(拒)胜书刀(算)',
+  'desc': '有一种强度的美，唤潮改过之后就是小裂伤装1，对手不给顺风逆风的水雷球和唤潮回牌库顶也很好用，顺风或者潜水成功还可以造成巨额伤害',
+  'decklink': 'https://sdrice.name/random/?ver=S8&lang=cn&isShow=1&girls=16+1,23+0&girlscard1=0,1,3,6+3&girlscard2=0,1,3+0,1'
+},
+{
+  'date': '2023-04-15',
+  'author': 'Icicle Tokamak',
+  'name': 'fun向回嗖久远友扇',
+  'desc': '核心思想是是链接+回嗖=翻2卡*2点强化，可以打出-/3久远，另一张卡就充分发挥想象力了，0纳晴舞，4/2千岁，再或者扇子换笛子一些卡都行。激光枪随便消耗一下多的豆子。启动顺序一般先开久远再开链接，诗舞无脑打出凑豆，回嗖抽的早直接盖掉等机会开，第三张王牌看情况。弱点是启动慢，怕灯塔，狭雾海域，罗盘，果果以及一些奇奇怪怪的打消，当然也怕鬼抽（？）。但是胡到牌就很快乐）',
+  'decklink': 'https://sdrice.name/random/?ver=S8&lang=cn&isShow=1&girls=3+0,9+2&girlscard1=1,3,5,6+0,1&girlscard2=0,4,5+3'
+},
+{
+  'date': '2023-05-08',
+  'author': 'Tsugumi',
+  'name': '兜车OTK',
+  'desc': '前期当儿子打，13气启动，号角一开你就是最靓的仔，必要时可以直接战场接阁换启动，斩杀轮2距开，战场阁展开中，斗神43，WE32，SC33回四进一反攻32，双枪兵32加32，最后门里掏的SC44斩杀，',
+  'decklink': 'https://sdrice.name/random/?ver=S8&lang=cn&isShow=1&girls=10+0,17+0&girlscard1=1,2,3,4+&girlscard2=1,5,6+0,2,3'
+},
+{
+  'date': '2023-05-29',
+  'author': '万叶',
+  'name': '镜唐',
+  'desc': '3/2 3/2接3/2，掌开了还能把1刀3/2变4/3，脸都不要了。幻影步和苇草在打近战对面把距拉到2时方便调到4，如果对面缺少拉距手段可以把苇草换成别的，打长手就把镜中魔和苇草都换掉',
+  'decklink': 'https://sdrice.name/random/?ver=S8&lang=cn&isShow=1&girls=15+0,18+0&girlscard1=0,1,2,3,4+0,3&girlscard2=1,4+3'
+},
+{
+  'date': '2024-06-03',
+  'author': 'Mark',
+  'name': '笛子救星',
+  'desc': 'beat打法，唐棹的火力藉由笛子輔助來穩定',
+  'decklink': 'https://sdrice.name/random/?ver=S8&lang=cn&isShow=1&girls=3+1,18+0&girlscard1=+&girlscard2=0,1,2,3,4,5,6+0,1,2'
+},
+{
+  'date': '2023-08-01',
+  'author': '滅丁毒',
+  'name': '花兜（64人網賽構築）',
+  'desc': '香港，日本，韓國64人網戰激鬥，花兜壓倒性戰勝韓國鋸劍，第二個回合開花王牌換走手中寄花變成徙寄花，第三個回合展開徒寄花把八葉卡牌變成完全態，之後重洗卡組再換，重覆換卡和防守，在時機成熟的時候進行後退，再用適當的戰術加上合適的方法，以壓倒性的戰術擊敗鋸劍',
+  'decklink': 'https://sdrice.name/random/?ver=S8-2pre&lang=cn&isShow=1&girls=15+1,17+0&girlscard1=2,3,4,5,6+0&girlscard2=2,4+0,2'
+},
+{
+  'date': '2023-08-25',
+  'author': '调和',
+  'name': '兜毒特胜',
+  'desc': '前期没虚先毒雾塞迟缓，尽快聚气塞灭灯毒影响对手运转，泥泞都当ap盖掉。尽量留0-1手压制能开就开，2命伤一下一律命吃。中间不时以毒针暗器骚扰上毒；一旦对手开迟缓毒立刻洗牌开信条。对手干瞪眼一回合时前进开泥泞蹑足卡0。血量健康的话可以把防壁塞兵舍里方便决胜。不适用于krr或信赖这种直接命伤角色。',
+  'decklink': 'https://sdrice.name/random/?ver=S8-2pre&lang=cn&isShow=1&girls=8+0,17+0&girlscard1=1,3,4,5,6+0,3&girlscard2=4,5+2'
+},
+{
+  'date': '2023-09-12',
+  'author': '调和',
+  'name': '电商',
+  'decklink': 'https://sdrice.name/random/?ver=S8-2pre&lang=cn&isShow=1&girls=9+0,22+0&girlscard1=0,1,5+0,2&girlscard2=1,3,4,6+3',
+  'desc': '依靠电疗和回收输出。上装能力很足：购买和两王牌再起都可以偷到装。王牌粘电疗打命抬市价，方便后续回收。'
+},
+{
+  'date': '2023-10-07',
+  'author': '调和',
+  'name': '绊炎强行削装',
+  'desc': '3装吃毒针，4装吃火炎流，不想拿命吃？那就尝尝杀意霞毒吧。遁术视情况开，有时候用来保护自己会更合适，尤其是面对刀剑兜这种情况。',
+  'decklink': 'https://sdrice.name/random/?ver=S8-2pre&lang=cn&isShow=1&girls=2+1,8+1&girlscard1=1,4+&girlscard2=0,1,2,3,5+0,2,3'
 }
 ]
