@@ -1964,7 +1964,7 @@ export default {
           special: []
         },
         {
-          ss: 'S8',
+          ss: 'S9',
           all: [],
           normal: [],
           special: []
