@@ -97,7 +97,7 @@ export function initChangeCardsData(sakuraChangeCardsData) {
               cardSubIndex: parseInt(cid[4], 10)
             })
           } else {
-            allccData.filter(sitem => sitem.id === item.id)[0].clist = item.clist.concat(allccData.filter(sitem => sitem.id === item.id)[0].clist[1])
+            allccData.filter(sitem => sitem.id === item.id)[0].clist = [item.from].concat(allccData.filter(sitem => sitem.id === item.id)[0].clist)
           }
         }
 
