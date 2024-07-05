@@ -1382,7 +1382,7 @@ const Sakura = [{
     changenormal: [{
       changeIndex: '2',
       id: '06-yukihi-a1-n-2',
-      name: '声援/恫吓',
+      name: '声援/威吓',
       namejp: 'ちからぞえ / おどしつけ',
       namekr: '조력/위협',
       baseType: 'normal',

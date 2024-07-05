@@ -211,7 +211,7 @@ export default [
         from: {
           cardwhojp: 'S9',
           id: '23-akina-o-n-2',
-          name: '威吓',
+          name: '恫吓',
           namejp: '恫喝',
           baseType: 'normal',
           types: ['attack'],
@@ -223,7 +223,7 @@ export default [
         to: {
           cardwhojp: 'S9',
           id: '23-akina-o-n-2',
-          name: '威吓',
+          name: '恫吓',
           namejp: '恫喝',
           baseType: 'normal',
           types: ['attack'],

@@ -1381,7 +1381,7 @@ const Sakura = [{
     changenormal: [{
       changeIndex: '2',
       id: '06-yukihi-a1-n-2',
-      name: '声援/恫吓',
+      name: '声援/威吓',
       namejp: 'ちからぞえ / おどしつけ',
       namekr: '조력/위협',
       baseType: 'normal',
@@ -5256,7 +5256,7 @@ const Sakura = [{
       textjp: '【攻撃後】以下から1つを選ぶ。\n・あなたは集中力を1得る。\n・回収を行う。\n・自フレア↔自フロー：１。'
     }, {
       id: '23-akina-o-n-2',
-      name: '威吓',
+      name: '恫吓',
       namejp: '恫喝',
       baseType: 'normal',
       types: ['attack'],
