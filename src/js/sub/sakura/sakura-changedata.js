@@ -67,6 +67,7 @@ export default [
           textjp: '遠心 \nあなたの捨て札にある異なる《全力》でないカードを2枚まで選び、任意の順番で使用する。'
         },
         to: {
+          isCancel: true,
           cardwhojp: 'S9-2',
           id: '08-hagane-o-s-4',
           name: '大山脉·转限',
