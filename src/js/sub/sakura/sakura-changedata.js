@@ -180,7 +180,7 @@ export default [
           namejp: '徹底抗戦',
           baseType: 'normal',
           types: ['attack', 'fullpower'],
-          range: '1-7',
+          range: '2-5',
           damage: '2/3',
           text: '【攻击后】对手畏缩，对自装、自气或自命造成1点裂伤。',
           textjp: '【攻撃後】相手を畏縮させ、あなたのオーラかフレアかライフに裂傷を1与える。',
