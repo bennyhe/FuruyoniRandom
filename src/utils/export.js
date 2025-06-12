@@ -445,6 +445,9 @@ function getAllRange(cardItem, val, pointVal) {
   if (range !== 'X' && range.length > 0) {
     if (range.indexOf('-') > -1) {
       range = range.split('-')
+      if (range[1]==='X'){
+        range[1] = 9
+      }
       range = range.map(Number)
       range = Array.from(new Array(range[1] + 1).keys()).slice(range[0])
     }

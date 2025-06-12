@@ -2,6 +2,194 @@
  */
 export default [
   {
+    id: 'S10',
+    name: 'S9-2 -> S10赛季更新',
+    namejp: 'シーズン９－２→１０カード更新',
+    link: 'http://bfpblog.bakafire.main.jp/?eid=727',
+    list: [
+      {
+        id: '07-shinra-o-n-2',
+        from: {
+          cardwhojp: 'S9-2',
+          id: '07-shinra-o-n-2',
+          name: '反论',
+          namejp: '反論',
+          baseType: 'normal',
+          types: ['attack', 'reaction'],
+          range: '2-7',
+          damage: '1/-',
+          text: '【攻击后】若被对应的《攻击》非王牌且对装伤害大于等于3，则打消该《攻击》的伤害。（不影响效果伤害）\n【攻击后】对手抓1张牌。',
+          textjp: '【攻撃後】対応した切札でなく、オーラへのダメージが3以上である《攻撃》のダメージを打ち消す。 \n【攻撃後】相手はカードを1枚引く。'
+        },
+        to: {
+          cardwhojp: 'S10',
+          id: '07-shinra-o-n-2',
+          name: '反论',
+          namejp: '反論',
+          baseType: 'normal',
+          types: ['attack', 'reaction'],
+          range: '2-7',
+          damage: '1/-',
+          text: '【攻击后】被对应的《攻击》的伤害结算前，若该《攻击》非王牌且对装伤害不为“-”，则打消该《攻击》的伤害。（不影响该《攻击》其他效果的伤害）\n【攻击后】对手抓1张牌。',
+          textjp: '【攻撃後】対応した切札でなく、オーラへのダメージが「-」でない《攻撃》のダメージを打ち消す。 \n【攻撃後】相手はカードを1枚引く。'
+        }
+      },
+      {
+        id: '08-hagane-o-s-4',
+        from: {
+          isCancel: true,
+          cardwhojp: 'S9-2',
+          id: '08-hagane-o-s-4',
+          name: '大山脉·转限',
+          namejp: '大山脈リスペクト',
+          baseType: 'special',
+          types: ['action'],
+          cost: '3',
+          text: '远心\n弃置你和对手的牌库。\n本回合的结束阶段开始时，重铸你的牌库。\n从你的弃牌中选择至多2张不具《全力》副类别的牌，以任意顺序从弃牌区使用它们。（若将要使用时所选择的牌已不再位于弃牌区则不能使用）',
+          textjp: '遠心\nあなたと相手の山札を全て捨て札にする。\nこのターンの終了フェーズに山札を再構成する。\nあなたの捨て札にある異なる《全力》でないカードを2枚まで選び、任意の順番で捨て札から使用する。'
+        },
+        to: {
+          cardwhojp: 'S10',
+          id: '08-hagane-o-s-4',
+          name: '大山脉·转限',
+          namejp: '大山脈リスペクト',
+          baseType: 'special',
+          types: ['action'],
+          cost: '3',
+          text: '远心\n选择至多2次。你可以多次选择同一个选项。\n1.弃置你和对手的牌库。\n2.从你的弃牌中选择一张不具《全力》副类别的牌使用。若以此法使用的非《付与》的牌将被置入弃牌区，则改为将其置入盖牌区。',
+          textjp: '遠心\n以下を2回まで選ぶ。同じものを複数回選んでもよい。\n·あなたの山札を全て捨て札にする。\n·あなたの捨て札にある異なる《全力》でないカードを選び、使用する。この方法で使用した《付与》でないカードが捨て札になるならば、代わりに伏せ札にする。'
+        }
+      },
+      {
+        id: '12-raira-o-n-6',
+        from: {
+          cardwhojp: 'S9-2',
+          id: '12-raira-o-n-6',
+          name: '吼叫',
+          namejp: '呼び声',
+          baseType: 'normal',
+          types: ['action', 'fullpower'],
+          text: '选择1项：\n1.对手畏缩，风神槽与雷神槽的值各增加1；\n2.雷神槽的值变为原本的2倍。\n然后，若风神槽的值或雷神槽的值大于等于7，则进行一次“攻击距离0-10，伤害1/-”的攻击，执行至多2次基本动作。',
+          textjp: '以下から1つを選ぶ。\n・相手を畏縮させ、風神ゲージと雷神ゲージを1ずつ上げる。\n・雷神ゲージを2倍にする。\nその後、風神ゲージか雷神ゲージが7以上ならば、攻撃『適正距離0-10、1/-』を行い、基本動作を2回まで行う。'
+        },
+        to: {
+          cardwhojp: 'S10',
+          id: '12-raira-o-n-6',
+          name: '吼叫',
+          namejp: '呼び声',
+          baseType: 'normal',
+          types: ['action', 'fullpower'],
+          text: '选择1项：\n1.对手畏缩，风神槽与雷神槽的值各增加1；\n2.雷神槽的值变为原本的2倍。\n然后，若风神槽的值或雷神槽的值大于等于7，则对敌装造成1点伤害，并执行至多2次基本动作。',
+          textjp: '以下から1つを選ぶ。\n・相手を畏縮させ、風神ゲージと雷神ゲージを1ずつ上げる。\n・雷神ゲージを2倍にする。\nその後、風神ゲージか雷神ゲージが7以上ならば、相手のオーラに1ダメージを与え、基本動作を2回まで行う。'
+        }
+      },
+      {
+        id: '23-akina-o-n-2',
+        from: {
+          cardwhojp: 'S9-2',
+          id: '23-akina-o-n-2',
+          name: '恫吓',
+          namejp: '恫喝',
+          baseType: 'normal',
+          types: ['attack'],
+          range: '4',
+          damage: '-/0',
+          text: '投资券\n【常时】若你的资本大于对手的资本，则此《攻击》获得+0/+1。',
+          textjp: '投資券\n【常時】あなたの資本が相手の資本より大きいならば、この《攻撃》は+0/+1となる。'
+        }, 
+        to: {
+          cardwhojp: 'S10',
+          id: '23-akina-o-n-2',
+          name: '恫吓',
+          namejp: '恫喝',
+          baseType: 'normal',
+          types: ['attack'],
+          range: '4',
+          damage: '-/0',
+          text: '投资券\n【常时】若你的资本与对手的资本之差大于等于3，则此《攻击》获得+0/+1。\n【攻击后】若你的资本小于等于对手的资本，则盖伏此牌。',
+          textjp: '投資券\n【常時】あなたの資本が相手の資本より３以上大きいならば、この《攻撃》は+0/+1となる。\n【攻撃後】あなたの資本が相手の資本以下ならば、このカードを伏せ札にする。'
+        }
+      },
+      {
+        id: '23-akina-o-n-5',
+        from: {
+          cardwhojp: 'S9-2',
+          id: '23-akina-o-n-5',
+          name: '算法',
+          namejp: '算法',
+          baseType: 'normal',
+          types: ['action', 'reaction'],
+          text: '获得1点集中力。\n本回合内，所有《攻击》的攻击距离中的每一个值减小1。\n（例如攻击距离3-4会因此变为攻击距离2-3）',
+          textjp: 'あなたは集中力を1得る。\nこのターン中、《攻撃》は全ての適正距離が1減少する。\n（例えば3‐4は2‐3となる）'
+        },
+        to: {
+          cardwhojp: 'S10',
+          id: '23-akina-o-n-5',
+          name: '算法',
+          namejp: '算法',
+          baseType: 'normal',
+          types: ['action', 'reaction'],
+          text: '本回合内，所有《攻击》的攻击距离中的每一个值减小1。\n（例如攻击距离3-4会因此变为攻击距离2-3）',
+          textjp: 'このターン中、《攻撃》は全ての適正距離が1減少する。\n（例えば3‐4は2‐3となる）'
+        }
+      },
+      {
+        id: '23-akina-o-n-6',
+        from: {
+          cardwhojp: 'S9-2',
+          id: '23-akina-o-n-6',
+          name: '乱拨',
+          namejp: '盤狂わせ',
+          baseType: 'normal',
+          types: ['enhance'],
+          capacity: '2',
+          text: '距离限制（0-3）\n【展开时】敌气（2）→距\n【破弃时】距（1）→敌气',
+          textjp: '間合制限（0‐3）\n【展開時】相フレア→間合：２。\n【破棄時】間合→相フレア：１。'
+        },
+        to: {
+          cardwhojp: 'S10',
+          id: '23-akina-o-n-6',
+          name: '乱拨',
+          namejp: '盤狂わせ',
+          baseType: 'normal',
+          types: ['enhance'],
+          capacity: '2',
+          text: '距离限制（0-3）\n【展开时】敌气（2）→距\n【展开中】若此牌上的樱花结晶将被移除，则不将其移至虚，而改为移至敌气。',
+          textjp: '間合制限（0‐3）\n【展開時】相フレア→間合：２。\n【展開中】この付与札の上の桜花結晶がダストへと送られるならば、それは代わりに相手のフレアへと移動する。'
+        }
+      },
+      {
+        id: '24-shisui-o-n-4',
+        from: {
+          cardwhojp: 'S9-2',
+          id: '24-shisui-o-n-4',
+          name: '彻底反抗',
+          namejp: '徹底抗戦',
+          baseType: 'normal',
+          types: ['attack', 'fullpower'],
+          range: '1-7',
+          damage: '2/3',
+          text: '不可被对应\n【攻击后】对手畏缩，对自装、自气或自命造成1点裂伤。',
+          textjp: '対応不可\n【攻撃後】相手を畏縮させ、あなたのオーラかフレアかライフに裂傷を1与える。',
+          isLacerationDamage: true
+        }, 
+        to: {
+          cardwhojp: 'S10',
+          id: '24-shisui-o-n-4',
+          name: '彻底反抗',
+          namejp: '徹底抗戦',
+          baseType: 'normal',
+          types: ['attack', 'fullpower'],
+          range: '1-7',
+          damage: '2/3',
+          text: '【攻击后】对手畏缩，对自装、自气或自命造成1点裂伤。',
+          textjp: '【攻撃後】相手を畏縮させ、あなたのオーラかフレアかライフに裂傷を1与える。',
+          isLacerationDamage: true
+        }
+      }
+    ]
+  },
+  {
     id: 'S9-2',
     name: 'S9 -> S9-2赛季更新',
     namejp: 'シーズン9→9ー２カード更新',
@@ -94,6 +282,7 @@ export default [
           textjp: '燃焼 \n【攻撃後】騎動を行う。'
         },
         to: {
+          isCancel: true,
           cardwhojp: 'S9-2',
           id: '11-thallya-o-n-2',
           name: 'Waving Edge',
