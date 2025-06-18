@@ -2444,7 +2444,7 @@ const Sakura = [{
       types: ['attack'],
       range: '3-5',
       damage: '2/1',
-      text: '【攻击后】骑动',
+      text: '【攻击后】进行一次骑动。',
       textjp: '【攻撃後】騎動を行う。'
     },
     {
@@ -2455,7 +2455,7 @@ const Sakura = [{
       types: ['attack'],
       range: '1-4',
       damage: '3/1',
-      text: '燃烧\n【攻击后】执行至多1次基本动作，然后骑动。',
+      text: '燃烧\n【攻击后】执行至多1次基本动作，然后进行一次骑动。',
       textjp: '燃焼\n【攻撃後】基本動作を1回まで行い、騎動を行う。'
     },
     {
@@ -2467,7 +2467,7 @@ const Sakura = [{
       range: '1',
       damage: '3/2',
       text: '燃烧\n【常时】若此《攻击》对对手造成了伤害，则不将因结算伤害移动的樱花结晶移至气或虚，而改为移至距。',
-      textjp: '燃焼 \n【常時】この《攻撃》のダメージにより移動する桜花結晶は、ダストやフレアでなく間合に動かす。'
+      textjp: '燃焼\n【常時】この《攻撃》のダメージにより移動する桜花結晶は、ダストやフレアでなく間合に動かす。'
     },
     {
       id: '11-thallya-o-n-4',
@@ -2504,8 +2504,8 @@ const Sakura = [{
       namejp: 'Turbo Switch',
       baseType: 'normal',
       types: ['action', 'reaction'],
-      text: '燃烧\n骑动',
-      textjp: '燃焼 \n騎動を行う。'
+      text: '燃烧\n进行一次骑动。',
+      textjp: '燃焼\n騎動を行う。'
     }],
     special: [{
       id: '11-thallya-o-s-1',
