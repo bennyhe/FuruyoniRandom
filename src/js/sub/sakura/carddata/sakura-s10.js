@@ -5289,7 +5289,7 @@ const Sakura = [{
       textjp: '【攻撃後】以下から1つを選ぶ。この《攻撃》が対応されたならば、代わりに相手が選ぶ。\n・共鳴する。\n・過去の運命をまだ見ぬ運命へと動かす。'
     }, {
       id: '26-innealra-o1-n-4',
-      name: '悔恨',
+      name: '怅憾',
       namejp: '悔恨',
       baseType: 'normal',
       types: ['action'],
