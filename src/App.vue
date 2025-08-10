@@ -1784,6 +1784,11 @@ const fnCopyCards = wantData => {
   //a旗复制原来的卡
   wantData[13].list[1].changeExtra.unshift(wantData[13].list[0].extra[4])
   wantData[13].list[1].changeExtra.unshift(wantData[13].list[0].extra[3])
+  //a衣复制原来的extra
+  if (wantData[21].list[1]){
+    wantData[21].list[1].changeExtra.unshift(wantData[21].list[0].extra[0])
+    wantData[21].list[1].changeExtra.unshift(wantData[21].list[0].extra[1])
+  }
 
   // s7
   // a2krr如果存在复制粘贴
