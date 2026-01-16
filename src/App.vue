@@ -1689,7 +1689,7 @@ import {
   get
 } from './utils/export.js'
 
-import sakuraData from './js/sub/sakura/carddata/sakura-s10'
+import sakuraData from './js/sub/sakura/carddata/sakura-s10-2'
 import sakuraDataCh from './js/sub/sakura/carddata/sakura-s8-ch'
 import sakuraDataOldVer from './js/sub/sakura/carddata/sakura-old'
 
@@ -3731,9 +3731,8 @@ export default {
       this.cardDetail = item
       console.log(
         '当前女神序号',
-        `${(girlItem && girlItem.index) || 'null'}|${
-          (girlItem && girlItem.subIndex) || 'null'
-        }|${cardIndex || 'null'}`
+        `[${girlItem.index}, ${girlItem.subIndex}, '${item.baseType}', ${cardIndex}]`
+
       )
     },
     getCardDetailInDeck(item) {

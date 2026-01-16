@@ -1,6 +1,15 @@
 /**
  */
 export default [
+  // {
+  //   id: 'S10-2',
+  //   name: 'S10 -> S10-2赛季更新',
+  //   namejp: 'シーズン１０→１０－２カード更新',
+  //   link: 'http://bfpblog.bakafire.main.jp/?eid=767',
+  //   list: [{
+
+  //   }]
+  // },
   {
     id: 'S10',
     name: 'S9-2 -> S10赛季更新',
