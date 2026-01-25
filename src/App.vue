@@ -1969,7 +1969,7 @@ export default {
           special: []
         },
         {
-          ss: 'S9',
+          ss: window.sakuraOtherData.sakuraPlayerDeckDataAnySeason,
           all: [],
           normal: [],
           special: []

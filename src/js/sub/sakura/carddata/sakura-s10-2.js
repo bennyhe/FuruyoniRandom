@@ -5252,8 +5252,8 @@ const Sakura = [{
   desc: '共鸣~除你的第1回合外，当你的主要阶段开始时，若你的手牌张数等于3，则进行一次共鸣。',
   descjp: '共鳴～第１ターン以外のメインフェイズ開始時にあなたの手札が３枚ならば共鳴する。',
   list: [{
-    name: '枪-过去',
-    namejp: '槍-過去',
+    name: '枪过去',
+    namejp: '槍過去',
     isSelect: false,
     pic: 'twiicon_sa_51.jpg',
     picq: 'sd_innealra1.png',
@@ -5393,8 +5393,8 @@ const Sakura = [{
       textjp: 'あなたと相手の山札の上から1枚を伏せ札にする。\nこの運命が過去にあるならば、もう1回行う。\n------\nこのターン中にあなたが基本動作を行っていないならば、相手のライフに1ダメージを与える。'
     }]
   }, {
-    name: '枪-现在',
-    namejp: '槍-現在',
+    name: '枪现在',
+    namejp: '槍現在',
     isSelect: false,
     pic: 'twiicon_sa_52.jpg',
     picq: 'sd_innealra2.png',
@@ -5506,8 +5506,8 @@ const Sakura = [{
       textjp: 'ダスト→自オーラ：2\nダスト→相オーラ：1\n------\nダスト→自オーラ：3'
     }]
   }, {
-    name: '枪-未來',
-    namejp: '槍-未來',
+    name: '枪未來',
+    namejp: '槍未來',
     isSelect: false,
     pic: 'twiicon_sa_53.jpg',
     picq: 'sd_innealra3.png',

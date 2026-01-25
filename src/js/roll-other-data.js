@@ -14,6 +14,7 @@ window.sakuraOtherData = {
   sakuraStoryData: [],
   sakuraOtherData,
   sakuraPlayerDeckData: [...decks2022, ...decks2024].reverse(),
+  sakuraPlayerDeckDataAnySeason: 'S10',
   sakuraCMData,
   sakuraChangeCardsData
 }
