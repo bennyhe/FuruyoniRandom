@@ -124,5 +124,12 @@ export default [
     'name': '欧耶逆反斩',
     'desc': '四叶镜吃遗响壁，运气好能入很多',
     'decklink': '//sdrice.name/random/?ver=S10-2&lang=cn&isShow=1&girls=1+2,15+0&girlscard1=0,1,6+0,2&girlscard2=0,1,3,4+1'
+  },
+  {
+    'date': '2026-01-29',
+    'author': 'KlaiRvoyanS~',
+    'name': '络锯电疗',
+    'desc': '传统电疗 茨道看着换反射',
+    'decklink': 'https://sdrice.name/random/?ver=S10-2&lang=cn&isShow=1&girls=9+0,23+0&girlscard1=0,2,5+0,2&girlscard2=2,4,5,6+2'
   }
 ]
