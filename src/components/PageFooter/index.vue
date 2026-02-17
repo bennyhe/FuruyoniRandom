@@ -75,7 +75,7 @@
     </p>
     <p>
       <a href="//sdrice.name/random-update.html"
-        >SakuraTool
+        >SakuraTool(2019-{{ new Date().getFullYear() }})
         {{ lang[curlang].changeLog }}
       </a>
     </p>
