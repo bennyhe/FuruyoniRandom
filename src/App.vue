@@ -1464,7 +1464,7 @@
                   <a
                     href="https://main-bakafire.ssl-lolipop.jp//furuyoni/na/faq.html"
                     target="_blank"
-                    >官方FAQ（纯日文）<span>(最后导入时间：2022-05-10)</span></a
+                    >官方FAQ（纯日文）<span>(最后导入时间：2026-02-18)</span></a
                   >
                 </p>
                 <p>
@@ -1475,7 +1475,7 @@
                   >
                 </p>
                 <p>
-                  <span class="faq-about__date">Last Updated: 2022-05-10</span>
+                  <span class="faq-about__date">Last Updated: 2026-02-18</span>
                 </p>
               </blockquote>
             </div>
