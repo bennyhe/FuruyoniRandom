@@ -28,6 +28,7 @@
             {{ formatTime(sakuraPlayerDeckData[0].date, "YYYY-MM-DD") }}</span
           >
         </p>
+        <p><span class="faq-about__date">投稿的卡组将会用于steam版散樱乱武的AI训练</span></p>
       </blockquote>
     </div>
     <div class="random-btn-wrap" style="text-align: left; padding-left: 10px">
