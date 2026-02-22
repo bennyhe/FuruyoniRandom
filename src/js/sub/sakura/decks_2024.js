@@ -674,14 +674,14 @@ export default [
   {
     'date': '2026-02-22',
     'author': '组卡器Bot',
-    'name': '韩国8人完全战上位-弓枪过去（书）',
+    'name': '26-02韩国8人完全战上位-弓枪过去（书）',
     'desc': '//x.com/furu_s_eta/status/2025161472364732619',
     'decklink': '//sdrice.name/random/?ver=S10-2&lang=cn&isShow=1&girls=24+0,25+0&girlscard1=0,3,5+&girlscard2=0,3,5,6+0,1,2'
   },
   {
     'date': '2026-02-22',
     'author': '组卡器Bot',
-    'name': '韩国起源战上位-铳笛（琵琶）',
+    'name': '26-02韩国起源战上位-铳笛（琵琶）',
     'desc': '//x.com/Furu_S_etA/status/2023009299296145454/',
     'decklink': '//sdrice.name/random/?ver=S10-2&lang=cn&isShow=1&girls=2+0,3+1&girlscard1=0,1,2,4+0&girlscard2=0,2,6+0,3'
   }
