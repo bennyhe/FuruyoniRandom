@@ -1,4 +1,3 @@
-
 @import "./_import.reset.scss";
 
 $avatarWidth: 8.3%;
@@ -6,30 +5,32 @@ $mobileAvatarWidth: 13%;
 $ipadAvatarWidth: 8.3%;
 $changeGirlAvatarWidth: 14.5%;
 
-body{
+body {
   line-height: 1.5;
   font-size: 16px;
-  color:#333;
-  background: url(../img/bg.jpg) center bottom fixed no-repeat;
-  background-size: cover;
+  color: #333;
+  // background: url(../img/bg.jpg) center bottom fixed no-repeat;
+  // background-size: cover;
 }
+
 input[type=text],
-textarea{
+textarea {
   background-color: rgba(#fff, .5);
   border: 1px solid rgba(#000, .2);
   border-radius: 4px;
 }
 
-.bg{
+.bg {
   position: fixed;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
+  left: -5%;
+  top: -5%;
+  bottom: -5%;
+  right: -5%;
   background: url(../img/bg.jpg) no-repeat;
   background-size: cover;
 }
-.main{
+
+.main {
   max-width: 1280px;
   margin: 0 auto;
   position: relative;
@@ -38,12 +39,12 @@ textarea{
   // transform: translateZ(0);
 }
 
-.copyright{
+.copyright {
   font-size: 12px;
   color: #222;
   padding: 10px 0;
 
-  &__version{
+  &__version {
     font-weight: 700;
   }
 }
