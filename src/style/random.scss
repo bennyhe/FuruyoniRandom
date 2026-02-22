@@ -1736,19 +1736,19 @@
 
 
 //暗夜模式下的css样式
-// @media (prefers-color-scheme: dark) {
-//   .bg {
-//     &:before {
-//       content: "";
-//       position: absolute;
-//       left: 0;
-//       top: 0;
-//       width: 100%;
-//       height: 100%;
-//       background: rgba($color: #333, $alpha: .05)
-//     }
-//   }
-// }
+@media (prefers-color-scheme: dark) {
+  .bg {
+    &:before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba($color: #333, $alpha: .05)
+    }
+  }
+}
 
 
 
