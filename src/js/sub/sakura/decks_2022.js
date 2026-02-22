@@ -2590,7 +2590,7 @@ export default [{
   'date': '2022-11-20',
   'author': '爱吃麻花',
   'name': '快乐-大天空一锤流',
-  'decklink': 'https://sdrice.name/random/?ver=S8&lang=cn&isShow=1&girls=7+0,9+0&girlscard1=3,5,6+0,3&girlscard2=1,2,4,5+2',
+  'decklink': '//sdrice.name/random/?ver=S8&lang=cn&isShow=1&girls=7+0,9+0&girlscard1=3,5,6+0,3&girlscard2=1,2,4,5+2',
   'desc': '一套娱乐otk锤络卡组，成功了会很快乐。一般没人刻意防吧。斩杀思路：前期聚气，复制大鸣钟（两张就行）。枢噜噜用掉（用不掉也没事，斩杀线变低）。前一回合模块化，引力场尽可能拉近距离。斩杀回合用集中力+开复制，退二（甲不健康就留打超反动）两张大鸣钟，转限两张大鸣钟，加束+回嗖用转限两张大鸣钟，触发十次模块化，尽可能退，6大鸣钟是+10/+5不可对应或+12/+6，然后大天空砸一锤超克斩杀，上限锤11命。正常7命左右配合对方抽牌也斩了，一套没斩就只能后续回嗖大天空。'
 },
 {
@@ -2598,34 +2598,34 @@ export default [{
   'author': '暗昏千鸟',
   'name': '11/20日“新生せし英雄2”杯网战32人组冠军——毒锯橇（毒锯部分）',
   'desc': '对战记录：毒锯（橇）胜算唐（锯），橇锯（毒）胜战炎（锯），毒橇（锯）胜铳锯（锤），毒橇（锯）胜桨铳（锯），毒橇（锯）胜算络（锯）思路其实挺简单的....用裂伤/毒的卡基本动作限制对方装上限，然后乱拳揍死就完事了，抗战铁屑遁术甚至可以强削4装，3个1/2随便入命，2个2/2一个2/1都只能命吃，斩杀线高的离谱，毒本身可以压制对面的对应端，导致对方无法对我方的斩杀做出有效阻抗，并且遁术也可以一定程度上反制锯的展开，下毒也可以变相遏制锯的蓄爆，配合黑铠有更多机会去反攻',
-  'decklink': 'https://sdrice.name/random/?ver=S8&lang=cn&isShow=1&girls=8+0,23+0&girlscard1=0,1,2+2&girlscard2=1,2,3,6+0,1'
+  'decklink': '//sdrice.name/random/?ver=S8&lang=cn&isShow=1&girls=8+0,23+0&girlscard1=0,1,2+2&girlscard2=1,2,3,6+0,1'
 },
 {
   'date': '2022-11-20',
   'author': '暗昏千鸟',
   'name': '12/20日“新生せし英雄2”杯网战32人组冠军——毒锯橇（毒橇部分）',
   'desc': '对战记录：毒锯（橇）胜算唐（锯），橇锯（毒）胜战炎（锯），毒橇（锯）胜铳锯（锤），毒橇（锯）胜桨铳（锯），毒橇（锯）胜算络（锯） 毒橇也是老朋友了，强度不用多说什么的。思路也是用绝对零度封锁对面装上限，毒封锁对方蓄爆，然后用大刀击杀对手就可以。需要注意的是，目前环境锯和算很多，对算的话可以考虑蹑足抢一个2t毒针干扰，单毒雾干扰的话很难阻拦对面花呗的展开',
-  'decklink': 'https://sdrice.name/random/?ver=S8&lang=cn&isShow=1&girls=8+0,14+0&girlscard1=0,1,2,4+2&girlscard2=1,2,4+0,1'
+  'decklink': '//sdrice.name/random/?ver=S8&lang=cn&isShow=1&girls=8+0,14+0&girlscard1=0,1,2,4+2&girlscard2=1,2,4+0,1'
 },
 {
   'date': '2022-11-21',
   'author': '爱吃麻花',
   'name': '薙络入血流',
-  'decklink': 'https://sdrice.name/random/?ver=S8&lang=cn&isShow=1&girls=1+0,6+0&girlscard1=3,4,5+&girlscard2=0,1,5,6+1,2,3',
+  'decklink': '//sdrice.name/random/?ver=S8&lang=cn&isShow=1&girls=1+0,6+0&girlscard1=3,4,5+&girlscard2=0,1,5,6+1,2,3',
   'desc': '前期聚气磨一下血，然后用天地反驳，森罗判证一开，除了识破都是入血牌，疯狂入就行了（天地反驳也可以前期开了入血）（提名一下沖音晶，一张牌能入2血，配诸式理解直接入4）'
 },
 {
   'date': '2022-11-22',
   'author': '爱吃麻花',
   'name': '锤毒特胜',
-  'decklink': 'https://sdrice.name/random/?ver=S8&lang=cn&isShow=1&girls=7+0,8+0&girlscard1=3,4,6+2&girlscard2=2,4,5,6+1,3',
+  'decklink': '//sdrice.name/random/?ver=S8&lang=cn&isShow=1&girls=7+0,8+0&girlscard1=3,4,6+2&girlscard2=2,4,5,6+1,3',
   'desc': '此卡组仅在对方2距以下难入血时使用！思路：前期聚气，塞毒，削气，卖血留装，自己气够了就直接大重力卡0距，蹑足泥泞全拍。对面基本打毒空过一回合，洗牌开信条，对面得拉距离，3牌2集中力，0（-2）距不够拉开之后再破5甲入血，甲回满然后看情况拉距离留遁术。'
 },
 {
   'date': '2022-11-23',
   'author': '爱吃麻花',
   'name': '刀络OTK（贪）',
-  'decklink': 'https://sdrice.name/random/?ver=S8&lang=cn&isShow=1&girls=0+0,6+0&girlscard1=5+1&girlscard2=0,1,2,3,5,6+1,2',
+  'decklink': '//sdrice.name/random/?ver=S8&lang=cn&isShow=1&girls=0+0,6+0&girlscard1=5+1&girlscard2=0,1,2,3,5,6+1,2',
   'desc': '启动快，气够了就行。开局可以诡辩小入一血。然后天地反驳开，付与牌把虚自装卡到0，气合斩直接入3，伤害牌全打是入8血，引用论破防对面对应。诸式理解看情况回气合斩或天地反驳，贪不到气合斩的3血就天地反驳入2波，也差不多带走了。'
 },
 {
@@ -2633,83 +2633,83 @@ export default [{
   'author': '暗昏千鸟',
   'name': '13/20日“新生せし英雄2”杯网战32人组冠军——毒锯橇（橇锯部分）',
   'desc': '对战记录：毒锯（橇）胜算唐（锯），橇锯（毒）胜战炎（锯），毒橇（锯）胜铳锯（锤），毒橇（锯）胜桨铳（锯），毒橇（锯）胜算络（锯）橇和锯相性也非常好，甚至可以达成裂伤把装打空然后全力化绝对零度的梦幻combo，而由于这过于便宜的裂伤机制，导致这个步骤很容易，本身冰雨的斩杀线或者霜风/深渊的阻抗在内战/针对算盘展开方面都有不小的作用。顺便吐槽一下，这环境不就是ban锯打2p么',
-  'decklink': 'https://sdrice.name/random/?ver=S8&lang=cn&isShow=1&girls=14+0,23+0&girlscard1=1,2,4+3&girlscard2=1,2,3,5+0,1'
+  'decklink': '//sdrice.name/random/?ver=S8&lang=cn&isShow=1&girls=14+0,23+0&girlscard1=1,2,4+3&girlscard2=1,2,3,5+0,1'
 },
 {
   'date': '2022-12-04',
   'author': '水魔万象',
   'name': '探衣大发现',
   'desc': '大发现之前肯定是漫漫求生路，用蛊惑和辜毒諂言将距离限制在近距从而消耗对手资源（对面是近距离女神就把蛊惑换了，会更难打一些），模块化配合对应尽可能活下来。豆子上需要主卡的红，所以有对应防御功能的12塗汙讒言尽量不用来当伪证子弹。一轮牌到最后凑凑3张，鶻鶩諼言和分析都能强盖对面手牌。最好能算好牌库，在分析鶻鶩諼言大发现的前一轮开出終幕，强盖强翻以后用銘衣完论吃掉，如果正常也能吃到那先开了用夙愿洗牌也好。第二次猜卡前记得把资源花了调整状态，别猜成了被终端害死了。探衣大发现是很难看答案猜卡的（4气对应不太现实，不如魔能拉装稳，当然衣的两张蓝紫切都是可以换掉魔能的，各有优劣，灵活调整），大发现要有信念感。大发现成功以后，一般来说选自己就好，衣探的切全部0气真的开香槟，每回合一张噜噜啦啦哩，切牌开一开就凑得齐樞式。当然这都大发现成了，就算输了也可以精神胜利（x 要问为什么要玩探衣大发现，又难又不能看答案……因为我两猜两成功（逃',
-  'decklink': 'https://sdrice.name/random/?ver=S8&lang=cn&isShow=1&girls=9+1,21+0&girlscard1=0,5+0,2&girlscard2=0,2,4,5,6+3'
+  'decklink': '//sdrice.name/random/?ver=S8&lang=cn&isShow=1&girls=9+1,21+0&girlscard1=0,5+0,2&girlscard2=0,2,4,5,6+3'
 },
 {
   'date': '2023-02-25',
   'author': '林木',
   'name': '快乐贴贴镜恐',
   'desc': '娱乐性强。前期试探进攻，开寄花与八叶镜后风舞台前进4脱兔前进2主打一个贴脸，依靠寄花和八叶入血。扇回旋可换意志，双叶镜可换六叶镜',
-  'decklink': 'https://sdrice.name/random/?ver=S8&lang=cn&isShow=1&girls=3+2,15+0&girlscard1=2,4,5+2&girlscard2=0,1,2,3+0,3'
+  'decklink': '//sdrice.name/random/?ver=S8&lang=cn&isShow=1&girls=3+2,15+0&girlscard1=2,4,5+2&girlscard2=0,1,2,3+0,3'
 },
 {
   'date': '2023-04-05',
   'author': '猫猫w',
   'name': '伞花 卡0灭灯',
   'desc': '八叶镜就为了契约换盟约，意志不换，幻影步建议也不要换，问就是大诱导。不想对应也可以换镜之恶魔，洗牌的时候偷一下。对面无后退对应幻影步可以换猫骗，对面有高气王牌也可以带星云爪（换潜进）变了偷气（这样建议幻影步也变掉）。前期可以契约选聚气，后期反向聚气。这套实测了五六把，灯几乎都能打到5血（最后一局被枢式开了，悲），前期31刮1，突刺打2，洗牌两次就结束了。',
-  'decklink': 'https://sdrice.name/random/?ver=S8&lang=cn&isShow=1&girls=5+0,15+1&girlscard1=0,2,3,5+1,3&girlscard2=3,4,5+0'
+  'decklink': '//sdrice.name/random/?ver=S8&lang=cn&isShow=1&girls=5+0,15+1&girlscard1=0,2,3,5+1,3&girlscard2=3,4,5+0'
 },
 {
   'date': '2023-04-14',
   'author': 'kk',
   'name': '锯信(拒)胜书刀(算)',
   'desc': '有一种强度的美，唤潮改过之后就是小裂伤装1，对手不给顺风逆风的水雷球和唤潮回牌库顶也很好用，顺风或者潜水成功还可以造成巨额伤害',
-  'decklink': 'https://sdrice.name/random/?ver=S8&lang=cn&isShow=1&girls=16+1,23+0&girlscard1=0,1,3,6+3&girlscard2=0,1,3+0,1'
+  'decklink': '//sdrice.name/random/?ver=S8&lang=cn&isShow=1&girls=16+1,23+0&girlscard1=0,1,3,6+3&girlscard2=0,1,3+0,1'
 },
 {
   'date': '2023-04-15',
   'author': 'Icicle Tokamak',
   'name': 'fun向回嗖久远友扇',
   'desc': '核心思想是是链接+回嗖=翻2卡*2点强化，可以打出-/3久远，另一张卡就充分发挥想象力了，0纳晴舞，4/2千岁，再或者扇子换笛子一些卡都行。激光枪随便消耗一下多的豆子。启动顺序一般先开久远再开链接，诗舞无脑打出凑豆，回嗖抽的早直接盖掉等机会开，第三张王牌看情况。弱点是启动慢，怕灯塔，狭雾海域，罗盘，果果以及一些奇奇怪怪的打消，当然也怕鬼抽（？）。但是胡到牌就很快乐）',
-  'decklink': 'https://sdrice.name/random/?ver=S8&lang=cn&isShow=1&girls=3+0,9+2&girlscard1=1,3,5,6+0,1&girlscard2=0,4,5+3'
+  'decklink': '//sdrice.name/random/?ver=S8&lang=cn&isShow=1&girls=3+0,9+2&girlscard1=1,3,5,6+0,1&girlscard2=0,4,5+3'
 },
 {
   'date': '2023-05-08',
   'author': 'Tsugumi',
   'name': '兜车OTK',
   'desc': '前期当儿子打，13气启动，号角一开你就是最靓的仔，必要时可以直接战场接阁换启动，斩杀轮2距开，战场阁展开中，斗神43，WE32，SC33回四进一反攻32，双枪兵32加32，最后门里掏的SC44斩杀，',
-  'decklink': 'https://sdrice.name/random/?ver=S8&lang=cn&isShow=1&girls=10+0,17+0&girlscard1=1,2,3,4+&girlscard2=1,5,6+0,2,3'
+  'decklink': '//sdrice.name/random/?ver=S8&lang=cn&isShow=1&girls=10+0,17+0&girlscard1=1,2,3,4+&girlscard2=1,5,6+0,2,3'
 },
 {
   'date': '2023-05-29',
   'author': '万叶',
   'name': '镜唐',
   'desc': '3/2 3/2接3/2，掌开了还能把1刀3/2变4/3，脸都不要了。幻影步和苇草在打近战对面把距拉到2时方便调到4，如果对面缺少拉距手段可以把苇草换成别的，打长手就把镜中魔和苇草都换掉',
-  'decklink': 'https://sdrice.name/random/?ver=S8&lang=cn&isShow=1&girls=15+0,18+0&girlscard1=0,1,2,3,4+0,3&girlscard2=1,4+3'
+  'decklink': '//sdrice.name/random/?ver=S8&lang=cn&isShow=1&girls=15+0,18+0&girlscard1=0,1,2,3,4+0,3&girlscard2=1,4+3'
 },
 {
   'date': '2024-06-03',
   'author': 'Mark',
   'name': '笛子救星',
   'desc': 'beat打法，唐棹的火力藉由笛子輔助來穩定',
-  'decklink': 'https://sdrice.name/random/?ver=S8&lang=cn&isShow=1&girls=3+1,18+0&girlscard1=+&girlscard2=0,1,2,3,4,5,6+0,1,2'
+  'decklink': '//sdrice.name/random/?ver=S8&lang=cn&isShow=1&girls=3+1,18+0&girlscard1=+&girlscard2=0,1,2,3,4,5,6+0,1,2'
 },
 {
   'date': '2023-08-01',
   'author': '滅丁毒',
   'name': '花兜（64人網賽構築）',
   'desc': '香港，日本，韓國64人網戰激鬥，花兜壓倒性戰勝韓國鋸劍，第二個回合開花王牌換走手中寄花變成徙寄花，第三個回合展開徒寄花把八葉卡牌變成完全態，之後重洗卡組再換，重覆換卡和防守，在時機成熟的時候進行後退，再用適當的戰術加上合適的方法，以壓倒性的戰術擊敗鋸劍',
-  'decklink': 'https://sdrice.name/random/?ver=S8-2pre&lang=cn&isShow=1&girls=15+1,17+0&girlscard1=2,3,4,5,6+0&girlscard2=2,4+0,2'
+  'decklink': '//sdrice.name/random/?ver=S8-2pre&lang=cn&isShow=1&girls=15+1,17+0&girlscard1=2,3,4,5,6+0&girlscard2=2,4+0,2'
 },
 {
   'date': '2023-08-25',
   'author': '调和',
   'name': '兜毒特胜',
   'desc': '前期没虚先毒雾塞迟缓，尽快聚气塞灭灯毒影响对手运转，泥泞都当ap盖掉。尽量留0-1手压制能开就开，2命伤一下一律命吃。中间不时以毒针暗器骚扰上毒；一旦对手开迟缓毒立刻洗牌开信条。对手干瞪眼一回合时前进开泥泞蹑足卡0。血量健康的话可以把防壁塞兵舍里方便决胜。不适用于krr或信赖这种直接命伤角色。',
-  'decklink': 'https://sdrice.name/random/?ver=S8-2pre&lang=cn&isShow=1&girls=8+0,17+0&girlscard1=1,3,4,5,6+0,3&girlscard2=4,5+2'
+  'decklink': '//sdrice.name/random/?ver=S8-2pre&lang=cn&isShow=1&girls=8+0,17+0&girlscard1=1,3,4,5,6+0,3&girlscard2=4,5+2'
 },
 {
   'date': '2023-09-12',
   'author': '调和',
   'name': '电商',
-  'decklink': 'https://sdrice.name/random/?ver=S8-2pre&lang=cn&isShow=1&girls=9+0,22+0&girlscard1=0,1,5+0,2&girlscard2=1,3,4,6+3',
+  'decklink': '//sdrice.name/random/?ver=S8-2pre&lang=cn&isShow=1&girls=9+0,22+0&girlscard1=0,1,5+0,2&girlscard2=1,3,4,6+3',
   'desc': '依靠电疗和回收输出。上装能力很足：购买和两王牌再起都可以偷到装。王牌粘电疗打命抬市价，方便后续回收。'
 },
 {
@@ -2717,6 +2717,6 @@ export default [{
   'author': '调和',
   'name': '绊炎强行削装',
   'desc': '3装吃毒针，4装吃火炎流，不想拿命吃？那就尝尝杀意霞毒吧。遁术视情况开，有时候用来保护自己会更合适，尤其是面对刀剑兜这种情况。',
-  'decklink': 'https://sdrice.name/random/?ver=S8-2pre&lang=cn&isShow=1&girls=2+1,8+1&girlscard1=1,4+&girlscard2=0,1,2,3,5+0,2,3'
+  'decklink': '//sdrice.name/random/?ver=S8-2pre&lang=cn&isShow=1&girls=2+1,8+1&girlscard1=1,4+&girlscard2=0,1,2,3,5+0,2,3'
 }
 ]
