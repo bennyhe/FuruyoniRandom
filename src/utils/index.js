@@ -191,6 +191,7 @@ export function getIsShowCardPicIn(cardData, lang, curlang) {
   if (
     lang[curlang].id === 'cn' &&
     (!(cardData.id.indexOf('tf') > -1)) && //排除transfrom卡图
+    (!(cardData.id.indexOf('-f-') > -1)) && //三女神版图
     (!(cardData.id === '16-yatsuha-aa1-t-1'))
   ) {
     return true
