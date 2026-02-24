@@ -5506,7 +5506,7 @@ const Sakura = [{
       textjp: 'ダスト→自オーラ：2\nダスト→相オーラ：1\n------\nダスト→自オーラ：3'
     }]
   }, {
-    name: '枪未來',
+    name: '枪未来',
     namejp: '槍未來',
     isSelect: false,
     pic: 'twiicon_sa_53.jpg',
