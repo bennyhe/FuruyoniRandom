@@ -816,7 +816,7 @@ export default [
     'author': '晓夜神香',
     'name': '魂尘（毒）vs兜书（唐）',
     'desc': '严正声明：娱乐构筑，抄卡组需谨慎！防御端壁康诡辩或21盾兵或31三重，由于放弃尘红可以无负担卡2防后续诡辩；资源端契约补充开启王牌花费的资源同时压气延缓对手判证节奏，速魔食复读遗灰咒持续给予装压；输出端携带爪鄂威胁，避免对手0装无损过魔食，回家变身后复读终焉用回忆区无损洗牌拉开血差，看情况自灭往寂或大收割斩杀。注意：选择回1牌出门，可以在回家回合用调整付与效果炸对手的状语。',
-    'decklink': 'https://sdrice.name/random/?ver=S10-2&lang=cn&isShow=1&girls=12+1,15+2&girlscard1=5,6+0,1&girlscard2=0,1,3,5,6+0'
+    'decklink': 'https://sdrice.name/random/?ver=S10-2&lang=cn&isShow=1&girls=12+1,15+2&girlscard1=5,6+0,1,3&girlscard2=0,1,3,5,6+'
   },
   {
     'date': '2026-04-07',
