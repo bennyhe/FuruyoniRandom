@@ -786,13 +786,6 @@ export default [
   {
     'date': '2026-03-13',
     'author': '河上一月',
-    'name': '社花（琵）——社交切轴花通常轴',
-    'desc': '主要靠翩然纷扬补充AP，伞飞旋放手不变，尽量翩然保持不掉。组卡器已有前人，可以自行找。',
-    'decklink': 'https://sdrice.name/random/?ver=S10-2&lang=cn&isShow=1&girls=1+1,5+1&girlscard1=0,4,5+1&girlscard2=0,1,2,4+0,3'
-  },
-  {
-    'date': '2026-03-13',
-    'author': '河上一月',
     'name': '琵花（社）',
     'desc': '完全化后4、5距输出，现世魔物1～3距站场，加上幻影步法不怕难立回。王牌均低气，镜映也方便控。',
     'decklink': 'https://sdrice.name/random/?ver=S10-2&lang=cn&isShow=1&girls=1+1,15+1&girlscard1=0,3+1,2&girlscard2=0,1,2,4,6+0'

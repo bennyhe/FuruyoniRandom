@@ -58,7 +58,7 @@ export default [{
     show: 1
   }]
 }, {
-  name: 'Q&A',
-  namejp: 'Q&A',
+  name: '新幕Q&A',
+  namejp: '新幕Q&A',
   show: 1
 }]

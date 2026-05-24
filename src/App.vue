@@ -224,20 +224,12 @@
               <input type="checkbox" v-model="isNaChVer" />
               <span>新幕官中S8</span>
             </label>
-            <label
-              class="checkbox"
-              :class="{ cur: isNaChVer }"
-              v-if="!isOldVer"
-            >
-              <input type="checkbox" v-model="isNaChVer" />
+            <label class="checkbox" :class="{ cur: isNaVer }" v-if="!isOldVer">
+              <input type="checkbox" v-model="isNaVer" />
               <span>新幕S10-2</span>
             </label>
-            <label
-              class="checkbox"
-              :class="{ cur: isNaChVer }"
-              v-if="!isOldVer"
-            >
-              <input type="checkbox" v-model="isNaChVer" />
+            <label class="checkbox" :class="{ cur: isReVer }" v-if="!isOldVer">
+              <input type="checkbox" v-model="isReVer" />
               <span>再演</span>
             </label>
             <div class="msee"></div>
@@ -380,7 +372,23 @@
                       v-if="!isOldVer && +curlang === 0"
                     >
                       <input type="checkbox" v-model="isNaChVer" />
-                      <span>官方中文</span>
+                      <span>新幕官中S8</span>
+                    </label>
+                    <label
+                      class="checkbox"
+                      :class="{ cur: isNaVer }"
+                      v-if="!isOldVer"
+                    >
+                      <input type="checkbox" v-model="isNaVer" />
+                      <span>新幕S10-2</span>
+                    </label>
+                    <label
+                      class="checkbox"
+                      :class="{ cur: isReVer }"
+                      v-if="!isOldVer"
+                    >
+                      <input type="checkbox" v-model="isReVer" />
+                      <span>再演</span>
                     </label>
                     <label
                       class="checkbox"
@@ -959,7 +967,15 @@
             v-if="!isOldVer && +curlang === 0"
           >
             <input type="checkbox" v-model="isNaChVer" />
-            <span>官方中文</span>
+            <span>新幕官中S8</span>
+          </label>
+          <label class="checkbox" :class="{ cur: isNaVer }" v-if="!isOldVer">
+            <input type="checkbox" v-model="isNaVer" />
+            <span>新幕S10-2</span>
+          </label>
+          <label class="checkbox" :class="{ cur: isReVer }" v-if="!isOldVer">
+            <input type="checkbox" v-model="isReVer" />
+            <span>再演</span>
           </label>
           <label class="checkbox" :class="{ cur: isShowA }" v-if="!isOldVer">
             <input type="checkbox" v-model="isShowA" />
@@ -1244,7 +1260,9 @@
                   </template>
                   <template
                     v-else-if="
-                      !isNaChVer && qiyuanGirls && qiyuanGirls.default.length > 0
+                      !isNaChVer &&
+                      qiyuanGirls &&
+                      qiyuanGirls.default.length > 0
                     "
                   >
                     <span
@@ -1268,7 +1286,9 @@
                   </template>
                   <template
                     v-else-if="
-                      !isNaChVer && seasonGirls && seasonGirls.default.length > 0
+                      !isNaChVer &&
+                      seasonGirls &&
+                      seasonGirls.default.length > 0
                     "
                   >
                     <span
@@ -1741,7 +1761,11 @@ const {
   sakuraChangeCardsData
 } = window.sakuraOtherData
 const seasonVersion = window.seasonVersion
-let { defaultData, naChData, naData } = initBaseData(sakuraData, sakuraDataCh, sakuraDataNa)
+let { defaultData, naChData, naData } = initBaseData(
+  sakuraData,
+  sakuraDataCh,
+  sakuraDataNa
+)
 
 // 赛季修订卡相关
 const SCCDATA = initChangeCardsData(sakuraChangeCardsData)
@@ -1755,43 +1779,33 @@ const noMatchSSCardsCh = addSSTagInCards(naChData, seasonVersion['cn'])
 
 //格式化新幕数据
 naChData = formatDefaultCardData(naChData)
+naData = formatDefaultCardData(naData, SCCDATA.allChangeCards.resultList)
 defaultData = formatDefaultCardData(
-  defaultData,
-  SCCDATA.allChangeCards.resultList
+  defaultData
 )
-naData = formatDefaultCardData(
-  naData,
-  SCCDATA.allChangeCards.resultList
-)
-
-if (
-  get('qiyuanGirls.default', window, 1) &&
-  window.qiyuanGirls.setDefaultNeedChangeCn
-) {
-  for (let i = 0; i < defaultData.length; i++) {
-    for (let si = 0; si < window.qiyuanGirls.default.length; si++) {
-      const item = window.qiyuanGirls.default[si]
-      if (item === defaultData[i].namejp) {
-        window.qiyuanGirls.default[si] = defaultData[i].list[0].name
-      }
-    }
-  }
-}
-
 //格式化旧幕数据
 const oldData = formatDefaultCardData(sakuraDataOldVer)
+
+// if ( // 起源标注
+//   get('qiyuanGirls.default', window, 1) &&
+//   window.qiyuanGirls.setDefaultNeedChangeCn
+// ) {
+//   for (let i = 0; i < defaultData.length; i++) {
+//     for (let si = 0; si < window.qiyuanGirls.default.length; si++) {
+//       const item = window.qiyuanGirls.default[si]
+//       if (item === defaultData[i].namejp) {
+//         window.qiyuanGirls.default[si] = defaultData[i].list[0].name
+//       }
+//     }
+//   }
+// }
+
 // 旧幕的牌数
 const oldDataSum = getCardSum(oldData)
 oldDataSum.other += 3
 console.log('旧幕牌数，other:伞面，5毒，3transform，2集中力', oldDataSum)
 // 新幕的牌数
 let cardSum = getCardSum(defaultData)
-cardSum.nomarl-- // 合奏减1
-cardSum.other += 25
-console.log(
-  '新幕牌数，other:伞面，5毒，6transform，4兵牌，岚之力，2集中力，6幕任务，2潜水，5伪证，1镜aa1任务牌，7张电子追加',
-  cardSum
-)
 // 新幕中文的牌数
 const naChDataSum = getCardSum(naChData)
 naChDataSum.other += 18
@@ -1799,9 +1813,17 @@ console.log(
   '新幕中文牌数，other:伞面，5毒，6transform，4兵牌，岚之力，2集中力，6幕任务，2潜水，5伪证，1镜aa1任务牌',
   naChDataSum
 )
+const naDataSum = getCardSum(naData)
+naDataSum.nomarl-- // 合奏减1
+naDataSum.other += 25
+console.log(
+  '新幕牌数，other:伞面，5毒，6transform，4兵牌，岚之力，2集中力，6幕任务，2潜水，5伪证，1镜aa1任务牌，7张电子追加',
+  naDataSum
+)
 cardSum = {
   jp: cardSum,
-  ch: naChDataSum
+  ch: naChDataSum,
+  naJp: naDataSum
 }
 
 const fnCopyCards = wantData => {
@@ -1809,7 +1831,7 @@ const fnCopyCards = wantData => {
   wantData[13].list[1].changeExtra.unshift(wantData[13].list[0].extra[4])
   wantData[13].list[1].changeExtra.unshift(wantData[13].list[0].extra[3])
   //a衣复制原来的extra
-  if (wantData[21].list[1]){
+  if (wantData[21].list[1]) {
     wantData[21].list[1].changeExtra.unshift(wantData[21].list[0].extra[0])
     wantData[21].list[1].changeExtra.unshift(wantData[21].list[0].extra[1])
   }
@@ -1891,8 +1913,8 @@ if (seasonVersion) {
     seasonVersion['jp'].forbidCards.length > 0
   ) {
     seasonVersion['jp'].forbidCards.forEach(item => {
-      if (defaultData[item[0]] && defaultData[item[0]].list[item[1]]) {
-        defaultData[item[0]].list[item[1]][item[2]][item[3]].isForbid = true
+      if (naData[item[0]] && naData[item[0]].list[item[1]]) {
+        naData[item[0]].list[item[1]][item[2]][item[3]].isForbid = true
       }
     })
   }
@@ -1900,6 +1922,7 @@ if (seasonVersion) {
 
 // 获取人物攻击距离
 naChData = paintRange(naChData)
+naData = paintRange(naData)
 defaultData = paintRange(defaultData)
 
 export default {
@@ -1930,6 +1953,8 @@ export default {
       resultGirls: [],
       isOldVer: false, //第二幕
       isNaChVer: false, //中文版本
+      isNaVer: false,
+      isReVer: true,
       cardDetail: {},
       cardDetailInDeck: {},
       groupCardData: [],
@@ -2075,6 +2100,32 @@ export default {
       this.isShowResultGirls = false
     },
     isNaChVer(val) {
+      if (val) {
+        this.isOldVer = false
+        this.isNaVer = false
+        this.isReVer = false
+
+      }
+      this.clearLock()
+      this.resetDefaultData()
+      this.isShowResultGirls = false
+    },
+    isNaVer(val) {
+      if (val) {
+        this.isOldVer = false
+        this.isNaChVer = false
+        this.isReVer = false
+      }
+      this.clearLock()
+      this.resetDefaultData()
+      this.isShowResultGirls = false
+    },
+    isReVer(val) {
+      if (val) {
+        this.isOldVer = false
+        this.isNaChVer = false
+        this.isNaVer = false
+      }
       this.clearLock()
       this.resetDefaultData()
       this.isShowResultGirls = false
@@ -3168,7 +3219,7 @@ export default {
     searchCard(keywords, noSetData) {
       keywords = keywords.toLowerCase() //统一转换小写
       let result = []
-      const orginData = this.isNaChVer ? this.naChData : this.defaultData
+      const orginData = this.isNaChVer ? this.naChData : this.naData
       // console.log(keywords)
       if (
         !this.isNaChVer &&
@@ -3660,6 +3711,10 @@ export default {
         //中文新幕
         this.showPanelGirls = JSON.parse(JSON.stringify(this.naChData))
         this.changePanelData = JSON.parse(JSON.stringify(this.naChData))
+      } else if (this.isNaVer) {
+        //新幕
+        this.showPanelGirls = JSON.parse(JSON.stringify(this.naData))
+        this.changePanelData = JSON.parse(JSON.stringify(this.naData))
       } else {
         this.showPanelGirls = JSON.parse(JSON.stringify(this.defaultData))
         this.changePanelData = JSON.parse(JSON.stringify(this.defaultData))
@@ -3757,7 +3812,6 @@ export default {
       console.log(
         '当前女神序号',
         `[${girlItem.index}, ${girlItem.subIndex}, '${item.baseType}', ${cardIndex}]`
-
       )
     },
     getCardDetailInDeck(item) {
@@ -3971,7 +4025,7 @@ export default {
       const imgBeforeUrl = '../img/card/na_'
       if (item !== undefined) {
         let _id = item.id
-        if(_id === '02/04-saine/tokoyo-a1-n-1/4') {
+        if (_id === '02/04-saine/tokoyo-a1-n-1/4') {
           return `${imgBeforeUrl}02_saine_a1_n_1.png`
         }
         _id = _id.replace(/\-/g, '_')
@@ -3979,7 +4033,7 @@ export default {
       }
       if (this.cardDetail && this.cardDetail.namejp) {
         let _id = this.cardDetail.id
-        if(_id === '02/04-saine/tokoyo-a1-n-1/4') {
+        if (_id === '02/04-saine/tokoyo-a1-n-1/4') {
           return `${imgBeforeUrl}02_saine_a1_n_1.png`
         }
         _id = _id.replace(/\-/g, '_')
