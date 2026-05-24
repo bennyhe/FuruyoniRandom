@@ -65,14 +65,14 @@
     </div>
     <span class="i-circle capacity" v-if="item.capacity"
       >{{
-        $parent.isChVer && +$parent.curlang === 0
+        $parent.isNaChVer && +$parent.curlang === 0
           ? "献"
           : lang[$parent.curlang].cardCapacity
       }}{{ item.capacity }}</span
     >
     <span class="i-circle capacity capacity--growup" v-if="item.capacityGrowup"
       >{{
-        $parent.isChVer && +$parent.curlang === 0
+        $parent.isNaChVer && +$parent.curlang === 0
           ? "育"
           : lang[$parent.curlang].cardCapacityGrowup
       }}{{ item.capacityGrowup }}</span
@@ -105,7 +105,7 @@
       class="returngroup"
       v-if="item.returnloopGirls && item.returnloopGirls.length > 0"
     >
-      <div
+      <!-- <div
         class="avatar avatar--small"
         v-for="(gitem, gkey) in item.returnloopGirls"
         v-bind:key="gkey"
@@ -115,7 +115,7 @@
             `../img/avatar/${$parent.defaultData[gitem[0]].list[gitem[1]].pic}`
           "
         />
-      </div>
+      </div> -->
     </div>
     <div
       v-if="item.id === 'Story Board'"

@@ -218,12 +218,29 @@
             </label>
             <label
               class="checkbox"
-              :class="{ cur: isChVer }"
+              :class="{ cur: isNaChVer }"
               v-if="!isOldVer && +curlang === 0"
             >
-              <input type="checkbox" v-model="isChVer" />
-              <span>官方中文</span>
+              <input type="checkbox" v-model="isNaChVer" />
+              <span>新幕官中S8</span>
             </label>
+            <label
+              class="checkbox"
+              :class="{ cur: isNaChVer }"
+              v-if="!isOldVer"
+            >
+              <input type="checkbox" v-model="isNaChVer" />
+              <span>新幕S10-2</span>
+            </label>
+            <label
+              class="checkbox"
+              :class="{ cur: isNaChVer }"
+              v-if="!isOldVer"
+            >
+              <input type="checkbox" v-model="isNaChVer" />
+              <span>再演</span>
+            </label>
+            <div class="msee"></div>
             <!-- <label class="checkbox hide" :class="{'cur':isShowPic}" v-if="!isOldVer">
               <input type="checkbox" v-model="isShowPic" />
               <span>显示头像</span>
@@ -359,10 +376,10 @@
                   <div class="checkbox-wrap">
                     <label
                       class="checkbox"
-                      :class="{ cur: isChVer }"
+                      :class="{ cur: isNaChVer }"
                       v-if="!isOldVer && +curlang === 0"
                     >
-                      <input type="checkbox" v-model="isChVer" />
+                      <input type="checkbox" v-model="isNaChVer" />
                       <span>官方中文</span>
                     </label>
                     <label
@@ -757,7 +774,7 @@
           <div
             class="panel-item--deck"
             v-if="
-              !isOldVer && !isChVer && beGroupDeck && beGroupDeck.length > 0
+              !isOldVer && !isNaChVer && beGroupDeck && beGroupDeck.length > 0
             "
             style="max-width: 1024px; margin: 0 auto"
           >
@@ -922,7 +939,7 @@
             hide: !(
               isGoToBeGroup &&
               !isOldVer &&
-              !isChVer &&
+              !isNaChVer &&
               beGroupDeck &&
               beGroupDeck.length > 0
             ),
@@ -938,10 +955,10 @@
         <div class="checkbox-wrap">
           <label
             class="checkbox"
-            :class="{ cur: isChVer }"
+            :class="{ cur: isNaChVer }"
             v-if="!isOldVer && +curlang === 0"
           >
-            <input type="checkbox" v-model="isChVer" />
+            <input type="checkbox" v-model="isNaChVer" />
             <span>官方中文</span>
           </label>
           <label class="checkbox" :class="{ cur: isShowA }" v-if="!isOldVer">
@@ -1000,7 +1017,7 @@
                       <template
                         v-if="
                           !isOldVer &&
-                          isChVer &&
+                          isNaChVer &&
                           qiyuanGirls &&
                           qiyuanGirls.ch.length > 0
                         "
@@ -1018,7 +1035,7 @@
                       <template
                         v-else-if="
                           !isOldVer &&
-                          !isChVer &&
+                          !isNaChVer &&
                           qiyuanGirls &&
                           qiyuanGirls.default.length > 0
                         "
@@ -1036,7 +1053,7 @@
                       <template
                         v-if="
                           !isOldVer &&
-                          isChVer &&
+                          isNaChVer &&
                           seasonGirls &&
                           seasonGirls.ch.length > 0
                         "
@@ -1050,7 +1067,7 @@
                       <template
                         v-else-if="
                           !isOldVer &&
-                          !isChVer &&
+                          !isNaChVer &&
                           seasonGirls &&
                           seasonGirls.default.length > 0
                         "
@@ -1064,7 +1081,7 @@
                       <template
                         v-if="
                           !isOldVer &&
-                          isChVer &&
+                          isNaChVer &&
                           seasonGirls &&
                           seasonGirls.nextCh.length > 0
                         "
@@ -1213,7 +1230,7 @@
                     getCardKeyValInLang(item)
                   }}</span>
                   <template
-                    v-if="isChVer && qiyuanGirls && qiyuanGirls.ch.length > 0"
+                    v-if="isNaChVer && qiyuanGirls && qiyuanGirls.ch.length > 0"
                   >
                     <span
                       class="i-tag i-tag--season"
@@ -1227,7 +1244,7 @@
                   </template>
                   <template
                     v-else-if="
-                      !isChVer && qiyuanGirls && qiyuanGirls.default.length > 0
+                      !isNaChVer && qiyuanGirls && qiyuanGirls.default.length > 0
                     "
                   >
                     <span
@@ -1241,7 +1258,7 @@
                     >
                   </template>
                   <template
-                    v-if="isChVer && seasonGirls && seasonGirls.ch.length > 0"
+                    v-if="isNaChVer && seasonGirls && seasonGirls.ch.length > 0"
                   >
                     <span
                       class="i-tag i-tag--season"
@@ -1251,7 +1268,7 @@
                   </template>
                   <template
                     v-else-if="
-                      !isChVer && seasonGirls && seasonGirls.default.length > 0
+                      !isNaChVer && seasonGirls && seasonGirls.default.length > 0
                     "
                   >
                     <span
@@ -1262,7 +1279,7 @@
                   </template>
                   <template
                     v-if="
-                      isChVer && seasonGirls && seasonGirls.nextCh.length > 0
+                      isNaChVer && seasonGirls && seasonGirls.nextCh.length > 0
                     "
                   >
                     <span
@@ -1635,13 +1652,14 @@
     <!-- S footer&copyright -->
     <PageFooter
       :isOldVer="isOldVer"
-      :isChVer="isChVer"
+      :isNaChVer="isNaChVer"
       :curlang="curlang"
       :cardSum="cardSum"
       :seasonVersion="seasonVersion"
       :showPanelIndex="showPanelIndex"
       :defaultData="defaultData"
-      :chData="chData"
+      :naChData="naChData"
+      :naData="naData"
       :getCardKeyValInLang="getCardKeyValInLang"
     />
     <!-- E footer&copyright -->
@@ -1689,7 +1707,8 @@ import {
   get
 } from './utils/export.js'
 
-import sakuraData from './js/sub/sakura/carddata/sakura-s10-2'
+import sakuraDataNa from './js/sub/sakura/carddata/sakura-s10-2'
+import sakuraData from './js/sub/sakura/carddata/re/sakura-s1'
 import sakuraDataCh from './js/sub/sakura/carddata/sakura-s8-ch'
 import sakuraDataOldVer from './js/sub/sakura/carddata/sakura-old'
 
@@ -1722,21 +1741,26 @@ const {
   sakuraChangeCardsData
 } = window.sakuraOtherData
 const seasonVersion = window.seasonVersion
-let { defaultData, chData } = initBaseData(sakuraData, sakuraDataCh)
+let { defaultData, naChData, naData } = initBaseData(sakuraData, sakuraDataCh, sakuraDataNa)
 
 // 赛季修订卡相关
 const SCCDATA = initChangeCardsData(sakuraChangeCardsData)
 const nSakuraChangeCardsData = SCCDATA.sakuraChangeCardsData
 
 // 标记赛季变更卡
-const noMatchSSCards = addSSTagInCards(defaultData, seasonVersion['jp'])
-const noMatchSSCardsCh = addSSTagInCards(chData, seasonVersion['cn'])
+// const noMatchSSCards = addSSTagInCards(defaultData, seasonVersion['jp'])
+const noMatchSSCards = addSSTagInCards(naData, seasonVersion['jp'])
+const noMatchSSCardsCh = addSSTagInCards(naChData, seasonVersion['cn'])
 // console.log(noMatchSSCards, noMatchSSCardsCh)
 
 //格式化新幕数据
-chData = formatDefaultCardData(chData)
+naChData = formatDefaultCardData(naChData)
 defaultData = formatDefaultCardData(
   defaultData,
+  SCCDATA.allChangeCards.resultList
+)
+naData = formatDefaultCardData(
+  naData,
   SCCDATA.allChangeCards.resultList
 )
 
@@ -1769,15 +1793,15 @@ console.log(
   cardSum
 )
 // 新幕中文的牌数
-const chDataSum = getCardSum(chData)
-chDataSum.other += 18
+const naChDataSum = getCardSum(naChData)
+naChDataSum.other += 18
 console.log(
   '新幕中文牌数，other:伞面，5毒，6transform，4兵牌，岚之力，2集中力，6幕任务，2潜水，5伪证，1镜aa1任务牌',
-  chDataSum
+  naChDataSum
 )
 cardSum = {
   jp: cardSum,
-  ch: chDataSum
+  ch: naChDataSum
 }
 
 const fnCopyCards = wantData => {
@@ -1822,12 +1846,12 @@ const fnCopyCards = wantData => {
     ]
   }
 }
-fnCopyCards(defaultData)
-fnCopyCards(chData)
+fnCopyCards(naData)
+fnCopyCards(naChData)
 
 // 补充标记赛季变更卡
 addSSTagInCards(
-  defaultData,
+  naData,
   {
     changeCards: noMatchSSCards,
     vername: seasonVersion['jp'].vername
@@ -1835,7 +1859,7 @@ addSSTagInCards(
   1
 )
 addSSTagInCards(
-  chData,
+  naChData,
   {
     changeCards: noMatchSSCardsCh,
     vername: seasonVersion['cn'].vername
@@ -1857,8 +1881,8 @@ if (seasonVersion) {
     seasonVersion['cn'].forbidCards.length > 0
   ) {
     seasonVersion['cn'].forbidCards.forEach(item => {
-      if (chData[item[0]] && chData[item[0]].list[item[1]]) {
-        chData[item[0]].list[item[1]][item[2]][item[3]].isForbid = true
+      if (naChData[item[0]] && naChData[item[0]].list[item[1]]) {
+        naChData[item[0]].list[item[1]][item[2]][item[3]].isForbid = true
       }
     })
   }
@@ -1875,7 +1899,7 @@ if (seasonVersion) {
 }
 
 // 获取人物攻击距离
-chData = paintRange(chData)
+naChData = paintRange(naChData)
 defaultData = paintRange(defaultData)
 
 export default {
@@ -1905,7 +1929,7 @@ export default {
       isFirstGetResult: true, //是否第一次使用
       resultGirls: [],
       isOldVer: false, //第二幕
-      isChVer: false, //中文版本
+      isNaChVer: false, //中文版本
       cardDetail: {},
       cardDetailInDeck: {},
       groupCardData: [],
@@ -1924,8 +1948,9 @@ export default {
       lockNameIndex: null,
       lockNameSubIndex: null,
       defaultData: defaultData,
+      naData: naData,
       oldData: oldData,
-      chData: chData,
+      naChData: naChData,
       showPanelGirls: JSON.parse(JSON.stringify(defaultData)),
       randomUseData: [],
       changePanelData: JSON.parse(JSON.stringify(defaultData)),
@@ -1998,7 +2023,7 @@ export default {
       localStorage.setItem('sakuraLang', val)
       if (val !== 0) {
         this.isShowA = true
-        // this.isChVer = this.isChVer;
+        // this.isNaChVer = this.isNaChVer;
         this.resetDefaultData()
       }
 
@@ -2049,7 +2074,7 @@ export default {
       this.resetDefaultData()
       this.isShowResultGirls = false
     },
-    isChVer(val) {
+    isNaChVer(val) {
       this.clearLock()
       this.resetDefaultData()
       this.isShowResultGirls = false
@@ -2141,14 +2166,14 @@ export default {
     // this.isCompleteGroup = true;
 
     if (getUrlQuery('ver') !== null && getUrlQuery('ver').indexOf('ch') > -1) {
-      this.isChVer = true
+      this.isNaChVer = true
       this.resetDefaultData()
     }
     if (
       getUrlQuery('ver') !== null &&
       !(getUrlQuery('ver').indexOf('ch') > -1)
     ) {
-      this.isChVer = false
+      this.isNaChVer = false
       this.resetDefaultData()
     }
 
@@ -2229,8 +2254,8 @@ export default {
     // this.randomGet(3) // debug
 
     // 原初复制原来的通常和切
-    if (this.sakuraCMData && this.defaultData) {
-      this.sakuraCMData = initSakuraCMDATA(this.sakuraCMData, this.defaultData)
+    if (this.sakuraCMData && this.naData) {
+      this.sakuraCMData = initSakuraCMDATA(this.sakuraCMData, this.naData)
       // console.log('sakuraCMData', this.sakuraCMData)
 
       // this.sakuraCMData.forEach(cmitem => {
@@ -2332,8 +2357,8 @@ export default {
         item.id = index
         item.ver =
           ver.toUpperCase().indexOf('CH') > -1
-            ? `官方中文${ver.toUpperCase().replace('CH', '')}`
-            : ver.toUpperCase()
+            ? `新幕官中${ver.toUpperCase().replace('CH', '')}`
+            : `新幕${ver.toUpperCase()}`
         item.shortVer = item.ver.replace('官方中文', '')
         item.isSeason =
           qiyuanGirls.default.includes(item.groupCardData[0].name) &&
@@ -2769,8 +2794,8 @@ export default {
           extra: [],
           changeExtra: []
         }
-      // const orginData = link.indexOf('ch') > -1 ? this.chData : this.defaultData
-      const orginData = this.defaultData
+      // const orginData = link.indexOf('ch') > -1 ? this.naChData : this.defaultData
+      const orginData = this.naData // 新幕卡组
       for (let i = 0; i < _girls.length; i++) {
         const _girlsSub = _girls[i].split('+')
         groupCardData.push(orginData[_girlsSub[0]].list[_girlsSub[1]])
@@ -3143,10 +3168,10 @@ export default {
     searchCard(keywords, noSetData) {
       keywords = keywords.toLowerCase() //统一转换小写
       let result = []
-      const orginData = this.isChVer ? this.chData : this.defaultData
+      const orginData = this.isNaChVer ? this.naChData : this.defaultData
       // console.log(keywords)
       if (
-        !this.isChVer &&
+        !this.isNaChVer &&
         keywords ===
           this.seasonVersion['jp'].vername
             .toLowerCase()
@@ -3160,7 +3185,7 @@ export default {
         this.searchResult = result
         return result
       } else if (
-        this.isChVer &&
+        this.isNaChVer &&
         keywords ===
           this.seasonVersion['cn'].vername
             .toLowerCase()
@@ -3527,7 +3552,7 @@ export default {
       // 赛季组合禁卡
       if (this.groupCardData.length === 2) {
         if (
-          this.isChVer &&
+          this.isNaChVer &&
           this.seasonVersion['cn'].forbidGroupCards &&
           this.seasonVersion['cn'].forbidGroupCards.length > 0
         ) {
@@ -3546,7 +3571,7 @@ export default {
             }
           })
         } else if (
-          !this.isChVer &&
+          !this.isNaChVer &&
           this.seasonVersion['jp'].forbidGroupCards &&
           this.seasonVersion['jp'].forbidGroupCards.length > 0
         ) {
@@ -3611,7 +3636,7 @@ export default {
         }
       }
 
-      if (!this.isOldVer && !this.isChVer) {
+      if (!this.isOldVer && !this.isNaChVer) {
         this.beGroupDeck = this.findDeck(
           this.groupCardData,
           1,
@@ -3631,10 +3656,10 @@ export default {
       if (this.isOldVer) {
         //第二幕
         this.showPanelGirls = JSON.parse(JSON.stringify(this.oldData))
-      } else if (this.isChVer) {
+      } else if (this.isNaChVer) {
         //中文新幕
-        this.showPanelGirls = JSON.parse(JSON.stringify(this.chData))
-        this.changePanelData = JSON.parse(JSON.stringify(this.chData))
+        this.showPanelGirls = JSON.parse(JSON.stringify(this.naChData))
+        this.changePanelData = JSON.parse(JSON.stringify(this.naChData))
       } else {
         this.showPanelGirls = JSON.parse(JSON.stringify(this.defaultData))
         this.changePanelData = JSON.parse(JSON.stringify(this.defaultData))
@@ -3881,7 +3906,7 @@ export default {
       } else {
         //新幕
         this.shareLink = `${this.shareUrl}?ver=${
-          this.isChVer
+          this.isNaChVer
             ? `ch${seasonVersion['cn'].vername.replace(' Preview', 'pre')}`
             : seasonVersion['jp'].vername.replace(' Preview', 'pre')
         }&lang=${this.lang[this.curlang].id}&isShow=1&girls=${
@@ -4099,7 +4124,7 @@ export default {
           }
         })
       } else if (type === 'ss2') {
-        if (this.isChVer) {
+        if (this.isNaChVer) {
           this.changePanelData.forEach((aItem, aKey) => {
             aItem.list.forEach((item, key) => {
               if (key === 0 && this.qiyuanGirls.ch.includes(item.name)) {

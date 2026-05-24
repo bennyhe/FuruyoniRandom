@@ -156,14 +156,14 @@
     </span>
     <span class="i-circle capacity" v-if="item.capacity"
       >{{
-        $parent.isChVer && +$parent.curlang === 0
+        $parent.isNaChVer && +$parent.curlang === 0
           ? "献"
           : lang[$parent.curlang].cardCapacity
       }}{{ item.capacity }}</span
     >
     <span class="i-circle capacity capacity--growup" v-if="item.capacityGrowup"
       >{{
-        $parent.isChVer && +$parent.curlang === 0
+        $parent.isNaChVer && +$parent.curlang === 0
           ? "育"
           : lang[$parent.curlang].cardCapacityGrowup
       }}{{ item.capacityGrowup }}</span

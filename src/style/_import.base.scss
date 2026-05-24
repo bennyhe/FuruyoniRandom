@@ -9,8 +9,8 @@ body {
   line-height: 1.5;
   font-size: 16px;
   color: #333;
-  // background: url(../img/bg.jpg) center bottom fixed no-repeat;
-  // background-size: cover;
+  background: url(../img/bg.jpg) center bottom fixed no-repeat;
+  background-size: cover;
 }
 
 input[type=text],
@@ -20,15 +20,15 @@ textarea {
   border-radius: 4px;
 }
 
-.bg {
-  position: fixed;
-  left: -5%;
-  top: -5%;
-  bottom: -5%;
-  right: -5%;
-  background: url(../img/bg.jpg) no-repeat;
-  background-size: cover;
-}
+// .bg {
+//   position: fixed;
+//   left: -5%;
+//   top: -5%;
+//   bottom: -5%;
+//   right: -5%;
+//   background: url(../img/bg.jpg) no-repeat;
+//   background-size: cover;
+// }
 
 .main {
   max-width: 1280px;

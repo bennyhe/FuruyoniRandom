@@ -13,37 +13,42 @@ import {
   findCardWithFaqCardName,
   get
 } from './export'
-export function initBaseData(sakuraData, chData) {
+export function initBaseData(sakuraData, naChData, naData) {
   // 数据指定
   const defaultData = JSON.parse(JSON.stringify(sakuraData))
-  getKrrDouzi(defaultData)
+  // getKrrDouzi(defaultData) // 暂时没有
 
-  chData = JSON.parse(JSON.stringify(chData))
-  getKrrDouzi(chData)
+  naChData = JSON.parse(JSON.stringify(naChData))
+  getKrrDouzi(naChData)
+
+  naData = JSON.parse(JSON.stringify(naData))
+  getKrrDouzi(naData)
 
   //伞的头像和q版随机开闭
   let _yukihIsOpen = parseInt(Math.random() * 2, 10) === 0
-  defaultData[5].list[0].pic = _yukihIsOpen ? 'twiicon_sa_05a.jpg' : 'twiicon_sa_05b.jpg'
-  chData[5].list[0].pic = _yukihIsOpen ? 'twiicon_sa_05a.jpg' : 'twiicon_sa_05b.jpg'
+  naData[5].list[0].pic = _yukihIsOpen ? 'twiicon_sa_05a.jpg' : 'twiicon_sa_05b.jpg'
+  naChData[5].list[0].pic = _yukihIsOpen ? 'twiicon_sa_05a.jpg' : 'twiicon_sa_05b.jpg'
+
   _yukihIsOpen = parseInt(Math.random() * 2, 10) === 0
-  defaultData[5].list[1].pic = _yukihIsOpen ? 'twiicon_sa_29.jpg' : 'twiicon_sa_30.jpg'
-  chData[5].list[1].pic = _yukihIsOpen ? 'twiicon_sa_29.jpg' : 'twiicon_sa_30.jpg'
+  naData[5].list[1].pic = _yukihIsOpen ? 'twiicon_sa_29.jpg' : 'twiicon_sa_30.jpg'
+  naChData[5].list[1].pic = _yukihIsOpen ? 'twiicon_sa_29.jpg' : 'twiicon_sa_30.jpg'
+
   _yukihIsOpen = parseInt(Math.random() * 2, 10) === 0
-  defaultData[21].list[0].pic = _yukihIsOpen ? 'twiicon_sa_39.jpg' : 'twiicon_sa_40.jpg'
+  naData[21].list[0].pic = _yukihIsOpen ? 'twiicon_sa_39.jpg' : 'twiicon_sa_40.jpg'
 
 
   //中文数据预处理
-  // for (let i = 0; i < chData.length; i++) {
-  //   chData[i].showAllCardsIndex = 0
-  //   chData[i].showAllCards = false
-  //   for (let kk = 0; kk < chData[i].list.length; kk++) {
-  //     chData[i].list[kk].showAllCards = false
+  // for (let i = 0; i < naChData.length; i++) {
+  //   naChData[i].showAllCardsIndex = 0
+  //   naChData[i].showAllCards = false
+  //   for (let kk = 0; kk < naChData[i].list.length; kk++) {
+  //     naChData[i].list[kk].showAllCards = false
   //   }
   // }
 
   //faq注入
   if (window.QADATA) {
-    defaultData.forEach(gitem => {
+    naData.forEach(gitem => {
       window.QADATA.forEach(qitem => {
         if (gitem.name === qitem.name) {
           gitem.list[0].QADATA = qitem.list
@@ -65,7 +70,8 @@ export function initBaseData(sakuraData, chData) {
 
   return {
     defaultData,
-    chData
+    naChData,
+    naData
   }
 }
 
