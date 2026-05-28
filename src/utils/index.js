@@ -28,10 +28,12 @@ export function initBaseData(sakuraData, naChData, naData) {
   let _yukihIsOpen = parseInt(Math.random() * 2, 10) === 0
   naData[5].list[0].pic = _yukihIsOpen ? 'twiicon_sa_05a.jpg' : 'twiicon_sa_05b.jpg'
   naChData[5].list[0].pic = _yukihIsOpen ? 'twiicon_sa_05a.jpg' : 'twiicon_sa_05b.jpg'
+  defaultData[5].list[0].pic = _yukihIsOpen ? 'twiicon_sa_05a.jpg' : 'twiicon_sa_05b.jpg'
 
   _yukihIsOpen = parseInt(Math.random() * 2, 10) === 0
   naData[5].list[1].pic = _yukihIsOpen ? 'twiicon_sa_29.jpg' : 'twiicon_sa_30.jpg'
   naChData[5].list[1].pic = _yukihIsOpen ? 'twiicon_sa_29.jpg' : 'twiicon_sa_30.jpg'
+  defaultData[5].list[1].pic = _yukihIsOpen ? 'twiicon_sa_29.jpg' : 'twiicon_sa_30.jpg'
 
   _yukihIsOpen = parseInt(Math.random() * 2, 10) === 0
   naData[21].list[0].pic = _yukihIsOpen ? 'twiicon_sa_39.jpg' : 'twiicon_sa_40.jpg'

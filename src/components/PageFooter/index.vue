@@ -8,10 +8,11 @@
       <template v-if="isNaChVer"
         >官方中文{{ seasonVersion["cn"].vername }}</template
       >
-      <template v-else>{{ seasonVersion["jp"].vername }}</template>
+      <template v-else-if="isNaVer">{{ seasonVersion["jp"].vername }}</template>
+      <template v-else>{{ seasonVersion["rejp"].vername }}</template>
     </p>
     <template
-      v-if="!isOldVer && !isNaChVer && seasonVersion['jp'].vername === 'S10-2'"
+      v-if="!isOldVer && isNaVer && seasonVersion['jp'].vername === 'S10-2'"
     >
       <p v-if="lang[curlang].id === 'cn'">
         <!-- {{
@@ -51,7 +52,7 @@
         }}
       </p>
     </template>
-    <template v-if="!isOldVer && !isNaChVer">
+    <template v-if="!isOldVer && isNaVer">
       <p>
         牌数: {{ cardSum.jp.normal }}通常 / {{ cardSum.jp.special }}切 /
         {{ cardSum.jp.other }}其它
@@ -61,6 +62,12 @@
       <p>
         牌数: {{ cardSum.ch.normal }}通常 / {{ cardSum.ch.special }}切 /
         {{ cardSum.ch.other }}其它
+      </p>
+    </template>
+    <template v-if="!isOldVer && isReVer">
+      <p>
+        牌数: {{ cardSum.rejp.normal }}通常 / {{ cardSum.rejp.special }}切 /
+        {{ cardSum.rejp.other }}其它
       </p>
     </template>
     <pre>{{ lang[curlang].copyright }}</pre>
@@ -93,6 +100,8 @@ export default defineComponent({
     'naData',
     'isOldVer',
     'isNaChVer',
+    'isNaVer',
+    'isReVer',
     'curlang',
     'cardSum',
     'seasonVersion',

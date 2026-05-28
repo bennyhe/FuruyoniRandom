@@ -721,7 +721,10 @@
               <CardDetail :item="cardDetail">
                 <template
                   v-if="
-                    !isOldVer && getIsShowCardPic(cardDetail) && isShowCardPic
+                    !isOldVer &&
+                    !isReVer &&
+                    getIsShowCardPic(cardDetail) &&
+                    isShowCardPic
                   "
                 >
                   <div
@@ -740,7 +743,9 @@
                   <img class="card-pic" v-lazy="getImgUrl()" v-else />
                 </template>
               </CardDetail>
-              <template v-if="!isOldVer && getIsShowCardPic(cardDetail)">
+              <template
+                v-if="!isOldVer && !isReVer && getIsShowCardPic(cardDetail)"
+              >
                 <label class="checkbox" :class="{ cur: isShowCardPic }"
                   ><input type="checkbox" v-model="isShowCardPic" />
                   <span>查看卡图</span></label
@@ -1673,6 +1678,8 @@
     <PageFooter
       :isOldVer="isOldVer"
       :isNaChVer="isNaChVer"
+      :isNaVer="isNaVer"
+      :isReVer="isReVer"
       :curlang="curlang"
       :cardSum="cardSum"
       :seasonVersion="seasonVersion"
@@ -1780,9 +1787,7 @@ const noMatchSSCardsCh = addSSTagInCards(naChData, seasonVersion['cn'])
 //格式化新幕数据
 naChData = formatDefaultCardData(naChData)
 naData = formatDefaultCardData(naData, SCCDATA.allChangeCards.resultList)
-defaultData = formatDefaultCardData(
-  defaultData
-)
+defaultData = formatDefaultCardData(defaultData)
 //格式化旧幕数据
 const oldData = formatDefaultCardData(sakuraDataOldVer)
 
@@ -1804,16 +1809,22 @@ const oldData = formatDefaultCardData(sakuraDataOldVer)
 const oldDataSum = getCardSum(oldData)
 oldDataSum.other += 3
 console.log('旧幕牌数，other:伞面，5毒，3transform，2集中力', oldDataSum)
-// 新幕的牌数
+// 再演的牌数
 let cardSum = getCardSum(defaultData)
-// 新幕中文的牌数
-const naChDataSum = getCardSum(naChData)
+cardSum.nomarl-- // 合奏减1
+cardSum.other += 3
+console.log(
+  '再演中文牌数，other:伞面，5毒，6transform，岚之力，2集中力，1镜aa1任务牌',
+  cardSum
+)
+
+const naChDataSum = getCardSum(naChData) // 新幕中文的牌数
 naChDataSum.other += 18
 console.log(
   '新幕中文牌数，other:伞面，5毒，6transform，4兵牌，岚之力，2集中力，6幕任务，2潜水，5伪证，1镜aa1任务牌',
   naChDataSum
 )
-const naDataSum = getCardSum(naData)
+const naDataSum = getCardSum(naData) // 新幕的牌数
 naDataSum.nomarl-- // 合奏减1
 naDataSum.other += 25
 console.log(
@@ -1821,17 +1832,19 @@ console.log(
   naDataSum
 )
 cardSum = {
-  jp: cardSum,
+  rejp: cardSum,
   ch: naChDataSum,
-  naJp: naDataSum
+  jp: naDataSum
 }
 
 const fnCopyCards = wantData => {
   //a旗复制原来的卡
-  wantData[13].list[1].changeExtra.unshift(wantData[13].list[0].extra[4])
-  wantData[13].list[1].changeExtra.unshift(wantData[13].list[0].extra[3])
+  if (wantData[13] && wantData[13].list[1]) {
+    wantData[13].list[1].changeExtra.unshift(wantData[13].list[0].extra[4])
+    wantData[13].list[1].changeExtra.unshift(wantData[13].list[0].extra[3])
+  }
   //a衣复制原来的extra
-  if (wantData[21].list[1]) {
+  if (wantData[21] && wantData[21].list[1]) {
     wantData[21].list[1].changeExtra.unshift(wantData[21].list[0].extra[0])
     wantData[21].list[1].changeExtra.unshift(wantData[21].list[0].extra[1])
   }
@@ -1870,6 +1883,7 @@ const fnCopyCards = wantData => {
 }
 fnCopyCards(naData)
 fnCopyCards(naChData)
+// fnCopyCards(defaultData)
 
 // 补充标记赛季变更卡
 addSSTagInCards(
@@ -2104,7 +2118,6 @@ export default {
         this.isOldVer = false
         this.isNaVer = false
         this.isReVer = false
-
       }
       this.clearLock()
       this.resetDefaultData()
@@ -2406,10 +2419,14 @@ export default {
         item.groupCardData = groupCardData
         item.isSelect = false
         item.id = index
-        item.ver =
-          ver.toUpperCase().indexOf('CH') > -1
-            ? `新幕官中${ver.toUpperCase().replace('CH', '')}`
-            : `新幕${ver.toUpperCase()}`
+        if (ver.toUpperCase().indexOf('RE') > -1) {
+          item.ver = `再演'${ver.toUpperCase().replace('RE', '')}`
+        } else {
+          item.ver =
+            ver.toUpperCase().indexOf('CH') > -1
+              ? `新幕官中${ver.toUpperCase().replace('CH', '')}`
+              : `新幕${ver.toUpperCase()}`
+        }
         item.shortVer = item.ver.replace('官方中文', '')
         item.isSeason =
           qiyuanGirls.default.includes(item.groupCardData[0].name) &&
@@ -3219,7 +3236,12 @@ export default {
     searchCard(keywords, noSetData) {
       keywords = keywords.toLowerCase() //统一转换小写
       let result = []
-      const orginData = this.isNaChVer ? this.naChData : this.naData
+      let orginData = this.defaultData
+      if (this.isNaChVer) {
+        orginData = this.naChData
+      } else {
+        orginData = this.naData
+      }
       // console.log(keywords)
       if (
         !this.isNaChVer &&
@@ -3959,13 +3981,17 @@ export default {
         }`
       } else {
         //新幕
-        this.shareLink = `${this.shareUrl}?ver=${
-          this.isNaChVer
+        let ver = seasonVersion['rejp'].verlink.replace(' Preview', 'pre')
+        if (!this.isReVer) {
+          ver = this.isNaChVer
             ? `ch${seasonVersion['cn'].vername.replace(' Preview', 'pre')}`
             : seasonVersion['jp'].vername.replace(' Preview', 'pre')
-        }&lang=${this.lang[this.curlang].id}&isShow=1&girls=${
-          this.shareGirls
-        }&girlscard1=${_arr3[0]}&girlscard2=${_arr3[1]}`
+        }
+        this.shareLink = `${this.shareUrl}?ver=${ver}&lang=${
+          this.lang[this.curlang].id
+        }&isShow=1&girls=${this.shareGirls}&girlscard1=${_arr3[0]}&girlscard2=${
+          _arr3[1]
+        }`
       }
     },
     /**
