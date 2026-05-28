@@ -701,7 +701,7 @@
               </button>
               <button
                 class="btn btn-small btn-main"
-                v-if="isCompleteGroup"
+                v-if="isCompleteGroup && !isReVer"
                 @click="shareGroup()"
               >
                 {{ lang[curlang].btnShare }}
@@ -942,7 +942,7 @@
             class="textarea textarea--share"
             v-model="shareLink"
             readonly
-            v-if="isGoToBeGroup && shareLink != ''"
+            v-if="isGoToBeGroup && !isReVer && shareLink != ''"
           ></textarea>
         </div>
         <!-- E 构筑卡组 -->
