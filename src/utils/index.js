@@ -16,7 +16,7 @@ import {
 export function initBaseData(sakuraData, naChData, naData) {
   // 数据指定
   const defaultData = JSON.parse(JSON.stringify(sakuraData))
-  // getKrrDouzi(defaultData) // 暂时没有
+  getKrrDouzi(defaultData)
 
   naChData = JSON.parse(JSON.stringify(naChData))
   getKrrDouzi(naChData)

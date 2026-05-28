@@ -109,7 +109,7 @@ export default defineComponent({
     'getCardKeyValInLang'
   ],
   setup(props, context) {
-    console.log(props.naData)
+    // console.log(props.naData)
     return {
       lang: configLang
     }

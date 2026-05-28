@@ -102,7 +102,7 @@
             <i class="i-close"></i>
           </button>
         </div>
-        <div class="search-result cgroup--old">
+        <div class="search-result cgroup--old" v-if="!isReVer">
           <template v-if="searchResult.length > 0">
             <p class="search-tips">About {{ searchResult.length }} results.</p>
             <div class="card-list">
@@ -1839,7 +1839,7 @@ cardSum = {
 
 const fnCopyCards = wantData => {
   //a旗复制原来的卡
-  if (wantData[13] && wantData[13].list[1]) {
+  if (wantData[13] && wantData[13].namejp === '旗' && wantData[13].list[1]) {
     wantData[13].list[1].changeExtra.unshift(wantData[13].list[0].extra[4])
     wantData[13].list[1].changeExtra.unshift(wantData[13].list[0].extra[3])
   }
@@ -1869,11 +1869,11 @@ const fnCopyCards = wantData => {
   // }
 
   // a1镜去掉s1-s3
-  if (wantData[15].list[1]) {
+  if (wantData[15] && wantData[15].namejp === '鏡' && wantData[15].list[1]) {
     wantData[15].list[1].special = [wantData[15].list[1].special[3]]
   }
   // aa1镜去掉s1-s3 复制a1镜的n1-n6的ex
-  if (wantData[15].list[2]) {
+  if (wantData[15] && wantData[15].namejp === '鏡' && wantData[15].list[2]) {
     wantData[15].list[2].special = [wantData[15].list[2].special[3]]
     wantData[15].list[2].changeExtra = [
       ...wantData[15].list[2].changeExtra,
@@ -1883,7 +1883,7 @@ const fnCopyCards = wantData => {
 }
 fnCopyCards(naData)
 fnCopyCards(naChData)
-// fnCopyCards(defaultData)
+fnCopyCards(defaultData)
 
 // 补充标记赛季变更卡
 addSSTagInCards(
