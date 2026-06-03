@@ -3644,7 +3644,7 @@ export default {
             }
           })
         } else if (
-          !this.isNaChVer &&
+          this.isNaVer &&
           this.seasonVersion['jp'].forbidGroupCards &&
           this.seasonVersion['jp'].forbidGroupCards.length > 0
         ) {
