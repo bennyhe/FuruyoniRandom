@@ -1464,7 +1464,7 @@
               </div>
             </template>
             <div class="faq-nav__list">
-              <template v-for="(firstItem, fristIndex) in defaultData">
+              <template v-for="(firstItem, fristIndex) in naData">
                 <div
                   class="faq-nav__item"
                   v-if="firstItem.list[0].QADATA"
@@ -1551,7 +1551,7 @@
               </div>
             </div>
           </template>
-          <template v-for="(firstItem, fristIndex) in defaultData">
+          <template v-for="(firstItem, fristIndex) in naData">
             <div
               class="allcards-list__item"
               :id="`faq${fristIndex + 2}`"
