@@ -1811,10 +1811,10 @@ oldDataSum.other += 3
 console.log('旧幕牌数，other:伞面，5毒，3transform，2集中力', oldDataSum)
 // 再演的牌数
 let cardSum = getCardSum(defaultData)
-cardSum.nomarl-- // 合奏减1
-cardSum.other += 3
+cardSum.normal-- // 合奏减1
+cardSum.other += 12
 console.log(
-  '再演中文牌数，other:伞面，5毒，6transform，岚之力，2集中力，1镜aa1任务牌',
+  '再演牌数，other:伞面，5毒，6transform，岚之力，2集中力，7张电子追加，1张空想树',
   cardSum
 )
 
@@ -1825,7 +1825,7 @@ console.log(
   naChDataSum
 )
 const naDataSum = getCardSum(naData) // 新幕的牌数
-naDataSum.nomarl-- // 合奏减1
+naDataSum.normal-- // 合奏减1
 naDataSum.other += 25
 console.log(
   '新幕牌数，other:伞面，5毒，6transform，4兵牌，岚之力，2集中力，6幕任务，2潜水，5伪证，1镜aa1任务牌，7张电子追加',
