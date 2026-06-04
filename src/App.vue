@@ -3704,7 +3704,7 @@ export default {
           this.groupCardData[0].subIndex === 1 &&
           this.groupCardData[1].index === 3 &&
           this.groupCardData[1].subIndex === 1 &&
-          this.groupCardData[1].normal[3].id === '02/04-saine/tokoyo-a1-n-1/4'
+          this.groupCardData[1].normal[3].id.indexOf('02/04-saine/tokoyo-a1-n-1/4') > -1
         ) {
           this.groupCardData[1].normal.splice(3, 1)
         }
