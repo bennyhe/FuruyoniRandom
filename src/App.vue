@@ -102,7 +102,7 @@
             <i class="i-close"></i>
           </button>
         </div>
-        <div class="search-result cgroup--old" v-if="!isReVer">
+        <div class="search-result cgroup--old">
           <template v-if="searchResult.length > 0">
             <p class="search-tips">About {{ searchResult.length }} results.</p>
             <div class="card-list">
@@ -3127,7 +3127,8 @@ export default {
       this.cardDetailInDeck = {}
     },
     clearSearch() {
-      (this.inputKw = ''), (this.searchResult = [])
+      this.inputKw = ''
+      this.searchResult = []
       this.cardDetail = {}
     },
     /**
@@ -3239,7 +3240,7 @@ export default {
       let orginData = this.defaultData
       if (this.isNaChVer) {
         orginData = this.naChData
-      } else {
+      } else if (this.isNaVer) {
         orginData = this.naData
       }
       // console.log(keywords)
