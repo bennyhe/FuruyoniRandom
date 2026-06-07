@@ -2757,13 +2757,15 @@ export default {
       } else if (count === 'allo' || count === 'alla') {
         if (count === 'allo') {
           this.deckAvatarList.forEach(item => {
-            if (item.subIndex === 0) {
+            if (item.namejp.indexOf('槍') < 0 && item.subIndex === 0) {
+              item.isSelect = true
+            } else if (item.namejp.indexOf('槍') > -1) {
               item.isSelect = true
             }
           })
         } else if (count === 'alla') {
           this.deckAvatarList.forEach(item => {
-            if (item.subIndex !== 0) {
+            if (item.namejp.indexOf('槍') < 0 && item.subIndex !== 0) {
               item.isSelect = true
             }
           })
@@ -3754,7 +3756,10 @@ export default {
 
       if (!this.isShowA) {
         for (let i = 0; i < this.showPanelGirls.length; i++) {
-          if (this.showPanelGirls[i].list.length > 1) {
+          if (
+            this.showPanelGirls[i].namejp !== 'イヌル' &&
+            this.showPanelGirls[i].list.length > 1
+          ) {
             this.showPanelGirls[i].list.splice(
               1,
               this.showPanelGirls[i].list.length
@@ -3762,7 +3767,10 @@ export default {
           }
         }
         for (let i = 0; i < this.changePanelData.length; i++) {
-          if (this.changePanelData[i].list.length > 1) {
+          if (
+            this.showPanelGirls[i].namejp !== 'イヌル' &&
+            this.changePanelData[i].list.length > 1
+          ) {
             this.changePanelData[i].list.splice(
               1,
               this.changePanelData[i].list.length
