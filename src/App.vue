@@ -1869,11 +1869,19 @@ const fnCopyCards = wantData => {
   // }
 
   // a1镜去掉s1-s3
-  if (wantData[15] && wantData[15].namejp === '鏡' && wantData[15].list[1]) {
+  if (
+    wantData[15] &&
+    wantData[15].namejp === 'ヤツハ' &&
+    wantData[15].list[1]
+  ) {
     wantData[15].list[1].special = [wantData[15].list[1].special[3]]
   }
   // aa1镜去掉s1-s3 复制a1镜的n1-n6的ex
-  if (wantData[15] && wantData[15].namejp === '鏡' && wantData[15].list[2]) {
+  if (
+    wantData[15] &&
+    wantData[15].namejp === 'ヤツハ' &&
+    wantData[15].list[2]
+  ) {
     wantData[15].list[2].special = [wantData[15].list[2].special[3]]
     wantData[15].list[2].changeExtra = [
       ...wantData[15].list[2].changeExtra,
