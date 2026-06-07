@@ -701,7 +701,7 @@
               </button>
               <button
                 class="btn btn-small btn-main"
-                v-if="isCompleteGroup && !isReVer"
+                v-if="isCompleteGroup"
                 @click="shareGroup()"
               >
                 {{ lang[curlang].btnShare }}
@@ -942,7 +942,7 @@
             class="textarea textarea--share"
             v-model="shareLink"
             readonly
-            v-if="isGoToBeGroup && !isReVer && shareLink != ''"
+            v-if="isGoToBeGroup && shareLink != ''"
           ></textarea>
         </div>
         <!-- E 构筑卡组 -->
@@ -1002,10 +1002,16 @@
                 "
                 v-bind:key="fristIndex"
               >
-                <div class="allcards__name">
-                  <span v-if="getCardKeyValInLang(firstItem, 'name')">{{
-                    getCardKeyValInLang(firstItem, "name")
-                  }}</span>
+            <div class="allcards__name">
+                <span v-if="getCardKeyValInLang(firstItem, 'name')"
+                  >{{ getCardKeyValInLang(firstItem, "name") }} </span
+                ><span
+                  class="i-tag i-tag--season"
+                  v-if="firstItem.isClassicBattle"
+                  >{{
+                    lang[curlang].id === "cn" ? toChzh("古典战") : "古典戦"
+                  }}</span
+                >
                 </div>
                 <div class="allcards-tab">
                   <div
@@ -1218,9 +1224,16 @@
             v-bind:key="fristIndex"
           >
             <div class="allcards__name">
-              <span v-if="getCardKeyValInLang(firstItem, 'name')">{{
-                getCardKeyValInLang(firstItem, "name")
-              }}</span>
+              <span v-if="getCardKeyValInLang(firstItem, 'name')"
+                >{{ getCardKeyValInLang(firstItem, "name") }}
+              </span>
+              <span
+                class="i-tag i-tag--season"
+                v-if="firstItem.isClassicBattle"
+                >{{
+                  lang[curlang].id === "cn" ? toChzh("古典战") : "古典戦"
+                }}</span
+              >
             </div>
             <div class="allcards-tab">
               <div
@@ -1757,7 +1770,8 @@ import {
   initChangeCardsData,
   initSakuraCMDATA,
   addSSTagInCards,
-  getIsShowCardPicIn
+  getIsShowCardPicIn,
+  mergeMissingGirls
 } from './utils/index.js'
 const {
   sakuraStoryData,
@@ -1946,6 +1960,8 @@ if (seasonVersion) {
 naChData = paintRange(naChData)
 naData = paintRange(naData)
 defaultData = paintRange(defaultData)
+
+defaultData = mergeMissingGirls(defaultData, naData)
 
 export default {
   name: 'pageIndex',
@@ -3714,7 +3730,9 @@ export default {
           this.groupCardData[0].subIndex === 1 &&
           this.groupCardData[1].index === 3 &&
           this.groupCardData[1].subIndex === 1 &&
-          this.groupCardData[1].normal[3].id.indexOf('02/04-saine/tokoyo-a1-n-1/4') > -1
+          this.groupCardData[1].normal[3].id.indexOf(
+            '02/04-saine/tokoyo-a1-n-1/4'
+          ) > -1
         ) {
           this.groupCardData[1].normal.splice(3, 1)
         }

@@ -206,3 +206,27 @@ export function getIsShowCardPicIn(cardData, lang, curlang) {
   }
   return false
 }
+
+export function mergeMissingGirls(defaultData, naData) {
+  // 已有女神 namejp 集合
+  const existingNamesJp = new Set(defaultData.map(g => g.namejp))
+
+  // 以 naData 顺序为基准，逐个位置填充
+  const result = []
+  naData.forEach((naGirl, naIndex) => {
+    if (existingNamesJp.has(naGirl.namejp)) {
+      // defaultData 有这个女神，用 defaultData 的数据
+      const existingGirl = defaultData.find(g => g.namejp === naGirl.namejp)
+      result.push(existingGirl)
+    } else {
+      // defaultData 缺失，用 naData 的数据补充
+      result.push({
+        ...naGirl,
+        isClassicBattle: true
+      })
+      // console.log(`补充女神: ${naGirl.namejp}, 位置: ${naIndex}`)
+    }
+  })
+
+  return result
+}
