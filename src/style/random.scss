@@ -59,6 +59,10 @@
 
 
 @media screen and (max-width: 660px) {
+  body {
+    background-size: auto 100%;
+    background-position: center top;
+  }
 
   .main--cn,
   .main--jp {
