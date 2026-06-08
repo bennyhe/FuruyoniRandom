@@ -774,188 +774,223 @@ export default [
     'author': '雪梦优',
     'name': '我是一只兜唐',
     'desc': '',
-    'decklink': 'https://sdrice.name/random/?ver=S10-2&lang=cn&isShow=1&girls=17+0,18+0&girlscard1=1,4,5,6+1&girlscard2=1,3,5+1,3'
+    'decklink': '//sdrice.name/random/?ver=S10-2&lang=cn&isShow=1&girls=17+0,18+0&girlscard1=1,4,5,6+1&girlscard2=1,3,5+1,3'
   },
   {
     'date': '2026-03-13',
     'author': '河上一月',
     'name': '琵社（花）——雪乃双切伞连击',
     'desc': '依靠伞飞旋+复返其身再起纷扬如雪，靠琵琶的加伤打出一套巨低费用的输出，伞飞旋放手里补装，到输出轮再开。因为3Ban1所以用社交，双掌可用伞。圈域伴奏不是刚需，王牌基本不变',
-    'decklink': 'https://sdrice.name/random/?ver=S10-2&lang=cn&isShow=1&girls=1+1,5+1&girlscard1=0,4,5+1&girlscard2=0,1,2,4+0,3'
+    'decklink': '//sdrice.name/random/?ver=S10-2&lang=cn&isShow=1&girls=1+1,5+1&girlscard1=0,4,5+1&girlscard2=0,1,2,4+0,3'
   },
   {
     'date': '2026-03-13',
     'author': '河上一月',
     'name': '琵花（社）',
     'desc': '完全化后4、5距输出，现世魔物1～3距站场，加上幻影步法不怕难立回。王牌均低气，镜映也方便控。',
-    'decklink': 'https://sdrice.name/random/?ver=S10-2&lang=cn&isShow=1&girls=1+1,15+1&girlscard1=0,3+1,2&girlscard2=0,1,2,4,6+0'
+    'decklink': '//sdrice.name/random/?ver=S10-2&lang=cn&isShow=1&girls=1+1,15+1&girlscard1=0,3+1,2&girlscard2=0,1,2,4,6+0'
   },
   {
     'date': '2026-03-13',
     'author': '河上一月',
     'name': '旗遗——双完论补全版',
     'desc': '此旗让铭衣双开完论（等夙愿再起时开此旗）。期瞒之雾硬牛牌，被封印故不可以展示。其他的和常见旗遗类似，王牌固定此旗+落幕。',
-    'decklink': 'https://sdrice.name/random/?ver=S10-2&lang=cn&isShow=1&girls=13+0,21+1&girlscard1=0,3,5+1&girlscard2=0,1,3,5+0,3'
+    'decklink': '//sdrice.name/random/?ver=S10-2&lang=cn&isShow=1&girls=13+0,21+1&girlscard1=0,3,5+1&girlscard2=0,1,3,5+0,3'
   },
   {
     'date': '2026-03-13',
     'author': '河上一月',
     'name': '铳橇走路模拟器',
     'desc': '靠凝努来保持立回，后跳渡雪领域有极强后拉能力，铳正常打既可，但伤害打的不快，大概得打5、6套才行。',
-    'decklink': 'https://sdrice.name/random/?ver=S10-2&lang=cn&isShow=1&girls=2+0,14+0&girlscard1=0,1,2,4+0,3&girlscard2=3,4,5+2'
+    'decklink': '//sdrice.name/random/?ver=S10-2&lang=cn&isShow=1&girls=2+0,14+0&girlscard1=0,1,2,4+0,3&girlscard2=3,4,5+2'
   },
   {
     'date': '2026-03-24',
     'author': '晓夜神香',
     'name': '魂尘（毒）vs兜书（唐）',
     'desc': '严正声明：娱乐构筑，抄卡组需谨慎！防御端壁康诡辩或21盾兵或31三重，由于放弃尘红可以无负担卡2防后续诡辩；资源端契约补充开启王牌花费的资源同时压气延缓对手判证节奏，速魔食复读遗灰咒持续给予装压；输出端携带爪鄂威胁，避免对手0装无损过魔食，回家变身后复读终焉用回忆区无损洗牌拉开血差，看情况自灭往寂或大收割斩杀。注意：选择回1牌出门，可以在回家回合用调整付与效果炸对手的状语。',
-    'decklink': 'https://sdrice.name/random/?ver=S10-2&lang=cn&isShow=1&girls=12+1,15+2&girlscard1=5,6+0,1,3&girlscard2=0,1,3,5,6+'
+    'decklink': '//sdrice.name/random/?ver=S10-2&lang=cn&isShow=1&girls=12+1,15+2&girlscard1=5,6+0,1,3&girlscard2=0,1,3,5,6+'
   },
   {
     'date': '2026-04-07',
     'author': 'Ima',
     'name': '旗镜（我说不可被对应你耳龙吗）',
     'desc': '开局找「精灵式」和「义旗」，「幻影步法」最好不要盖掉。「精灵式」变到「突击灵式」，视情况变出「神灵奥华」，「幻影步法」协助「守护灵」向「突击灵」的变化，后续也方便4距打「突击灵」。算上「星之爪」和「暗之颚」就是三张不可被通常对应的通常红卡。关键组件就这些，剩下的卡位就比较灵活了。「四季轮回」可以顶替「义旗」、「追风」防拉远、「镜之恶魔」提高「八叶镜」潜在收益、「双叶镜」或「花道」提供生存等等。',
-    'decklink': 'https://sdrice.name/random/?ver=S10-2&lang=cn&isShow=1&girls=13+0,15+0&girlscard1=0,2,5+1&girlscard2=0,1,3,4+2,3'
+    'decklink': '//sdrice.name/random/?ver=S10-2&lang=cn&isShow=1&girls=13+0,15+0&girlscard1=0,2,5+1&girlscard2=0,1,3,4+2,3'
   },
   {
     'date': '2026-04-07',
     'author': 'Ima',
     'name': '魂兜散步',
     'desc': '魂兜（薙）。魂大人选起点超时了被对面狂怼，因而散步回来怒吃两焦躁。兜的「防壁」或「盾兵」为魂提供旅途刚结束时的生存能力。「压前」征兵，后期可以用「此魂」删掉，「星之爪」不变完全态。「契约」视情况可以换「反攻」，「此魂」可以换「阁」提高斩杀，整体调整空间不大，注意气耗。',
-    'decklink': 'https://sdrice.name/random/?ver=S10-2&lang=cn&isShow=1&girls=15+2,17+0&girlscard1=0,1,3,5,6+0&girlscard2=4,5+1,2'
+    'decklink': '//sdrice.name/random/?ver=S10-2&lang=cn&isShow=1&girls=15+2,17+0&girlscard1=0,1,3,5,6+0&girlscard2=4,5+1,2'
   },
   {
     'date': '2026-04-08',
     'author': 'Ima',
     'name': '镜现八叶镜',
     'desc': '思路是「八叶镜」提高箭头收益，由于命运卡也属于卡牌，在「八叶镜」开启后，最容易内鬼的命运卡“赎罪”是可以敌装→虚的。再携带上「星之爪」和「契约」，可以大幅提高AP差，不过这也让「八叶镜」的开启时点变得十分关键。担心命运“流离”被锁的话，「挥枪」或「鸣枪」可以换成「变转」。通常牌也可以考虑带「幻影步法」，「幻影步法」是能够在第一轮牌库早期打出“颓踏”拉2→「幻影步法」拉2→「挥枪」或「鸣枪」→“流离”→「刃碎」的爆发的，「契约」则偏向于保住下限。',
-    'decklink': 'https://sdrice.name/random/?ver=S10-2&lang=cn&isShow=1&girls=15+0,25+1&girlscard1=0,1,5+3&girlscard2=0,1,2,3+0,2'
+    'decklink': '//sdrice.name/random/?ver=S10-2&lang=cn&isShow=1&girls=15+0,25+1&girlscard1=0,1,5+3&girlscard2=0,1,2,3+0,2'
   },
   {
     'date': '2026-04-08',
     'author': 'Ima',
     'name': '花现平砍',
     'desc': '思路相当简单，「暗之颚」、命运“流离”和王牌「徒樱」都会畏缩自己，而畏缩是不会叠加的，最理想的情况下在一轮里共鸣“流离”、打出「暗之颚」，然后「徒樱」结束回合，从而减少AP的亏空。当然实际打起来不会这么顺风顺水，能省多少是多少。「幻影步法」优先变完全态，最后变「暗之颚」，「星之爪」不变，6红开砍！你可能会说就变两张牌吗？是的，不然哪有气打「月影落」（',
-    'decklink': 'https://sdrice.name/random/?ver=S10-2&lang=cn&isShow=1&girls=15+1,25+1&girlscard1=0,1,3+0&girlscard2=0,1,2,3+0,2'
+    'decklink': '//sdrice.name/random/?ver=S10-2&lang=cn&isShow=1&girls=15+1,25+1&girlscard1=0,1,3+0&girlscard2=0,1,2,3+0,2'
   },
   {
     'date': '2026-04-08',
     'author': 'Escapist',
     'name': '神秘络爪',
     'desc': '风雷击单核流，开局找狗叫。后手可以2t洗牌再叫一次，直接2/2启动顺便送对面两次畏缩。优先7风，刷新齿轮加快启动。回收的用法很多，回收风雷击打5/3或者5/2远1，回收风雷智慧加快攒槽（也许能顺便收一下模块化），回收刷新多印齿轮都行。对面康多可以不做7风，换个风神爪增加稳定性。',
-    'decklink': 'https://sdrice.name/random/?ver=S10-2&lang=cn&isShow=1&girls=9+0,11+0&girlscard1=1,4,5+0,2&girlscard2=1,3,4,5+2'
+    'decklink': '//sdrice.name/random/?ver=S10-2&lang=cn&isShow=1&girls=9+0,11+0&girlscard1=1,4,5+0,2&girlscard2=1,3,4,5+2'
   },
   {
     'date': '2026-04-08',
     'author': 'Escapist',
     'name': '神秘络刀',
     'desc': '偷鸡卡组，只要我启动得够快别人就想不到防。复制身法，控血线比对面低，配合模块单卡3ap。理想情况手上1加速1回收2身法，模块化展开中。两身法保底集3气，配合前面的少量储备打4/4+4/5或5/4。启动轮3气左右，对面应该想不到要吃落（）',
-    'decklink': 'https://sdrice.name/random/?ver=S10-2&lang=cn&isShow=1&girls=0+0,9+0&girlscard1=0,1,4+0&girlscard2=1,2,4,5+0,2'
+    'decklink': '//sdrice.name/random/?ver=S10-2&lang=cn&isShow=1&girls=0+0,9+0&girlscard1=0,1,4+0&girlscard2=1,2,4,5+0,2'
   },
   {
     'date': '2026-04-08',
     'author': 'Escapist',
     'name': '神秘刀铳',
     'desc': '近距吃居合，远距吃爆破。气合斩腾装前进和压装，对面2装及以下可以考虑进2打绯红零时斩杀（身法远1防止被拉，决死的话可以先柄击一下打3/2双边）。牌序比较公式，绯红2/2+柄击2/1+离脱+回燃+一闪3/3。偷不到绯红就一点一点慢慢打吧，有红卡焦虑可以把气合换3/1。',
-    'decklink': 'https://sdrice.name/random/?ver=S10-2&lang=cn&isShow=1&girls=0+0,2+0&girlscard1=1,2,3,4,5+1,2&girlscard2=3,5+1'
+    'decklink': '//sdrice.name/random/?ver=S10-2&lang=cn&isShow=1&girls=0+0,2+0&girlscard1=1,2,3,4,5+1,2&girlscard2=3,5+1'
   },
   {
     'date': '2026-04-08',
     'author': 'Escapist',
     'name': '神秘络过',
     'desc': '变种络扇，靠回收王牌打-/2，启动比久远之花快一点，防御端也差一点。枪的豆子给的不错，换友情打链接-/3也行。',
-    'decklink': 'https://sdrice.name/random/?ver=S10-2&lang=cn&isShow=1&girls=9+0,25+0&girlscard1=1,2,4,5+0,2&girlscard2=1,3,6+0'
+    'decklink': '//sdrice.name/random/?ver=S10-2&lang=cn&isShow=1&girls=9+0,25+0&girlscard1=1,2,4,5+0,2&girlscard2=1,3,6+0'
   },
   {
     'date': '2026-04-08',
     'author': 'Escapist',
     'name': '神秘紫皮二人组',
     'desc': '整活向，加速和回收捏手里，敢质疑就1/2+1/3二连，但是对面全信也没什么办法。尽量往前，平时没事做就骗点钓鱼和1-2距-/1吧。',
-    'decklink': 'https://sdrice.name/random/?ver=S10-2&lang=cn&isShow=1&girls=9+0,21+0&girlscard1=1,2,4+0&girlscard2=0,1,2,4+0,3'
+    'decklink': '//sdrice.name/random/?ver=S10-2&lang=cn&isShow=1&girls=9+0,21+0&girlscard1=1,2,4+0&girlscard2=0,1,2,4+0,3'
   },
   {
     'date': '2026-04-09',
     'author': 'Ima',
     'name': '扇唐果实',
     'desc': '以打出「果实」为核心的卡组，争取在打出「果实」的下一个己方回合打出5/5。「果实」的发动需要上面落有5种，对于2纳的《付与》来说，只要放的都是种子，那么再下一个己方回合，这些《付与》的所有种子都会落到「果实」上，而「果实」因为本身有2纳，只要放的都是樱花结晶，就不会有种子的损失。「风舞台」和「晴舞台」是比较优质的2纳《付与》，平时不吃种子，启动轮可以拿来结果。判断能不能凑够果实需求也很简单，启动轮萌芽区至少有1种，然后打出「果实」，这里就是2种了，最后打出3张《付与》，并把5个种子分配到它们上，每张牌上的种子和樱花不超过2个。注意「凤仙花」有被破绽的风险，启动轮只能放1个种子且不能放樱花。平时的伤害靠「打掷」和「晴舞台」，「空闪」在启动轮和斩杀轮中是3/2。王牌「枝」的作用是补一个5/1的伤害，并且可能让启动轮手牌中《付与》卡需求减少1张，甚至你可以在启动轮的前一个对手回合用「枝」对应。「常世之月」是防止对手通过前进躲避「果实」导致回5的AP不足，可以换「无穷之风」、「千岁之鸟」甚至是「掌」。「无穷之风」是打掉对手的非《攻击》对应或拉距，「千岁之鸟」给想满装抗「果实」的对手入2血，「掌」则是PLAN B，对手有办法闪避「果实」的就老老实实beat了。根据想携带常世的王牌不同可以把扇换成异相。',
-    'decklink': 'https://sdrice.name/random/?ver=S10-2&lang=cn&isShow=1&girls=3+0,18+0&girlscard1=5,6+3&girlscard2=0,1,3,4,5+1,2'
+    'decklink': '//sdrice.name/random/?ver=S10-2&lang=cn&isShow=1&girls=3+0,18+0&girlscard1=5,6+3&girlscard2=0,1,3,4,5+1,2'
   },
   {
     'date': '2026-04-09',
     'author': 'Ima',
     'name': '唐算削气',
     'desc': '娱乐卡组。思路是攒一个种子，然后打出「乱拨」，把两个种子放「乱拨」上。由于种子优先回土壤，因此敌气就是实实在在的少2了。安岐那：谁说借了钱要还？通过让对手被迫盖牌集气来打出气耗较高的王牌，从而造成资源差。王牌「借贷」放个种子上去使「打掷」变为3/2，「因果律之根」给「乱拨」凑种子。一般在2价回收，因为3价和4价会导致对手没气，「乱拨」可能空发。剩下的牌就看情况带了，「穿竹」可以根据对手换成其他牌，「投机」可以换「直接金融」，「空闪」或「恐吓」补伤害，「凤仙花」可以在没有「乱拨」和「借贷」的时候给「打掷」凑3/2最好还是带上，带「苇草」可以把王牌的「根」换成「掌」。不玩娱乐的话就王牌正常带「枝」和「掌」，「乱拨」换「苇草」，「投机」换「直接金融」。',
-    'decklink': 'https://sdrice.name/random/?ver=S10-2&lang=cn&isShow=1&girls=18+0,22+0&girlscard1=0,1,3,5+0&girlscard2=0,3,5+2,3'
+    'decklink': '//sdrice.name/random/?ver=S10-2&lang=cn&isShow=1&girls=18+0,22+0&girlscard1=0,1,3,5+0&girlscard2=0,3,5+2,3'
   },
   {
     'date': '2026-04-11',
     'author': 'Ima',
     'name': '唐遗',
     'desc': '核心思路是在第3轮（或是某个洗牌轮前，取决于你想何时启动）先打出王牌「道化的觉悟」，之后打出「脱粒」获得下次使用其他女神的《付与》生长2的BUFF，回合结束时再使用「觉悟」，手牌控制在一张。由于「觉悟」被使用了两次，刚好有2个种子，可以全部放到「觉悟」上面，这样一来在第4轮和第5轮都是抽3张牌，快速过干牌库。「苇草」和「凤仙花」拿到就打，给「掌」凑种子。「神授」换「刃的本质」，在「觉悟」生效期间并用「掌」吸完种子后，算上「空闪」和「打掷」，一共是三张3/2（考虑到对手几乎不会相信第一张「刃的本质」，可以认为还有一刀2/1）。「掌」可以在第4轮开或者第5轮开。如果第4轮开「掌」，由于还有2个种子在「觉悟」上面，「掌」放3种的话就没有多余的种子放「凤仙花」或是「枝」了，这样第5轮的「凤仙花」是无法被BUFF到的（「枝」依然可以因为是在移除《付与》樱花结晶前打出5/2）。也可以放2种到「掌」上，1种给「凤仙花」，打一个3/2，不过这样第5轮「掌」的BUFF就没有了。如果是第5轮开「掌」，此时「觉悟」上面剩余1种，还有1种在土壤里，那么「掌」放3种，「凤仙花」放1种，是可以做到第5轮「凤仙花」3/2，第6轮「枝」保底2/2的，但多拖了一轮变数就增加了。卡组整体替换空间不大，「穿竹」勉强可以换成「欺瞒之雾」，注意要小心对手卡近距回不去4。',
-    'decklink': 'https://sdrice.name/random/?ver=S10-2&lang=cn&isShow=1&girls=18+0,21+1&girlscard1=0,1,2,3,4,5+1,3&girlscard2=5+0'
+    'decklink': '//sdrice.name/random/?ver=S10-2&lang=cn&isShow=1&girls=18+0,21+1&girlscard1=0,1,2,3,4,5+1,3&girlscard2=5+0'
   },
   {
     'date': '2026-04-12',
     'author': 'Ima',
     'name': '扇算countdown',
     'desc': '以「梳流」、「恐吓」、「晴舞台」、算盘回收入血的countdown卡组。最大的问题在于没有装伤，己方资本是不一定比对方多的，也就导致「恐吓」可能只是-/0。根据对手的不同，「雅击」可换「算法」或是都带，「脱兔」可换「凤舞」，「投机」或「恐吓」可换「直接金融」，「无穷之风」可以换「手算表」。',
-    'decklink': 'https://sdrice.name/random/?ver=S10-2&lang=cn&isShow=1&girls=3+0,22+0&girlscard1=0,1,2,6+0,2&girlscard2=0,1,3+3'
+    'decklink': '//sdrice.name/random/?ver=S10-2&lang=cn&isShow=1&girls=3+0,22+0&girlscard1=0,1,2,6+0,2&girlscard2=0,1,3+3'
   },
   {
     'date': '2026-04-17',
     'author': 'Random',
     'name': '忍金4t三敲',
     'desc': '对战思路：打中远程敲钢丝，打近战贴脸（尤其是喜欢站2能进1的）或是康多的敲影菱。1t最好情况调度生物活性+要敲的牌+除旋回起以外的废牌。先手聚气1，2装开生物活性；后手聚气2，1装开生物活性。2t二敲。3t打出炼成攻击虚鱼全盖回去，4t设置炼成攻击+3敲。后面看牌序情况是分身术开炼成攻击还是大山脉掀牌库打炼成，注意大山脉是可以盖回炼成攻击再设置打一次的。基本第二次洗牌的时候杀死比赛（或者被杀死lol）。构筑思路：注意面对1t能造虚的女神可以不带生物活性（如爪疾风步、剑荆棘、还有三聚气减灯毒等1t王牌），不带生物活性我们也能1t+4t+5t三敲。对手后退多或是担心3t打不出炼成攻击可以超反动换炉火。王牌面对对熊抗性低的卡组可以带熊介阴一手，我们4t是可以吃两焦躁打7盖熊的，对手看到我们铁砧+虚鱼往往会默认我们带大山脉放松警惕。面对高伤怕跳距的王牌如月影落也可以考虑带鸢影防止对手血吃先一步将我们斩杀。忍步看对手通常站位可以考虑换诱导下装防止5甲吃炼成攻击；面对灵活的对手，也可以不带分身术或生物活性，诱导忍步都带来调整洗牌设置轮次的站位。使用心得：卡组构成很灵活，忍步生物活性分身术皆可根据对手特性替换。2t洗牌运好的话几乎可以打所有卡组，比较怕毒，不是很怕书之类的盖牌效果，因为我们可以随时洗牌用设置打或是分身术打。个人比较喜欢敲钢丝，这样1t洗牌对手站2要吃影菱+忍步+炼成攻击一套，站34有被熊介秒杀的风险，站5需要额外浪费ap后退（我们3t基本能走到3）。影菱的存在还压制对手蓄爆。敲钢丝缺点是比较难打出分身术炼成攻击，对手可以卡2，比较依赖把忍步盖下去。顺便第一轮洗牌如果打不了影菱，还有个开生物活性压牌库的小技巧。',
-    'decklink': 'https://sdrice.name/random/?ver=S10-2&lang=cn&isShow=1&girls=4+0,7+1&girlscard1=0,1,3,5,6+2&girlscard2=1,3+0,3'
+    'decklink': '//sdrice.name/random/?ver=S10-2&lang=cn&isShow=1&girls=4+0,7+1&girlscard1=0,1,3,5,6+2&girlscard2=1,3+0,3'
   },
   {
     'date': '2026-04-17',
     'author': 'Ima',
     'name': '古算决死',
     'desc': '核心思路是通过王牌「借贷」让摇波的决死来得更早，使摇波的三张红卡以及「身法」都能发挥最大效果。「算盘珠」提供局内回收，「交易」拿回摇波的卡继续给予对手压力。由于频繁回收装造成装压，「投机」用于补充自流。王牌方面「正解」在外面一直挂着更有威慑力，因为在市价1的时候可以通过投资+回收的方式使对手的装不满，从而吃到「底力」。',
-    'decklink': 'https://sdrice.name/random/?ver=S10-2&lang=cn&isShow=1&girls=0+1,22+0&girlscard1=0,1,2,4+3&girlscard2=0,2,3+2,3'
+    'decklink': '//sdrice.name/random/?ver=S10-2&lang=cn&isShow=1&girls=0+1,22+0&girlscard1=0,1,2,4+3&girlscard2=0,2,3+2,3'
   },
   {
     'date': '2026-04-18',
     'author': 'Ima',
     'name': '衣未',
     'desc': '思路是尽可能把距离拖入0~1这样的距离与对手交战，所以箭头前进带的比较激进，「蠱惑」和「辜毒諂言」都带上了。在这种极近距离的情况下，「荼酷謾言」、「塗汙讒言」和「辜毒諂言」都有被反驳的理由，为「讕戾淋漓」提供入血可能。害怕命运“歆羨”被对手干涉走的，可以带「变转」或「虚幻意志」，但平时最好还是让“歆羨”保持在“待启的命运”里面，然后在己方回合通过规则共鸣+手动共鸣的方式打出并重新放回到“待启的命运”，这样不易使“歆羨”被转走从而节约卡位。',
-    'decklink': 'https://sdrice.name/random/?ver=S10-2&lang=cn&isShow=1&girls=21+0,25+2&girlscard1=0,2,5,6+0&girlscard2=1,2,3+0,2'
+    'decklink': '//sdrice.name/random/?ver=S10-2&lang=cn&isShow=1&girls=21+0,25+2&girlscard1=0,2,5,6+0&girlscard2=1,2,3+0,2'
   },
   {
     'date': '2026-04-18',
     'author': 'kiraaaaa',
     'name': '簪雷二擇',
     'desc': '前期使用吼叫與藏針假裝是beatdown騙血，之後拉近距離用獸爪續騙並用潛近/復返其身/傘飛轉防禦，對手入裝就拒/引拉近明滅如燈扎針之後揮舞/突刺斬殺，對手入血就卡0-2集氣吼叫雷翻倍打雷斬殺，對手逃離就揮舞/突刺破裝使其無法後退，面對強力離脫的卡牌將揮舞/突刺替換成結緣，獸爪替換成疾風步就能確保貼2距，此牌組不適合對戰有王牌反擊能力的牌組如久遠之花/冰雪細音的終焉(會剩下打雷的選擇而被看穿無法騙血)。',
-    'decklink': 'https://sdrice.name/random/?ver=S10-2&lang=cn&isShow=1&girls=5+0,11+0&girlscard1=0,2,3,4,5+1,3&girlscard2=0,5+1'
+    'decklink': '//sdrice.name/random/?ver=S10-2&lang=cn&isShow=1&girls=5+0,11+0&girlscard1=0,2,3,4,5+1,3&girlscard2=0,5+1'
   },
   {
     'date': '2026-04-25',
     'author': 'ima',
     'name': '铳琵二重奏速攻',
     'desc': '思路是在早期对手无法对己方造成命伤的时间窗口开启「二重奏」，在第1t盖掉2牌（后手盖1和花1集中）用于集气并打出「二重奏」，将铳的三张通常红和「真红凶弹」变为2/2、3/3、3/3和3/2，至少入对手5命，最后用「绯红零时」斩杀。如果是先手，因为盖掉了两张牌，可以在第2t打「完全爆破」（但是这样会因为打掉对手3装，导致对手腾出装空位去前进从而让己方失去优势距离，可以换成其他卡，互有取舍）。核心牌其实就是铳的三红+「二重奏」，剩下四张带什么需要根据场况判断。上面的「完全爆破」就是一个例子，完全可以换成「薙刀斩」或别的什么，但这就可能先手抽三红鬼抽导致2t没事干。「绯红零时」也不是必带的，换成「真红领域」也可以。最后还是要说一句，这种极端的换血卡组是很不稳定的，既吃牌序，也怕被康，还可能没距离打红。如果对手是那种容易康攻击的女神，带个「无音壁」苟着从长计议也不是不行，思路不要被换血束缚住。',
-    'decklink': 'https://sdrice.name/random/?ver=S10-2&lang=cn&isShow=1&girls=1+1,2+0&girlscard1=3,4+1&girlscard2=0,1,2,3,4+0,1'
+    'decklink': '//sdrice.name/random/?ver=S10-2&lang=cn&isShow=1&girls=1+1,2+0&girlscard1=3,4+1&girlscard2=0,1,2,3,4+0,1'
   },
   {
     'date': '2026-05-01',
     'author': '未知',
     'name': '古刀友跳距46',
     'desc': '思路：古刀凑齿轮还可以，友情回收4/6叠5甲很爽，跳2也几乎稳中，我说回响很强多带，还有机器人另个形态慢启动很合理吧。对战：前期聚气没甲2气拉5甲然后血少身法又可以拉2气后期回收好开，高甲低血刀血吃叠气，凑到齿轮时优先开友情王牌早攒花，后面靠激光攒，激光打甲防止甲吃，月影攒够了尽快打，然后回收回响拉两张，距离不够身法来凑变3-5，尽可能4距防止被小跳跳走，有距离回收双刀，两点加哪看情况决死3/3+4/4激光花花2/2双倍+4/4，压力大拉5甲打一刀4/4，其他防御牌，还算能放的住，有条件可以8纳反射，然后和对应等于删2牌，洗牌好开下一轮。爽点：可能是刀刀暴击，另一套激光C位，去回收身法月影换复制和电磁炮气焰和靠气焰决死激光能吃三次加伤，对应回手气焰下轮复制的激光够多能一回合3刀5/5（吓哭了）加友情的花还能多很多伤害',
-    'decklink': 'https://sdrice.name/random/?ver=S10-2&lang=cn&isShow=1&girls=0+1,9+2&girlscard1=0,4,5+0,2&girlscard2=0,2,4,6+3'
+    'decklink': '//sdrice.name/random/?ver=S10-2&lang=cn&isShow=1&girls=0+1,9+2&girlscard1=0,4,5+0,2&girlscard2=0,2,4,6+3'
   },
   {
     'date': '2026-05-12',
     'author': '雨师',
     'name': '神秘新使の神秘新爪——风轴',
     'desc': '对于最近的络爪旗有感，新爪应该和旗爪是同一定位，新黑盒的频繁使用让爪可以快速刷槽。大狗叫可以摆烂打赚ap，需要注意的是一巡为了完成新型的一变并没有时间去打，抽到盖掉就行。transform按需选择，狗叫的基本动作可以触发asura的3/2，可以考虑qc拉asura打32下回合狗叫32。七风后新黑盒可以免费开了回油，因此ts可以进构筑，大大提高了防御力（但依旧不推荐一巡打，一变优先级非常高）。风魔缠回可以再起新黑盒快速变身，需要圆环时也可以再起圆环提升防御，如果对面狗胆包天的话也可以12连打入血。圆环不能起到良好作用时也可以选择风神爪补输出快速斩杀。适用于需要ts防御以及天雷轴不能起到很好效果的情况。',
-    'decklink': 'https://sdrice.name/random/?ver=S10-2&lang=cn&isShow=1&girls=10+1,11+0&girlscard1=3,4,5,6+0&girlscard2=1,2,5+2,3'
+    'decklink': '//sdrice.name/random/?ver=S10-2&lang=cn&isShow=1&girls=10+1,11+0&girlscard1=3,4,5,6+0&girlscard2=1,2,5+2,3'
   },
   {
     'date': '2026-05-12',
     'author': '雨师',
     'name': '神秘新使の神秘新爪——雷轴',
     'desc': '雷轴为风轴下篇，与上文承接，适用于面对天雷抗性不高且火力不够暴力的对手。经典新型主轴公式让新爪的刷槽速度更上一层楼，能在二巡一半时快速将雷槽裸刷到8-9，狗叫翻倍后通过ro，we，bs带来的立回优势方便自己活着开出天雷。注意一巡依然不开狗叫，道中需要新型来想办法，请灵活调整卡位（风雷之智换倒车/兽爪？）',
-    'decklink': 'https://sdrice.name/random/?ver=S10-2&lang=cn&isShow=1&girls=10+1,11+0&girlscard1=0,1,3,4,5+0&girlscard2=4,5+1,3'
+    'decklink': '//sdrice.name/random/?ver=S10-2&lang=cn&isShow=1&girls=10+1,11+0&girlscard1=0,1,3,4,5+0&girlscard2=4,5+1,3'
+  },
+  {
+    'date': '2026-05-22',
+    'author': 'kogoto',
+    'name': '旗弓',
+    'desc': '樱吹雪，樱翅，空翼都是灵活组件，有需求可以换成护符，狙蹴等卡。理想情况下甲乙弓流合计4 未果3+1 洗牌2 ，一边开花一边做未果照准，樱吹雪/突击/奥华什么的能入命就入，吃康缺伤害就依靠旗弓的高防御打第三巡补。',
+    'decklink': '//sdrice.name/random/?ver=S10-2&lang=cn&isShow=1&girls=13+0,24+0&girlscard1=0,1,3+2&girlscard2=0,2,3,6+0,2'
+  },
+  {
+    'date': '2026-05-22',
+    'author': 'kogoto',
+    'name': '镰弓',
+    'desc': '我们一般是打3巡，洗牌3甲乙弓流合计4圆月2观空1。依靠影壁，风孔，影，虚伪，观空的防御拖。构筑仅供参考，实战灵活变通',
+    'decklink': '//sdrice.name/random/?ver=S10-2&lang=cn&isShow=1&girls=12+0,24+0&girlscard1=0,1,5+1&girlscard2=0,2,3,6+2,3'
+  },
+  {
+    'date': '2026-06-08',
+    'author': '横浜MYGO！',
+    'name': '新时代铳镰',
+    'desc': '开着神奇小鹿冰被的时候随便吃什么攻击都能绝唱，实质绝对防御',
+    'decklink': '//sdrice.name/random/?ver=res1&lang=jp&isShow=1&girls=1+2,14+1&girlscard1=0,1,2,6+0,2&girlscard2=0,1,5+0'
+  },
+  {
+    'date': '2026-06-08',
+    'author': 'Reinhard',
+    'name': '忍毒',
+    'desc': '版本更新替换了幽默斩首，暗器成为非常优秀的6装对应以及全力装压下毒手段，有效避免了毒针打不中的难题。然后再演更新的忍的2刀距离更加友好且和飞苦无更好适配。分身可以拿去盖毒雾打11叠1赚ap差。',
+    'decklink': '//sdrice.name/random/?ver=res1&lang=cn&isShow=1&girls=4+0,8+0&girlscard1=0,1,2+3&girlscard2=0,2,3,4+0,2'
+  },
+  {
+    'date': '2026-06-08',
+    'author': 'Reinhard',
+    'name': '毒爪',
+    'desc': '新的缠毒给了1/2人很好的斩杀手段，爪比较适配这一套思路，基本就是前期站2用兽爪压血，无脑跑风轴，斩杀轮缠毒开启后风轴2刀22+霞毒一刀22配合4手（风雷爪此时也是22）',
+    'decklink': '//sdrice.name/random/?ver=res1&lang=cn&isShow=1&girls=8+0,11+0&girlscard1=0,2,3,4,5+1,2&girlscard2=0,1+2'
   }
 ]
