@@ -2255,13 +2255,16 @@ export default {
 
     if (getUrlQuery('ver') !== null && getUrlQuery('ver').indexOf('ch') > -1) {
       this.isNaChVer = true
+      this.isReVer = false
       this.resetDefaultData()
     }
     if (
       getUrlQuery('ver') !== null &&
-      !(getUrlQuery('ver').indexOf('ch') > -1)
+      (getUrlQuery('ver').indexOf('ch') < 0) &&
+      (getUrlQuery('ver').indexOf('re') < 0)
     ) {
-      this.isNaChVer = false
+      this.isNaVer = true
+      this.isReVer = false
       this.resetDefaultData()
     }
 
@@ -2269,6 +2272,7 @@ export default {
     //?isOlder=1&isShow=1&girls=0+0,11+0&girlscard1=1,2,3+0,1,2&girlscard2=0,1,2,3+
     if (+getUrlQuery('isOlder') === 1) {
       this.isOldVer = true
+      this.isReVer = false
       this.resetDefaultData()
     }
 
@@ -2443,8 +2447,8 @@ export default {
         item.groupCardData = groupCardData
         item.isSelect = false
         item.id = index
-        if (ver.toUpperCase().indexOf('RE') > -1) {
-          item.ver = `再演'${ver.toUpperCase().replace('RE', '')}`
+        if (ver.toUpperCase().indexOf('RE') > -1 && ver.toUpperCase().indexOf('PRE') < 0) {
+          item.ver = `再演${ver.toUpperCase().replace('RE', '')}`
         } else {
           item.ver =
             ver.toUpperCase().indexOf('CH') > -1
@@ -2460,7 +2464,7 @@ export default {
           item.name.indexOf('冠軍') > -1 ||
           item.name.indexOf('冠军') > -1
         item.isSOldVer = !(
-          ver.toUpperCase().indexOf(seasonVersion['jp'].vername.toUpperCase()) >
+          ver.toUpperCase().indexOf(seasonVersion['rejp'].vername.toUpperCase().replace('RE', '')) >
           -1
         )
 
@@ -2888,8 +2892,10 @@ export default {
           extra: [],
           changeExtra: []
         }
-      // const orginData = link.indexOf('ch') > -1 ? this.naChData : this.defaultData
-      const orginData = this.naData // 新幕卡组
+      let orginData = this.naData // 新幕卡组
+      if( link.indexOf('re') > -1) {
+        orginData = this.defaultData
+      }
       for (let i = 0; i < _girls.length; i++) {
         const _girlsSub = _girls[i].split('+')
         groupCardData.push(orginData[_girlsSub[0]].list[_girlsSub[1]])
