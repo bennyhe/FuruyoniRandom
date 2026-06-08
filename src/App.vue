@@ -2449,8 +2449,13 @@ export default {
         item.groupCardData = groupCardData
         item.isSelect = false
         item.id = index
+        item.isSOldVer = true
         if (ver.toUpperCase().indexOf('RE') > -1 && ver.toUpperCase().indexOf('PRE') < 0) {
           item.ver = `再演${ver.toUpperCase().replace('RE', '')}`
+          item.isSOldVer = !(
+            ver.toUpperCase().indexOf(seasonVersion['rejp'].verlink.toUpperCase().replace('RE', '')) >
+          -1
+          )
         } else {
           item.ver =
             ver.toUpperCase().indexOf('CH') > -1
@@ -2465,11 +2470,7 @@ export default {
           item.name.indexOf('上位') > -1 ||
           item.name.indexOf('冠軍') > -1 ||
           item.name.indexOf('冠军') > -1
-        item.isSOldVer = !(
-          ver.toUpperCase().indexOf(seasonVersion['rejp'].vername.toUpperCase().replace('RE', '')) >
-          -1
-        )
-
+        
         if (!seasonTags.includes(item.shortVer)) {
           seasonTags.push(item.shortVer)
         }
