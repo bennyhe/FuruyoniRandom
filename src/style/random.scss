@@ -739,7 +739,7 @@
       min-width: 150px;
       max-width: 50%;
       max-height: 400px;
-      opacity: .5;
+      opacity: .3;
       vertical-align: bottom;
 
       &:nth-child(1) {
@@ -2265,11 +2265,11 @@
 }
 
 // ipad air4 横屏
-@media only screen and (min-width: 1180px) and (orientation: landscape) {
-  .random-item {
-    width: $ipadAvatarWidth - 0.5%;
-  }
-}
+// @media only screen and (min-width: 1180px) and (orientation: landscape) {
+//   .random-item {
+//     width: $ipadAvatarWidth - 0.5%;
+//   }
+// }
 
 @media screen and (max-width: 1280px) {
   .panel-item--faq {
