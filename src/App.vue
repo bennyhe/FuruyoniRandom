@@ -2253,19 +2253,21 @@ export default {
     // this.groupCardData[1].special[3].selected = true;
     // this.isCompleteGroup = true;
 
-    if (getUrlQuery('ver') !== null && getUrlQuery('ver').indexOf('ch') > -1) {
-      this.isNaChVer = true
-      this.isReVer = false
-      this.resetDefaultData()
-    }
-    if (
-      getUrlQuery('ver') !== null &&
-      (getUrlQuery('ver').indexOf('ch') < 0) &&
-      (getUrlQuery('ver').indexOf('re') < 0)
-    ) {
-      this.isNaVer = true
-      this.isReVer = false
-      this.resetDefaultData()
+    if (getUrlQuery('ver') !== null && getUrlQuery('ver') !== '') {
+      console.log('...share link ver', getUrlQuery('ver'))
+      if (getUrlQuery('ver').indexOf('ch') > -1) {
+        this.isNaChVer = true
+        this.isReVer = false
+        this.resetDefaultData()
+      }
+      if (
+        (getUrlQuery('ver').indexOf('ch') < 0) &&
+        (getUrlQuery('ver').indexOf('re') < 0)
+      ) {
+        this.isNaVer = true
+        this.isReVer = false
+        this.resetDefaultData()
+      }
     }
 
     //旧幕卡组分享链接
@@ -2893,7 +2895,7 @@ export default {
           changeExtra: []
         }
       let orginData = this.naData // 新幕卡组
-      if( link.indexOf('re') > -1) {
+      if( link.indexOf('re') > -1 && link.indexOf('pre') < 0) {
         orginData = this.defaultData
       }
       for (let i = 0; i < _girls.length; i++) {
