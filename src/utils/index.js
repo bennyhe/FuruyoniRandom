@@ -228,5 +228,13 @@ export function mergeMissingGirls(defaultData, naData) {
     }
   })
 
+  // 重置下序号
+  for (let i = 0; i < result.length; i++) {
+    for (let k = 0; k < result[i].list.length; k++) {
+      result[i].list[k].index = i
+      result[i].list[k].subIndex = k
+    }
+  }
+
   return result
 }

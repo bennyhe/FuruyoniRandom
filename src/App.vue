@@ -3551,7 +3551,7 @@ export default {
         this.randomUseData.splice(this.lockNameIndex, 1)
         count--
       }
-      for (let i = 0; i < count; i++) {
+      for (let i = 0; i < count; i++) { 
         this.getRandomGirlItem()
       }
       if (this.isLockName && temp) {
@@ -3573,9 +3573,8 @@ export default {
       }
 
       const _random = parseInt(Math.random() * newRandomList.length, 10)
-      // let _random = this.rand(newRandomList.length) - 1;
       const _data = newRandomList[_random]
-      // console.log(_random, _data.name)
+      // console.log(newRandomList, _random, _data.name)
       for (let i = 0; i < this.randomUseData.length; i++) {
         const index = this.randomUseData[i].list[0].index
         if (index === _data.index) {
