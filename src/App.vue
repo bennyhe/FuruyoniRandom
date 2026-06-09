@@ -400,14 +400,6 @@
                     </label>
                   </div>
                   <div class="btn-wrap">
-                    <!-- <button class="btn btn-xs" @click="selectedInArea('verBasic')">{{lang[curlang].verBasic || lang[1].verBasic}}</button>
-                    <button class="btn btn-xs" @click="selectedInArea('verPro')">{{lang[curlang].verPro || lang[1].verPro}}</button>
-                    <button class="btn btn-xs" @click="selectedInArea('ver1')">{{lang[curlang].ver1 || lang[1].ver1}}</button>
-                    <button class="btn btn-xs" @click="selectedInArea('ver2')">{{lang[curlang].ver2 || lang[1].ver2}}</button>
-                    <button class="btn btn-xs" @click="selectedInArea('ver3')">{{lang[curlang].ver3 || lang[1].ver3}}</button>
-                    <button class="btn btn-xs" @click="selectedInArea('ver4')">{{lang[curlang].ver4 || lang[1].ver4}}</button>
-                    <button class="btn btn-xs" @click="selectedInArea('ver5')">{{lang[curlang].ver5 || lang[1].ver5}}</button>
-                    <button class="btn btn-xs" @click="selectedInArea('ver6')">{{lang[curlang].ver6 || lang[1].ver6}}</button> -->
                     <button
                       class="btn btn-xs"
                       @click="selectedInArea('a')"
@@ -415,7 +407,7 @@
                     >
                       ALL A
                     </button>
-                    <button class="btn btn-xs" @click="selectedInArea('ss2')">
+                    <button class="btn btn-xs" v-if="isReVer" @click="selectedInArea('ss2')">
                       起源
                     </button>
                     <button class="btn btn-xs" @click="resetArea()">
@@ -1061,8 +1053,7 @@
                       </template>
                       <template
                         v-else-if="
-                          !isOldVer &&
-                          !isNaChVer &&
+                          isReVer &&
                           qiyuanGirls &&
                           qiyuanGirls.default.length > 0
                         "
@@ -1278,7 +1269,7 @@
                   </template>
                   <template
                     v-else-if="
-                      !isNaChVer &&
+                      isReVer &&
                       qiyuanGirls &&
                       qiyuanGirls.default.length > 0
                     "
@@ -1805,19 +1796,19 @@ defaultData = formatDefaultCardData(defaultData)
 //格式化旧幕数据
 const oldData = formatDefaultCardData(sakuraDataOldVer)
 
-// if ( // 起源标注
-//   get('qiyuanGirls.default', window, 1) &&
-//   window.qiyuanGirls.setDefaultNeedChangeCn
-// ) {
-//   for (let i = 0; i < defaultData.length; i++) {
-//     for (let si = 0; si < window.qiyuanGirls.default.length; si++) {
-//       const item = window.qiyuanGirls.default[si]
-//       if (item === defaultData[i].namejp) {
-//         window.qiyuanGirls.default[si] = defaultData[i].list[0].name
-//       }
-//     }
-//   }
-// }
+if ( // 起源标注
+  get('qiyuanGirls.default', window, 1) &&
+  window.qiyuanGirls.setDefaultNeedChangeCn
+) {
+  for (let i = 0; i < defaultData.length; i++) {
+    for (let si = 0; si < window.qiyuanGirls.default.length; si++) {
+      const item = window.qiyuanGirls.default[si]
+      if (item === defaultData[i].namejp) {
+        window.qiyuanGirls.default[si] = defaultData[i].list[0].name
+      }
+    }
+  }
+}
 
 // 旧幕的牌数
 const oldDataSum = getCardSum(oldData)
@@ -2464,6 +2455,7 @@ export default {
         }
         item.shortVer = item.ver.replace('官方中文', '')
         item.isSeason =
+          !item.isSOldVer &&
           qiyuanGirls.default.includes(item.groupCardData[0].name) &&
           qiyuanGirls.default.includes(item.groupCardData[1].name)
         item.isTop1 =
@@ -2530,6 +2522,7 @@ export default {
           this.statisticsDeckCards[0].all.push(carditem)
           this.statisticsDeckCards[0].normal.push(carditem)
 
+          // console.log(item.shortVer, this.statisticsDeckCards[1].ss)
           if (item.shortVer === this.statisticsDeckCards[1].ss) {
             this.statisticsDeckCards[1].all.push(carditem)
             this.statisticsDeckCards[1].normal.push(carditem)
@@ -4228,24 +4221,12 @@ export default {
       if (type === 'a') {
         this.changePanelData.forEach((aItem, aKey) => {
           aItem.list.forEach((item, key) => {
-            if (key === 0) {
+            if (key === 0 || aItem.namejp === 'イヌル') {
               item.isInArea = false
             } else {
               item.isInArea = true
             }
           })
-        })
-      } else if (type === 'a1') {
-        this.changePanelData.forEach(aItem => {
-          if (aItem.list[0] && aItem.list[0].name) {
-            aItem.list[0].isInArea = false
-          }
-          if (aItem.list[1] && aItem.list[1].name) {
-            aItem.list[1].isInArea = true
-          }
-          if (aItem.list[2] && aItem.list[2].name) {
-            aItem.list[2].isInArea = false
-          }
         })
       } else if (type === 'ss2') {
         if (this.isNaChVer) {

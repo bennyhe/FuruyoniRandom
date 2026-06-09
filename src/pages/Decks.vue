@@ -152,7 +152,7 @@
                 )
               : `${
                   statisticesItem.ss !== "all" ? statisticesItem.ss : ""
-                } Some of the most used cards`
+                } Top 5 most used cards`
           }}
         </h3>
         <p class="allcards__type">NORMAL</p>

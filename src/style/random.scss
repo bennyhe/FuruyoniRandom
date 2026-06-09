@@ -39,9 +39,12 @@
 .main--cn,
 .main--jp {
 
-  .panel-item--1 .random-item__name,
-  .panel-item--deck .random-item__name {
+  .panel-item--1 .random-item__name{
     font-size: 20px;
+  }
+
+  .panel-item--deck .random-item__name {
+    font-size: 16px;
   }
 
   .panel-item--allcards .allcards__title .name {
@@ -1679,7 +1682,7 @@
 
   &__title {
     font-weight: 700;
-    font-size: 16px;
+    font-size: 15px;
     cursor: pointer;
   }
 

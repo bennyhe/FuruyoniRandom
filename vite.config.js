@@ -61,6 +61,10 @@ export default defineConfig({
             return 'roll-other-data'
           } else if (id.includes('sakura-old')) {
             return 'sakura-carddata-old'
+          } else if (id.includes('js/sub/sakura/decks/')) {
+            return 'sakura-decks'
+          } else if (id.includes('js/sub/sakura/carddata/re')) {
+            return 'sakura-carddata-re'
           } else if (id.includes('js/sub/sakura/carddata/')) {
             return 'sakura-carddata-na'
           }
