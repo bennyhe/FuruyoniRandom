@@ -5,7 +5,7 @@
       <span class="name">
         <i
           class="i-end"
-          v-if="item.textjp && item.textjp.substr(0, 2) === '終端'"
+          v-if="isShowStopIcon(item)"
         ></i>
         <template v-if="$parent.getCardKeyValInLang(item)">{{
           $parent.getCardKeyValInLang(item)
@@ -279,14 +279,17 @@
 <script>
 import { defineComponent } from 'vue'
 import configLang from '../../config/lang.js'
+import { isShowStopIcon } from '../../utils/cards.js'
 
 export default defineComponent({
   name: 'cardDetail',
   props: ['item'],
   setup(props, context) {
     return {
-      lang: configLang
+      lang: configLang,
+      isShowStopIcon
     }
   }
 })
 </script>
+
