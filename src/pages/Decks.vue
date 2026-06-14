@@ -421,41 +421,16 @@
               />
             </div>
             <div class="card-wrap">
-              <div class="card-list pcsee">
-                <div
-                  class="card-list__item normal"
-                  :class="getCardClass(cardItem)"
-                  v-for="(cardItem, cardIndex) in item.deck.normal"
-                  @click="getCardDetailInDeck(cardItem)"
-                  v-bind:key="cardIndex"
-                >
-                  <CardItem :item="cardItem"></CardItem>
-                </div>
-              </div>
-              <div class="card-list msee">
-                <template v-for="(cardItem, cardIndex) in item.deck.normal">
+              <div class="card-list">
+                  <template v-for="(cardItem, cardIndex) in item.deck.normal" v-bind:key="cardIndex">
                   <div
                     class="card-list__item normal"
                     :class="getCardClass(cardItem)"
-                    v-bind:key="cardIndex"
                     @click="getCardDetailInDeck(cardItem)"
-                    v-if="cardIndex < 3"
                   >
                     <CardItem :item="cardItem"></CardItem>
                   </div>
-                </template>
-              </div>
-              <div class="card-list msee">
-                <template v-for="(cardItem, cardIndex) in item.deck.normal">
-                  <div
-                    class="card-list__item normal"
-                    :class="getCardClass(cardItem)"
-                    v-bind:key="cardIndex"
-                    @click="getCardDetailInDeck(cardItem)"
-                    v-if="cardIndex >= 3"
-                  >
-                    <CardItem :item="cardItem"></CardItem>
-                  </div>
+                  <div v-if="cardIndex === 3" class="card-list msee"></div>
                 </template>
               </div>
               <div class="card-list">
