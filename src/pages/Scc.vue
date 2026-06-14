@@ -133,9 +133,7 @@ export default defineComponent({
     'toChzh',
     'getCardKeyValInLang',
     'getCardClass',
-    'getTypeName',
-    'getCanBeStrong',
-    'getNewRange'
+    'getTypeName'
   ],
   data() {
     return {

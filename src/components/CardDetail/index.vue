@@ -3,10 +3,7 @@
   <div class="card-detail" :class="$parent.getCardClass(item)">
     <div class="hd">
       <span class="name">
-        <i
-          class="i-end"
-          v-if="isShowStopIcon(item)"
-        ></i>
+        <i class="i-end" v-if="isShowStopIcon(item)"></i>
         <template v-if="$parent.getCardKeyValInLang(item)">{{
           $parent.getCardKeyValInLang(item)
         }}</template>
@@ -41,13 +38,13 @@
           {{ lang[$parent.curlang].cardRange
           }}<span class="r">{{
             $parent.getCanBeStrong(item) && item.beStrong > 0
-              ? $parent.getNewRange(item)
+              ? getNewRange(item)
               : item.range
           }}</span
           >， {{ lang[$parent.curlang].typeAttack
           }}<span class="a">{{
             $parent.getCanBeStrong(item) && item.beStrong > 0
-              ? $parent.getNewDamage(item)
+              ? getNewDamage(item)
               : item.damage
           }}</span>
           <span
@@ -67,13 +64,13 @@
           {{ lang[$parent.curlang].cardRange
           }}<span class="r">{{
             $parent.getCanBeStrong(item) && item.beStrong > 0
-              ? $parent.getNewRange(item, item.rangeOpened)
+              ? getNewRange(item, item.rangeOpened)
               : item.rangeOpened
           }}</span
           >， {{ lang[$parent.curlang].typeAttack
           }}<span class="a">{{
             $parent.getCanBeStrong(item) && item.beStrong > 0
-              ? $parent.getNewDamage(item, item.damageOpened)
+              ? getNewDamage(item, item.damageOpened)
               : item.damageOpened
           }}</span>
           <span
@@ -97,7 +94,7 @@
           item.baseType === "normal" &&
           item.types.includes("attack") &&
           item.beStrong > 0
-            ? $parent.getNewRange(item)
+            ? getNewRange(item)
             : item.range
         }}</span
         >， {{ lang[$parent.curlang].typeAttack
@@ -107,7 +104,7 @@
             item.baseType === "normal" &&
             item.types.includes("attack") &&
             item.beStrong > 0
-              ? $parent.getNewDamage(item)
+              ? getNewDamage(item)
               : item.damage
           }}<em class="laceration" v-if="item.isLacerationDamage">}</em></span
         >
@@ -261,8 +258,12 @@
       class="select card-detail__strong"
       v-if="$parent.getCanBeStrong(item)"
     >
-      {{ item.beStrong === 0 ? "無錬成" : "錬" + item.beStrong }}
-      <select v-model="item.beStrong" @change="$parent.onChangeBeStrong">
+      {{
+        item.beStrong === 0 || item.beStrong === undefined
+          ? "無錬成"
+          : "錬" + item.beStrong
+      }}
+      <select v-model="item.beStrong">
         <option value="0">無錬成</option>
         <option
           :value="index2 + 1"
@@ -285,9 +286,67 @@ export default defineComponent({
   name: 'cardDetail',
   props: ['item'],
   setup(props, context) {
+    const getNewRange = (cardItem, range) => {
+      // console.log(cardItem.range);
+      const _rangeDefault = range !== undefined ? range : cardItem.range
+      //带-距离
+      if (_rangeDefault.indexOf('-') > -1) {
+        const _range = _rangeDefault.split('-')
+        _range[1] = parseInt(_range[1]) + cardItem.beStrong
+
+        // _range[1] = _range[1] > 10 ? 10 : _range[1];
+
+        // console.log(_range.join('-'));
+        return _range.join('-')
+      }
+      //带,距离
+      else if (_rangeDefault.indexOf(',') > -1) {
+        return _rangeDefault
+      }
+      //单数字距离
+      else if (!isNaN(+_rangeDefault)) {
+        const _range = [parseInt(_rangeDefault), parseInt(_rangeDefault)]
+        _range[1] = parseInt(_range[1]) + cardItem.beStrong
+        // _range[1] = _range[1] > 10 ? 10 : _range[1];
+        return _range.join('-')
+      }
+
+      return _rangeDefault
+    }
+    const getNewDamage = (cardItem, damage) => {
+      const _damageDefault = damage !== undefined ? damage : cardItem.damage
+      // console.log(cardItem.damage);
+      if (_damageDefault.indexOf('/') > -1) {
+        const _damage = _damageDefault.split('/')
+        // console.log(!isNaN(+ _damage[0]), !isNaN(+ _damage[0]), !isNaN(+ _damage[1]));
+        if (!isNaN(+_damage[0])) { // 打盾
+          let afterStrong = cardItem.beStrong
+          if(cardItem.id.indexOf('re-') > -1 && cardItem.beStrong > 1) { // 再演
+          // 0以上……+1/+0となり、距離拡大（遠1）を得る。
+          // 1以上……+0/+1となり、距離拡大（遠1）を得る。
+          // 2以上……+1/+1となり、距離拡大（遠1）を得る、打ち消されない。
+            afterStrong--
+          }
+          // 新幕
+          // 大於等於0……+1/+0和距離擴大（遠1）
+          // 大於等於1……+1/+1和距離擴大（遠1）
+          // 大於等於2……+1/+1、距離擴大（遠1）和不可被打消。
+          _damage[0] = parseInt(_damage[0]) + afterStrong
+        }
+
+        if (!isNaN(+_damage[1])) { // 打命
+          _damage[1] = parseInt(_damage[1]) + (cardItem.beStrong - 1)
+        }
+        return _damage.join('/')
+      }
+
+      return _damageDefault
+    }
     return {
       lang: configLang,
-      isShowStopIcon
+      isShowStopIcon,
+      getNewDamage,
+      getNewRange
     }
   }
 })

@@ -1666,8 +1666,6 @@
           :getCardKeyValInLang="getCardKeyValInLang"
           :getCardClass="getCardClass"
           :getTypeName="getTypeName"
-          :getCanBeStrong="getCanBeStrong"
-          :getNewRange="getNewRange"
         />
       </div>
       <!-- E 赛季更新卡 -->
@@ -2684,7 +2682,6 @@ export default {
       })
       this.resDecks[index].isSelect = !tempSelect
       this.cardDetailInDeck = {}
-      this.$forceUpdate()
     },
     selectedDeckShowInGroup(index) {
       const tempSelect = this.beGroupDeck[index].isSelect
@@ -2693,7 +2690,6 @@ export default {
       })
       this.beGroupDeck[index].isSelect = !tempSelect
       this.cardDetailInDeck = {}
-      this.$forceUpdate()
     },
     findDeck(data, noSetData, isAnd) {
       let result = [],
@@ -2764,7 +2760,6 @@ export default {
       girlItem.isSelect = !girlItem.isSelect
       this.findDeck()
       this.panelTab[4].childTabIndex = 0
-      this.$forceUpdate()
     },
     randomGetDeck(count) {
       const randomList = []
@@ -2838,7 +2833,6 @@ export default {
         this.findDeck()
       }
       this.panelTab[4].childTabIndex = 0
-      this.$forceUpdate()
     },
     handleClickCancelDeckAvatar() {
       this.deckAvatarList.forEach(item => {
@@ -3748,7 +3742,6 @@ export default {
       }
       // console.log(this.beGroupDeck)
 
-      this.$forceUpdate()
       // console.log(this.groupCardData);
     },
     /**
@@ -4124,9 +4117,6 @@ export default {
         return item[val + 'jp']
       }
     },
-    onChangeBeStrong() {
-      this.$forceUpdate()
-    },
     getCanBeStrong(item) {
       if (this.isGoToBeGroup) {
         let showStrong = false
@@ -4148,52 +4138,6 @@ export default {
         )
       }
       return false
-    },
-    getNewRange(cardItem, range) {
-      // console.log(cardItem.range);
-      const _rangeDefault = range !== undefined ? range : cardItem.range
-      //带-距离
-      if (_rangeDefault.indexOf('-') > -1) {
-        const _range = _rangeDefault.split('-')
-        _range[1] = parseInt(_range[1]) + cardItem.beStrong
-
-        // _range[1] = _range[1] > 10 ? 10 : _range[1];
-
-        // console.log(_range.join('-'));
-        return _range.join('-')
-      }
-      //带,距离
-      else if (_rangeDefault.indexOf(',') > -1) {
-        return _rangeDefault
-      }
-      //单数字距离
-      else if (!isNaN(+_rangeDefault)) {
-        const _range = [parseInt(_rangeDefault), parseInt(_rangeDefault)]
-        _range[1] = parseInt(_range[1]) + cardItem.beStrong
-        // _range[1] = _range[1] > 10 ? 10 : _range[1];
-        return _range.join('-')
-      }
-
-      return _rangeDefault
-    },
-    getNewDamage(cardItem, damage) {
-      const _damageDefault = damage !== undefined ? damage : cardItem.damage
-      // console.log(cardItem.damage);
-      if (_damageDefault.indexOf('/') > -1) {
-        const _damage = _damageDefault.split('/')
-        // console.log(!isNaN(+ _damage[0]), !isNaN(+ _damage[0]), !isNaN(+ _damage[1]));
-
-        if (!isNaN(+_damage[0])) {
-          _damage[0] = parseInt(_damage[0]) + cardItem.beStrong
-        }
-
-        if (!isNaN(+_damage[1])) {
-          _damage[1] = parseInt(_damage[1]) + (cardItem.beStrong - 1)
-        }
-        return _damage.join('/')
-      }
-
-      return _damageDefault
     },
     handleClickChangeGirlBtn() {
       this.isShowChangeGirl = !this.isShowChangeGirl
@@ -4250,7 +4194,6 @@ export default {
           })
         }
       }
-      this.$forceUpdate()
       this.setChangeArea()
       this.isShowChangeGirl = false
     },
