@@ -1662,6 +1662,7 @@
           :getCardKeyValInLang="getCardKeyValInLang"
           :getCardClass="getCardClass"
           :getTypeName="getTypeName"
+          :getCanBeStrong="getCanBeStrong"
         />
       </div>
       <!-- E 赛季更新卡 -->

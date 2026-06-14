@@ -133,7 +133,8 @@ export default defineComponent({
     'sakuraChangeCardsData',
     'getCardKeyValInLang',
     'getCardClass',
-    'getTypeName'
+    'getTypeName',
+    'getCanBeStrong'
   ],
   data() {
     return {
