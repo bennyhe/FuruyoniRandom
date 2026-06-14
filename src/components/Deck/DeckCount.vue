@@ -1,3 +1,14 @@
+<script setup>
+import { defineProps } from 'vue'
+import configLang from '../../config/lang.js'
+import { toChzh } from '../../utils/lang.js'
+const props = defineProps({
+  curlang: String,
+  deckSum: Number,
+  deckcount: Number
+})
+const lang = configLang
+</script>
 <template>
   <div class="md faq-about" v-if="deckcount">
     <p>
@@ -15,15 +26,3 @@
     </p>
   </div>
 </template>
-
-<script setup>
-import { defineProps } from 'vue'
-import configLang from '../../config/lang.js'
-const props = defineProps({
-  curlang: String,
-  toChzh: Function,
-  deckSum: Number,
-  deckcount: Number
-})
-const lang = configLang
-</script>

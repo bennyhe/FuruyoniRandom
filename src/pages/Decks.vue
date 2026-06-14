@@ -358,7 +358,6 @@
     <div :class="{ hide: panelTab[4].childTabIndex !== 0 }">
       <DeckCount
         :curlang="curlang"
-        :toChzh="toChzh"
         :deckSum="deckSum"
         :deckcount="resDecks.length"
       ></DeckCount>
