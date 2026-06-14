@@ -544,6 +544,7 @@
 <script>
 import { defineComponent } from 'vue'
 import configLang from '../config/lang.js'
+import { toChzh } from '../utils/lang.js'
 import CardItem from '../components/CardItem/index.vue'
 import CardDetail from '../components/CardDetail/index.vue'
 import DeckCount from '../components/Deck/DeckCount.vue'
@@ -570,7 +571,6 @@ export default defineComponent({
     'resDecks',
     'cardDetailInDeck',
     'deckSum',
-    'toChzh',
     'randomGetDeck',
     'getCardKeyValInLang',
     'handleClickCancelDeckAvatar',
@@ -587,7 +587,8 @@ export default defineComponent({
   ],
   setup(props, context) {
     return {
-      lang: configLang
+      lang: configLang,
+      toChzh
     }
   }
 })

@@ -785,7 +785,6 @@
           >
             <DeckCount
               :curlang="curlang"
-              :toChzh="toChzh"
               :deckSum="deckSum"
               :deckcount="beGroupDeck.length"
             ></DeckCount>
@@ -1432,7 +1431,6 @@
           :sakuraCMData="sakuraCMData"
           :panelTab="panelTab"
           :cardDetail="cardDetail"
-          :toChzh="toChzh"
           :getCardKeyValInLang="getCardKeyValInLang"
           :tabChangedInChild="tabChangedInChild"
           :getCardClass="getCardClass"
@@ -1637,7 +1635,6 @@
           :resDecks="resDecks"
           :cardDetailInDeck="cardDetailInDeck"
           :deckSum="deckSum"
-          :toChzh="toChzh"
           :randomGetDeck="randomGetDeck"
           :getCardKeyValInLang="getCardKeyValInLang"
           :handleClickCancelDeckAvatar="handleClickCancelDeckAvatar"
@@ -1662,7 +1659,6 @@
         <PageScc
           :curlang="curlang"
           :sakuraChangeCardsData="sakuraChangeCardsData"
-          :toChzh="toChzh"
           :getCardKeyValInLang="getCardKeyValInLang"
           :getCardClass="getCardClass"
           :getTypeName="getTypeName"
@@ -1725,9 +1721,6 @@
 import {
   getCardSum,
   formatDefaultCardData,
-  simpPYStr,
-  ftPYStr,
-  qqPYStr,
   getUrlQuery,
   paintRange,
   findAllRangeFromCards,
@@ -1762,6 +1755,10 @@ import {
   getIsShowCardPicIn,
   mergeMissingGirls
 } from './utils/index.js'
+import {
+  toChzh,
+  toChsim
+} from './utils/lang.js'
 const {
   sakuraStoryData,
   sakuraWithData,
@@ -3054,32 +3051,7 @@ export default {
     //   }
     // },
     toChzh(cc) {
-      let str = ''
-      if (cc) {
-        for (let i = 0; i < cc.length; i++) {
-          if (simpPYStr().indexOf(cc.charAt(i)) !== -1)
-            str += ftPYStr().charAt(simpPYStr().indexOf(cc.charAt(i)))
-          else if (qqPYStr().indexOf(cc.charAt(i)) !== -1)
-            str += ftPYStr().charAt(qqPYStr().indexOf(cc.charAt(i)))
-          else str += cc.charAt(i)
-        }
-      }
-      // console.log(str);
-      return str
-    },
-    toChsim(cc) {
-      let str = ''
-      if (cc) {
-        for (let i = 0; i < cc.length; i++) {
-          if (ftPYStr().indexOf(cc.charAt(i)) !== -1)
-            str += simpPYStr().charAt(ftPYStr().indexOf(cc.charAt(i)))
-          else if (qqPYStr().indexOf(cc.charAt(i)) !== -1)
-            str += simpPYStr().charAt(qqPYStr().indexOf(cc.charAt(i)))
-          else str += cc.charAt(i)
-        }
-      }
-      // console.log(str);
-      return str
+      return toChzh(cc)
     },
     /**
      * 将输入的任意对象转换成 Date，如果装换失败将返回当前时间
@@ -3203,7 +3175,7 @@ export default {
                 namejp: item.namejp.toLowerCase()
               }
               if (
-                (_target.name.indexOf(this.toChsim(keywrodItem)) > -1 ||
+                (_target.name.indexOf(toChsim(keywrodItem)) > -1 ||
                   _target.namejp.indexOf(keywrodItem) > -1) &&
                 filterType
               ) {
@@ -3228,18 +3200,18 @@ export default {
             } else {
               // if (_target.name === '阵风祭天式') {
               //   console.log(_target.text.indexOf(this.keywords))
-              //   console.log(_target.text.indexOf(this.toChsim(keywords)))
+              //   console.log(_target.text.indexOf(toChsim(keywords)))
               //   console.log(_target.textjp.indexOf(keywords))
-              //   console.log(_target.text, keywords, this.toChsim(keywords))
+              //   console.log(_target.text, keywords, toChsim(keywords))
               // }
               if (
                 (_target.name === keywords ||
                   _target.namejp === keywords ||
                   _target.name.indexOf(keywords) > -1 ||
-                  _target.name.indexOf(this.toChsim(keywords)) > -1 ||
+                  _target.name.indexOf(toChsim(keywords)) > -1 ||
                   _target.namejp.indexOf(keywords) > -1 ||
                   _target.text.indexOf(keywords) > -1 ||
-                  _target.text.indexOf(this.toChsim(keywords)) > -1 ||
+                  _target.text.indexOf(toChsim(keywords)) > -1 ||
                   _target.textjp.indexOf(keywords) > -1) &&
                 filterType
               ) {

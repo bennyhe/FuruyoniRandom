@@ -175,11 +175,11 @@
       <template v-for="(subItem, subKey) in item.textkururu">
         <div class="kururu" v-if="subItem.if" v-bind:key="subKey">
           <p class="kururu__if" v-html="subItem.if"></p>
-          <pre v-if="subItem.ctn" v-html="$parent.toChzh(subItem.ctn)"></pre>
+          <pre v-if="subItem.ctn" v-html="toChzh(subItem.ctn)"></pre>
         </div>
         <pre
           v-else
-          v-html="$parent.toChzh(subItem.ctn)"
+          v-html="toChzh(subItem.ctn)"
           v-bind:key="`${subKey}else`"
         ></pre>
       </template>
@@ -228,7 +228,7 @@
           v-if="lang[$parent.curlang].id === 'cn' && item.cardchange"
           class="cardchange"
         >
-          FROM: {{ $parent.toChzh(item.cardchange) }}
+          FROM: {{ toChzh(item.cardchange) }}
         </p>
         <p
           v-else-if="lang[$parent.curlang].id === 'kr' && item.cardchangekr"
@@ -281,6 +281,7 @@
 import { defineComponent } from 'vue'
 import configLang from '../../config/lang.js'
 import { isShowStopIcon } from '../../utils/cards.js'
+import { toChzh } from '../../utils/lang.js'
 
 export default defineComponent({
   name: 'cardDetail',
@@ -319,12 +320,14 @@ export default defineComponent({
       if (_damageDefault.indexOf('/') > -1) {
         const _damage = _damageDefault.split('/')
         // console.log(!isNaN(+ _damage[0]), !isNaN(+ _damage[0]), !isNaN(+ _damage[1]));
-        if (!isNaN(+_damage[0])) { // 打盾
+        if (!isNaN(+_damage[0])) {
+          // 打盾
           let afterStrong = cardItem.beStrong
-          if(cardItem.id.indexOf('re-') > -1 && cardItem.beStrong > 1) { // 再演
-          // 0以上……+1/+0となり、距離拡大（遠1）を得る。
-          // 1以上……+0/+1となり、距離拡大（遠1）を得る。
-          // 2以上……+1/+1となり、距離拡大（遠1）を得る、打ち消されない。
+          if (cardItem.id.indexOf('re-') > -1 && cardItem.beStrong > 1) {
+            // 再演
+            // 0以上……+1/+0となり、距離拡大（遠1）を得る。
+            // 1以上……+0/+1となり、距離拡大（遠1）を得る。
+            // 2以上……+1/+1となり、距離拡大（遠1）を得る、打ち消されない。
             afterStrong--
           }
           // 新幕
@@ -334,7 +337,8 @@ export default defineComponent({
           _damage[0] = parseInt(_damage[0]) + afterStrong
         }
 
-        if (!isNaN(+_damage[1])) { // 打命
+        if (!isNaN(+_damage[1])) {
+          // 打命
           _damage[1] = parseInt(_damage[1]) + (cardItem.beStrong - 1)
         }
         return _damage.join('/')
@@ -346,7 +350,8 @@ export default defineComponent({
       lang: configLang,
       isShowStopIcon,
       getNewDamage,
-      getNewRange
+      getNewRange,
+      toChzh
     }
   }
 })

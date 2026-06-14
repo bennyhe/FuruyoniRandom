@@ -14,9 +14,7 @@
     <span class="i-tag i-tag--top1" v-if="item.isTop1">優勝</span>
     <span class="name">{{ item.name }}</span>
     <span class="i-tag i-tag--season" v-if="item.isSeason">{{
-      lang[$parent.curlang].id === "cn"
-        ? $parent.toChzh("起源可用")
-        : "起源戦OK"
+      lang[$parent.curlang].id === "cn" ? toChzh("起源可用") : "起源戦OK"
     }}</span>
     <span class="deck-author">@{{ item.author }}</span>
   </div>
@@ -25,13 +23,15 @@
 <script>
 import { defineComponent } from 'vue'
 import configLang from '../../config/lang.js'
+import { toChzh } from '../../utils/lang.js'
 
 export default defineComponent({
   name: 'deckTitle',
   props: ['item'],
   setup(props, context) {
     return {
-      lang: configLang
+      lang: configLang,
+      toChzh
     }
   }
 })

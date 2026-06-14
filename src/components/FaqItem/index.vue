@@ -19,7 +19,7 @@
             (lang[$parent.curlang].id !== 'cn' && !listitem.ajp)
           "
         >
-          {{ $parent.toChzh(listitem.a) }}
+          {{ toChzh(listitem.a) }}
         </p>
       </li>
     </ul>
@@ -32,7 +32,7 @@
         "
       >
         <strong>Q：{{ item.qjp }}</strong
-        ><span v-if="item.author">@{{ $parent.toChzh(item.author) }}</span>
+        ><span v-if="item.author">@{{ toChzh(item.author) }}</span>
       </p>
       <p
         v-if="
@@ -41,8 +41,8 @@
         "
       >
         <template v-if="item.q || item.qjp">
-          <strong>Q：{{ $parent.toChzh(item.q) }}</strong>
-          <span v-if="item.author">@{{ $parent.toChzh(item.author) }}</span>
+          <strong>Q：{{ toChzh(item.q) }}</strong>
+          <span v-if="item.author">@{{ toChzh(item.author) }}</span>
         </template>
       </p>
       <blockquote>
@@ -61,8 +61,7 @@
             (lang[$parent.curlang].id !== 'cn' && !item.ajp)
           "
         >
-          <template v-if="item.q || item.qjp">A：</template
-          >{{ $parent.toChzh(item.a) }}
+          <template v-if="item.q || item.qjp">A：</template>{{ toChzh(item.a) }}
         </p>
       </blockquote>
     </blockquote>
@@ -72,13 +71,15 @@
 <script>
 import { defineComponent } from 'vue'
 import configLang from '../../config/lang.js'
+import { toChzh } from '../../utils/lang.js'
 
 export default defineComponent({
   name: 'faqItem',
   props: ['item'],
   setup(props, context) {
     return {
-      lang: configLang
+      lang: configLang,
+      toChzh
     }
   }
 })

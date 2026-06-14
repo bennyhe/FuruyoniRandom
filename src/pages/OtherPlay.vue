@@ -311,6 +311,7 @@
 <script>
 import { defineComponent } from 'vue'
 import configLang from '../config/lang.js'
+import { toChzh } from '../utils/lang.js'
 import CardItem from '../components/CardItem/index.vue'
 import CardDetail from '../components/CardDetail/index.vue'
 // import GirlRange from '../components/GirlRange/index.vue';
@@ -331,7 +332,6 @@ export default defineComponent({
     'sakuraOtherData',
     'sakuraCMData',
     'cardDetail',
-    'toChzh',
     'getCardKeyValInLang',
     'tabChangedInChild',
     'getCardClass',
@@ -370,7 +370,8 @@ export default defineComponent({
     return {
       lang: configLang,
       randomGetLx,
-      handleClickSA
+      handleClickSA,
+      toChzh
     }
   }
 })

@@ -1,13 +1,5 @@
 import {
-  // getCardSum,
-  // formatDefaultCardData,
   getKrrDouzi,
-  // simpPYStr,
-  // ftPYStr,
-  // qqPYStr,
-  // getUrlQuery,
-  // paintRange,
-  // findAllRangeFromCards,
   sortInObjectOptions,
   getCounts,
   findCardWithFaqCardName,
