@@ -815,7 +815,7 @@
                         >
                           <CardItem :item="cardItem"></CardItem>
                         </div>
-                        <div v-if="cardIndex === 3" class="card-list msee"></div>
+                        <div v-if="cardIndex === 2" class="msee"></div>
                       </template>
                     </div>
                     <div class="card-list">
