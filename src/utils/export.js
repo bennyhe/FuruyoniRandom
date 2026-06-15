@@ -671,7 +671,7 @@ const getDateObject = datetime => {
  * @return {string}           格式化后的时间字符串
  */
 export function formatTime(datetime, formatStr) {
-  const t = this.getDateObject(datetime)
+  const t = getDateObject(datetime)
   let i = 0
   formatStr = formatStr || 'YYYY-MM-DD HH:mm:ss'
   const hours = t.getHours()
