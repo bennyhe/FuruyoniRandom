@@ -110,7 +110,7 @@ const localShowA = computed({
               <span v-if="getCardKeyValInLang(firstItem, 'name')"
                 >{{ getCardKeyValInLang(firstItem, "name") }} </span
               ><span
-                class="i-tag i-tag--season"
+                class="i-tag i-tag--season2"
                 v-if="firstItem.isClassicBattle"
                 >{{
                   lang[curlang].id === "cn" ? toChzh("古典战") : "古典戦"
@@ -326,7 +326,7 @@ const localShowA = computed({
           <span v-if="getCardKeyValInLang(firstItem, 'name')"
             >{{ getCardKeyValInLang(firstItem, "name") }}
           </span>
-          <span class="i-tag i-tag--season" v-if="firstItem.isClassicBattle">{{
+          <span class="i-tag i-tag--season2" v-if="firstItem.isClassicBattle">{{
             lang[curlang].id === "cn" ? toChzh("古典战") : "古典戦"
           }}</span>
         </div>

@@ -485,6 +485,11 @@
     color: #fff;
   }
 
+  &--season2 {
+    background: darken($color: #f3a3bd, $amount: 15%);
+    color: #f1f1f1;
+  }
+
   &--verson {
     background: #60728b;
     color: #fff;
