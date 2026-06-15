@@ -519,6 +519,7 @@
 import { defineComponent } from 'vue'
 import configLang from '../config/lang.js'
 import { toChzh } from '../utils/lang.js'
+import { getCardClass } from '../utils/cards.js'
 import CardItem from '../components/CardItem/index.vue'
 import CardDetail from '../components/CardDetail/index.vue'
 import DeckCount from '../components/Deck/DeckCount.vue'
@@ -550,7 +551,6 @@ export default defineComponent({
     'handleClickCancelDeckAvatar',
     'handleClickResetDeckAvatar',
     'tabChangedInChild',
-    'getCardClass',
     'getTypeName',
     'selectedCancel',
     'deckSortBy',
@@ -562,7 +562,8 @@ export default defineComponent({
   setup(props, context) {
     return {
       lang: configLang,
-      toChzh
+      toChzh,
+      getCardClass
     }
   }
 })

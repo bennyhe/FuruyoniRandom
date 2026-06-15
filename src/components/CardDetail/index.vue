@@ -1,6 +1,6 @@
 <!-- eslint-disable vue/no-mutating-props -->
 <template>
-  <div class="card-detail" :class="$parent.getCardClass(item)">
+  <div class="card-detail" :class="getCardClass(item)">
     <div class="hd">
       <span class="name">
         <i class="i-end" v-if="isShowStopIcon(item)"></i>
@@ -280,7 +280,7 @@
 <script>
 import { defineComponent } from 'vue'
 import configLang from '../../config/lang.js'
-import { isShowStopIcon } from '../../utils/cards.js'
+import { isShowStopIcon, getCardClass } from '../../utils/cards.js'
 import { toChzh } from '../../utils/lang.js'
 
 export default defineComponent({
@@ -351,7 +351,8 @@ export default defineComponent({
       isShowStopIcon,
       getNewDamage,
       getNewRange,
-      toChzh
+      toChzh,
+      getCardClass
     }
   }
 })

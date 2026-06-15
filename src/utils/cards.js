@@ -5,3 +5,27 @@ export function isShowStopIcon(item) {
   }
   return false
 }
+
+/**
+ * 获取牌类型
+ * @param  {[type]} item [description]
+ */
+export function getCardClass(cardItem) {
+  let _classname = ''
+  if (cardItem.types && cardItem.types.length > 0) {
+    _classname += cardItem.types.join(' ')
+  }
+  if (cardItem.isForbid !== undefined && cardItem.isForbid) {
+    _classname += ' forbid'
+  }
+  if (cardItem.selected !== undefined && cardItem.selected) {
+    _classname += ' cur'
+  }
+  if (cardItem.isCancel) {
+    _classname += ' cancel-card'
+  }
+  // if (this.debug) {
+  //   _classname += ' haspic'
+  // }
+  return _classname
+}

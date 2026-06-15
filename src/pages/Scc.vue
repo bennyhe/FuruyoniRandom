@@ -119,6 +119,8 @@
 import { defineComponent } from 'vue'
 import configLang from '../config/lang.js'
 import { toChzh } from '../utils/lang.js'
+import { getCardClass } from '../utils/cards.js'
+
 import CardItem from '../components/CardItem/index.vue'
 import CardDetail from '../components/CardDetail/index.vue'
 
@@ -132,7 +134,6 @@ export default defineComponent({
     'curlang',
     'sakuraChangeCardsData',
     'getCardKeyValInLang',
-    'getCardClass',
     'getTypeName',
     'getCanBeStrong'
   ],
@@ -155,7 +156,8 @@ export default defineComponent({
       lang: configLang,
       getCardDetail,
       handleClickChangeGirlBtn,
-      toChzh
+      toChzh,
+      getCardClass
     }
   }
 })
