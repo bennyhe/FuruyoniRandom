@@ -6,7 +6,7 @@
         !$parent.isOldVer && getIsShowCardPic(item) && $parent.isShowCardPic
       "
     >
-      <img class="item-pic" v-lazy="$parent.getImgUrl(item)" />
+      <img class="item-pic" v-lazy="$parent.getImgUrlUse(item)" />
     </div>
     <p class="name">
       <i

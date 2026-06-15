@@ -520,6 +520,7 @@ import { defineComponent } from 'vue'
 import configLang from '../config/lang.js'
 import { toChzh } from '../utils/lang.js'
 import { getCardClass } from '../utils/cards.js'
+import { formatTime } from '../utils/export.js'
 import CardItem from '../components/CardItem/index.vue'
 import CardDetail from '../components/CardDetail/index.vue'
 import DeckCount from '../components/Deck/DeckCount.vue'
@@ -555,7 +556,6 @@ export default defineComponent({
     'selectedCancel',
     'deckSortBy',
     'getCardDetailInDeck',
-    'formatTime',
     'selectedDeckShow',
     'getCanBeStrong'
   ],
@@ -563,7 +563,8 @@ export default defineComponent({
     return {
       lang: configLang,
       toChzh,
-      getCardClass
+      getCardClass,
+      formatTime
     }
   }
 })

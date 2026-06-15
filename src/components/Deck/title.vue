@@ -1,7 +1,7 @@
 <template>
   <div class="allcards__title">
     <span class="deck-date">{{
-      $parent.formatTime(item.date, "YY-MM-DD")
+      formatTime(item.date, "YY-MM-DD")
     }}</span>
     <span
       class="avatar"
@@ -24,6 +24,7 @@
 import { defineComponent } from 'vue'
 import configLang from '../../config/lang.js'
 import { toChzh } from '../../utils/lang.js'
+import { formatTime } from '../../utils/export.js'
 
 export default defineComponent({
   name: 'deckTitle',
@@ -31,7 +32,8 @@ export default defineComponent({
   setup(props, context) {
     return {
       lang: configLang,
-      toChzh
+      toChzh,
+      formatTime
     }
   }
 })

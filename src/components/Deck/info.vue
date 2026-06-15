@@ -4,7 +4,7 @@
       <p>
         <span class="deck-info__title"
           >{{ toChzh("提交时间：")
-          }}{{ $parent.formatTime(item.date, "YYYY-MM-DD") }}</span
+          }}{{ formatTime(item.date, "YYYY-MM-DD") }}</span
         >
       </p>
       <p>
@@ -38,6 +38,7 @@
 import { defineComponent } from 'vue'
 import configLang from '../../config/lang.js'
 import { toChzh } from '../../utils/lang.js'
+import { formatTime } from '../../utils/export.js'
 import GirlRange from '../GirlRange/index.vue'
 
 export default defineComponent({
@@ -49,7 +50,8 @@ export default defineComponent({
   setup(props, context) {
     return {
       lang: configLang,
-      toChzh
+      toChzh,
+      formatTime
     }
   }
 })

@@ -202,7 +202,7 @@ export function getDeckDetailForLink(link, naData, defaultData, deckfilterMap) {
   // console.log(groupCardData, deck)
   return {
     deck,
-    groupCardData: [
+    newGroupCardData: [
       {
         ...groupCardData[0],
         useCards: girl1
