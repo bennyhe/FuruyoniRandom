@@ -45,7 +45,7 @@ defineExpose({
   curlang: props.curlang,
   getCanBeStrong: props.getCanBeStrong
 })
-defineEmits([
+const emit = defineEmits([
   'update:isNaChVer',
   'update:isNaVer',
   'update:isReVer',
