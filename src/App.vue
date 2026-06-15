@@ -944,7 +944,6 @@
         />
       </div>
       <!-- E 全卡表 -->
-
       <!-- S 扩展玩法 -->
       <div
         class="panel-item panel-item--otherplay"
@@ -1254,9 +1253,6 @@ import {
   getCounts,
   get
 } from './utils/export.js'
-import {
-  getCardClass
-} from './utils/cards.js'
 
 import sakuraDataNa from './js/sub/sakura/carddata/sakura-s10-2'
 import sakuraData from './js/sub/sakura/carddata/re/sakura-s1'
@@ -1282,13 +1278,16 @@ import {
   initChangeCardsData,
   initSakuraCMDATA,
   addSSTagInCards,
-  getIsShowCardPicIn,
   mergeMissingGirls
 } from './utils/index.js'
 import {
   toChzh,
   toChsim
 } from './utils/lang.js'
+import {
+  getIsShowCardPicIn,
+  getCardClass
+} from './utils/cards.js'
 const {
   sakuraStoryData,
   sakuraWithData,

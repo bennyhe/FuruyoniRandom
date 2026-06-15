@@ -127,8 +127,7 @@
 <script>
 import { defineComponent } from 'vue'
 import configLang from '../../config/lang.js'
-import { getIsShowCardPicIn } from '../../utils/index.js'
-import { isShowStopIcon } from '../../utils/cards.js'
+import { isShowStopIcon, getIsShowCardPicIn } from '../../utils/cards.js'
 
 export default defineComponent({
   name: 'cardItem',
