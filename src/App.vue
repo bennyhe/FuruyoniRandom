@@ -317,7 +317,7 @@
             </template>
             <button
               class="btn btn-small btn-cancel"
-              @click="unLockBtn()"
+              @click="handleClickUnlockBtn()"
               v-if="isLockName"
             >
               {{ lang[curlang].lockCancel }}
@@ -331,7 +331,7 @@
             </button>
             <button
               class="btn btn-small btn-cancel"
-              @click="returnRoll2()"
+              @click="handleClickCancelRandom()"
               v-if="isShowResultGirls"
             >
               {{ lang[curlang].btnReturn }}->
@@ -666,7 +666,7 @@
             </template>
             <!-- E 构筑提示 -->
             <div class="random-btn-wrap" v-if="isCompleteGroup">
-              <button class="btn btn-small" @click="returnGroup()">
+              <button class="btn btn-small" @click="handleClickReturnGroup()">
                 {{ lang[curlang].btnReturn }}->{{ lang[curlang].toGroup }}
               </button>
             </div>
@@ -702,7 +702,7 @@
               >
                 {{ lang[curlang].btnShare }}
               </button>
-              <button class="btn btn-small btn-cancel" @click="returnRoll()">
+              <button class="btn btn-small btn-cancel" @click="handleClickReturnRoll()">
                 {{ lang[curlang].btnReturn }}->{{ lang[curlang].btnRandomItem }}
               </button>
             </div>
@@ -2957,7 +2957,7 @@ export default {
      * 解除锁定
      * @return {[type]} [description]
      */
-    unLockBtn() {
+    handleClickUnlockBtn() {
       this.clearLock()
       this.showPanelGirls.map(item =>
         item.list.map(item2 => (item2.isSelect = false))
@@ -3174,7 +3174,7 @@ export default {
      * 返回构筑界面（女神不变）按钮
      * @return {[type]} [description]
      */
-    returnGroup() {
+    handleClickReturnGroup() {
       this.cardDetail = {}
       this.cardDetailInDeck = {}
       this.isGoToBeGroup = true
@@ -3190,13 +3190,13 @@ export default {
      * @return {[type]} [description]
      */
     btnClearGroup() {
-      this.returnRoll()
+      this.handleClickReturnRoll()
     },
     /**
      * 返回roll女神界面
      * @return {[type]} [description]
      */
-    returnRoll() {
+    handleClickReturnRoll() {
       this.isGoToBeGroup = false
       this.reset()
       this.groupCardData = []
@@ -3212,7 +3212,7 @@ export default {
       this.selectedSpecialCount = 0
       this.shareLink = ''
     },
-    returnRoll2() {
+    handleClickCancelRandom() {
       this.groupCardData = []
       this.resultGirls = []
       this.isShowBeGroupBtn = false
