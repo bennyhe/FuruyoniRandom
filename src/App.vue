@@ -30,7 +30,11 @@
       <div class="topbar-extra">
         <template
           v-if="isOldVer && (showPanelIndex == 0 || showPanelIndex == 1)"
-          >第二幕</template
+          >第二幕&nbsp;</template
+        >
+        <template
+          v-if="!isOldVer && !isReVer && (showPanelIndex == 0)"
+          >新幕&nbsp;</template
         >
         <span
           class="togroup-tips"
@@ -44,7 +48,7 @@
           <span
             >通常<i>{{ selectedNormalCount }}</i
             >/7</span
-          >
+          >,
           <span
             >切<i>{{ selectedSpecialCount }}</i
             >/3</span
@@ -1584,8 +1588,8 @@ export default {
       showPanelIndex: 0,
       panelTab: configNav,
 
+      lang: configLang,
       curlang: 0,
-      lang: configLang, //语言
 
       seasonTags: [],
 
@@ -1608,11 +1612,11 @@ export default {
 
       this.searchTypeShowWord = {
         all: 'ALL',
-        attack: this.lang[this.curlang].typeAttack,
-        action: this.lang[this.curlang].typeAction,
-        reaction: this.lang[this.curlang].typeReaction,
-        fullpower: this.lang[this.curlang].typeFullpower,
-        enhance: this.lang[this.curlang].typeEnhance
+        attack: configLang[this.curlang].typeAttack,
+        action: configLang[this.curlang].typeAction,
+        reaction: configLang[this.curlang].typeReaction,
+        fullpower: configLang[this.curlang].typeFullpower,
+        enhance: configLang[this.curlang].typeEnhance
       }
       this.searchTypeOptions = [
         {
@@ -1621,27 +1625,27 @@ export default {
         },
         {
           value: 'attack',
-          label: this.lang[this.curlang].typeAttack
+          label: configLang[this.curlang].typeAttack
         },
         {
           value: 'action',
-          label: this.lang[this.curlang].typeAction
+          label: configLang[this.curlang].typeAction
         },
         {
           value: 'reaction',
-          label: this.lang[this.curlang].typeReaction
+          label: configLang[this.curlang].typeReaction
         },
         {
           value: 'fullpower',
-          label: this.lang[this.curlang].typeFullpower
+          label: configLang[this.curlang].typeFullpower
         },
         {
           value: 'enhance',
-          label: this.lang[this.curlang].typeEnhance
+          label: configLang[this.curlang].typeEnhance
         }
         // {
         //   value: 'variable',
-        //   label: this.lang[this.curlang].typeVariable
+        //   label: configLang[this.curlang].typeVariable
         // }
       ]
     },
@@ -3018,8 +3022,8 @@ export default {
       // console.log(_random);
       this.whoStart =
         _random === 0
-          ? this.lang[this.curlang].first
-          : this.lang[this.curlang].second
+          ? configLang[this.curlang].first
+          : configLang[this.curlang].second
     },
     startRandom(count) {
       const _startRandomCount = count
@@ -3190,7 +3194,7 @@ export default {
       }
 
       // 中文版下的预加载卡图
-      // if (this.lang[this.curlang].id === 'cn') {
+      // if (configLang[this.curlang].id === 'cn') {
       //   let loadImg = []
       //   this.groupCardData.forEach(el => {
       //     if (el.normal && el.normal.length > 0) {
@@ -3506,7 +3510,7 @@ export default {
       if (this.isOldVer) {
         //旧幕
         this.shareLink = `${this.shareUrl}?isOlder=1&lang=${
-          this.lang[this.curlang].id
+          configLang[this.curlang].id
         }&isShow=1&girls=${this.shareGirls}&girlscard1=${_arr3[0]}&girlscard2=${
           _arr3[1]
         }`
@@ -3519,7 +3523,7 @@ export default {
             : seasonVersion['jp'].vername.replace(' Preview', 'pre')
         }
         this.shareLink = `${this.shareUrl}?ver=${ver}&lang=${
-          this.lang[this.curlang].id
+          configLang[this.curlang].id
         }&isShow=1&girls=${this.shareGirls}&girlscard1=${_arr3[0]}&girlscard2=${
           _arr3[1]
         }`
@@ -3559,44 +3563,24 @@ export default {
        */
       const qstr = isAll ? 'type' : 'typeShort'
       const word = typeItem.charAt(0).toUpperCase() + typeItem.slice(1) //转换成首字母大写
-      return this.lang[this.curlang][`${qstr}${word}`]
+      return configLang[this.curlang][`${qstr}${word}`]
     },
-    getImgUrl(item) {
-      const imgBeforeUrl = '../img/card/na_'
-      if (item !== undefined) {
-        let _id = item.id
-        if (_id === '02/04-saine/tokoyo-a1-n-1/4') {
-          return `${imgBeforeUrl}02_saine_a1_n_1.png`
-        }
-        _id = _id.replace(/\-/g, '_')
-        return `${imgBeforeUrl}${_id}.png`
-      }
-      if (this.cardDetail && this.cardDetail.namejp) {
-        let _id = this.cardDetail.id
-        if (_id === '02/04-saine/tokoyo-a1-n-1/4') {
-          return `${imgBeforeUrl}02_saine_a1_n_1.png`
-        }
-        _id = _id.replace(/\-/g, '_')
-        return `${imgBeforeUrl}${_id}.png`
-      }
+    getImgUrl(cardItem) {
+      return getImgUrl(cardItem, this.cardDetail)
     },
-    getImgUrlWill(item) {
-      if (this.cardDetail && this.cardDetail.namejp) {
-        let _id = this.cardDetail.id
-        _id = _id.replace(/\-/g, '_')
-        return `../img/card/na_${_id}_w.png`
-      }
+    getImgUrlWill() {
+      return getImgUrlWill(this.cardDetail)
     },
     getIsShowCardPic(cardData) {
-      return getIsShowCardPicIn(cardData, this.lang, this.curlang)
+      return getIsShowCardPicIn(cardData, configLang, this.curlang)
     },
     getCardKeyValInLang(item, val) {
       val = val === undefined ? 'name' : val
-      if (this.isOldVer || (this.lang[this.curlang].id === 'cn' && item[val])) {
+      if (this.isOldVer || (configLang[this.curlang].id === 'cn' && item[val])) {
         return this.toChzh(item[val])
-      } else if (this.lang[this.curlang].id === 'kr' && item[val + 'kr']) {
+      } else if (configLang[this.curlang].id === 'kr' && item[val + 'kr']) {
         return item[val + 'kr']
-      } else if (this.lang[this.curlang].id === 'en' && item[val + 'en']) {
+      } else if (configLang[this.curlang].id === 'en' && item[val + 'en']) {
         return item[val + 'en']
       } else {
         return item[val + 'jp']
