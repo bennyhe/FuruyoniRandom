@@ -218,31 +218,3 @@ export function mergeMissingGirls(defaultData, naData) {
 
   return result
 }
-
-export function getImgUrl(cardItem, cardDetailData) {
-  const imgBeforeUrl = '../img/card/na_'
-  if (cardItem !== undefined) {
-    let _id = cardItem.id
-    if (_id === '02/04-saine/tokoyo-a1-n-1/4') {
-      return `${imgBeforeUrl}02_saine_a1_n_1.png`
-    }
-    _id = _id.replace(/\-/g, '_')
-    return `${imgBeforeUrl}${_id}.png`
-  }
-  if (cardDetailData && cardDetailData.namejp) {
-    let _id = cardDetailData.id
-    if (_id === '02/04-saine/tokoyo-a1-n-1/4') {
-      return `${imgBeforeUrl}02_saine_a1_n_1.png`
-    }
-    _id = _id.replace(/\-/g, '_')
-    return `${imgBeforeUrl}${_id}.png`
-  }
-}
-
-export function getImgUrlWill(cardDetailData) {
-  if (cardDetailData && cardDetailData.namejp) {
-    let _id = cardDetailData.id
-    _id = _id.replace(/\-/g, '_')
-    return `../img/card/na_${_id}_w.png`
-  }
-}

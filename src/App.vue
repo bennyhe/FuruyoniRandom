@@ -1290,7 +1290,10 @@ import {
 } from './utils/lang.js'
 import {
   getIsShowCardPicIn,
-  getCardClass
+  getCardClass,
+  getImgUrl,
+  getImgUrlWill,
+  getDeckDetailForLink
 } from './utils/cards.js'
 const {
   sakuraStoryData,
@@ -1961,8 +1964,11 @@ export default {
     initDecksPlaza() {
       const seasonTags = []
       this.sakuraPlayerDeckData.forEach((item, index) => {
-        const { deck, groupCardData, ver } = this.getDeckDetailForLink(
-          item.decklink
+        const { deck, groupCardData, ver } = getDeckDetailForLink(
+          item.decklink,
+          this.naData,
+          this.defaultData,
+          this.deckfilterMap
         )
 
         item.deck = deck
@@ -2383,147 +2389,6 @@ export default {
       this.cardDetailInDeck = {}
       this.resDecks = [...this.sakuraPlayerDeckData]
       this.panelTab[4].childTabIndex = 0
-    },
-    getDeckDetailForLink(link) {
-      const _girls = getUrlQuery('girls', link).split(',')
-      const _girlscard1 = getUrlQuery('girlscard1', link)
-        ? getUrlQuery('girlscard1', link).split('+')
-        : '0,1,2,3,4,5,6+0,1,2,3'.split('+')
-      const _girlscard2 = getUrlQuery('girlscard2', link)
-        ? getUrlQuery('girlscard2', link).split('+')
-        : '0,1,2,3,4,5,6+0,1,2,3'.split('+')
-      if (_girlscard1[0] !== '') {
-        _girlscard1[0] = _girlscard1[0].split(',')
-      }
-      if (_girlscard1[1] !== '') {
-        _girlscard1[1] = _girlscard1[1].split(',')
-      }
-      if (_girlscard2[0] !== '') {
-        _girlscard2[0] = _girlscard2[0].split(',')
-      }
-      if (_girlscard2[1] !== '') {
-        _girlscard2[1] = _girlscard2[1].split(',')
-      }
-      const groupCardData = [],
-        girl1 = [],
-        girl2 = [],
-        deck = {
-          normal: [],
-          special: [],
-          extra: [],
-          changeExtra: []
-        }
-      let orginData = this.naData // 新幕卡组
-      if( link.indexOf('re') > -1 && link.indexOf('pre') < 0) {
-        orginData = this.defaultData
-      }
-      for (let i = 0; i < _girls.length; i++) {
-        const _girlsSub = _girls[i].split('+')
-        groupCardData.push(orginData[_girlsSub[0]].list[_girlsSub[1]])
-      }
-      if (_girlscard1[0] !== '') {
-        for (let i = 0; i < _girlscard1[0].length; i++) {
-          deck.normal.push(groupCardData[0].normal[_girlscard1[0][i]])
-          girl1.push(groupCardData[0].normal[_girlscard1[0][i]])
-        }
-      }
-      if (_girlscard1[1] !== '') {
-        for (let i = 0; i < _girlscard1[1].length; i++) {
-          deck.special.push(groupCardData[0].special[_girlscard1[1][i]])
-          girl1.push(groupCardData[0].special[_girlscard1[1][i]])
-        }
-      }
-      if (_girlscard2[0] !== '') {
-        for (let i = 0; i < _girlscard2[0].length; i++) {
-          deck.normal.push(groupCardData[1].normal[_girlscard2[0][i]])
-          girl2.push(groupCardData[1].normal[_girlscard2[0][i]])
-        }
-      }
-      if (_girlscard2[1] !== '') {
-        for (let i = 0; i < _girlscard2[1].length; i++) {
-          deck.special.push(groupCardData[1].special[_girlscard2[1][i]])
-          girl2.push(groupCardData[1].special[_girlscard2[1][i]])
-        }
-      }
-      deck.extra = [
-        ...(groupCardData[0].extra || []),
-        ...(groupCardData[1].extra || [])
-      ]
-      deck.changeExtra = [
-        ...(groupCardData[0].changeExtra || []),
-        ...(groupCardData[1].changeExtra || [])
-      ]
-      deck.poison = [
-        ...(groupCardData[0].poison || []),
-        ...(groupCardData[1].poison || [])
-      ]
-      deck.transform = [
-        ...(groupCardData[0].transform || []),
-        ...(groupCardData[1].transform || [])
-      ]
-      deck.girlBoard = [
-        ...(groupCardData[0].girlBoard || []),
-        ...(groupCardData[1].girlBoard || [])
-      ]
-      for (const fitem in this.deckfilterMap) {
-        // console.log(fitem, this.deckfilterMap[fitem])
-        if (
-          +groupCardData[0].index === +fitem ||
-          +groupCardData[1].index === +fitem
-        ) {
-          if (deck.extra && deck.extra.length > 0) {
-            this.deckfilterMap[fitem].forEach(oItem => {
-              if (
-                deck[oItem.find] &&
-                deck[oItem.find].length > 0 &&
-                deck[oItem.find].filter(item => item.id === oItem.findFrom)
-                  .length === 0
-              ) {
-                deck.extra = deck.extra.filter(
-                  item => item.id && item.id.indexOf(oItem.findFrom) === -1
-                )
-              }
-            })
-          }
-          if (deck.changeExtra && deck.changeExtra.length > 0) {
-            this.deckfilterMap[fitem].forEach(oItem => {
-              if (
-                deck[oItem.find] &&
-                deck[oItem.find].length > 0 &&
-                deck[oItem.find].filter(item => item.id === oItem.findFrom)
-                  .length === 0
-              ) {
-                if (+fitem === 15) {
-                  deck.changeExtra = deck.changeExtra.filter(
-                    item =>
-                      item.extraFrom &&
-                      item.extraFrom.indexOf(oItem.findFrom) === -1
-                  )
-                } else {
-                  deck.changeExtra = deck.changeExtra.filter(
-                    item => item.id && item.id.indexOf(oItem.findFrom) === -1
-                  )
-                }
-              }
-            })
-          }
-        }
-      }
-      // console.log(groupCardData, deck)
-      return {
-        deck,
-        groupCardData: [
-          {
-            ...groupCardData[0],
-            useCards: girl1
-          },
-          {
-            ...groupCardData[1],
-            useCards: girl2
-          }
-        ],
-        ver: getUrlQuery('ver', link)
-      }
     },
     changeGroupVer() {
       this.isGroupOldVer = !this.isGroupOldVer
@@ -3672,7 +3537,6 @@ export default {
   }
 }
 </script>
-
 
 <style lang="scss">
 @import "@/style/random.scss";
