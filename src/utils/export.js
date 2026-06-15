@@ -737,7 +737,7 @@ export function filterKeywords(keywords) {
     _newKeywords =
       _newKeywords + keywords.substr(i, 1).replace(_pattern, '')
   }
-  _newKeywords = this.filterEmoji(_newKeywords)
+  _newKeywords = filterEmoji(_newKeywords)
   // console.log('过滤后',_newKeywords)
   return _newKeywords
 }

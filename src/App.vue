@@ -1174,7 +1174,6 @@
           :selectedCancel="selectedCancel"
           :deckSortBy="deckSortBy"
           :getCardDetailInDeck="getCardDetailInDeck"
-          :formatTime="formatTime"
           :selectedDeckShow="selectedDeckShow"
           :getCanBeStrong="getCanBeStrong"
         />
@@ -1255,7 +1254,10 @@ import {
   findAllRangeFromCards,
   sortInObjectOptions,
   getCounts,
-  get
+  get,
+  formatTime,
+  unique,
+  filterKeywords
 } from './utils/export.js'
 
 import sakuraDataNa from './js/sub/sakura/carddata/sakura-s10-2'
@@ -1724,7 +1726,7 @@ export default {
             const textSplit = text.split('\t')
             if (textSplit && textSplit.length > 0) {
               arrNew.push({
-                date: this.formatTime(new Date(), 'YYYY-MM-DD'),
+                date: formatTime(new Date(), 'YYYY-MM-DD'),
                 author: textSplit[0],
                 name: textSplit[1],
                 desc: textSplit[3],
@@ -1964,7 +1966,7 @@ export default {
     initDecksPlaza() {
       const seasonTags = []
       this.sakuraPlayerDeckData.forEach((item, index) => {
-        const { deck, groupCardData, ver } = getDeckDetailForLink(
+        const { deck, newGroupCardData, ver } = getDeckDetailForLink(
           item.decklink,
           this.naData,
           this.defaultData,
@@ -1972,7 +1974,7 @@ export default {
         )
 
         item.deck = deck
-        item.groupCardData = groupCardData
+        item.groupCardData = newGroupCardData
         item.isSelect = false
         item.id = index
         item.isSOldVer = true
@@ -2531,7 +2533,7 @@ export default {
       this.cardDetail = {}
       if (this.inputKw !== '') {
         let keywords = this.inputKw.toLowerCase()
-        keywords = this.filterKeywords(this.inputKw)
+        keywords = filterKeywords(this.inputKw)
         this.searchResult = []
         this.searchCard(keywords)
       } else {
@@ -2742,7 +2744,7 @@ export default {
         })
       })
       if (result.length > 0) {
-        result = this.unique(result) // 根据id去重
+        result = unique(result) // 根据id去重
       }
       const keywordsBroke = keywords.split('')
       // 如果没有单词和全名匹配才去做拆散匹配
@@ -2767,7 +2769,7 @@ export default {
         })
       }
       if (result.length > 0) {
-        result = this.unique(result) // 根据id去重
+        result = unique(result) // 根据id去重
 
         // kk = []
         // result.forEach((aa)=>{
@@ -2783,38 +2785,6 @@ export default {
       }
       return result
       // console.log(result);
-    },
-    unique(arr, findKeyName) {
-      findKeyName = findKeyName === undefined ? 'id' : findKeyName
-      const obj = {}
-      arr = arr.reduce((cur, next) => {
-        obj[next[findKeyName]]
-          ? ''
-          : (obj[next[findKeyName]] = true && cur.push(next))
-        return cur
-      }, [])
-      return arr
-    },
-    filterKeywords(keywords) {
-      // console.log('过滤前',keywords)
-      const _pattern = new RegExp(
-        '[`~!@#$^&*()=|{}\':;\',\\[\\]<>/?~！@#￥……&*（）——|{}‘；：\'，。、！？：；﹑•＂…‘’“”〝〞∕¦‖—　〈〉﹞﹝「」‹›〖〗】【»«』『〕〔》《﹐¸﹕︰﹔！¡？¿﹖﹌﹏﹋＇´ˊˋ―﹫︳︴¯＿￣﹢﹦﹤‐­˜﹟﹩﹠﹪﹡﹨﹍﹉﹎﹊ˇ︵︶︷︸︹︿﹀︺︽︾ˉ﹁﹂﹃﹄︻︼（）]'
-      )
-      let _newKeywords = ''
-      for (let i = 0; i < keywords.length; i++) {
-        _newKeywords =
-          _newKeywords + keywords.substr(i, 1).replace(_pattern, '')
-      }
-      _newKeywords = this.filterEmoji(_newKeywords)
-      // console.log('过滤后',_newKeywords)
-      return _newKeywords
-    },
-    filterEmoji(keywords) {
-      keywords = keywords.replace(
-        /([\uE000-\uF8FF]|\uD83C[\uDC00-\uDFFF]|\uD83D[\uDC00-\uDFFF]|[\u2011-\u26FF]|\uD83E[\uDD10-\uDDFF])/g,
-        ''
-      )
-      return keywords
     },
     clearLock() {
       if (this.isLockName) {
@@ -2840,26 +2810,25 @@ export default {
       }
     },
     randomGet(count) {
-      const _this = this
-      _this.isFirstGetResult = false
-      _this.isShowResultGirls = false
-      _this.isShowBeGroupBtn = count === 2 ? true : false
+      this.isFirstGetResult = false
+      this.isShowResultGirls = false
+      this.isShowBeGroupBtn = count === 2 ? true : false
       this.groupCardData = []
       this.shareGirls = []
-      if (!_this.isStart) {
+      if (!this.isStart) {
         //开始抽奖
-        _this.isStart = true
-        _this.getCount = count
-        if (!_this.isQuick) {
-          _this.isShowResultGirls = true
+        this.isStart = true
+        this.getCount = count
+        if (!this.isQuick) {
+          this.isShowResultGirls = true
         }
-        if (_this.isQuick) {
+        if (this.isQuick) {
           window.intA = setInterval(function () {
-            _this.startRandom(count)
+            this.startRandom(count)
           }, 100)
         } else {
-          _this.startRandom(count)
-          _this.afterStopShowResult()
+          this.startRandom(count)
+          this.afterStopShowResult()
         }
       }
     },
