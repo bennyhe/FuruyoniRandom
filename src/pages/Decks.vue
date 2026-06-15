@@ -371,11 +371,11 @@
             class="allcards-tab__item allcards-item"
             :class="{ show: item.isSelect }"
           >
-            <DeckTitle :item="item"></DeckTitle>
+            <DeckTitle :item="item" :curlang="curlang"></DeckTitle>
           </div>
         </div>
         <div class="allcards__content" :class="{ hide: !item.isSelect }">
-          <DeckInfo :item="item"></DeckInfo>
+          <DeckInfo :item="item" :curlang="curlang"></DeckInfo>
           <div class="cgroup cgroup--old">
             <!-- S 头像 -->
             <div
@@ -524,8 +524,8 @@ import { formatTime } from '../utils/export.js'
 import CardItem from '../components/CardItem/index.vue'
 import CardDetail from '../components/CardDetail/index.vue'
 import DeckCount from '../components/Deck/DeckCount.vue'
-import DeckTitle from '../components/Deck/title.vue'
-import DeckInfo from '../components/Deck/info.vue'
+import DeckTitle from '../components/Deck/DeckTitle.vue'
+import DeckInfo from '../components/Deck/DeckInfo.vue'
 
 export default defineComponent({
   name: 'PageDecks',

@@ -1,3 +1,14 @@
+<script setup>
+import { defineProps } from 'vue'
+import lang from '../../config/lang.js'
+import { toChzh } from '../../utils/lang.js'
+import { formatTime } from '../../utils/export.js'
+
+const props = defineProps({
+  item: Object,
+  curlang: [String, Number]
+})
+</script>
 <template>
   <div class="allcards__title">
     <span class="deck-date">{{
@@ -14,27 +25,8 @@
     <span class="i-tag i-tag--top1" v-if="item.isTop1">優勝</span>
     <span class="name">{{ item.name }}</span>
     <span class="i-tag i-tag--season" v-if="item.isSeason">{{
-      lang[$parent.curlang].id === "cn" ? toChzh("起源可用") : "起源戦OK"
+      lang[curlang].id === "cn" ? toChzh("起源可用") : "起源戦OK"
     }}</span>
     <span class="deck-author">@{{ item.author }}</span>
   </div>
 </template>
-
-<script>
-import { defineComponent } from 'vue'
-import configLang from '../../config/lang.js'
-import { toChzh } from '../../utils/lang.js'
-import { formatTime } from '../../utils/export.js'
-
-export default defineComponent({
-  name: 'deckTitle',
-  props: ['item'],
-  setup(props, context) {
-    return {
-      lang: configLang,
-      toChzh,
-      formatTime
-    }
-  }
-})
-</script>

@@ -3,7 +3,7 @@ import { defineProps } from 'vue'
 import configLang from '../../config/lang.js'
 import { toChzh } from '../../utils/lang.js'
 const props = defineProps({
-  curlang: String,
+  curlang: [String, Number],
   deckSum: Number,
   deckcount: Number
 })

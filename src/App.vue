@@ -803,11 +803,11 @@
                   class="allcards-tab__item allcards-item"
                   :class="{ show: item.isSelect }"
                 >
-                  <DeckTitle :item="item"></DeckTitle>
+                  <DeckTitle :item="item" :curlang="curlang"></DeckTitle>
                 </div>
               </div>
               <div class="allcards__content" :class="{ hide: !item.isSelect }">
-                <DeckInfo :item="item"></DeckInfo>
+                <DeckInfo :item="item" :curlang="curlang"></DeckInfo>
                 <div class="cgroup cgroup--old">
                   <div class="card-wrap">
                     <div class="card-list">
@@ -1271,8 +1271,8 @@ import CardDetail from './components/CardDetail/index.vue'
 import GirlRange from './components/GirlRange/index.vue'
 import FaqItem from './components/FaqItem/index.vue'
 import DeckCount from './components/Deck/DeckCount.vue'
-import DeckTitle from './components/Deck/title.vue'
-import DeckInfo from './components/Deck/info.vue'
+import DeckTitle from './components/Deck/DeckTitle.vue'
+import DeckInfo from './components/Deck/DeckInfo.vue'
 import PageDecks from './pages/Decks.vue'
 import PageOtherPlay from './pages/OtherPlay.vue'
 import PageCardList from './pages/CardList.vue'
