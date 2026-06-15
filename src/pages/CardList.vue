@@ -11,7 +11,10 @@ const props = defineProps({
   showPanelGirls: {
     type: Array
   },
-  showPanelGirls: {
+  qiyuanGirls: {
+    type: Object
+  },
+  seasonGirls: {
     type: Object
   },
   isOldVer: {

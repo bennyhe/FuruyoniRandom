@@ -937,6 +937,7 @@
           v-model:isShowA="isShowA"
           :showPanelGirls="showPanelGirls"
           :getCardKeyValInLang="getCardKeyValInLang"
+          :qiyuanGirls="qiyuanGirls"
           :seasonGirls="seasonGirls"
           :getTypeName="getTypeName"
           :getCanBeStrong="getCanBeStrong"
