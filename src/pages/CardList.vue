@@ -3,6 +3,7 @@ import { defineProps, defineEmits, computed, defineExpose} from 'vue'
 import configLang from '../config/lang.js'
 import { toChzh } from '../utils/lang.js'
 import CardDetail from '../components/CardDetail/index.vue'
+import GirlRange from '../components/GirlRange/index.vue'
 const lang = configLang
 const props = defineProps({
   curlang: {
