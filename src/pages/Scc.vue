@@ -86,6 +86,11 @@
     </div>
     <!-- S 卡片详情 -->
     <CardDetail
+      :curlang="curlang"
+      :isNaChVer="isNaChVer"
+      :getTypeName="getTypeName"
+      :getCardKeyValInLang="getCardKeyValInLang"
+      :getCanBeStrong="getCanBeStrong"
       :item="cardDetail"
       v-if="cardDetail && (cardDetail.name || cardDetail.namejp)"
     />
@@ -99,6 +104,11 @@
       <div class="change-girl-ani">
         <div class="change-girl-ctn">
           <CardDetail
+            :curlang="curlang"
+            :isNaChVer="isNaChVer"
+            :getTypeName="getTypeName"
+            :getCardKeyValInLang="getCardKeyValInLang"
+            :getCanBeStrong="getCanBeStrong"
             :item="cardDetail"
             v-if="cardDetail && (cardDetail.name || cardDetail.namejp)"
           />
@@ -131,7 +141,7 @@ import { toChzh } from '../utils/lang.js'
 import { getCardClass } from '../utils/cards.js'
 
 import CardItem from '../components/CardItem/CardIndex.vue'
-import CardDetail from '../components/CardDetail/index.vue'
+import CardDetail from '../components/CardDetail/DetailItem.vue'
 
 export default defineComponent({
   name: 'PageScc',

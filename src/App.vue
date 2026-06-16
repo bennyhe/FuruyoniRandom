@@ -136,6 +136,11 @@
             No Result.
           </div>
           <CardDetail
+            :curlang="curlang"
+            :isNaChVer="isNaChVer"
+            :getTypeName="getTypeName"
+            :getCardKeyValInLang="getCardKeyValInLang"
+            :getCanBeStrong="getCanBeStrong"
             :item="cardDetail"
             v-if="cardDetail && (cardDetail.name || cardDetail.namejp)"
           />
@@ -819,7 +824,14 @@
                 isGoToBeGroup
               "
             >
-              <CardDetail :item="cardDetail">
+              <CardDetail
+                :curlang="curlang"
+                :isNaChVer="isNaChVer"
+                :getTypeName="getTypeName"
+                :getCardKeyValInLang="getCardKeyValInLang"
+                :getCanBeStrong="getCanBeStrong"
+                :item="cardDetail"
+              >
                 <template
                   v-if="
                     !isOldVer &&
@@ -1063,6 +1075,11 @@
                 </div>
                 <!-- S 卡片详情 -->
                 <CardDetail
+                  :curlang="curlang"
+                  :isNaChVer="isNaChVer"
+                  :getTypeName="getTypeName"
+                  :getCardKeyValInLang="getCardKeyValInLang"
+                  :getCanBeStrong="getCanBeStrong"
                   :item="cardDetailInDeck"
                   v-if="
                     cardDetailInDeck &&
@@ -1310,7 +1327,14 @@
                     "
                     v-bind:key="`${lkey}ajp`"
                   >
-                    <CardDetail :item="litem.nameCard" />
+                    <CardDetail
+                      :curlang="curlang"
+                      :isNaChVer="isNaChVer"
+                      :getTypeName="getTypeName"
+                      :getCardKeyValInLang="getCardKeyValInLang"
+                      :getCanBeStrong="getCanBeStrong"
+                      :item="litem.nameCard"
+                    />
                   </div>
                   <FaqItem
                     :curlang="curlang"
@@ -1453,7 +1477,7 @@ import sakuraDataOldVer from './js/sub/sakura/carddata/sakura-old'
 
 import PageFooter from './components/PageFooter/index.vue'
 import CardItem from './components/CardItem/CardIndex.vue'
-import CardDetail from './components/CardDetail/index.vue'
+import CardDetail from './components/CardDetail/DetailItem.vue'
 import GirlRange from './components/GirlRange/index.vue'
 import FaqItem from './components/FaqItem/index.vue'
 import DeckCount from './components/Deck/DeckCount.vue'

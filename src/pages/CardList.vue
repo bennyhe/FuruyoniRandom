@@ -1,8 +1,8 @@
 <script setup>
-import { defineProps, defineEmits, computed, defineExpose} from 'vue'
+import { defineProps, defineEmits, computed, defineExpose } from 'vue'
 import configLang from '../config/lang.js'
 import { toChzh } from '../utils/lang.js'
-import CardDetail from '../components/CardDetail/index.vue'
+import CardDetail from '../components/CardDetail/DetailItem.vue'
 import GirlRange from '../components/GirlRange/index.vue'
 const lang = configLang
 const props = defineProps({
@@ -247,6 +247,11 @@ const localShowA = computed({
               ></div>
               <p class="allcards__type">NORMAL</p>
               <CardDetail
+                :curlang="curlang"
+                :isNaChVer="isNaChVer"
+                :getTypeName="getTypeName"
+                :getCardKeyValInLang="getCardKeyValInLang"
+                :getCanBeStrong="getCanBeStrong"
                 v-for="(cardItem, cardIndex) in firstItem.list[
                   firstItem.showAllCardsIndex
                 ].normal"
@@ -256,6 +261,11 @@ const localShowA = computed({
               <div class="allcards__special">
                 <p class="allcards__type">SPECIAL</p>
                 <CardDetail
+                  :curlang="curlang"
+                  :isNaChVer="isNaChVer"
+                  :getTypeName="getTypeName"
+                  :getCardKeyValInLang="getCardKeyValInLang"
+                  :getCanBeStrong="getCanBeStrong"
                   v-for="(cardItem, cardIndex) in firstItem.list[
                     firstItem.showAllCardsIndex
                   ].special"
@@ -277,6 +287,11 @@ const localShowA = computed({
                 EXTRA
               </p>
               <CardDetail
+                :curlang="curlang"
+                :isNaChVer="isNaChVer"
+                :getTypeName="getTypeName"
+                :getCardKeyValInLang="getCardKeyValInLang"
+                :getCanBeStrong="getCanBeStrong"
                 v-for="(cardItem, cardIndex) in firstItem.list[
                   firstItem.showAllCardsIndex
                 ].extra"
@@ -284,6 +299,11 @@ const localShowA = computed({
                 v-bind:key="cardIndex"
               />
               <CardDetail
+                :curlang="curlang"
+                :isNaChVer="isNaChVer"
+                :getTypeName="getTypeName"
+                :getCardKeyValInLang="getCardKeyValInLang"
+                :getCanBeStrong="getCanBeStrong"
                 v-for="(cardItem, cardIndex) in firstItem.list[
                   firstItem.showAllCardsIndex
                 ].poison"
@@ -291,6 +311,11 @@ const localShowA = computed({
                 v-bind:key="cardIndex"
               />
               <CardDetail
+                :curlang="curlang"
+                :isNaChVer="isNaChVer"
+                :getTypeName="getTypeName"
+                :getCardKeyValInLang="getCardKeyValInLang"
+                :getCanBeStrong="getCanBeStrong"
                 v-for="(cardItem, cardIndex) in firstItem.list[
                   firstItem.showAllCardsIndex
                 ].transform"
@@ -298,6 +323,11 @@ const localShowA = computed({
                 v-bind:key="cardIndex"
               />
               <CardDetail
+                :curlang="curlang"
+                :isNaChVer="isNaChVer"
+                :getTypeName="getTypeName"
+                :getCardKeyValInLang="getCardKeyValInLang"
+                :getCanBeStrong="getCanBeStrong"
                 v-for="(cardItem, cardIndex) in firstItem.list[
                   firstItem.showAllCardsIndex
                 ].changeExtra"
@@ -305,6 +335,11 @@ const localShowA = computed({
                 v-bind:key="cardIndex"
               />
               <CardDetail
+                :curlang="curlang"
+                :isNaChVer="isNaChVer"
+                :getTypeName="getTypeName"
+                :getCardKeyValInLang="getCardKeyValInLang"
+                :getCanBeStrong="getCanBeStrong"
                 v-for="(cardItem, cardIndex) in firstItem.list[
                   firstItem.showAllCardsIndex
                 ].girlBoard"
@@ -439,6 +474,11 @@ const localShowA = computed({
           ></div>
           <p class="allcards__type">NORMAL</p>
           <CardDetail
+            :curlang="curlang"
+            :isNaChVer="isNaChVer"
+            :getTypeName="getTypeName"
+            :getCardKeyValInLang="getCardKeyValInLang"
+            :getCanBeStrong="getCanBeStrong"
             v-for="(cardItem, cardIndex) in firstItem.list[
               firstItem.showAllCardsIndex
             ].normal"
@@ -448,6 +488,11 @@ const localShowA = computed({
           <div class="allcards__special">
             <p class="allcards__type">SPECIAL</p>
             <CardDetail
+              :curlang="curlang"
+              :isNaChVer="isNaChVer"
+              :getTypeName="getTypeName"
+              :getCardKeyValInLang="getCardKeyValInLang"
+              :getCanBeStrong="getCanBeStrong"
               v-for="(cardItem, cardIndex) in firstItem.list[
                 firstItem.showAllCardsIndex
               ].special"
@@ -469,6 +514,11 @@ const localShowA = computed({
             EXTRA
           </p>
           <CardDetail
+            :curlang="curlang"
+            :isNaChVer="isNaChVer"
+            :getTypeName="getTypeName"
+            :getCardKeyValInLang="getCardKeyValInLang"
+            :getCanBeStrong="getCanBeStrong"
             v-for="(cardItem, cardIndex) in firstItem.list[
               firstItem.showAllCardsIndex
             ].extra"
@@ -476,6 +526,11 @@ const localShowA = computed({
             v-bind:key="cardIndex"
           />
           <CardDetail
+            :curlang="curlang"
+            :isNaChVer="isNaChVer"
+            :getTypeName="getTypeName"
+            :getCardKeyValInLang="getCardKeyValInLang"
+            :getCanBeStrong="getCanBeStrong"
             v-for="(cardItem, cardIndex) in firstItem.list[
               firstItem.showAllCardsIndex
             ].poison"
@@ -483,6 +538,11 @@ const localShowA = computed({
             v-bind:key="cardIndex"
           />
           <CardDetail
+            :curlang="curlang"
+            :isNaChVer="isNaChVer"
+            :getTypeName="getTypeName"
+            :getCardKeyValInLang="getCardKeyValInLang"
+            :getCanBeStrong="getCanBeStrong"
             v-for="(cardItem, cardIndex) in firstItem.list[
               firstItem.showAllCardsIndex
             ].transform"
@@ -490,6 +550,11 @@ const localShowA = computed({
             v-bind:key="cardIndex"
           />
           <CardDetail
+            :curlang="curlang"
+            :isNaChVer="isNaChVer"
+            :getTypeName="getTypeName"
+            :getCardKeyValInLang="getCardKeyValInLang"
+            :getCanBeStrong="getCanBeStrong"
             v-for="(cardItem, cardIndex) in firstItem.list[
               firstItem.showAllCardsIndex
             ].changeExtra"
@@ -497,6 +562,11 @@ const localShowA = computed({
             v-bind:key="cardIndex"
           />
           <CardDetail
+            :curlang="curlang"
+            :isNaChVer="isNaChVer"
+            :getTypeName="getTypeName"
+            :getCardKeyValInLang="getCardKeyValInLang"
+            :getCanBeStrong="getCanBeStrong"
             v-for="(cardItem, cardIndex) in firstItem.list[
               firstItem.showAllCardsIndex
             ].girlBoard"

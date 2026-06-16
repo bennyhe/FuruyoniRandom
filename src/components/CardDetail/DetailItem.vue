@@ -4,8 +4,8 @@
     <div class="hd">
       <span class="name">
         <i class="i-end" v-if="isShowStopIcon(item)"></i>
-        <template v-if="$parent.getCardKeyValInLang(item)">{{
-          $parent.getCardKeyValInLang(item)
+        <template v-if="getCardKeyValInLang(item)">{{
+          getCardKeyValInLang(item)
         }}</template>
       </span>
       <span class="type">
@@ -15,14 +15,14 @@
         >
           <span v-if="typeIndex > 0">/</span>
           <span :class="'cardtype--' + typeItem">{{
-            $parent.getTypeName(typeItem, 1)
+            getTypeName(typeItem, 1)
           }}</span>
         </span>
       </span>
       <span
         class="cardwho"
-        v-if="$parent.getCardKeyValInLang(item, 'cardwho')"
-        >{{ $parent.getCardKeyValInLang(item, "cardwho") }}</span
+        v-if="getCardKeyValInLang(item, 'cardwho')"
+        >{{ getCardKeyValInLang(item, "cardwho") }}</span
       >
     </div>
     <div class="i-circle cost" v-if="item.cost">
@@ -34,54 +34,54 @@
     <template v-if="item.rangeOpened">
       <div class="ra">
         <p v-if="item.range">
-          {{ lang[$parent.curlang].cardClose }}
-          {{ lang[$parent.curlang].cardRange
+          {{ lang[curlang].cardClose }}
+          {{ lang[curlang].cardRange
           }}<span class="r">{{
-            $parent.getCanBeStrong(item) && item.beStrong > 0
+            getCanBeStrong(item) && item.beStrong > 0
               ? getNewRange(item)
               : item.range
           }}</span
-          >， {{ lang[$parent.curlang].typeAttack
+          >， {{ lang[curlang].typeAttack
           }}<span class="a">{{
-            $parent.getCanBeStrong(item) && item.beStrong > 0
+            getCanBeStrong(item) && item.beStrong > 0
               ? getNewDamage(item)
               : item.damage
           }}</span>
           <span
             v-if="
-              $parent.getCanBeStrong(item) &&
+              getCanBeStrong(item) &&
               item.beStrong === 3 &&
-              lang[$parent.curlang].id === 'cn'
+              lang[curlang].id === 'cn'
             "
             >，不可被打消</span
           >
-          <span v-else-if="$parent.getCanBeStrong(item) && item.beStrong === 3"
+          <span v-else-if="getCanBeStrong(item) && item.beStrong === 3"
             >，打ち消されない</span
           >
         </p>
         <p v-if="item.rangeOpened">
-          {{ lang[$parent.curlang].cardOpen }}
-          {{ lang[$parent.curlang].cardRange
+          {{ lang[curlang].cardOpen }}
+          {{ lang[curlang].cardRange
           }}<span class="r">{{
-            $parent.getCanBeStrong(item) && item.beStrong > 0
+            getCanBeStrong(item) && item.beStrong > 0
               ? getNewRange(item, item.rangeOpened)
               : item.rangeOpened
           }}</span
-          >， {{ lang[$parent.curlang].typeAttack
+          >， {{ lang[curlang].typeAttack
           }}<span class="a">{{
-            $parent.getCanBeStrong(item) && item.beStrong > 0
+            getCanBeStrong(item) && item.beStrong > 0
               ? getNewDamage(item, item.damageOpened)
               : item.damageOpened
           }}</span>
           <span
             v-if="
-              $parent.getCanBeStrong(item) &&
+              getCanBeStrong(item) &&
               item.beStrong === 3 &&
-              lang[$parent.curlang].id === 'cn'
+              lang[curlang].id === 'cn'
             "
             >，不可被打消</span
           >
-          <span v-else-if="$parent.getCanBeStrong(item) && item.beStrong === 3"
+          <span v-else-if="getCanBeStrong(item) && item.beStrong === 3"
             >，打ち消されない</span
           >
         </p>
@@ -89,7 +89,7 @@
     </template>
     <template v-else-if="item.range">
       <div class="ra">
-        {{ lang[$parent.curlang].cardRange
+        {{ lang[curlang].cardRange
         }}<span class="r">{{
           item.baseType === "normal" &&
           item.types.includes("attack") &&
@@ -97,7 +97,7 @@
             ? getNewRange(item)
             : item.range
         }}</span
-        >， {{ lang[$parent.curlang].typeAttack
+        >， {{ lang[curlang].typeAttack
         }}<span class="a"
           ><em class="laceration" v-if="item.isLacerationDamage">{</em
           >{{
@@ -113,7 +113,7 @@
             item.baseType === 'normal' &&
             item.types.includes('attack') &&
             item.beStrong === 3 &&
-            lang[$parent.curlang].id === 'cn'
+            lang[curlang].id === 'cn'
           "
           >，不可被打消</span
         >
@@ -153,21 +153,21 @@
     </span>
     <span class="i-circle capacity" v-if="item.capacity"
       >{{
-        $parent.isNaChVer && +$parent.curlang === 0
+        isNaChVer && +curlang === 0
           ? "献"
-          : lang[$parent.curlang].cardCapacity
+          : lang[curlang].cardCapacity
       }}{{ item.capacity }}</span
     >
     <span class="i-circle capacity capacity--growup" v-if="item.capacityGrowup"
       >{{
-        $parent.isNaChVer && +$parent.curlang === 0
+        isNaChVer && +curlang === 0
           ? "育"
-          : lang[$parent.curlang].cardCapacityGrowup
+          : lang[curlang].cardCapacityGrowup
       }}{{ item.capacityGrowup }}</span
     >
     <template
       v-if="
-        lang[$parent.curlang].id === 'cn' &&
+        lang[curlang].id === 'cn' &&
         item.textkururu &&
         item.textkururu.length > 0
       "
@@ -194,50 +194,30 @@
       </template>
     </template>
     <div
-      v-else-if="$parent.getCardKeyValInLang(item, 'name') === 'Story Board'"
-      v-html="$parent.getCardKeyValInLang(item, 'text')"
+      v-else-if="getCardKeyValInLang(item, 'name') === 'Story Board'"
+      v-html="getCardKeyValInLang(item, 'text')"
     ></div>
     <pre
-      v-else-if="$parent.getCardKeyValInLang(item, 'text')"
-      v-html="$parent.getCardKeyValInLang(item, 'text')"
-    ></pre>
-    <div
-      class="returngroup"
-      v-if="item.returnloopGirls && item.returnloopGirls.length > 0"
-    >
-      <div
-        class="avatar"
-        v-for="(gitem, gkey) in item.returnloopGirls"
-        v-bind:key="gkey"
-      >
-        <img
-          v-lazy="
-            `../img/avatar/${$parent.defaultData[gitem[0]].list[gitem[1]].pic}`
-          "
-        />
-      </div>
-    </div>
-    <pre
-      v-if="$parent.getCardKeyValInLang(item, 'returnloop')"
-      v-html="$parent.getCardKeyValInLang(item, 'returnloop')"
+      v-else-if="getCardKeyValInLang(item, 'text')"
+      v-html="getCardKeyValInLang(item, 'text')"
     ></pre>
     <slot></slot>
     <div class="card-detail-ft">
       <template v-if="item.cardchange && item.cardchange !== ''">
         <p
-          v-if="lang[$parent.curlang].id === 'cn' && item.cardchange"
+          v-if="lang[curlang].id === 'cn' && item.cardchange"
           class="cardchange"
         >
           FROM: {{ toChzh(item.cardchange) }}
         </p>
         <p
-          v-else-if="lang[$parent.curlang].id === 'kr' && item.cardchangekr"
+          v-else-if="lang[curlang].id === 'kr' && item.cardchangekr"
           class="cardchange"
         >
           FROM: {{ item.cardchangekr }}
         </p>
         <p
-          v-else-if="lang[$parent.curlang].id === 'en' && item.cardchangeen"
+          v-else-if="lang[curlang].id === 'en' && item.cardchangeen"
           class="cardchange"
         >
           FROM: {{ item.cardchangeen }}
@@ -256,7 +236,7 @@
     </div>
     <span
       class="select card-detail__strong"
-      v-if="$parent.getCanBeStrong(item)"
+      v-if="getCanBeStrong(item)"
     >
       {{
         item.beStrong === 0 || item.beStrong === undefined
@@ -277,84 +257,79 @@
   </div>
 </template>
 
-<script>
-import { defineComponent } from 'vue'
-import configLang from '../../config/lang.js'
+<script setup>
+import { defineProps } from 'vue'
+import lang from '../../config/lang.js'
 import { isShowStopIcon, getCardClass } from '../../utils/cards.js'
 import { toChzh } from '../../utils/lang.js'
 
-export default defineComponent({
-  name: 'cardDetail',
-  props: ['item'],
-  setup(props, context) {
-    const getNewRange = (cardItem, range) => {
-      // console.log(cardItem.range);
-      const _rangeDefault = range !== undefined ? range : cardItem.range
-      //带-距离
-      if (_rangeDefault.indexOf('-') > -1) {
-        const _range = _rangeDefault.split('-')
-        _range[1] = parseInt(_range[1]) + cardItem.beStrong
-
-        // _range[1] = _range[1] > 10 ? 10 : _range[1];
-
-        // console.log(_range.join('-'));
-        return _range.join('-')
-      }
-      //带,距离
-      else if (_rangeDefault.indexOf(',') > -1) {
-        return _rangeDefault
-      }
-      //单数字距离
-      else if (!isNaN(+_rangeDefault)) {
-        const _range = [parseInt(_rangeDefault), parseInt(_rangeDefault)]
-        _range[1] = parseInt(_range[1]) + cardItem.beStrong
-        // _range[1] = _range[1] > 10 ? 10 : _range[1];
-        return _range.join('-')
-      }
-
-      return _rangeDefault
-    }
-    const getNewDamage = (cardItem, damage) => {
-      const _damageDefault = damage !== undefined ? damage : cardItem.damage
-      // console.log(cardItem.damage);
-      if (_damageDefault.indexOf('/') > -1) {
-        const _damage = _damageDefault.split('/')
-        // console.log(!isNaN(+ _damage[0]), !isNaN(+ _damage[0]), !isNaN(+ _damage[1]));
-        if (!isNaN(+_damage[0])) {
-          // 打盾
-          let afterStrong = cardItem.beStrong
-          if (cardItem.id.indexOf('re-') > -1 && cardItem.beStrong > 1) {
-            // 再演
-            // 0以上……+1/+0となり、距離拡大（遠1）を得る。
-            // 1以上……+0/+1となり、距離拡大（遠1）を得る。
-            // 2以上……+1/+1となり、距離拡大（遠1）を得る、打ち消されない。
-            afterStrong--
-          }
-          // 新幕
-          // 大於等於0……+1/+0和距離擴大（遠1）
-          // 大於等於1……+1/+1和距離擴大（遠1）
-          // 大於等於2……+1/+1、距離擴大（遠1）和不可被打消。
-          _damage[0] = parseInt(_damage[0]) + afterStrong
-        }
-
-        if (!isNaN(+_damage[1])) {
-          // 打命
-          _damage[1] = parseInt(_damage[1]) + (cardItem.beStrong - 1)
-        }
-        return _damage.join('/')
-      }
-
-      return _damageDefault
-    }
-    return {
-      lang: configLang,
-      isShowStopIcon,
-      getNewDamage,
-      getNewRange,
-      toChzh,
-      getCardClass
-    }
-  }
+const props = defineProps({
+  item: Object,
+  curlang: [Number, String],
+  isNaChVer: Boolean,
+  getTypeName: Function,
+  getCardKeyValInLang: Function,
+  getCanBeStrong: Function
 })
+
+const getNewRange = (cardItem, range) => {
+  // console.log(cardItem.range);
+  const _rangeDefault = range !== undefined ? range : cardItem.range
+  //带-距离
+  if (_rangeDefault.indexOf('-') > -1) {
+    const _range = _rangeDefault.split('-')
+    _range[1] = parseInt(_range[1]) + cardItem.beStrong
+
+    // _range[1] = _range[1] > 10 ? 10 : _range[1];
+
+    // console.log(_range.join('-'));
+    return _range.join('-')
+  }
+  //带,距离
+  else if (_rangeDefault.indexOf(',') > -1) {
+    return _rangeDefault
+  }
+  //单数字距离
+  else if (!isNaN(+_rangeDefault)) {
+    const _range = [parseInt(_rangeDefault), parseInt(_rangeDefault)]
+    _range[1] = parseInt(_range[1]) + cardItem.beStrong
+    // _range[1] = _range[1] > 10 ? 10 : _range[1];
+    return _range.join('-')
+  }
+
+  return _rangeDefault
+}
+const getNewDamage = (cardItem, damage) => {
+  const _damageDefault = damage !== undefined ? damage : cardItem.damage
+  // console.log(cardItem.damage);
+  if (_damageDefault.indexOf('/') > -1) {
+    const _damage = _damageDefault.split('/')
+    // console.log(!isNaN(+ _damage[0]), !isNaN(+ _damage[0]), !isNaN(+ _damage[1]));
+    if (!isNaN(+_damage[0])) {
+      // 打盾
+      let afterStrong = cardItem.beStrong
+      if (cardItem.id.indexOf('re-') > -1 && cardItem.beStrong > 1) {
+        // 再演
+        // 0以上……+1/+0となり、距離拡大（遠1）を得る。
+        // 1以上……+0/+1となり、距離拡大（遠1）を得る。
+        // 2以上……+1/+1となり、距離拡大（遠1）を得る、打ち消されない。
+        afterStrong--
+      }
+      // 新幕
+      // 大於等於0……+1/+0和距離擴大（遠1）
+      // 大於等於1……+1/+1和距離擴大（遠1）
+      // 大於等於2……+1/+1、距離擴大（遠1）和不可被打消。
+      _damage[0] = parseInt(_damage[0]) + afterStrong
+    }
+
+    if (!isNaN(+_damage[1])) {
+      // 打命
+      _damage[1] = parseInt(_damage[1]) + (cardItem.beStrong - 1)
+    }
+    return _damage.join('/')
+  }
+
+  return _damageDefault
+}
 </script>
 

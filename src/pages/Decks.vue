@@ -617,6 +617,11 @@
           </div>
           <!-- S 卡片详情 -->
           <CardDetail
+            :curlang="curlang"
+            :isNaChVer="isNaChVer"
+            :getTypeName="getTypeName"
+            :getCardKeyValInLang="getCardKeyValInLang"
+            :getCanBeStrong="getCanBeStrong"
             :item="cardDetailInDeck"
             v-if="
               cardDetailInDeck &&
@@ -637,7 +642,7 @@ import { toChzh } from '../utils/lang.js'
 import { getCardClass } from '../utils/cards.js'
 import { formatTime } from '../utils/export.js'
 import CardItem from '../components/CardItem/CardIndex.vue'
-import CardDetail from '../components/CardDetail/index.vue'
+import CardDetail from '../components/CardDetail/DetailItem.vue'
 import DeckCount from '../components/Deck/DeckCount.vue'
 import DeckTitle from '../components/Deck/DeckTitle.vue'
 import DeckInfo from '../components/Deck/DeckInfo.vue'

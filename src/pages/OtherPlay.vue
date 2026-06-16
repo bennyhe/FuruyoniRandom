@@ -107,9 +107,37 @@
       </div>
       <!-- S 卡片详情 -->
       <CardDetail
+        :curlang="curlang"
+        :isNaChVer="isNaChVer"
+        :getTypeName="getTypeName"
+        :getCardKeyValInLang="getCardKeyValInLang"
+        :getCanBeStrong="getCanBeStrong"
         :item="cardDetail"
         v-if="cardDetail && (cardDetail.name || cardDetail.namejp)"
-      />
+      >
+        <div
+          class="returngroup"
+          v-if="
+            cardDetail.returnloopGirls && cardDetail.returnloopGirls.length > 0
+          "
+        >
+          <div
+            class="avatar"
+            v-for="(gitem, gkey) in cardDetail.returnloopGirls"
+            v-bind:key="gkey"
+          >
+            <img
+              v-lazy="
+                `../img/avatar/${defaultData[gitem[0]].list[gitem[1]].pic}`
+              "
+            />
+          </div>
+        </div>
+        <pre
+          v-if="getCardKeyValInLang(cardDetail, 'returnloop')"
+          v-html="getCardKeyValInLang(cardDetail, 'returnloop')"
+        ></pre>
+      </CardDetail>
       <!-- E 卡片详情 -->
     </div>
     <!-- E 连携 -->
@@ -198,6 +226,11 @@
         </div>
         <!-- S 卡片详情 -->
         <CardDetail
+          :curlang="curlang"
+          :isNaChVer="isNaChVer"
+          :getTypeName="getTypeName"
+          :getCardKeyValInLang="getCardKeyValInLang"
+          :getCanBeStrong="getCanBeStrong"
           :item="cardDetail"
           v-if="cardDetail && (cardDetail.name || cardDetail.namejp)"
         />
@@ -246,6 +279,11 @@
       </div>
       <!-- S 卡片详情 -->
       <CardDetail
+        :curlang="curlang"
+        :isNaChVer="isNaChVer"
+        :getTypeName="getTypeName"
+        :getCardKeyValInLang="getCardKeyValInLang"
+        :getCanBeStrong="getCanBeStrong"
         :item="cardDetail"
         v-if="cardDetail && (cardDetail.name || cardDetail.namejp)"
       />
@@ -382,6 +420,11 @@
         </div>
         <!-- S 卡片详情 -->
         <CardDetail
+          :curlang="curlang"
+          :isNaChVer="isNaChVer"
+          :getTypeName="getTypeName"
+          :getCardKeyValInLang="getCardKeyValInLang"
+          :getCanBeStrong="getCanBeStrong"
           :item="cardDetail"
           v-if="cardDetail && (cardDetail.name || cardDetail.namejp)"
         />
@@ -398,7 +441,7 @@ import { toChzh } from '../utils/lang.js'
 import { getCardClass } from '../utils/cards.js'
 
 import CardItem from '../components/CardItem/CardIndex.vue'
-import CardDetail from '../components/CardDetail/index.vue'
+import CardDetail from '../components/CardDetail/DetailItem.vue'
 // import GirlRange from '../components/GirlRange/index.vue';
 
 export default defineComponent({
