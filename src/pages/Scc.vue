@@ -61,7 +61,16 @@
                   :class="getCardClass(citem)"
                   @click="getCardDetail(citem)"
                 >
-                  <CardItem :item="citem"></CardItem>
+                  <CardItem
+                    :isOldVer="isOldVer"
+                    :curlang="curlang"
+                    :isNaChVer="isNaChVer"
+                    :isShowCardPic="isShowCardPic"
+                    :getCardKeyValInLang="getCardKeyValInLang"
+                    :getImgUrl="getImgUrl"
+                    :getTypeName="getTypeName"
+                    :item="citem"
+                  ></CardItem>
                 </div>
                 <span
                   class="scc-arrow"
@@ -121,7 +130,7 @@ import configLang from '../config/lang.js'
 import { toChzh } from '../utils/lang.js'
 import { getCardClass } from '../utils/cards.js'
 
-import CardItem from '../components/CardItem/index.vue'
+import CardItem from '../components/CardItem/CardIndex.vue'
 import CardDetail from '../components/CardDetail/index.vue'
 
 export default defineComponent({
@@ -135,7 +144,11 @@ export default defineComponent({
     'sakuraChangeCardsData',
     'getCardKeyValInLang',
     'getTypeName',
-    'getCanBeStrong'
+    'getCanBeStrong',
+    'isOldVer',
+    'isNaChVer',
+    'isShowCardPic',
+    'getImgUrl'
   ],
   data() {
     return {

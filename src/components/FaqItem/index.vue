@@ -7,16 +7,16 @@
         <p
           v-if="
             listitem.ajp &&
-            ((lang[$parent.curlang].id === 'cn' && !listitem.a) ||
-              lang[$parent.curlang].id !== 'cn')
+            ((lang[curlang].id === 'cn' && !listitem.a) ||
+              lang[curlang].id !== 'cn')
           "
         >
           {{ listitem.ajp }}
         </p>
         <p
           v-if="
-            (listitem.a && lang[$parent.curlang].id === 'cn') ||
-            (lang[$parent.curlang].id !== 'cn' && !listitem.ajp)
+            (listitem.a && lang[curlang].id === 'cn') ||
+            (lang[curlang].id !== 'cn' && !listitem.ajp)
           "
         >
           {{ toChzh(listitem.a) }}
@@ -27,8 +27,8 @@
       <p
         v-if="
           item.qjp &&
-          ((lang[$parent.curlang].id === 'cn' && !item.q) ||
-            lang[$parent.curlang].id !== 'cn')
+          ((lang[curlang].id === 'cn' && !item.q) ||
+            lang[curlang].id !== 'cn')
         "
       >
         <strong>Q：{{ item.qjp }}</strong
@@ -36,8 +36,8 @@
       </p>
       <p
         v-if="
-          (item.q && lang[$parent.curlang].id === 'cn') ||
-          (lang[$parent.curlang].id !== 'cn' && !item.qjp)
+          (item.q && lang[curlang].id === 'cn') ||
+          (lang[curlang].id !== 'cn' && !item.qjp)
         "
       >
         <template v-if="item.q || item.qjp">
@@ -49,16 +49,16 @@
         <p
           v-if="
             item.ajp &&
-            ((lang[$parent.curlang].id === 'cn' && !item.a) ||
-              lang[$parent.curlang].id !== 'cn')
+            ((lang[curlang].id === 'cn' && !item.a) ||
+              lang[curlang].id !== 'cn')
           "
         >
           <template v-if="item.q || item.qjp">A：</template>{{ item.ajp }}
         </p>
         <p
           v-if="
-            (item.a && lang[$parent.curlang].id === 'cn') ||
-            (lang[$parent.curlang].id !== 'cn' && !item.ajp)
+            (item.a && lang[curlang].id === 'cn') ||
+            (lang[curlang].id !== 'cn' && !item.ajp)
           "
         >
           <template v-if="item.q || item.qjp">A：</template>{{ toChzh(item.a) }}
@@ -75,7 +75,7 @@ import { toChzh } from '../../utils/lang.js'
 
 export default defineComponent({
   name: 'faqItem',
-  props: ['item'],
+  props: ['item', 'curlang'],
   setup(props, context) {
     return {
       lang: configLang,

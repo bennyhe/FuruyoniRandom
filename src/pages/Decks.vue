@@ -28,7 +28,11 @@
             {{ formatTime(sakuraPlayerDeckData[0].date, "YYYY-MM-DD") }}</span
           >
         </p>
-        <p><span class="faq-about__date">投稿的卡组将会用于steam版散樱乱武的AI训练</span></p>
+        <p>
+          <span class="faq-about__date"
+            >投稿的卡组将会用于steam版散樱乱武的AI训练</span
+          >
+        </p>
       </blockquote>
     </div>
     <div class="random-btn-wrap" style="text-align: left; padding-left: 10px">
@@ -164,7 +168,16 @@
               v-bind:key="cardIndex"
             >
               <div class="card-list__item" :class="getCardClass(cardItem.card)">
-                <CardItem :item="cardItem.card"></CardItem>
+                <CardItem
+                  :isOldVer="isOldVer"
+                  :curlang="curlang"
+                  :isNaChVer="isNaChVer"
+                  :isShowCardPic="isShowCardPic"
+                  :getCardKeyValInLang="getCardKeyValInLang"
+                  :getImgUrl="getImgUrl"
+                  :getTypeName="getTypeName"
+                  :item="cardItem.card"
+                ></CardItem>
               </div>
               <p style="color: #646464; font-size: 12px; white-space: nowrap">
                 {{ cardItem.count
@@ -182,7 +195,16 @@
               v-bind:key="cardIndex"
             >
               <div class="card-list__item" :class="getCardClass(cardItem.card)">
-                <CardItem :item="cardItem.card"></CardItem>
+                <CardItem
+                  :isOldVer="isOldVer"
+                  :curlang="curlang"
+                  :isNaChVer="isNaChVer"
+                  :isShowCardPic="isShowCardPic"
+                  :getCardKeyValInLang="getCardKeyValInLang"
+                  :getImgUrl="getImgUrl"
+                  :getTypeName="getTypeName"
+                  :item="cardItem.card"
+                ></CardItem>
               </div>
               <p style="color: #646464; font-size: 12px; white-space: nowrap">
                 {{ cardItem.count
@@ -200,7 +222,16 @@
               v-bind:key="cardIndex"
             >
               <div class="card-list__item" :class="getCardClass(cardItem.card)">
-                <CardItem :item="cardItem.card"></CardItem>
+                <CardItem
+                  :isOldVer="isOldVer"
+                  :curlang="curlang"
+                  :isNaChVer="isNaChVer"
+                  :isShowCardPic="isShowCardPic"
+                  :getCardKeyValInLang="getCardKeyValInLang"
+                  :getImgUrl="getImgUrl"
+                  :getTypeName="getTypeName"
+                  :item="cardItem.card"
+                ></CardItem>
               </div>
               <p style="color: #646464; font-size: 12px; white-space: nowrap">
                 {{ cardItem.count
@@ -279,7 +310,16 @@
                       class="card-list__item"
                       :class="getCardClass(cardItem.card)"
                     >
-                      <CardItem :item="cardItem.card"></CardItem>
+                      <CardItem
+                        :isOldVer="isOldVer"
+                        :curlang="curlang"
+                        :isNaChVer="isNaChVer"
+                        :isShowCardPic="isShowCardPic"
+                        :getCardKeyValInLang="getCardKeyValInLang"
+                        :getImgUrl="getImgUrl"
+                        :getTypeName="getTypeName"
+                        :item="cardItem.card"
+                      ></CardItem>
                     </div>
                     <p
                       style="
@@ -334,7 +374,16 @@
                       class="card-list__item"
                       :class="getCardClass(cardItem.card)"
                     >
-                      <CardItem :item="cardItem.card"></CardItem>
+                      <CardItem
+                        :isOldVer="isOldVer"
+                        :curlang="curlang"
+                        :isNaChVer="isNaChVer"
+                        :isShowCardPic="isShowCardPic"
+                        :getCardKeyValInLang="getCardKeyValInLang"
+                        :getImgUrl="getImgUrl"
+                        :getTypeName="getTypeName"
+                        :item="cardItem.card"
+                      ></CardItem>
                     </div>
                     <p
                       style="
@@ -422,13 +471,25 @@
             </div>
             <div class="card-wrap">
               <div class="card-list">
-                  <template v-for="(cardItem, cardIndex) in item.deck.normal" v-bind:key="cardIndex">
+                <template
+                  v-for="(cardItem, cardIndex) in item.deck.normal"
+                  v-bind:key="cardIndex"
+                >
                   <div
                     class="card-list__item normal"
                     :class="getCardClass(cardItem)"
                     @click="getCardDetailInDeck(cardItem)"
                   >
-                    <CardItem :item="cardItem"></CardItem>
+                    <CardItem
+                      :isOldVer="isOldVer"
+                      :curlang="curlang"
+                      :isNaChVer="isNaChVer"
+                      :isShowCardPic="isShowCardPic"
+                      :getCardKeyValInLang="getCardKeyValInLang"
+                      :getImgUrl="getImgUrl"
+                      :getTypeName="getTypeName"
+                      :item="cardItem"
+                    ></CardItem>
                   </div>
                   <div v-if="cardIndex === 2" class="msee"></div>
                 </template>
@@ -442,7 +503,16 @@
                   v-bind:key="cardIndex"
                   @click="getCardDetailInDeck(cardItem)"
                 >
-                  <CardItem :item="cardItem"></CardItem>
+                  <CardItem
+                    :isOldVer="isOldVer"
+                    :curlang="curlang"
+                    :isNaChVer="isNaChVer"
+                    :isShowCardPic="isShowCardPic"
+                    :getCardKeyValInLang="getCardKeyValInLang"
+                    :getImgUrl="getImgUrl"
+                    :getTypeName="getTypeName"
+                    :item="cardItem"
+                  ></CardItem>
                 </div>
               </div>
               <!-- S 追加 -->
@@ -455,7 +525,16 @@
                     v-bind:key="cardIndex"
                     @click="getCardDetailInDeck(cardItem)"
                   >
-                    <CardItem :item="cardItem"></CardItem>
+                    <CardItem
+                      :isOldVer="isOldVer"
+                      :curlang="curlang"
+                      :isNaChVer="isNaChVer"
+                      :isShowCardPic="isShowCardPic"
+                      :getCardKeyValInLang="getCardKeyValInLang"
+                      :getImgUrl="getImgUrl"
+                      :getTypeName="getTypeName"
+                      :item="cardItem"
+                    ></CardItem>
                   </div>
                   <div
                     class="card-list__item"
@@ -465,7 +544,16 @@
                     v-for="(cardItem, cardIndex) in item.deck.extra"
                     @click="getCardDetailInDeck(cardItem)"
                   >
-                    <CardItem :item="cardItem"></CardItem>
+                    <CardItem
+                      :isOldVer="isOldVer"
+                      :curlang="curlang"
+                      :isNaChVer="isNaChVer"
+                      :isShowCardPic="isShowCardPic"
+                      :getCardKeyValInLang="getCardKeyValInLang"
+                      :getImgUrl="getImgUrl"
+                      :getTypeName="getTypeName"
+                      :item="cardItem"
+                    ></CardItem>
                   </div>
                   <div
                     class="card-list__item"
@@ -474,7 +562,16 @@
                     v-bind:key="cardIndex"
                     @click="getCardDetailInDeck(cardItem)"
                   >
-                    <CardItem :item="cardItem"></CardItem>
+                    <CardItem
+                      :isOldVer="isOldVer"
+                      :curlang="curlang"
+                      :isNaChVer="isNaChVer"
+                      :isShowCardPic="isShowCardPic"
+                      :getCardKeyValInLang="getCardKeyValInLang"
+                      :getImgUrl="getImgUrl"
+                      :getTypeName="getTypeName"
+                      :item="cardItem"
+                    ></CardItem>
                   </div>
                   <div
                     class="card-list__item"
@@ -483,7 +580,16 @@
                     v-bind:key="cardIndex"
                     @click="getCardDetailInDeck(cardItem)"
                   >
-                    <CardItem :item="cardItem"></CardItem>
+                    <CardItem
+                      :isOldVer="isOldVer"
+                      :curlang="curlang"
+                      :isNaChVer="isNaChVer"
+                      :isShowCardPic="isShowCardPic"
+                      :getCardKeyValInLang="getCardKeyValInLang"
+                      :getImgUrl="getImgUrl"
+                      :getTypeName="getTypeName"
+                      :item="cardItem"
+                    ></CardItem>
                   </div>
                   <div
                     class="card-list__item"
@@ -493,7 +599,16 @@
                     v-for="(cardItem, cardIndex) in item.deck.changeExtra"
                     @click="getCardDetailInDeck(cardItem)"
                   >
-                    <CardItem :item="cardItem"></CardItem>
+                    <CardItem
+                      :isOldVer="isOldVer"
+                      :curlang="curlang"
+                      :isNaChVer="isNaChVer"
+                      :isShowCardPic="isShowCardPic"
+                      :getCardKeyValInLang="getCardKeyValInLang"
+                      :getImgUrl="getImgUrl"
+                      :getTypeName="getTypeName"
+                      :item="cardItem"
+                    ></CardItem>
                   </div>
                 </div>
               </div>
@@ -521,7 +636,7 @@ import configLang from '../config/lang.js'
 import { toChzh } from '../utils/lang.js'
 import { getCardClass } from '../utils/cards.js'
 import { formatTime } from '../utils/export.js'
-import CardItem from '../components/CardItem/index.vue'
+import CardItem from '../components/CardItem/CardIndex.vue'
 import CardDetail from '../components/CardDetail/index.vue'
 import DeckCount from '../components/Deck/DeckCount.vue'
 import DeckTitle from '../components/Deck/DeckTitle.vue'
@@ -557,7 +672,11 @@ export default defineComponent({
     'deckSortBy',
     'getCardDetailInDeck',
     'selectedDeckShow',
-    'getCanBeStrong'
+    'getCanBeStrong',
+    'isOldVer',
+    'isNaChVer',
+    'isShowCardPic',
+    'getImgUrl'
   ],
   setup(props, context) {
     return {

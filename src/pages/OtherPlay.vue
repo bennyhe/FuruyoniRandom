@@ -38,7 +38,16 @@
                   @click="getCardDetail(cardItem)"
                   v-bind:key="cardIndex"
                 >
-                  <CardItem :item="cardItem"></CardItem>
+                  <CardItem
+                    :isOldVer="isOldVer"
+                    :curlang="curlang"
+                    :isNaChVer="isNaChVer"
+                    :isShowCardPic="isShowCardPic"
+                    :getCardKeyValInLang="getCardKeyValInLang"
+                    :getImgUrl="getImgUrl"
+                    :getTypeName="getTypeName"
+                    :item="cardItem"
+                  ></CardItem>
                 </div>
               </div>
             </div>
@@ -81,7 +90,16 @@
                 @click="getCardDetail(cardItem)"
                 v-bind:key="cardIndex"
               >
-                <CardItem :item="cardItem"></CardItem>
+                <CardItem
+                  :isOldVer="isOldVer"
+                  :curlang="curlang"
+                  :isNaChVer="isNaChVer"
+                  :isShowCardPic="isShowCardPic"
+                  :getCardKeyValInLang="getCardKeyValInLang"
+                  :getImgUrl="getImgUrl"
+                  :getTypeName="getTypeName"
+                  :item="cardItem"
+                ></CardItem>
               </div>
             </div>
           </div>
@@ -139,7 +157,16 @@
                       @click="getCardDetail(cardItem)"
                       v-bind:key="cardIndex"
                     >
-                      <CardItem :item="cardItem"></CardItem>
+                      <CardItem
+                        :isOldVer="isOldVer"
+                        :curlang="curlang"
+                        :isNaChVer="isNaChVer"
+                        :isShowCardPic="isShowCardPic"
+                        :getCardKeyValInLang="getCardKeyValInLang"
+                        :getImgUrl="getImgUrl"
+                        :getTypeName="getTypeName"
+                        :item="cardItem"
+                      ></CardItem>
                     </div>
                   </template>
                 </div>
@@ -152,7 +179,16 @@
                       @click="getCardDetail(cardItem)"
                       v-bind:key="cardIndex"
                     >
-                      <CardItem :item="cardItem"></CardItem>
+                      <CardItem
+                        :isOldVer="isOldVer"
+                        :curlang="curlang"
+                        :isNaChVer="isNaChVer"
+                        :isShowCardPic="isShowCardPic"
+                        :getCardKeyValInLang="getCardKeyValInLang"
+                        :getImgUrl="getImgUrl"
+                        :getTypeName="getTypeName"
+                        :item="cardItem"
+                      ></CardItem>
                     </div>
                   </template>
                 </div>
@@ -187,7 +223,16 @@
                   @click="getCardDetail(cardItem)"
                   v-bind:key="cardIndex"
                 >
-                  <CardItem :item="cardItem"></CardItem>
+                  <CardItem
+                    :isOldVer="isOldVer"
+                    :curlang="curlang"
+                    :isNaChVer="isNaChVer"
+                    :isShowCardPic="isShowCardPic"
+                    :getCardKeyValInLang="getCardKeyValInLang"
+                    :getImgUrl="getImgUrl"
+                    :getTypeName="getTypeName"
+                    :item="cardItem"
+                  ></CardItem>
                 </div>
               </div>
             </div>
@@ -230,7 +275,9 @@
             </div>
           </div>
         </div>
-        <a :href="panelTab[3].child[0].link" target="_blank">Download Link &gt;&gt;</a>
+        <a :href="panelTab[3].child[0].link" target="_blank"
+          >Download Link &gt;&gt;</a
+        >
         <div class="story__item">
           <div class="card-wrap card-wrap--noscrollinm">
             <!-- <p>{{getCardKeyValInLang(sakuraCMData[curCMIndex])}}</p> -->
@@ -252,7 +299,16 @@
                       v-if="item.normal && item.normal.length > 0"
                       @click="getCardDetail(cardItem)"
                     >
-                      <CardItem :item="cardItem"></CardItem>
+                      <CardItem
+                        :isOldVer="isOldVer"
+                        :curlang="curlang"
+                        :isNaChVer="isNaChVer"
+                        :isShowCardPic="isShowCardPic"
+                        :getCardKeyValInLang="getCardKeyValInLang"
+                        :getImgUrl="getImgUrl"
+                        :getTypeName="getTypeName"
+                        :item="cardItem"
+                      ></CardItem>
                     </div>
                   </template>
                 </div>
@@ -265,7 +321,16 @@
                       v-if="item.special && item.special.length > 0"
                       @click="getCardDetail(cardItem)"
                     >
-                      <CardItem :item="cardItem"></CardItem>
+                      <CardItem
+                        :isOldVer="isOldVer"
+                        :curlang="curlang"
+                        :isNaChVer="isNaChVer"
+                        :isShowCardPic="isShowCardPic"
+                        :getCardKeyValInLang="getCardKeyValInLang"
+                        :getImgUrl="getImgUrl"
+                        :getTypeName="getTypeName"
+                        :item="cardItem"
+                      ></CardItem>
                     </div>
                   </template>
                 </div>
@@ -278,7 +343,16 @@
                       v-if="item.extra && item.extra.length > 0"
                       @click="getCardDetail(cardItem)"
                     >
-                      <CardItem :item="cardItem"></CardItem>
+                      <CardItem
+                        :isOldVer="isOldVer"
+                        :curlang="curlang"
+                        :isNaChVer="isNaChVer"
+                        :isShowCardPic="isShowCardPic"
+                        :getCardKeyValInLang="getCardKeyValInLang"
+                        :getImgUrl="getImgUrl"
+                        :getTypeName="getTypeName"
+                        :item="cardItem"
+                      ></CardItem>
                     </div>
                   </template>
                   <template v-for="(cardItem, cardIndex) in item.poison">
@@ -289,7 +363,16 @@
                       v-if="item.poison && item.poison.length > 0"
                       @click="getCardDetail(cardItem)"
                     >
-                      <CardItem :item="cardItem"></CardItem>
+                      <CardItem
+                        :isOldVer="isOldVer"
+                        :curlang="curlang"
+                        :isNaChVer="isNaChVer"
+                        :isShowCardPic="isShowCardPic"
+                        :getCardKeyValInLang="getCardKeyValInLang"
+                        :getImgUrl="getImgUrl"
+                        :getTypeName="getTypeName"
+                        :item="cardItem"
+                      ></CardItem>
                     </div>
                   </template>
                 </div>
@@ -314,7 +397,7 @@ import configLang from '../config/lang.js'
 import { toChzh } from '../utils/lang.js'
 import { getCardClass } from '../utils/cards.js'
 
-import CardItem from '../components/CardItem/index.vue'
+import CardItem from '../components/CardItem/CardIndex.vue'
 import CardDetail from '../components/CardDetail/index.vue'
 // import GirlRange from '../components/GirlRange/index.vue';
 
@@ -338,7 +421,11 @@ export default defineComponent({
     'tabChangedInChild',
     'getTypeName',
     'getCardDetail',
-    'getCanBeStrong'
+    'getCanBeStrong',
+    'isOldVer',
+    'isNaChVer',
+    'isShowCardPic',
+    'getImgUrl'
   ],
   data() {
     return {

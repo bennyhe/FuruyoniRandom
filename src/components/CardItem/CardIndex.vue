@@ -2,19 +2,14 @@
   <div class="card-item">
     <div
       class="item-pic"
-      v-if="
-        !$parent.isOldVer && getIsShowCardPic(item) && $parent.isShowCardPic
-      "
+      v-if="!isOldVer && getIsShowCardPicIn(item, lang, curlang) && isShowCardPic"
     >
-      <img class="item-pic" v-lazy="$parent.getImgUrlUse(item)" />
+      <img class="item-pic" v-lazy="getImgUrl(item)" />
     </div>
     <p class="name">
-      <i
-        class="i-end"
-        v-if="isShowStopIcon(item)"
-      ></i>
-      <template v-if="$parent.getCardKeyValInLang(item)">{{
-        $parent.getCardKeyValInLang(item)
+      <i class="i-end" v-if="isShowStopIcon(item)"></i>
+      <template v-if="getCardKeyValInLang(item)">{{
+        getCardKeyValInLang(item)
       }}</template>
     </p>
     <div class="i-circle cost" v-if="item.cost">
@@ -25,27 +20,22 @@
       <span v-for="(typeItem, typeIndex) in item.types" v-bind:key="typeIndex">
         <template v-if="typeIndex > 0">/</template>
         <span :class="'cardtype--' + typeItem">{{
-          $parent.getTypeName(typeItem)
+          getTypeName(typeItem)
         }}</span>
       </span>
     </div>
     <div
       class="color"
       v-if="
-        item.cardchange ||
-        $parent.getCardKeyValInLang(item, 'cardwho') ||
-        item.colors
+        item.cardchange || getCardKeyValInLang(item, 'cardwho') || item.colors
       "
     >
-      <p class="cardwho" v-if="$parent.getCardKeyValInLang(item, 'cardwho')">
-        {{ $parent.getCardKeyValInLang(item, "cardwho") }}
+      <p class="cardwho" v-if="getCardKeyValInLang(item, 'cardwho')">
+        {{ getCardKeyValInLang(item, "cardwho") }}
       </p>
 
-      <p
-        class="cardchange"
-        v-if="$parent.getCardKeyValInLang(item, 'cardchange')"
-      >
-        {{ $parent.getCardKeyValInLang(item, "cardchange") }}
+      <p class="cardchange" v-if="getCardKeyValInLang(item, 'cardchange')">
+        {{ getCardKeyValInLang(item, "cardchange") }}
       </p>
 
       <p v-if="item.colors">
@@ -64,17 +54,11 @@
       </p>
     </div>
     <span class="i-circle capacity" v-if="item.capacity"
-      >{{
-        $parent.isNaChVer && +$parent.curlang === 0
-          ? "献"
-          : lang[$parent.curlang].cardCapacity
+      >{{ isNaChVer && +curlang === 0 ? "献" : lang[curlang].cardCapacity
       }}{{ item.capacity }}</span
     >
     <span class="i-circle capacity capacity--growup" v-if="item.capacityGrowup"
-      >{{
-        $parent.isNaChVer && +$parent.curlang === 0
-          ? "育"
-          : lang[$parent.curlang].cardCapacityGrowup
+      >{{ isNaChVer && +curlang === 0 ? "育" : lang[curlang].cardCapacityGrowup
       }}{{ item.capacityGrowup }}</span
     >
     <span class="i-circle range" v-if="item.range">{{ item.range }}</span>
@@ -102,63 +86,43 @@
       </i>
     </span>
     <div
-      class="returngroup"
-      v-if="item.returnloopGirls && item.returnloopGirls.length > 0"
-    >
-      <!-- <div
-        class="avatar avatar--small"
-        v-for="(gitem, gkey) in item.returnloopGirls"
-        v-bind:key="gkey"
-      >
-        <img
-          v-lazy="
-            `../img/avatar/${$parent.defaultData[gitem[0]].list[gitem[1]].pic}`
-          "
-        />
-      </div> -->
-    </div>
-    <div
       v-if="item.id === 'Story Board'"
-      v-html="$parent.getCardKeyValInLang(item, 'text')"
+      v-html="getCardKeyValInLang(item, 'text')"
     ></div>
   </div>
 </template>
 
-<script>
-import { defineComponent } from 'vue'
-import configLang from '../../config/lang.js'
+<script setup>
+import { defineProps } from 'vue'
+import lang from '../../config/lang.js'
 import { isShowStopIcon, getIsShowCardPicIn } from '../../utils/cards.js'
 
-export default defineComponent({
-  name: 'cardItem',
-  props: ['item'],
-  setup(props, context) {
-    function getIsShowCardPic(cardData) {
-      return getIsShowCardPicIn(cardData, configLang, this.$parent.curlang)
-    }
-    /**
-     * 豆子颜色
-     * @param  {[type]} colorItem [description]
-     * @return {[type]}           [description]
-     */
-    function getColorClass(colorItem) {
-      const colorClass = {
-        绿: 'green',
-        红: 'red',
-        紫: 'purple',
-        蓝: 'blue',
-        黄: 'yellow',
-        X: 'x',
-        Y: 'y'
-      }
-      return colorClass[colorItem]
-    }
-    return {
-      lang: configLang,
-      getIsShowCardPic,
-      getColorClass,
-      isShowStopIcon
-    }
-  }
+const props = defineProps({
+  item: Object,
+  curlang: [String, Number],
+  isOldVer: Boolean,
+  isNaChVer: Boolean,
+  isShowCardPic: Boolean,
+  getCardKeyValInLang: Function,
+  getImgUrl: Function,
+  getTypeName: Function
 })
+
+/**
+ * 豆子颜色
+ * @param  {[type]} colorItem [description]
+ * @return {[type]}           [description]
+ */
+const getColorClass = colorItem => {
+  const colorClass = {
+    绿: 'green',
+    红: 'red',
+    紫: 'purple',
+    蓝: 'blue',
+    黄: 'yellow',
+    X: 'x',
+    Y: 'y'
+  }
+  return colorClass[colorItem]
+}
 </script>

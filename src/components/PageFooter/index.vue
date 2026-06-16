@@ -25,11 +25,11 @@
           )}(${getCardKeyValInLang(
             naData[25].list[1]
           )})（全员禁止）`}}， -->
-          {{`${$parent.getCardKeyValInLang(
+          {{`${getCardKeyValInLang(
             naData[2].list[0].special[0]
-          )}（${$parent.getCardKeyValInLang(
+          )}（${getCardKeyValInLang(
             naData[2].list[0]
-          )}/${$parent.getCardKeyValInLang(naData[12].list[0])}组合禁止）`
+          )}/${getCardKeyValInLang(naData[12].list[0])}组合禁止）`
         }}
       </p>
       <p v-else>
@@ -40,13 +40,13 @@
             naData[25].list[1].normal[4]
           )}(${getCardKeyValInLang(
             naData[25].list[1]
-          )})、${$parent.getCardKeyValInLang(
+          )})、${getCardKeyValInLang(
             naData[2].list[0].special[0]
-          )}（${$parent.getCardKeyValInLang(
+          )}（${getCardKeyValInLang(
             naData[2].list[0]
           )}
         }}/ -->
-          {{`${$parent.getCardKeyValInLang(naData[12].list[0])}组合禁止）——${new Date().getFullYear()}年${
+          {{`${getCardKeyValInLang(naData[12].list[0])}组合禁止）——${new Date().getFullYear()}年${
             new Date().getMonth() + 1
           }月禁止カード`
         }}
