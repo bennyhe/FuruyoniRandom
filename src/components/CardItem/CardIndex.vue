@@ -2,7 +2,9 @@
   <div class="card-item">
     <div
       class="item-pic"
-      v-if="!isOldVer && getIsShowCardPicIn(item, lang, curlang) && isShowCardPic"
+      v-if="
+        !isOldVer && getIsShowCardPicIn(item, lang, curlang) && isShowCardPic
+      "
     >
       <img class="item-pic" v-lazy="getImgUrl(item)" />
     </div>
@@ -85,6 +87,7 @@
         <span>{{ item.damageOpened.split("/")[1] }}</span>
       </i>
     </span>
+    <slot />
     <div
       v-if="item.id === 'Story Board'"
       v-html="getCardKeyValInLang(item, 'text')"

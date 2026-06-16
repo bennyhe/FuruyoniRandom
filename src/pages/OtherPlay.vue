@@ -47,7 +47,29 @@
                     :getImgUrl="getImgUrl"
                     :getTypeName="getTypeName"
                     :item="cardItem"
-                  ></CardItem>
+                  >
+                    <div
+                      class="returngroup"
+                      v-if="
+                        cardItem.returnloopGirls &&
+                        cardItem.returnloopGirls.length > 0
+                      "
+                    >
+                      <div
+                        class="avatar avatar--small"
+                        v-for="(gitem, gkey) in cardItem.returnloopGirls"
+                        v-bind:key="gkey"
+                      >
+                        <img
+                          v-lazy="
+                            `../img/avatar/${
+                              $parent.defaultData[gitem[0]].list[gitem[1]].pic
+                            }`
+                          "
+                        />
+                      </div>
+                    </div>
+                  </CardItem>
                 </div>
               </div>
             </div>
@@ -99,7 +121,29 @@
                   :getImgUrl="getImgUrl"
                   :getTypeName="getTypeName"
                   :item="cardItem"
-                ></CardItem>
+                >
+                  <div
+                    class="returngroup"
+                    v-if="
+                      cardItem.returnloopGirls &&
+                      cardItem.returnloopGirls.length > 0
+                    "
+                  >
+                    <div
+                      class="avatar avatar--small"
+                      v-for="(gitem, gkey) in cardItem.returnloopGirls"
+                      v-bind:key="gkey"
+                    >
+                      <img
+                        v-lazy="
+                          `../img/avatar/${
+                            $parent.defaultData[gitem[0]].list[gitem[1]].pic
+                          }`
+                        "
+                      />
+                    </div>
+                  </div>
+                </CardItem>
               </div>
             </div>
           </div>
