@@ -1,5 +1,5 @@
 <script setup>
-import { defineProps, defineEmits, computed, defineExpose } from 'vue'
+import { defineProps, defineEmits, computed } from 'vue'
 import configLang from '../config/lang.js'
 import { toChzh } from '../utils/lang.js'
 import CardDetail from '../components/CardDetail/DetailItem.vue'
@@ -42,12 +42,6 @@ const props = defineProps({
   getCanBeStrong: {
     type: Function
   }
-})
-defineExpose({
-  getCardKeyValInLang: props.getCardKeyValInLang,
-  getTypeName: props.getTypeName,
-  curlang: props.curlang,
-  getCanBeStrong: props.getCanBeStrong
 })
 const emit = defineEmits([
   'update:isNaChVer',
