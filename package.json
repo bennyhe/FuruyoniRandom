@@ -14,10 +14,8 @@
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^2.3.0",
-    "babel-polyfill": "^6.26.0",
     "eslint": "^8.20.0",
     "eslint-plugin-vue": "^9.3.0",
-    "fastclick": "^1.0.6",
     "postcss": "^8.4.12",
     "sass-loader": "^6.0.6",
     "vite": "^2.9.0",

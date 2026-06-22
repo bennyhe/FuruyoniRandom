@@ -16,7 +16,6 @@ This template should help get you started developing with Vue 3 in Vite. The tem
 # 引用插件
 1. vue3-lazyload
 2. eslint
-3. babel-polyfill
-4. autoprefixer
-5. sass
-6. sass-loader
+3. autoprefixer
+4. sass
+5. sass-loader
