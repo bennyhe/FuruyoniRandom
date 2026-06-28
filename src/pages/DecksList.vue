@@ -96,8 +96,7 @@ const getAnyCardsData = newVal => {
   // console.log(data)
   return data
 }
-const anyCardsData = ref([])
-anyCardsData.value = getAnyCardsData(props.deckAvatarList)
+const anyCardsData = ref(getAnyCardsData(props.deckAvatarList))
 </script>
 <template>
   <div class="allcards-list">

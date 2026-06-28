@@ -2320,7 +2320,7 @@ export default {
         item.AllGroup = this.findDeck(item, true)
         item.GroupNum = item.AllGroup.length
       })
-      this.resDecks = [...this.sakuraPlayerDeckData]
+      this.resDecks = this.sakuraPlayerDeckData
       this.deckSum = this.resDecks.length
       // console.log(this.sakuraPlayerDeckData, this.deckAvatarList)
       console.log(
@@ -2548,7 +2548,7 @@ export default {
       selectedItems.forEach(item => item.isSelect = true)
 
       this.cardDetailInDeck = {}
-      this.resDecks = [...this.sakuraPlayerDeckData]
+      this.resDecks = this.sakuraPlayerDeckData
       this.panelTab[4].childTabIndex = 0
     },
     changeGroupVer() {
