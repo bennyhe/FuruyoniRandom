@@ -1,5 +1,5 @@
 <script setup>
-import { defineProps, ref, watch } from 'vue'
+import { defineProps, ref } from 'vue'
 import configLang from '../config/lang.js'
 import { toChzh } from '../utils/lang.js'
 import { getCardClass } from '../utils/cards.js'
@@ -93,7 +93,7 @@ const getAnyCardsData = newVal => {
     // console.log(newItem, newItem.name, newItem.cardname)
     data.push(newItem)
   })
-  console.log(data)
+  // console.log(data)
   return data
 }
 const anyCardsData = ref([])
