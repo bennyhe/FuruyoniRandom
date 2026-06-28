@@ -2588,9 +2588,9 @@ export default {
       this.panelTab[4].childTabIndex = 0
     },
     handleClickCancelDeckAvatar() {
-      this.deckAvatarList.forEach(item => {
-        item.isSelect = false
-      })
+      const selectedItems = this.deckAvatarList.filter(item => item.isSelect)
+      selectedItems.forEach(item => item.isSelect = false)
+      
       this.cardDetailInDeck = {}
       this.resDecks = []
       this.panelTab[4].childTabIndex = 0
@@ -2599,9 +2599,10 @@ export default {
       this.sakuraPlayerDeckData.forEach(item => {
         item.isSelect = false
       })
-      this.deckAvatarList.forEach(item => {
-        item.isSelect = true
-      })
+      
+      const selectedItems = this.deckAvatarList.filter(item => !item.isSelect)
+      selectedItems.forEach(item => item.isSelect = true)
+
       this.cardDetailInDeck = {}
       this.resDecks = [...this.sakuraPlayerDeckData]
       this.panelTab[4].childTabIndex = 0

@@ -100,7 +100,7 @@ export default [
     ver5: '伍',
     ver6: '六',
     changeLog: '更新履歴',
-    once: '',
+    once: '個',
     decksCount: 'デッキ数',
     seasonUse: '起源戦',
     classicalUse: '古典戦'
