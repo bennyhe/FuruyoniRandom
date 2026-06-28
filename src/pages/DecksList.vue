@@ -1,3 +1,44 @@
+<script setup>
+import { defineProps } from 'vue'
+import configLang from '../config/lang.js'
+import { toChzh } from '../utils/lang.js'
+import { getCardClass } from '../utils/cards.js'
+import { formatTime } from '../utils/export.js'
+import CardItem from '../components/CardItem/CardIndex.vue'
+import CardDetail from '../components/CardDetail/DetailItem.vue'
+import DeckCount from '../components/Deck/DeckCount.vue'
+import DeckTitle from '../components/Deck/DeckTitle.vue'
+import DeckInfo from '../components/Deck/DeckInfo.vue'
+
+const lang = configLang
+const props = defineProps({
+  curlang: [String, Number],
+  sakuraPlayerDeckData,
+  deckAvatarList,
+  deckSortByType,
+  panelTab,
+  statisticsDeckCards,
+  deckAvatarListBackup,
+  resDecks,
+  cardDetailInDeck,
+  deckSum,
+  randomGetDeck,
+  getCardKeyValInLang,
+  handleClickCancelDeckAvatar,
+  handleClickResetDeckAvatar,
+  tabChangedInChild,
+  getTypeName,
+  selectedCancel,
+  deckSortBy,
+  getCardDetailInDeck,
+  selectedDeckShow,
+  getCanBeStrong,
+  isOldVer,
+  isNaChVer,
+  isShowCardPic,
+  getImgUrl
+})
+</script>
 <template>
   <div class="allcards-list">
     <div class="md faq-about">
@@ -636,61 +677,3 @@
     </div>
   </div>
 </template>
-<script>
-import { defineComponent } from 'vue'
-import configLang from '../config/lang.js'
-import { toChzh } from '../utils/lang.js'
-import { getCardClass } from '../utils/cards.js'
-import { formatTime } from '../utils/export.js'
-import CardItem from '../components/CardItem/CardIndex.vue'
-import CardDetail from '../components/CardDetail/DetailItem.vue'
-import DeckCount from '../components/Deck/DeckCount.vue'
-import DeckTitle from '../components/Deck/DeckTitle.vue'
-import DeckInfo from '../components/Deck/DeckInfo.vue'
-
-export default defineComponent({
-  name: 'PageDecks',
-  components: {
-    CardItem,
-    CardDetail,
-    DeckCount,
-    DeckTitle,
-    DeckInfo
-  },
-  props: [
-    'curlang',
-    'sakuraPlayerDeckData',
-    'deckAvatarList',
-    'deckSortByType',
-    'panelTab',
-    'statisticsDeckCards',
-    'deckAvatarListBackup',
-    'resDecks',
-    'cardDetailInDeck',
-    'deckSum',
-    'randomGetDeck',
-    'getCardKeyValInLang',
-    'handleClickCancelDeckAvatar',
-    'handleClickResetDeckAvatar',
-    'tabChangedInChild',
-    'getTypeName',
-    'selectedCancel',
-    'deckSortBy',
-    'getCardDetailInDeck',
-    'selectedDeckShow',
-    'getCanBeStrong',
-    'isOldVer',
-    'isNaChVer',
-    'isShowCardPic',
-    'getImgUrl'
-  ],
-  setup(props, context) {
-    return {
-      lang: configLang,
-      toChzh,
-      getCardClass,
-      formatTime
-    }
-  }
-})
-</script>
