@@ -48,14 +48,22 @@
         @click="deckSortBy('countdown', deckSortByType === 'countdown')"
         :class="{ disabled: deckSortByType === 'countdown' }"
       >
-        {{ lang[curlang].id === "cn" ? toChzh("卡组数量") : "デッキ数" }}↓
+        {{
+          lang[curlang].decksCount
+            ? lang[curlang].decksCount
+            : lang[1].decksCount
+        }}↓
       </button>
       <button
         class="btn btn-xs btn-main-brd"
         @click="deckSortBy('countup', deckSortByType === 'countup')"
         :class="{ disabled: deckSortByType === 'countup' }"
       >
-        {{ lang[curlang].id === "cn" ? toChzh("卡组数量") : "デッキ数" }}↑
+        {{
+          lang[curlang].decksCount
+            ? lang[curlang].decksCount
+            : lang[1].decksCount
+        }}↑
       </button>
     </div>
     <div
@@ -78,8 +86,7 @@
           }}</template>
         </span>
         <span style="color: #646464; font-size: 12px; white-space: nowrap"
-          >{{ girlItem.GroupNum
-          }}{{ lang[curlang].id === "cn" ? toChzh("个") : "" }}</span
+          >{{ girlItem.GroupNum }}{{ lang[curlang].once }}</span
         >
       </span>
     </div>
@@ -180,8 +187,7 @@
                 ></CardItem>
               </div>
               <p style="color: #646464; font-size: 12px; white-space: nowrap">
-                {{ cardItem.count
-                }}{{ lang[curlang].id === "cn" ? toChzh("个") : "" }}
+                {{ cardItem.count }}{{ lang[curlang].once }}
               </p>
             </span>
           </div>
@@ -207,8 +213,7 @@
                 ></CardItem>
               </div>
               <p style="color: #646464; font-size: 12px; white-space: nowrap">
-                {{ cardItem.count
-                }}{{ lang[curlang].id === "cn" ? toChzh("个") : "" }}
+                {{ cardItem.count }}{{ lang[curlang].once }}
               </p>
             </span>
           </div>
@@ -234,8 +239,7 @@
                 ></CardItem>
               </div>
               <p style="color: #646464; font-size: 12px; white-space: nowrap">
-                {{ cardItem.count
-                }}{{ lang[curlang].id === "cn" ? toChzh("个") : "" }}
+                {{ cardItem.count }}{{ lang[curlang].once }}
               </p>
             </span>
           </div>
@@ -262,8 +266,7 @@
                 }}</span>
                 <span
                   style="color: #646464; font-size: 12px; white-space: nowrap"
-                  >({{ girlItem.GroupNum
-                  }}{{ lang[curlang].id === "cn" ? toChzh("个") : "" }})</span
+                  >({{ girlItem.GroupNum }}{{ lang[curlang].once }})</span
                 >
               </div>
             </div>
@@ -328,8 +331,7 @@
                         white-space: nowrap;
                       "
                     >
-                      {{ cardItem.count
-                      }}{{ lang[curlang].id === "cn" ? toChzh("个") : "" }}
+                      {{ cardItem.count }}{{ lang[curlang].once }}
                     </p>
                   </span>
                 </div>
@@ -392,8 +394,7 @@
                         white-space: nowrap;
                       "
                     >
-                      {{ cardItem.count
-                      }}{{ lang[curlang].id === "cn" ? toChzh("个") : "" }}
+                      {{ cardItem.count }}{{ lang[curlang].once }}
                     </p>
                   </span>
                 </div>

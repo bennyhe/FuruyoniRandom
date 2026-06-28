@@ -11,9 +11,7 @@ const props = defineProps({
 </script>
 <template>
   <div class="allcards__title">
-    <span class="deck-date">{{
-      formatTime(item.date, "YY-MM-DD")
-    }}</span>
+    <span class="deck-date">{{ formatTime(item.date, "YY-MM-DD") }}</span>
     <span
       class="avatar"
       v-for="(item2, index2) in item.groupCardData"
@@ -25,7 +23,7 @@ const props = defineProps({
     <span class="i-tag i-tag--top1" v-if="item.isTop1">優勝</span>
     <span class="name">{{ item.name }}</span>
     <span class="i-tag i-tag--season" v-if="item.isSeason">{{
-      lang[curlang].id === "cn" ? toChzh("起源可用") : "起源戦OK"
+      lang[curlang].seasonUse ? lang[curlang].seasonUse : lang[1].seasonUse
     }}</span>
     <span class="deck-author">@{{ item.author }}</span>
   </div>

@@ -108,7 +108,7 @@ const localShowA = computed({
                 class="i-tag i-tag--season2"
                 v-if="firstItem.isClassicBattle"
                 >{{
-                  lang[curlang].id === "cn" ? toChzh("古典战") : "古典戦"
+                  lang[curlang].classicalUse ? lang[curlang].classicalUse : lang[1].classicalUse
                 }}</span
               >
             </div>
@@ -152,9 +152,9 @@ const localShowA = computed({
                       class="i-tag i-tag--season"
                       v-if="qiyuanGirls.ch.includes(item.name)"
                       >{{
-                        lang[curlang].id === "cn"
-                          ? toChzh("起源可用")
-                          : "起源戦OK"
+                        lang[curlang].seasonUse
+                          ? lang[curlang].seasonUse
+                          : lang[1].seasonUse
                       }}</span
                     >
                   </template>
@@ -167,9 +167,9 @@ const localShowA = computed({
                       class="i-tag i-tag--season"
                       v-if="qiyuanGirls.default.includes(item.name)"
                       >{{
-                        lang[curlang].id === "cn"
-                          ? toChzh("起源可用")
-                          : "起源戦OK"
+                        lang[curlang].seasonUse
+                          ? lang[curlang].seasonUse
+                          : lang[1].seasonUse
                       }}</span
                     >
                   </template>
@@ -357,7 +357,7 @@ const localShowA = computed({
             >{{ getCardKeyValInLang(firstItem, "name") }}
           </span>
           <span class="i-tag i-tag--season2" v-if="firstItem.isClassicBattle">{{
-            lang[curlang].id === "cn" ? toChzh("古典战") : "古典戦"
+            lang[curlang].classicalUse ? lang[curlang].classicalUse : lang[1].classicalUse
           }}</span>
         </div>
         <div class="allcards-tab">
@@ -394,7 +394,9 @@ const localShowA = computed({
                   class="i-tag i-tag--season"
                   v-if="qiyuanGirls.ch.includes(item.name)"
                   >{{
-                    lang[curlang].id === "cn" ? toChzh("起源可用") : "起源戦OK"
+                    lang[curlang].seasonUse
+                      ? lang[curlang].seasonUse
+                      : lang[1].seasonUse
                   }}</span
                 >
               </template>
@@ -407,7 +409,9 @@ const localShowA = computed({
                   class="i-tag i-tag--season"
                   v-if="qiyuanGirls.default.includes(item.name)"
                   >{{
-                    lang[curlang].id === "cn" ? toChzh("起源可用") : "起源戦OK"
+                    lang[curlang].seasonUse
+                      ? lang[curlang].seasonUse
+                      : lang[1].seasonUse
                   }}</span
                 >
               </template>

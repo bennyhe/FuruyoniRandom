@@ -46,7 +46,11 @@ export default [
     ver4: '肆',
     ver5: '伍',
     ver6: '陸',
-    changeLog: '更新日誌'
+    changeLog: '更新日誌',
+    once: '個',
+    decksCount: '卡組數量',
+    seasonUse: '起源可用',
+    classicalUse: '古典戰'
   },
   {
     id: 'jp',
@@ -95,7 +99,11 @@ export default [
     ver4: '四',
     ver5: '伍',
     ver6: '六',
-    changeLog: '更新履歴'
+    changeLog: '更新履歴',
+    once: '',
+    decksCount: 'デッキ数',
+    seasonUse: '起源戦',
+    classicalUse: '古典戦'
   },
   {
     id: 'kr',
