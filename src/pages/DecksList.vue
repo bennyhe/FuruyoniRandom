@@ -1,9 +1,9 @@
 <script setup>
-import { defineProps } from 'vue'
+import { defineProps, ref, watch } from 'vue'
 import configLang from '../config/lang.js'
 import { toChzh } from '../utils/lang.js'
 import { getCardClass } from '../utils/cards.js'
-import { formatTime } from '../utils/export.js'
+import { formatTime, getCounts } from '../utils/export.js'
 import CardItem from '../components/CardItem/CardIndex.vue'
 import CardDetail from '../components/CardDetail/DetailItem.vue'
 import DeckCount from '../components/Deck/DeckCount.vue'
@@ -15,10 +15,9 @@ const props = defineProps({
   curlang: [String, Number],
   sakuraPlayerDeckData: [Array],
   deckAvatarList: [Array],
-  deckSortByType: [Array],
+  deckSortByType: [String],
   panelTab: [Array],
   statisticsDeckCards: [Object],
-  deckAvatarListBackup: [Array],
   resDecks: [Array],
   cardDetailInDeck: [Object],
   deckSum: [String, Number],
@@ -30,7 +29,7 @@ const props = defineProps({
   getTypeName: [Function],
   selectedCancel: [Function],
   deckSortBy: [Function],
-  getCardDetailInDeck:[Object],
+  getCardDetailInDeck:[Function],
   selectedDeckShow: [Function],
   getCanBeStrong: [Function],
   isOldVer: [Boolean],
@@ -38,6 +37,67 @@ const props = defineProps({
   isShowCardPic: [Boolean],
   getImgUrl: [Function]
 })
+const getAnyCardsData = newVal => {
+  const data = []
+  newVal.forEach(item => {
+    const newItem = {
+      name: item.name,
+      namejp: item.namejp,
+      pic: item.pic,
+      GroupNum: item.GroupNum,
+      giCards: {
+        normal: [],
+        special: [],
+        normalMostCard: [],
+        specialMostCard: [],
+        normalCardTypes: [],
+        specialCardTypes: []
+      }
+    }
+    item.useCards.forEach(carditem => {
+      if (carditem.baseType === 'normal') {
+        newItem.giCards.normal.push(carditem.id)
+      }
+      if (carditem.baseType === 'special') {
+        newItem.giCards.special.push(carditem.id)
+      }
+    })
+    newItem.giCards.normal = getCounts(newItem.giCards.normal)
+    newItem.giCards.special = getCounts(newItem.giCards.special)
+    if (newItem.giCards.normal.resultList.length > 0) {
+      newItem.giCards.normal.resultList.forEach((qitem, qindex) => {
+        newItem.giCards.normalMostCard[qindex] = {
+          card: item.useCards.filter(citem => citem.id === qitem.name)[0],
+          count: qitem.count
+        }
+        newItem.giCards.normalCardTypes[qindex] =
+              newItem.giCards.normalMostCard[qindex].card.types[0]
+      })
+      newItem.giCards.normalCardTypes = getCounts(
+        newItem.giCards.normalCardTypes
+      )
+    }
+    if (newItem.giCards.special.resultList.length > 0) {
+      newItem.giCards.special.resultList.forEach((qitem, qindex) => {
+        newItem.giCards.specialMostCard[qindex] = {
+          card: item.useCards.filter(citem => citem.id === qitem.name)[0],
+          count: qitem.count
+        }
+        newItem.giCards.specialCardTypes[qindex] =
+              newItem.giCards.specialMostCard[qindex].card.types[0]
+      })
+      newItem.giCards.specialCardTypes = getCounts(
+        newItem.giCards.specialCardTypes
+      )
+    }
+    // console.log(newItem, newItem.name, newItem.cardname)
+    data.push(newItem)
+  })
+  console.log(data)
+  return data
+}
+const anyCardsData = ref([])
+anyCardsData.value = getAnyCardsData(props.deckAvatarList)
 </script>
 <template>
   <div class="allcards-list">
@@ -289,10 +349,10 @@ const props = defineProps({
       <!-- E 投稿卡组中使用数前五的卡牌 -->
       <div
         class="anycard-data"
-        v-if="deckAvatarListBackup && deckAvatarListBackup.length > 0"
+        v-if="anyCardsData.length > 0"
       >
         <div
-          v-for="(girlItem, girlIndex) in deckAvatarListBackup"
+          v-for="(girlItem, girlIndex) in anyCardsData"
           class="allcards-list__item"
           v-bind:key="girlIndex"
         >

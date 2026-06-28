@@ -1354,7 +1354,7 @@
       <div
         class="panel-item panel-item--deck"
         :class="{ cur: showPanelIndex === 4 }"
-        v-if="sakuraPlayerDeckData && sakuraPlayerDeckData.length > 0"
+        v-if="sakuraPlayerDeckData && sakuraPlayerDeckData.length > 0 && deckAvatarList.length > 0"
       >
         <PageDecks
           :curlang="curlang"
@@ -1363,7 +1363,6 @@
           :deckSortByType="deckSortByType"
           :panelTab="panelTab"
           :statisticsDeckCards="statisticsDeckCards"
-          :deckAvatarListBackup="deckAvatarListBackup"
           :resDecks="resDecks"
           :cardDetailInDeck="cardDetailInDeck"
           :deckSum="deckSum"
@@ -1793,8 +1792,6 @@ export default {
           special: []
         }
       ],
-      deckAvatarListBackup: [],
-
       showPanelIndex: 0,
       panelTab: configNav,
 
@@ -2322,57 +2319,7 @@ export default {
       this.deckAvatarList.forEach(item => {
         item.AllGroup = this.findDeck(item, true)
         item.GroupNum = item.AllGroup.length
-
-        // 各女神使用的卡
-        if (!item.giCards) {
-          item.giCards = {
-            normal: [],
-            special: [],
-            normalMostCard: [],
-            specialMostCard: [],
-            normalCardTypes: [],
-            specialCardTypes: []
-          }
-        }
-        item.useCards.forEach(carditem => {
-          if (carditem.baseType === 'normal') {
-            item.giCards.normal.push(carditem.id)
-          }
-          if (carditem.baseType === 'special') {
-            item.giCards.special.push(carditem.id)
-          }
-        })
-        item.giCards.normal = getCounts(item.giCards.normal)
-        item.giCards.special = getCounts(item.giCards.special)
-        if (item.giCards.normal.resultList.length > 0) {
-          item.giCards.normal.resultList.forEach((qitem, qindex) => {
-            item.giCards.normalMostCard[qindex] = {
-              card: item.useCards.filter(citem => citem.id === qitem.name)[0],
-              count: qitem.count
-            }
-            item.giCards.normalCardTypes[qindex] =
-              item.giCards.normalMostCard[qindex].card.types[0]
-          })
-          item.giCards.normalCardTypes = getCounts(
-            item.giCards.normalCardTypes
-          )
-        }
-        if (item.giCards.special.resultList.length > 0) {
-          item.giCards.special.resultList.forEach((qitem, qindex) => {
-            item.giCards.specialMostCard[qindex] = {
-              card: item.useCards.filter(citem => citem.id === qitem.name)[0],
-              count: qitem.count
-            }
-            item.giCards.specialCardTypes[qindex] =
-              item.giCards.specialMostCard[qindex].card.types[0]
-          })
-          item.giCards.specialCardTypes = getCounts(
-            item.giCards.specialCardTypes
-          )
-        }
-        // console.log(item.name, item.cardname)
       })
-      this.deckAvatarListBackup = [...this.deckAvatarList]
       this.resDecks = [...this.sakuraPlayerDeckData]
       this.deckSum = this.resDecks.length
       // console.log(this.sakuraPlayerDeckData, this.deckAvatarList)
@@ -2610,9 +2557,7 @@ export default {
     },
     deckSortBy(type, disabled) {
       if (
-        disabled &&
-        !this.deckAvatarListBackup &&
-        this.deckAvatarListBackup.length === 0
+        disabled
       ) {
         return
       }
