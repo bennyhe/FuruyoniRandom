@@ -1483,7 +1483,7 @@ import FaqItem from './components/FaqItem/index.vue'
 import DeckCount from './components/Deck/DeckCount.vue'
 import DeckTitle from './components/Deck/DeckTitle.vue'
 import DeckInfo from './components/Deck/DeckInfo.vue'
-import PageDecks from './pages/Decks.vue'
+import PageDecks from './pages/DecksList.vue'
 import PageOtherPlay from './pages/OtherPlay.vue'
 import PageCardList from './pages/CardList.vue'
 import PageScc from './pages/Scc.vue'
@@ -1772,10 +1772,7 @@ export default {
       qiyuanGirls: window.qiyuanGirls || {},
       seasonGirls: window.seasonGirls || {},
 
-      sakuraPlayerDeckData:
-        sakuraPlayerDeckData && sakuraPlayerDeckData.length > 0
-          ? JSON.parse(JSON.stringify(sakuraPlayerDeckData))
-          : [],
+      sakuraPlayerDeckData: sakuraPlayerDeckData,
       resDecks: [],
       deckSum: 0,
       deckAvatarList: [],
