@@ -19,15 +19,14 @@ textarea {
   border-radius: 4px;
 }
 
-// .bg {
-//   position: fixed;
-//   left: -5%;
-//   top: -5%;
-//   bottom: -5%;
-//   right: -5%;
-//   background: url(../img/bg.jpg) no-repeat;
-//   background-size: cover;
-// }
+.bg {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba($color: #222, $alpha: .05)
+}
 
 .main {
   max-width: 1280px;

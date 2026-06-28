@@ -3538,7 +3538,7 @@ const Sakura = [{
     changespecial: [{
       changeIndex: 1,
       id: 're-15-korunu-a1-s-1',
-      name: '水银利刃',
+      name: '蛊毒刀锋',
       namejp: 'ルカネマキリ',
       types: ['attack'],
       range: '3-4',
@@ -3549,7 +3549,7 @@ const Sakura = [{
     }, {
       changeIndex: 3,
       id: 're-15-korunu-a1-s-3',
-      name: '通神御币',
+      name: '遁光砥炼',
       namejp: 'マクイナウ',
       types: ['enhance'],
       capacity: '3',
