@@ -1354,7 +1354,11 @@
       <div
         class="panel-item panel-item--deck"
         :class="{ cur: showPanelIndex === 4 }"
-        v-if="sakuraPlayerDeckData && sakuraPlayerDeckData.length > 0 && deckAvatarList.length > 0"
+        v-if="
+          sakuraPlayerDeckData &&
+          sakuraPlayerDeckData.length > 0 &&
+          deckAvatarList.length > 0
+        "
       >
         <PageDecks
           :curlang="curlang"
@@ -2166,7 +2170,18 @@ export default {
       this.deckfilterMap = temp
     },
     initDecksPlaza() {
+      // 性能优化：预构建映射
+      const girlToDeckMap = new Map() // 女神→卡组映射
+      const deckAvatarMap = new Map() // 头像临时存储（避免filter）
+
       const seasonTags = []
+      // 统计数据收集容器
+      const allNormalCards = []
+      const allSpecialCards = []
+      const currentSeasonNormal = []
+      const currentSeasonSpecial = []
+      const currentSeasonSS = this.statisticsDeckCards[1]?.ss
+
       this.sakuraPlayerDeckData.forEach((item, index) => {
         const { deck, newGroupCardData, ver } = getDeckDetailForLink(
           item.decklink,
@@ -2218,36 +2233,15 @@ export default {
           ranges: [],
           rangeOpened: []
         }
-        findAllRangeFromCards(
-          thisGirl,
-          deck,
-          'normal',
-          item.groupCardData[0].index === 5 || item.groupCardData[1].index === 5
-        )
-        findAllRangeFromCards(
-          thisGirl,
-          deck,
-          'special',
-          item.groupCardData[0].index === 5 || item.groupCardData[1].index === 5
-        )
-        findAllRangeFromCards(
-          thisGirl,
-          deck,
-          'extra',
-          item.groupCardData[0].index === 5 || item.groupCardData[1].index === 5
-        )
-        findAllRangeFromCards(
-          thisGirl,
-          deck,
-          'transform',
-          item.groupCardData[0].index === 5 || item.groupCardData[1].index === 5
-        )
-        findAllRangeFromCards(
-          thisGirl,
-          deck,
-          'changeExtra',
-          item.groupCardData[0].index === 5 || item.groupCardData[1].index === 5
-        )
+        // 优化：合并多次调用
+        const isYukihiGroup =
+          item.groupCardData[0].index === 5 ||
+          item.groupCardData[1].index === 5
+        findAllRangeFromCards(thisGirl, deck, 'normal', isYukihiGroup)
+        findAllRangeFromCards(thisGirl, deck, 'special', isYukihiGroup)
+        findAllRangeFromCards(thisGirl, deck, 'extra', isYukihiGroup)
+        findAllRangeFromCards(thisGirl, deck, 'transform', isYukihiGroup)
+        findAllRangeFromCards(thisGirl, deck, 'changeExtra', isYukihiGroup)
         item.deckrange = {
           girlExtra: {
             name: item.groupCardData[0].name + item.groupCardData[1].name,
@@ -2263,32 +2257,25 @@ export default {
         // console.log(deck,item.deckrange)
 
         // 为了统计卡组构筑中的卡的使用频率
+        // 优化：收集到临时数组
         item.deck.normal.forEach(carditem => {
-          this.statisticsDeckCards[0].all.push(carditem)
-          this.statisticsDeckCards[0].normal.push(carditem)
-
-          // console.log(item.shortVer, this.statisticsDeckCards[1].ss)
-          if (item.shortVer === this.statisticsDeckCards[1].ss) {
-            this.statisticsDeckCards[1].all.push(carditem)
-            this.statisticsDeckCards[1].normal.push(carditem)
+          allNormalCards.push(carditem)
+          if (item.shortVer === currentSeasonSS) {
+            currentSeasonNormal.push(carditem)
           }
+          // console.log(item.shortVer, this.statisticsDeckCards[1].ss)
         })
         item.deck.special.forEach(carditem => {
-          this.statisticsDeckCards[0].all.push(carditem)
-          this.statisticsDeckCards[0].special.push(carditem)
-
-          if (item.shortVer === this.statisticsDeckCards[1].ss) {
-            this.statisticsDeckCards[1].all.push(carditem)
-            this.statisticsDeckCards[1].special.push(carditem)
+          allSpecialCards.push(carditem)
+          if (item.shortVer === currentSeasonSS) {
+            currentSeasonSpecial.push(carditem)
           }
         })
 
+        // 优化：用Map替代filter + push
         item.groupCardData.forEach(item2 => {
-          const isAdd = this.deckAvatarList.filter(
-            listitem => listitem.name === item2.name
-          )
-          if (isAdd && isAdd.length === 0) {
-            this.deckAvatarList.push({
+          if (!deckAvatarMap.has(item2.name)) {
+            deckAvatarMap.set(item2.name, {
               name: item2.name || '',
               namejp: item2.namejp || '',
               pic: item2.pic || '',
@@ -2298,8 +2285,15 @@ export default {
               useCards: [...item2.useCards]
             })
           } else {
-            isAdd[0].useCards = isAdd[0].useCards.concat(item2.useCards)
+            const existing = deckAvatarMap.get(item2.name)
+            existing.useCards.push(...item2.useCards) // push替代concat
           }
+
+          // 构建：女神→卡组映射
+          if (!girlToDeckMap.has(item2.name)) {
+            girlToDeckMap.set(item2.name, [])
+          }
+          girlToDeckMap.get(item2.name).push(item)
         })
       })
 
@@ -2311,15 +2305,23 @@ export default {
       })
       // console.log(this.seasonTags)
 
+      // 优化：从Map转换并排序
       this.deckAvatarList = sortInObjectOptions(
-        this.deckAvatarList,
+        Array.from(deckAvatarMap.values()),
         ['index', 'subIndex'],
         'up'
       )
+
+      // 优化：用映射直接计算，避免嵌套遍历
       this.deckAvatarList.forEach(item => {
-        item.AllGroup = this.findDeck(item, true)
+        item.AllGroup = girlToDeckMap.get(item.name) || []
         item.GroupNum = item.AllGroup.length
       })
+
+      // 保存映射供后续使用
+      this.girlToDeckMap = girlToDeckMap
+
+      // 优化：直接引用
       this.resDecks = this.sakuraPlayerDeckData
       this.deckSum = this.resDecks.length
       // console.log(this.sakuraPlayerDeckData, this.deckAvatarList)
@@ -2329,6 +2331,19 @@ export default {
           this.sakuraPlayerDeckData.map(item => item.decklink)
         ).resultList.filter(item => item.count > 1)
       )
+
+      // 优化：一次性赋值统计数据
+      this.statisticsDeckCards[0].all = [...allNormalCards, ...allSpecialCards]
+      this.statisticsDeckCards[0].normal = allNormalCards
+      this.statisticsDeckCards[0].special = allSpecialCards
+      if (currentSeasonSS) {
+        this.statisticsDeckCards[1].all = [
+          ...currentSeasonNormal,
+          ...currentSeasonSpecial
+        ]
+        this.statisticsDeckCards[1].normal = currentSeasonNormal
+        this.statisticsDeckCards[1].special = currentSeasonSpecial
+      }
 
       // 统计使用卡的频率前5
       this.formatCardname(this.statisticsDeckCards[0]) // 所有赛季
@@ -2389,6 +2404,66 @@ export default {
       this.cardDetailInDeck = {}
     },
     findDeck(data, noSetData, isAnd) {
+      // 如果有预构建的映射，使用快速查找
+      if (this.girlToDeckMap) {
+        let result = [],
+          resultPick2 = []
+        let avatarList = this.deckAvatarList.filter(item2 => item2.isSelect)
+
+        if (data && Array.isArray(data)) {
+          // 如果是数组
+          avatarList = data
+        } else if (data) {
+          avatarList = [data]
+        }
+
+        if (avatarList.length > 0) {
+          this.sakuraPlayerDeckData.forEach(item => {
+            item.isSelect = false
+          })
+
+          if (avatarList.length === 2) {
+            // 2Pick是两个包含优先展示
+            const girl1Decks = this.girlToDeckMap.get(avatarList[0].name) || []
+            girl1Decks.forEach(item => {
+              // console.log((item.groupCardData[0].name === avatarList[0].name) && (item.groupCardData[1].name === avatarList[1].name))
+              if (item.groupCardData[1].name === avatarList[1].name) {
+                resultPick2.push(item)
+              }
+            })
+            // console.log(resultPick2)
+          }
+
+          //包含女神的卡组
+          if (!isAnd) {
+            const resultSet = new Set(resultPick2)
+            avatarList.forEach(aitem => {
+              const decks = this.girlToDeckMap.get(aitem.name) || []
+              decks.forEach(item => {
+                // console.log(item.id, result.filter(item2 => item2.id === item.id).length)
+                if (!resultSet.has(item)) {
+                  result.push(item)
+                  resultSet.add(item)
+                }
+              })
+            })
+          }
+        }
+
+        if (resultPick2.length > 0) {
+          resultPick2 = [...sortInObjectOptions(resultPick2, ['id'], 'up')]
+        }
+        if (result.length > 0) {
+          result = [...sortInObjectOptions(result, ['id'], 'up')]
+        }
+        // console.log(result, resultPick2)
+        if (!noSetData) {
+          this.resDecks = [...resultPick2, ...result]
+        }
+        return [...resultPick2, ...result]
+      }
+
+      // ❌ 兜底：原版逻辑（保留兼容性）
       let result = [],
         resultPick2 = []
       let avatarList = this.deckAvatarList.filter(item2 => item2.isSelect)
@@ -2532,23 +2607,37 @@ export default {
       this.panelTab[4].childTabIndex = 0
     },
     handleClickCancelDeckAvatar() {
-      const selectedItems = this.deckAvatarList.filter(item => item.isSelect)
-      selectedItems.forEach(item => item.isSelect = false)
-      
+      // 优化：合并filter和forEach（功能一致）
+      for (let i = 0; i < this.deckAvatarList.length; i++) {
+        if (this.deckAvatarList[i].isSelect !== false) {
+          this.deckAvatarList[i].isSelect = false
+        }
+      }
+
       this.cardDetailInDeck = {}
       this.resDecks = []
       this.panelTab[4].childTabIndex = 0
     },
     handleClickResetDeckAvatar() {
-      this.sakuraPlayerDeckData.forEach(item => {
-        item.isSelect = false
-      })
-      
-      const selectedItems = this.deckAvatarList.filter(item => !item.isSelect)
-      selectedItems.forEach(item => item.isSelect = true)
+      // 优化：条件更新，只改真正需要的（避免不必要的响应式触发）
+      for (let i = 0; i < this.sakuraPlayerDeckData.length; i++) {
+        if (this.sakuraPlayerDeckData[i].isSelect !== false) {
+          this.sakuraPlayerDeckData[i].isSelect = false
+        }
+      }
+
+      // 优化：合并filter和forEach为一次遍历（保持功能一致）
+      for (let i = 0; i < this.deckAvatarList.length; i++) {
+        if (this.deckAvatarList[i].isSelect !== true) {
+          this.deckAvatarList[i].isSelect = true
+        }
+      }
 
       this.cardDetailInDeck = {}
+
+      // 优化：直接引用，不复制（功能不变，但性能提升）
       this.resDecks = this.sakuraPlayerDeckData
+
       this.panelTab[4].childTabIndex = 0
     },
     changeGroupVer() {
@@ -2556,9 +2645,7 @@ export default {
       localStorage.setItem('sakuraGroupVer22010802', this.isGroupOldVer)
     },
     deckSortBy(type, disabled) {
-      if (
-        disabled
-      ) {
+      if (disabled) {
         return
       }
       this.deckSortByType = type
