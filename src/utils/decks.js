@@ -21,7 +21,7 @@ export function findDeck(girlToDeckMap, sakuraPlayerDeckData, data, deckAvatarLi
 
   // 2. 空列表直接返回
   if (avatarList.length === 0) {
-    return { result: [], resultPick2: [], all: [] }
+    return []
   }
 
   // 3. 重置所有卡组的选中状态

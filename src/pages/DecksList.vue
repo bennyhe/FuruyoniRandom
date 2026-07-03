@@ -21,7 +21,6 @@ const props = defineProps({
   getCardKeyValInLang: [Function],
   tabChangedInChild: [Function],
   getTypeName: [Function],
-  selectedCancel: [Function],
   getCardDetailInDeck: [Function],
   selectedDeckShow: [Function],
   getCanBeStrong: [Function],
@@ -32,7 +31,8 @@ const props = defineProps({
   updateTime: [String],
   resDecks: [Array],
   cardDetailInDeck: [Object],
-  sakuraPlayerDeckData: [Array]
+  sakuraPlayerDeckData: [Array],
+  findDeck: [Function]
 })
 const deckSortByType = ref('index')
 
@@ -158,6 +158,12 @@ const handleClickResetDeckAvatar = () => {
   emit('update:resDecks', decks)
   emit('resetChildTab')
 }
+
+const handleClickSelectedCancel = girlItem => {
+  girlItem.isSelect = !girlItem.isSelect
+  props.findDeck()
+  emit('resetChildTab')
+}
 </script>
 <template>
   <div class="allcards-list">
@@ -234,7 +240,7 @@ const handleClickResetDeckAvatar = () => {
         class="random-item"
         v-for="(girlItem, girlIndex) in deckAvatarList"
         :class="{ 'random-item--nouse': !girlItem.isSelect }"
-        @click="selectedCancel(girlItem)"
+        @click="handleClickSelectedCancel(girlItem)"
         v-bind:key="girlIndex"
       >
         <span class="random-item__pic">

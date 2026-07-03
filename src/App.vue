@@ -1376,7 +1376,7 @@
           :getCardKeyValInLang="getCardKeyValInLang"
           :tabChangedInChild="tabChangedInChild"
           :getTypeName="getTypeName"
-          :selectedCancel="selectedCancel"
+          :findDeck="findDeck"
           :getCardDetailInDeck="getCardDetailInDeck"
           :selectedDeckShow="selectedDeckShow"
           :getCanBeStrong="getCanBeStrong"
@@ -2384,11 +2384,6 @@ export default {
       )
       if (!noSetData) this.resDecks = all
       return all
-    },
-    selectedCancel(girlItem) {
-      girlItem.isSelect = !girlItem.isSelect
-      this.findDeck()
-      this.panelTab[4].childTabIndex = 0
     },
     randomGetDeck(count) {
       const result = randomGetDeck(
