@@ -68,3 +68,76 @@ export function findDeck(girlToDeckMap, sakuraPlayerDeckData, data, deckAvatarLi
 
   return [...resultPick2, ...result]
 }
+/**
+ * randomGetDeck - 随机选取卡组
+ * @param  {Number|String} count  数字=随机抽取数量，'top1'/'allo'/'alla'/'ss2'=特殊筛选
+ * @param  {Array} deckAvatarList      头像列表（会被修改 isSelect）
+ * @param  {Array} sakuraPlayerDeckData 全部卡组数据
+ * @param  {Array} qiyuanDefault       起源女神列表
+ * @return {Array}                     筛选后的卡组列表
+ */
+export function randomGetDeck(count, deckAvatarList, sakuraPlayerDeckData, qiyuanDefault) {
+  // 1. 统一重置选择状态
+  deckAvatarList.forEach(item => {
+    item.isSelect = false
+  })
+
+  let resDecks = []
+
+  if (count === 'top1') {
+    deckAvatarList.forEach(item => {
+      item.isSelect = true
+    })
+    resDecks = sakuraPlayerDeckData.filter(item => item.isTop1)
+
+  } else if (count === 'allo' || count === 'alla') {
+    deckAvatarList.forEach(item => {
+      const isInnealra = item.namejp.indexOf('槍') > -1
+      if (count === 'allo') {
+        item.isSelect = isInnealra || item.subIndex === 0
+      } else {
+        item.isSelect = !isInnealra && item.subIndex !== 0
+      }
+    })
+    const chizi = deckAvatarList
+      .filter(item => item.isSelect)
+      .map(item => item.name)
+    resDecks = sakuraPlayerDeckData.filter(
+      item =>
+        chizi.includes(item.groupCardData[0].name) &&
+        chizi.includes(item.groupCardData[1].name)
+    )
+
+  } else if (count === 'ss2') {
+    deckAvatarList.forEach(item => {
+      if (item.subIndex === 0 && qiyuanDefault.includes(item.name)) {
+        item.isSelect = true
+      }
+    })
+    resDecks = sakuraPlayerDeckData.filter(item => item.isSeason)
+
+  } else {
+    // 随机抽取count个女神：swap+pop，O(n)
+    const pool = deckAvatarList.map(item => ({
+      name: item.name,
+      index: item.index
+    }))
+    const randomList = []
+    for (let i = 0; i < count && pool.length > 0; i++) {
+      const r = Math.floor(Math.random() * pool.length)
+      randomList.push(pool[r].name)
+      pool[r] = pool[pool.length - 1]
+      pool.pop()
+    }
+    const randomSet = new Set(randomList)
+    deckAvatarList.forEach(item => {
+      if (randomSet.has(item.name)) {
+        item.isSelect = true
+      }
+    })
+    // 随机抽取后需要调 findDeck 筛选，返回 null 表示需要调用方调 findDeck
+    return null
+  }
+
+  return resDecks
+}

@@ -1474,7 +1474,8 @@ import {
   filterKeywords
 } from './utils/export.js'
 import {
-  findDeck
+  findDeck,
+  randomGetDeck
 } from './utils/decks.js'
 
 import sakuraDataNa from './js/sub/sakura/carddata/sakura-s10-2'
@@ -2408,93 +2409,34 @@ export default {
       this.cardDetailInDeck = {}
     },
     findDeck(data, noSetData, isAnd) {
-      if (!noSetData){
-        return findDeck(
-          data,
-          this.deckAvatarList,
-          isAnd
-        )
-      }
-      return []
+      const all = findDeck(
+        this.girlToDeckMap,
+        this.sakuraPlayerDeckData,
+        data,
+        this.deckAvatarList,
+        isAnd
+      )
+      if (!noSetData) this.resDecks = all
+      return all
     },
     selectedCancel(girlItem) {
       girlItem.isSelect = !girlItem.isSelect
       this.findDeck()
       this.panelTab[4].childTabIndex = 0
     },
-    /**
-     * randomGetDeck - 随机选取卡组
-     * @param  {Number|String} count  数字=随机抽取数量，'top1'/'allo'/'alla'/'ss2'=特殊筛选
-     */
     randomGetDeck(count) {
-      // 1. 统一重置选择状态
-      this.deckAvatarList.forEach(item => {
-        item.isSelect = false
-      })
-
-      if (count === 'top1') {
-        // 上位卡组：全选头像，筛选上位卡组
-        this.deckAvatarList.forEach(item => {
-          item.isSelect = true
-        })
-        this.resDecks = this.sakuraPlayerDeckData.filter(item => item.isTop1)
-      } else if (count === 'allo' || count === 'alla') {
-        // Only O / Only A 筛选
-        this.deckAvatarList.forEach(item => {
-          const isInnealra = item.namejp.indexOf('槍') > -1
-          if (count === 'allo') {
-            // O侧：槍全选 + 非槍的subIndex===0
-            item.isSelect = isInnealra || item.subIndex === 0
-          } else {
-            // A侧：非槍的subIndex!==0（槍不选）
-            item.isSelect = !isInnealra && item.subIndex !== 0
-          }
-        })
-        const chizi = this.deckAvatarList
-          .filter(item => item.isSelect)
-          .map(item => item.name)
-        this.resDecks = this.sakuraPlayerDeckData.filter(
-          item =>
-            chizi.includes(item.groupCardData[0].name) &&
-            chizi.includes(item.groupCardData[1].name)
-        )
-      } else if (count === 'ss2') {
-        // 起源女神筛选
-        this.deckAvatarList.forEach(item => {
-          if (
-            item.subIndex === 0 &&
-            this.qiyuanGirls.default.includes(item.name)
-          ) {
-            item.isSelect = true
-          }
-        })
-        this.resDecks = this.sakuraPlayerDeckData.filter(
-          item => item.isSeason
-        )
-      } else {
-        // 随机抽取count个女神：用swap+pop代替filter，O(n)而非O(n²)
-        const pool = this.deckAvatarList.map(item => ({
-          name: item.name,
-          index: item.index
-        }))
-        const randomList = []
-        for (let i = 0; i < count && pool.length > 0; i++) {
-          const r = Math.floor(Math.random() * pool.length)
-          randomList.push(pool[r].name)
-          // 把选中的swap到末尾pop掉，避免filter重建数组
-          pool[r] = pool[pool.length - 1]
-          pool.pop()
-        }
-        // 用Set加速includes判断
-        const randomSet = new Set(randomList)
-        this.deckAvatarList.forEach(item => {
-          if (randomSet.has(item.name)) {
-            item.isSelect = true
-          }
-        })
+      const result = randomGetDeck(
+        count,
+        this.deckAvatarList,
+        this.sakuraPlayerDeckData,
+        this.qiyuanGirls.default
+      )
+      if (result === null) {
+        // 随机抽取模式，需要调 findDeck
         this.findDeck()
+      } else {
+        this.resDecks = result
       }
-
       this.panelTab[4].childTabIndex = 0
     },
     changeGroupVer() {
