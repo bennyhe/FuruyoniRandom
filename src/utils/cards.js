@@ -1,5 +1,6 @@
 import {
-  getUrlQuery
+  getUrlQuery,
+  getCounts
 } from './export.js'
 
 const spStopsCards = ['re-08-hagane-o-n-1', 're-06-yukihi-o-s-3']
@@ -214,4 +215,38 @@ export function getDeckDetailForLink(link, naData, defaultData, deckfilterMap) {
     ],
     ver: getUrlQuery('ver', link)
   }
+}
+
+export function formatCardname(cardname) {
+  cardname.ssall = getCounts(cardname.all.map(item => item.id))
+  cardname.ssnormal = getCounts(cardname.normal.map(item => item.id))
+  cardname.ssspecial = getCounts(cardname.special.map(item => item.id))
+  cardname.afAll = []
+  cardname.afNormal = []
+  cardname.afSpecial = []
+  cardname.ssall.resultList.forEach((item, key) => {
+    if (key < 5) {
+      cardname.afAll[key] = {
+        card: cardname.all.filter(citem => item.name === citem.id)[0],
+        count: item.count
+      }
+    }
+  })
+  cardname.ssnormal.resultList.forEach((item, key) => {
+    if (key < 5) {
+      cardname.afNormal[key] = {
+        card: cardname.all.filter(citem => item.name === citem.id)[0],
+        count: item.count
+      }
+    }
+  })
+  cardname.ssspecial.resultList.forEach((item, key) => {
+    if (key < 5) {
+      cardname.afSpecial[key] = {
+        card: cardname.all.filter(citem => item.name === citem.id)[0],
+        count: item.count
+      }
+    }
+  })
+  return cardname
 }

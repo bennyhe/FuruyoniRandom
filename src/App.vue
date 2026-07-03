@@ -1369,7 +1369,6 @@
           :curlang="curlang"
           :updateTime="sakuraPlayerDeckData[0].date"
           :sakuraPlayerDeckData="sakuraPlayerDeckData"
-          :deckSortByType="deckSortByType"
           :panelTab="panelTab"
           :statisticsDeckCards="statisticsDeckCards"
           :deckSum="deckSum"
@@ -1378,7 +1377,6 @@
           :tabChangedInChild="tabChangedInChild"
           :getTypeName="getTypeName"
           :selectedCancel="selectedCancel"
-          :deckSortBy="deckSortBy"
           :getCardDetailInDeck="getCardDetailInDeck"
           :selectedDeckShow="selectedDeckShow"
           :getCanBeStrong="getCanBeStrong"
@@ -1510,7 +1508,8 @@ import {
   getCardClass,
   getImgUrl,
   getImgUrlWill,
-  getDeckDetailForLink
+  getDeckDetailForLink,
+  formatCardname
 } from './utils/cards.js'
 const {
   sakuraStoryData,
@@ -1785,7 +1784,7 @@ export default {
       deckSum: 0,
       deckAvatarList: [],
       exportDeck: '',
-      deckSortByType: 'index',
+      
       beGroupDeck: [],
       statisticsDeckCards: [
         {
@@ -2351,46 +2350,13 @@ export default {
       }
 
       // 统计使用卡的频率前5
-      this.formatCardname(this.statisticsDeckCards[0]) // 所有赛季
-      this.formatCardname(this.statisticsDeckCards[1]) // 当前赛季
+      formatCardname(this.statisticsDeckCards[0]) // 所有赛季
+      formatCardname(this.statisticsDeckCards[1]) // 当前赛季
 
       // console.log(this.statisticsDeckCards)
 
       // this.findDeck([{ name: '花' }]) // debug
       // this.resDecks = this.sakuraPlayerDeckData.filter(item=>item.isSOldVer) // debug
-    },
-    formatCardname(cardname) {
-      cardname.ssall = getCounts(cardname.all.map(item => item.id))
-      cardname.ssnormal = getCounts(cardname.normal.map(item => item.id))
-      cardname.ssspecial = getCounts(cardname.special.map(item => item.id))
-      cardname.afAll = []
-      cardname.afNormal = []
-      cardname.afSpecial = []
-      cardname.ssall.resultList.forEach((item, key) => {
-        if (key < 5) {
-          cardname.afAll[key] = {
-            card: cardname.all.filter(citem => item.name === citem.id)[0],
-            count: item.count
-          }
-        }
-      })
-      cardname.ssnormal.resultList.forEach((item, key) => {
-        if (key < 5) {
-          cardname.afNormal[key] = {
-            card: cardname.all.filter(citem => item.name === citem.id)[0],
-            count: item.count
-          }
-        }
-      })
-      cardname.ssspecial.resultList.forEach((item, key) => {
-        if (key < 5) {
-          cardname.afSpecial[key] = {
-            card: cardname.all.filter(citem => item.name === citem.id)[0],
-            count: item.count
-          }
-        }
-      })
-      return cardname
     },
     selectedDeckShow(index) {
       const tempSelect = this.resDecks[index].isSelect
@@ -2442,31 +2408,6 @@ export default {
     changeGroupVer() {
       this.isGroupOldVer = !this.isGroupOldVer
       localStorage.setItem('sakuraGroupVer22010802', this.isGroupOldVer)
-    },
-    deckSortBy(type, disabled) {
-      if (disabled) {
-        return
-      }
-      this.deckSortByType = type
-      if (type === 'index') {
-        this.deckAvatarList = sortInObjectOptions(
-          this.deckAvatarList,
-          ['index', 'subIndex'],
-          'up'
-        )
-      } else if (type === 'countdown') {
-        this.deckAvatarList = sortInObjectOptions(
-          this.deckAvatarList,
-          ['GroupNum', 'index', 'subIndex'],
-          'down'
-        )
-      } else if (type === 'countup') {
-        this.deckAvatarList = sortInObjectOptions(
-          this.deckAvatarList,
-          ['GroupNum', 'index', 'subIndex'],
-          'up'
-        )
-      }
     },
     // loadingImg(arrImgPath) {
     //   let newimages = [], loadedimages = 0
