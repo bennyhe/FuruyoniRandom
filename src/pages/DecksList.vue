@@ -31,7 +31,10 @@ const props = defineProps({
   isNaChVer: [Boolean],
   isShowCardPic: [Boolean],
   getImgUrl: [Function],
-  updateTime: [String]
+  updateTime: [String],
+  resDecks: [Array],
+  cardDetailInDeck: [Object],
+  sakuraPlayerDeckData: [Array]
 })
 
 const emit = defineEmits([
