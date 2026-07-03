@@ -1473,6 +1473,9 @@ import {
   unique,
   filterKeywords
 } from './utils/export.js'
+import {
+  findDeck
+} from './utils/decks.js'
 
 import sakuraDataNa from './js/sub/sakura/carddata/sakura-s10-2'
 import sakuraData from './js/sub/sakura/carddata/re/sakura-s1'
@@ -2404,83 +2407,15 @@ export default {
       this.beGroupDeck[index].isSelect = !tempSelect
       this.cardDetailInDeck = {}
     },
-    /**
-     * findDeck - 根据女神筛选卡组
-     * @param  {Array|Object} data    指定女神列表，不传则用当前已选中的女神
-     * @param  {Boolean}      noSetData 为true时只返回结果不写入resDecks
-     * @param  {Boolean}      isAnd     为true时仅查精确2Pick匹配，不附带单女神包含结果
-     * @return {Array}                  排序后的卡组列表（精确匹配在前，单女神包含在后）
-     */
     findDeck(data, noSetData, isAnd) {
-      // 1. 确定要查找的女神列表
-      let avatarList
-      if (Array.isArray(data)) {
-        avatarList = data
-      } else if (data) {
-        avatarList = [data]
-      } else {
-        // 未传data时，取当前已勾选的女神
-        avatarList = this.deckAvatarList.filter(item2 => item2.isSelect)
+      if (!noSetData){
+        return findDeck(
+          data,
+          this.deckAvatarList,
+          isAnd
+        )
       }
-
-      // 2. 空列表提前返回，避免后续无意义的排序和拼接
-      if (avatarList.length === 0) {
-        if (!noSetData) this.resDecks = []
-        return []
-      }
-
-      // 3. 重置所有卡组的选中状态，其他模块依赖isSelect=false的初始状态
-      this.sakuraPlayerDeckData.forEach(item => {
-        item.isSelect = false
-      })
-
-      let result = []
-      let resultPick2 = []
-
-      // 4. 2Pick精确匹配：两个女神同时出现在同一卡组（girl1在前位，girl2在后位）
-      if (avatarList.length === 2) {
-        const girl1Decks = this.girlToDeckMap.get(avatarList[0].name) || []
-        const girl2Decks = this.girlToDeckMap.get(avatarList[1].name) || []
-        // 用Set加速查找，避免逐个比对字符串
-        const girl2Set = new Set(girl2Decks)
-        girl1Decks.forEach(item => {
-          // girl2Set.has保证卡组同时包含两个女神，再确认位置顺序
-          if (
-            girl2Set.has(item) &&
-            item.groupCardData[1].name === avatarList[1].name
-          ) {
-            resultPick2.push(item)
-          }
-        })
-      }
-
-      // 5. 单女神包含匹配（非isAnd模式）：任一女神出现的卡组都纳入
-      if (!isAnd) {
-        // resultSet复用于去重，避免同一卡组同时出现在resultPick2和result中
-        const resultSet = new Set(resultPick2)
-        avatarList.forEach(aitem => {
-          const decks = this.girlToDeckMap.get(aitem.name) || []
-          decks.forEach(item => {
-            if (!resultSet.has(item)) {
-              result.push(item)
-              resultSet.add(item)
-            }
-          })
-        })
-      }
-
-      // 6. 分别排序：精确匹配优先展示，单女神包含在后
-      if (resultPick2.length > 0) {
-        resultPick2 = sortInObjectOptions(resultPick2, ['id'], 'up')
-      }
-      if (result.length > 0) {
-        result = sortInObjectOptions(result, ['id'], 'up')
-      }
-
-      // 7. 拼接一次复用，避免重复构造
-      const finalResult = [...resultPick2, ...result]
-      if (!noSetData) this.resDecks = finalResult
-      return finalResult
+      return []
     },
     selectedCancel(girlItem) {
       girlItem.isSelect = !girlItem.isSelect
@@ -3187,7 +3122,7 @@ export default {
         // 浅拷贝，使beGroupDeck拥有独立的isSelect状态，避免与卡组广场(resDecks)联动
         this.beGroupDeck = this.findDeck(
           this.groupCardData,
-          1,
+          this.deckAvatarList,
           this.groupCardData.length === 2
         ).map(item => ({ ...item, isSelect: false }))
       }
