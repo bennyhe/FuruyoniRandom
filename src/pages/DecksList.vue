@@ -1,5 +1,5 @@
 <script setup>
-import { defineProps, ref } from 'vue'
+import { defineProps, ref, defineEmits } from 'vue'
 import configLang from '../config/lang.js'
 import { toChzh } from '../utils/lang.js'
 import { getCardClass } from '../utils/cards.js'
@@ -13,18 +13,13 @@ import DeckInfo from '../components/Deck/DeckInfo.vue'
 const lang = configLang
 const props = defineProps({
   curlang: [String, Number],
-  sakuraPlayerDeckData: [Array],
   deckAvatarList: [Array],
   deckSortByType: [String],
   panelTab: [Array],
   statisticsDeckCards: [Object],
-  resDecks: [Array],
-  cardDetailInDeck: [Object],
   deckSum: [String, Number],
   randomGetDeck: [Function],
   getCardKeyValInLang: [Function],
-  handleClickCancelDeckAvatar: [Function],
-  handleClickResetDeckAvatar: [Function],
   tabChangedInChild: [Function],
   getTypeName: [Function],
   selectedCancel: [Function],
@@ -35,8 +30,18 @@ const props = defineProps({
   isOldVer: [Boolean],
   isNaChVer: [Boolean],
   isShowCardPic: [Boolean],
-  getImgUrl: [Function]
+  getImgUrl: [Function],
+  updateTime: [String]
 })
+
+const emit = defineEmits([
+  'update:deckAvatarList',
+  'update:resDecks',
+  'update:cardDetailInDeck',
+  'resetDeckSelection',
+  'resetChildTab'
+])
+
 const getAnyCardsData = newVal => {
   const data = []
   newVal.forEach(item => {
@@ -97,6 +102,35 @@ const getAnyCardsData = newVal => {
   return data
 }
 const anyCardsData = ref(getAnyCardsData(props.deckAvatarList))
+
+// 清空选择
+const handleClickCancelDeckAvatar=()=> {
+  const list = [...props.deckAvatarList]
+  for (let i = 0; i < list.length; i++) {
+    if (list[i].isSelect !== false) {
+      list[i].isSelect = false
+    }
+  }
+  emit('update:deckAvatarList', list)
+  emit('update:cardDetailInDeck', {})
+  emit('update:resDecks', [])
+  emit('resetChildTab')
+}
+
+// 重置选择
+const handleClickResetDeckAvatar=()=> {
+  emit('resetDeckSelection')
+  const list = [...props.deckAvatarList]
+  for (let i = 0; i < list.length; i++) {
+    if (list[i].isSelect !== true) {
+      list[i].isSelect = true
+    }
+  }
+  emit('update:deckAvatarList', list)
+  emit('update:cardDetailInDeck', {})
+  emit('update:resDecks', props.sakuraPlayerDeckData)
+  emit('resetChildTab')
+}
 </script>
 <template>
   <div class="allcards-list">
@@ -125,7 +159,7 @@ const anyCardsData = ref(getAnyCardsData(props.deckAvatarList))
         <p>
           <span class="faq-about__date"
             >Last Updated:
-            {{ formatTime(sakuraPlayerDeckData[0].date, "YYYY-MM-DD") }}</span
+            {{ formatTime(updateTime, "YYYY-MM-DD") }}</span
           >
         </p>
         <p>

@@ -1361,19 +1361,20 @@
         "
       >
         <PageDecks
+          v-model:resDecks="resDecks"
+          v-model:cardDetailInDeck="cardDetailInDeck"
+          v-model:deckAvatarList="deckAvatarList"
+          @reset-deck-selection="sakuraPlayerDeckData.forEach(item => { item.isSelect = false })"
+          @reset-child-tab="panelTab[4].childTabIndex = 0"
           :curlang="curlang"
-          :sakuraPlayerDeckData="sakuraPlayerDeckData"
-          :deckAvatarList="deckAvatarList"
+          :updateTime="sakuraPlayerDeckData[0].date"
           :deckSortByType="deckSortByType"
+          :deckAvatarList="deckAvatarList"
           :panelTab="panelTab"
           :statisticsDeckCards="statisticsDeckCards"
-          :resDecks="resDecks"
-          :cardDetailInDeck="cardDetailInDeck"
           :deckSum="deckSum"
           :randomGetDeck="randomGetDeck"
           :getCardKeyValInLang="getCardKeyValInLang"
-          :handleClickCancelDeckAvatar="handleClickCancelDeckAvatar"
-          :handleClickResetDeckAvatar="handleClickResetDeckAvatar"
           :tabChangedInChild="tabChangedInChild"
           :getTypeName="getTypeName"
           :selectedCancel="selectedCancel"
@@ -2558,40 +2559,6 @@ export default {
         })
         this.findDeck()
       }
-
-      this.panelTab[4].childTabIndex = 0
-    },
-    handleClickCancelDeckAvatar() {
-      // 优化：合并filter和forEach（功能一致）
-      for (let i = 0; i < this.deckAvatarList.length; i++) {
-        if (this.deckAvatarList[i].isSelect !== false) {
-          this.deckAvatarList[i].isSelect = false
-        }
-      }
-
-      this.cardDetailInDeck = {}
-      this.resDecks = []
-      this.panelTab[4].childTabIndex = 0
-    },
-    handleClickResetDeckAvatar() {
-      // 优化：条件更新，只改真正需要的（避免不必要的响应式触发）
-      for (let i = 0; i < this.sakuraPlayerDeckData.length; i++) {
-        if (this.sakuraPlayerDeckData[i].isSelect !== false) {
-          this.sakuraPlayerDeckData[i].isSelect = false
-        }
-      }
-
-      // 优化：合并filter和forEach为一次遍历（保持功能一致）
-      for (let i = 0; i < this.deckAvatarList.length; i++) {
-        if (this.deckAvatarList[i].isSelect !== true) {
-          this.deckAvatarList[i].isSelect = true
-        }
-      }
-
-      this.cardDetailInDeck = {}
-
-      // 优化：直接引用，不复制（功能不变，但性能提升）
-      this.resDecks = this.sakuraPlayerDeckData
 
       this.panelTab[4].childTabIndex = 0
     },
