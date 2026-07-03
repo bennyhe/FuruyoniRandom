@@ -3,7 +3,7 @@ import { defineProps, ref, defineEmits } from 'vue'
 import configLang from '../config/lang.js'
 import { toChzh } from '../utils/lang.js'
 import { getCardClass } from '../utils/cards.js'
-import { formatTime, getCounts } from '../utils/export.js'
+import { formatTime, getCounts, sortInObjectOptions } from '../utils/export.js'
 import CardItem from '../components/CardItem/CardIndex.vue'
 import CardDetail from '../components/CardDetail/DetailItem.vue'
 import DeckCount from '../components/Deck/DeckCount.vue'
@@ -14,7 +14,6 @@ const lang = configLang
 const props = defineProps({
   curlang: [String, Number],
   deckAvatarList: [Array],
-  deckSortByType: [String],
   panelTab: [Array],
   statisticsDeckCards: [Object],
   deckSum: [String, Number],
@@ -23,8 +22,7 @@ const props = defineProps({
   tabChangedInChild: [Function],
   getTypeName: [Function],
   selectedCancel: [Function],
-  deckSortBy: [Function],
-  getCardDetailInDeck:[Function],
+  getCardDetailInDeck: [Function],
   selectedDeckShow: [Function],
   getCanBeStrong: [Function],
   isOldVer: [Boolean],
@@ -36,6 +34,7 @@ const props = defineProps({
   cardDetailInDeck: [Object],
   sakuraPlayerDeckData: [Array]
 })
+const deckSortByType = ref('index')
 
 const emit = defineEmits([
   'update:deckAvatarList',
@@ -79,7 +78,7 @@ const getAnyCardsData = newVal => {
           count: qitem.count
         }
         newItem.giCards.normalCardTypes[qindex] =
-              newItem.giCards.normalMostCard[qindex].card.types[0]
+          newItem.giCards.normalMostCard[qindex].card.types[0]
       })
       newItem.giCards.normalCardTypes = getCounts(
         newItem.giCards.normalCardTypes
@@ -92,7 +91,7 @@ const getAnyCardsData = newVal => {
           count: qitem.count
         }
         newItem.giCards.specialCardTypes[qindex] =
-              newItem.giCards.specialMostCard[qindex].card.types[0]
+          newItem.giCards.specialMostCard[qindex].card.types[0]
       })
       newItem.giCards.specialCardTypes = getCounts(
         newItem.giCards.specialCardTypes
@@ -106,8 +105,35 @@ const getAnyCardsData = newVal => {
 }
 const anyCardsData = ref(getAnyCardsData(props.deckAvatarList))
 
+const deckSortBy = (type, disabled) => {
+  if (disabled) {
+    return
+  }
+  deckSortByType.value = type
+  let sorted = []
+  if (type === 'index') {
+    sorted = sortInObjectOptions(
+      props.deckAvatarList,
+      ['index', 'subIndex'],
+      'up'
+    )
+  } else if (type === 'countdown') {
+    sorted = sortInObjectOptions(
+      props.deckAvatarList,
+      ['GroupNum', 'index', 'subIndex'],
+      'down'
+    )
+  } else if (type === 'countup') {
+    sorted = sortInObjectOptions(
+      props.deckAvatarList,
+      ['GroupNum', 'index', 'subIndex'],
+      'up'
+    )
+  }
+  emit('update:deckAvatarList', sorted)
+}
 // 清空选择
-const handleClickCancelDeckAvatar=()=> {
+const handleClickCancelDeckAvatar = () => {
   const list = props.deckAvatarList
   for (let i = 0; i < list.length; i++) {
     list[i].isSelect = false
@@ -118,14 +144,17 @@ const handleClickCancelDeckAvatar=()=> {
 }
 
 // 重置选择
-const handleClickResetDeckAvatar=()=> {
+const handleClickResetDeckAvatar = () => {
   emit('resetDeckSelection')
   const list = props.deckAvatarList
   for (let i = 0; i < list.length; i++) {
     list[i].isSelect = true
   }
   emit('update:cardDetailInDeck', {})
-  const decks = props.sakuraPlayerDeckData.map(item => ({ ...item, isSelect: false }))
+  const decks = props.sakuraPlayerDeckData.map(item => ({
+    ...item,
+    isSelect: false
+  }))
   emit('update:resDecks', decks)
   emit('resetChildTab')
 }
@@ -156,8 +185,7 @@ const handleClickResetDeckAvatar=()=> {
         </p>
         <p>
           <span class="faq-about__date"
-            >Last Updated:
-            {{ formatTime(updateTime, "YYYY-MM-DD") }}</span
+            >Last Updated: {{ formatTime(updateTime, "YYYY-MM-DD") }}</span
           >
         </p>
         <p>
@@ -378,10 +406,7 @@ const handleClickResetDeckAvatar=()=> {
         </div>
       </div>
       <!-- E 投稿卡组中使用数前五的卡牌 -->
-      <div
-        class="anycard-data"
-        v-if="anyCardsData.length > 0"
-      >
+      <div class="anycard-data" v-if="anyCardsData.length > 0">
         <div
           v-for="(girlItem, girlIndex) in anyCardsData"
           class="allcards-list__item"
