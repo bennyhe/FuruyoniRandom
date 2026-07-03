@@ -125,7 +125,8 @@ const handleClickResetDeckAvatar=()=> {
     list[i].isSelect = true
   }
   emit('update:cardDetailInDeck', {})
-  emit('update:resDecks', props.sakuraPlayerDeckData)
+  const decks = props.sakuraPlayerDeckData.map(item => ({ ...item, isSelect: false }))
+  emit('update:resDecks', decks)
   emit('resetChildTab')
 }
 </script>
