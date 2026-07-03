@@ -108,13 +108,10 @@ const anyCardsData = ref(getAnyCardsData(props.deckAvatarList))
 
 // 清空选择
 const handleClickCancelDeckAvatar=()=> {
-  const list = [...props.deckAvatarList]
+  const list = props.deckAvatarList
   for (let i = 0; i < list.length; i++) {
-    if (list[i].isSelect !== false) {
-      list[i].isSelect = false
-    }
+    list[i].isSelect = false
   }
-  emit('update:deckAvatarList', list)
   emit('update:cardDetailInDeck', {})
   emit('update:resDecks', [])
   emit('resetChildTab')
@@ -123,13 +120,10 @@ const handleClickCancelDeckAvatar=()=> {
 // 重置选择
 const handleClickResetDeckAvatar=()=> {
   emit('resetDeckSelection')
-  const list = [...props.deckAvatarList]
+  const list = props.deckAvatarList
   for (let i = 0; i < list.length; i++) {
-    if (list[i].isSelect !== true) {
-      list[i].isSelect = true
-    }
+    list[i].isSelect = true
   }
-  emit('update:deckAvatarList', list)
   emit('update:cardDetailInDeck', {})
   emit('update:resDecks', props.sakuraPlayerDeckData)
   emit('resetChildTab')
