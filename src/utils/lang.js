@@ -37,3 +37,20 @@ export function toChsim(cc) {
   // console.log(str);
   return str
 }
+
+// import configLang from '../config/lang.js'
+// export function getCardKeyValInLang(isOldVer, curLangIndex, item, val) {
+//   val = val === undefined ? 'name' : val
+//   if (
+//     isOldVer ||
+//     (configLang[curLangIndex].id === 'cn' && item[val])
+//   ) {
+//     return this.toChzh(item[val])
+//   } else if (configLang[curLangIndex].id === 'kr' && item[val + 'kr']) {
+//     return item[val + 'kr']
+//   } else if (configLang[curLangIndex].id === 'en' && item[val + 'en']) {
+//     return item[val + 'en']
+//   } else {
+//     return item[val + 'jp']
+//   }
+// }
