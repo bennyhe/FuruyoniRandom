@@ -935,7 +935,7 @@ export default [{
 },
 {
   'date': '2022-01-17',
-  'author': '组卡器Bot',
+  'author': '组卡器BOT',
   'name': '21-12日本上位-书信',
   'desc': '矢向完全戦通常選択で優勝しましたーサイネ間に合って良かったー選出：書信1回戦：書剣○2回戦：傘衣○3回戦：書面○',
   'decklink': '//sdrice.name/random.html?ver=S7&lang=cn&isShow=1&girls=6+0,16+1&girlscard1=2,3,4,5+0,3&girlscard2=0,1,3+1'
@@ -1148,7 +1148,7 @@ export default [{
 },
 {
   'date': '2022-01-19',
-  'author': '组卡器Bot',
+  'author': '组卡器BOT',
   'name': '22-01日本上位-信棹',
   'desc': 'ババーン杯優勝しましたー(書)信棹-恐傘(面)(書)信棹-銃嵐(面)(書)信棹-(銃)扇剣書信棹-銃面剣シンラ……？知らない子ですね……エキシビションマッチの様子はあかさきチャンネルをご覧ください',
   'decklink': '//sdrice.name/random.html?ver=S7&lang=jp&isShow=1&girls=16+1,18+0&girlscard1=0,1,2,3+1,2,3&girlscard2=3,4,6+'
@@ -1169,7 +1169,7 @@ export default [{
 },
 {
   'date': '2022-01-20',
-  'author': '组卡器Bot',
+  'author': '组卡器BOT',
   'name': '22-01日本完全上位-伞面',
   'desc': '1/16 新公式大会 秋葉原イエサブ 完全戦三拾一捨 使用メガミ 恐傘仮 〇鏡剣(嵐) 〇刀剣(扇) 〇社絆(剣) 〇扇騎(剣) (こちらは全試合傘仮) で優勝しました！',
   'decklink': '//sdrice.name/random.html?ver=S7&lang=cn&isShow=1&girls=5+0,19+0&girlscard1=4,5+3&girlscard2=0,1,3,4,6+0,1'
@@ -1231,7 +1231,7 @@ export default [{
   'decklink': '//sdrice.name/random.html?ver=S7&lang=jp&isShow=1&girls=0+1,9+2&girlscard1=0,5,6+2&girlscard2=0,1,2,6+2,3'
 }, {
   'date': '2022-01-21',
-  'author': '组卡器Bot',
+  'author': '组卡器BOT',
   'name': '21-12韩国起源上位',
   'desc': '12/12 韓国ソウル定期大会、１２月のシーズン７の会ー起源戦 扇忍鏡で優勝しました。 形式 : 起源戦 三拾一捨 選択 : 扇忍鏡 ◯ 1回戦 扇鏡(忍) vs 忍鏡(銃) ◯ 2回戦 扇忍(鏡) vs 忍櫂(銃)',
   'decklink': '//sdrice.name/random.html?ver=S7&lang=cn&isShow=1&girls=3+0,4+0&girlscard1=1,3,6+0,1,2&girlscard2=0,1,2,4+'
@@ -1273,20 +1273,20 @@ export default [{
 },
 {
   'date': '2022-01-21',
-  'author': '组卡器Bot',
+  'author': '组卡器BOT',
   'name': '21-11韩国完全上位',
   'desc': '2021年11月20日 今日の韓国ソウルふるよに完全戰大会（ゲムマ秋の記念大会）で炎忍鏡で優勝しました。 1回戦 ○忍鏡(炎)vs嵐鏡(面) 2回戦 不戦勝 3回戦 ○鏡炎(忍)vs薙古(書)',
   'decklink': '//sdrice.name/random.html?ver=S6-2&lang=cn&isShow=1&girls=2+1,15+0&girlscard1=1,4,5+1&girlscard2=0,1,3,5+0,1'
 },
 {
   'date': '2022-01-21',
-  'author': '组卡器Bot',
+  'author': '组卡器BOT',
   'name': '21-11日本起源上位',
   'desc': 'らみぃふるよに平日大会 起源戦通常選択 刀忍で出場 VS騎橇 勝ち VS薙鏡 勝ち',
   'decklink': '//sdrice.name/random.html?ver=S6-2&lang=cn&isShow=1&girls=0+0,4+0&girlscard1=0,1,2+0,1,3&girlscard2=0,1,2,4+'
 }, {
   'date': '2022-01-21',
-  'author': '组卡器Bot',
+  'author': '组卡器BOT',
   'name': '21-11日本完全上位',
   'desc': '11月30日らみぃふるよに平日大会 完全戦三拾一捨 炎忍嵐で出場 炎嵐VS傘鎚(銃) 勝ち 忍嵐VS薙騎(毒) 勝ち',
   'decklink': '//sdrice.name/random.html?ver=S6-2&lang=jp&isShow=1&girls=4+0,11+1&girlscard1=0,1,4+1&girlscard2=1,2,3,5+0,2'
@@ -1677,14 +1677,14 @@ export default [{
 },
 {
   'date': '2022-02-14',
-  'author': '组卡器Bot',
+  'author': '组卡器BOT',
   'name': '22-02韩国起源上位-络骑',
   'desc': '今日の韓国ソウル大会、起源戦優勝しました！ くるるで優勝...！ １回戦 勝 扇騎(絡)  vs 薙棹(書) 2 回戦 勝 騎絡(扇)  vs 薙棹(書)',
   'decklink': '//sdrice.name/random.html?ver=S7&lang=cn&isShow=1&girls=9+0,10+0&girlscard1=0,2,3,5,6+0,2,3&girlscard2=0,1+'
 },
 {
   'date': '2022-02-14',
-  'author': '组卡器Bot',
+  'author': '组卡器BOT',
   'name': '22-02韩国完全上位-伞镜',
   'desc': '韓国2022年初のふるよに大会 完全戦 傘鏡面 鏡面(傘) O vs 薙鏡(劍) 傘鏡(面) O vs 拒絶 花 (扇)',
   'decklink': '//sdrice.name/random.html?ver=S7&lang=cn&isShow=1&girls=5+0,15+0&girlscard1=0,2,3+1&girlscard2=0,1,3,4+0,2'
@@ -1761,21 +1761,21 @@ export default [{
 },
 {
   'date': '2022-03-07',
-  'author': '组卡器Bot',
+  'author': '组卡器BOT',
   'name': '22-03日本起源上位-铳衣',
   'desc': '柏木「ふるよに」の会（起源戦大会）で優勝しましたー初道連れやったー選出：銃衣1回戦：vs薙毒2回戦：vs刀衣',
   'decklink': '//sdrice.name/random.html?ver=S7&lang=jp&isShow=1&girls=2+0,21+0&girlscard1=0,3,4,5+0,1&girlscard2=0,1,4+2'
 },
 {
   'date': '2022-03-07',
-  'author': '组卡器Bot',
+  'author': '组卡器BOT',
   'name': '22-02日本完全上位-镰橇（铳）',
   'desc': '2/26 静岡らみぃ完全戦3拾1捨 銃鎌橇にてタロット獲得いたしましたので報告します',
   'decklink': '//sdrice.name/random.html?ver=S7&lang=jp&isShow=1&girls=12+0,14+0&girlscard1=1,3,4+2&girlscard2=0,2,5,6+2,3'
 },
 {
   'date': '2022-03-07',
-  'author': '组卡器Bot',
+  'author': '组卡器BOT',
   'name': '22-02日本完全上位-铳镰（剑）',
   'desc': 'さいたまふるよに第31回大会完全戦3-1で優勝しましたー選出：銃鎌剣1回戦：銃剣（鎌）vs古傘（書）2回戦：鎌剣（銃）vs信棹（書）3回戦：銃鎌（剣）vs面剣（扇）',
   'decklink': '//sdrice.name/random.html?ver=S7&lang=jp&isShow=1&girls=2+0,12+0&girlscard1=1,2,4,5+0,1&girlscard2=0,1,4+1'
@@ -1810,7 +1810,7 @@ export default [{
 // },
 {
   'date': '2022-03-18',
-  'author': '组卡器Bot',
+  'author': '组卡器BOT',
   'name': '22-03韩国完全上位-忍剑（扇）',
   'desc': '3/13 韓国ふるよに春を迎える決闘ー完全戦 扇忍剣で優勝しました。 形式 : 完全戦 三拾一捨 選択 : 扇忍剣 ◯ 1回戦 忍剣(扇) vs 爪衣(忍) ◯ 2回戦 忍剣(扇) vs 恐傘(仮面)',
   'decklink': '//sdrice.name/random.html?ver=S7&lang=cn&isShow=1&girls=4+0,20+0&girlscard1=0,1,3,4+1&girlscard2=0,1,5+1,3'
@@ -1824,14 +1824,14 @@ export default [{
 },
 {
   'date': '2022-04-05',
-  'author': '组卡器Bot',
+  'author': '组卡器BOT',
   'name': '22-03日本起源上位-铳骑',
   'desc': 'らみぃふるよに起源戦 銃騎使用 vs刀棹 ○ 先行ロアからの次ターンフルバ、その後も連撃決めつつヴァミで逃げ回って勝ち‼️ vs忍爪 ○ 間合い離しても近付かれる方が早いと踏んで同じ土俵で戦う事を選ぶ 終盤、敢えてライフダメージ受けて次ターンにクリゼロとバクドラ＆エッジ決めて勝ち',
   'decklink': '//sdrice.name/random.html?ver=S7&lang=cn&isShow=1&girls=2+0,10+0&girlscard1=0,5+0,1&girlscard2=0,1,2,5,6+1'
 },
 {
   'date': '2022-04-06',
-  'author': '组卡器Bot',
+  'author': '组卡器BOT',
   'name': '22-04日本完全上位-兜面（剑）',
   'desc': '本日の娯楽屋での完全戦3-1は兜面剣で優勝しました！！初トコヨタロット！嬉しい！！',
   'decklink': '//sdrice.name/random.html?ver=S7&lang=cn&isShow=1&girls=17+0,19+0&girlscard1=2,4,5,6+0&girlscard2=0,1,3+2,3'
@@ -1929,7 +1929,7 @@ export default [{
 },
 {
   'date': '2022-04-27',
-  'author': '组卡器Bot',
+  'author': '组卡器BOT',
   'name': '22-04日本完全上位-刀岚（面）',
   'desc': '刀嵐面で面納めぽい',
   'decklink': '//sdrice.name/random/?ver=S7&lang=cn&isShow=1&girls=0+0,11+1&girlscard1=1,2,4+1&girlscard2=0,1,2,5+0,2'
@@ -2237,7 +2237,7 @@ export default [{
 },
 {
   'date': '2022-05-15',
-  'author': '组卡器Bot',
+  'author': '组卡器BOT',
   'name': '22-05日本完全上位-旗橇（友）',
   'desc': '福山ふるよに交流会　完全戦優勝しました。 1戦目　不戦勝 2戦目　旗橇(友)-扇嵐(剣)　win 3戦目　旗橇(友)-薙扇(魂)　win 序盤リソース奪いながら殴り、終盤レンジロック気味に動き勝利。',
   'decklink': '//sdrice.name/random/?ver=S7-2&lang=jp&isShow=1&girls=13+0,14+0&girlscard1=0,2+&girlscard2=1,2,3,4,5+0,2,3'
@@ -2251,7 +2251,7 @@ export default [{
 },
 {
   'date': '2022-05-16',
-  'author': '组卡器Bot',
+  'author': '组卡器BOT',
   'name': '22-05日本完全上位-毒魂（橇）-信条特胜',
   'desc': '2回生きる道を決めて久しぶりの優勝！ヤツハはおうちに帰さない！！！',
   'decklink': '//sdrice.name/random/?ver=S7-2&lang=jp&isShow=1&girls=8+0,15+2&girlscard1=2,4,5,6+0,3&girlscard2=4,5,6+0'

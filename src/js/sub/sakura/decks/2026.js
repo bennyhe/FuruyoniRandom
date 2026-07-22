@@ -16,8 +16,8 @@ export default [
   },
   {
     'date': '2026-06-07',
-    'author': '组卡器Bot',
-    'name': '26-06完全战上位-拒毒（试练）',
+    'author': '组卡器BOT',
+    'name': '26-06日本完全战上位-拒毒（试练）',
     'desc': '拒毒試で優勝 //x.com/Zico_furuyoni/status/2063548853924897139',
     'decklink': '//sdrice.name/random/?ver=res1&lang=jp&isShow=1&girls=1+2,14+1&girlscard1=0,2,3,6+0,2&girlscard2=1,4,5+0'
   },
@@ -199,8 +199,15 @@ export default [
   {
     'date': '2026-07-21',
     'author': '组卡器BOT',
-    'name': '26-07完全战上位-心书（梿枷）',
+    'name': '26-07日本完全战上位-心书（梿枷）',
     'desc': '午後完全戦 心棹書，//x.com/amamori3882/status/2078759642969378892',
     'decklink': '//sdrice.name/random/?ver=res1&lang=jp&isShow=1&girls=0+2,6+0&girlscard1=1,2,6+0,1&girlscard2=0,1,2,3+0'
+  },
+  {
+    'date': '2026-07-22',
+    'author': '组卡器BOT',
+    'name': '26-07日本完全战上位-古刀铳',
+    'desc': '//x.com/hilmleb/status/2079765445155188949',
+    'decklink': '//sdrice.name/random/?ver=res1&lang=jp&isShow=1&girls=0+1,2+0&girlscard1=1,4,6+1&girlscard2=0,1,2,4+0,2'
   }
 ]
