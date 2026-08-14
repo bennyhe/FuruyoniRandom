@@ -44,8 +44,9 @@ export default defineConfig({
       replacement: './src'
     }]
   },
-  // 生产环境移除console
+  // 生产环境移除console（minify 需显式指定为 terser 才会应用 terserOptions）
   build: {
+    minify: 'terser',
     terserOptions: {
       compress: {
         drop_console: true,
