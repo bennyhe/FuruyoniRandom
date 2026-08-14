@@ -68,6 +68,8 @@ export default defineConfig({
             return 'sakura-carddata-re'
           } else if (id.includes('js/sub/sakura/carddata/')) {
             return 'sakura-carddata-na'
+          } else if (id.includes('js/sub/import_roll_faq.js')) {
+            return 'sakura-faq-na'
           }
         }
       }

@@ -1,3 +1,4 @@
+import { QADATA } from '../js/sub/import_roll_faq'
 import {
   getKrrDouzi,
   sortInObjectOptions,
@@ -41,9 +42,9 @@ export function initBaseData(sakuraData, naChData, naData) {
   // }
 
   //faq注入
-  if (window.QADATA) {
+  if (QADATA) {
     naData.forEach(gitem => {
-      window.QADATA.forEach(qitem => {
+      QADATA.forEach(qitem => {
         if (gitem.name === qitem.name) {
           gitem.list[0].QADATA = qitem.list
           gitem.list.forEach(girlItem => {

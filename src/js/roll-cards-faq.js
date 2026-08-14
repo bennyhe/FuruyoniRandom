@@ -1,5 +1,9 @@
+// FAQ 数据生成工具（主动使用）：数据已由 App.vue 与 utils/index.js 直接 import 消费，不再经 window.QADATA 通信。
+// formatSubStr / getDataFromValue / onload 输入框监听为生成与核对 FAQ 数据的工具代码，完整保留。
+// 使用方式：本地调试时在页面放置 <textarea id="exportfaq"> 与 <textarea id="exportfaqSub"> 输入框，
+// 并在 index.html 临时恢复本文件入口；元素缺失时 onload 静默跳过，不会报错。
 import { QADATA } from './sub/import_roll_faq'
-window.QADATA = QADATA
+// window.QADATA = QADATA
 
 // initFAQ();
 
@@ -215,15 +219,23 @@ const getDataFromValue = value => {
 // A：対応としての使用なら打ち消しが行われ、そうでないなら何も起きません。テキストは上から解決され、最初の「相手のオーラに空きが無いならば」の時点でのオーラの上限は5なため、その下の矢印効果は解決されません。
 // `)
 
+// FAQ 数据生成工具的输入事件绑定（工具激活入口）。
+// 先确认输入框元素存在再绑定，否则页面无 exportfaq / exportfaqSub 元素时 onload 会抛 TypeError。
 window.onload = () => {
-  document.getElementById('exportfaq').onkeyup = e => {
-    // console.log(document.getElementById('exportfaq').value)
-    const value = document.getElementById('exportfaq').value
-    getDataFromValue(value)
+  const exportfaq = document.getElementById('exportfaq')
+  const exportfaqSub = document.getElementById('exportfaqSub')
+  if (exportfaq) {
+    exportfaq.onkeyup = e => {
+      // console.log(exportfaq.value)
+      const value = exportfaq.value
+      getDataFromValue(value)
+    }
   }
-  document.getElementById('exportfaqSub').onkeyup = e => {
-    // console.log(document.getElementById('exportfaqSub').value)
-    const value = document.getElementById('exportfaqSub').value
-    console.log(formatSubStr(value))
+  if (exportfaqSub) {
+    exportfaqSub.onkeyup = e => {
+      // console.log(exportfaqSub.value)
+      const value = exportfaqSub.value
+      console.log(formatSubStr(value))
+    }
   }
 }
