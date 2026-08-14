@@ -106,11 +106,11 @@ export function formatDefaultCardData(data, changeCards) {
       }
 
       if (k > 0 && _proData.changenormal && _proData.changespecial) { //如果是a女神替换牌表
-        _proData.normal = JSON.parse(JSON.stringify(data[i].list[0].normal))
-        _proData.special = JSON.parse(JSON.stringify(data[i].list[0].special))
+        _proData.normal = [...data[i].list[0].normal]
+        _proData.special = [...data[i].list[0].special]
 
         _proData.changenormal.forEach(item => {
-          _proData.normal[item.changeIndex - 1] = JSON.parse(JSON.stringify(item))
+          _proData.normal[item.changeIndex - 1] = {...item}
 
           _proData.normal[item.changeIndex - 1].cardwho = _proData.name
           _proData.normal[item.changeIndex - 1].cardwhojp = _proData.namejp
@@ -119,7 +119,7 @@ export function formatDefaultCardData(data, changeCards) {
         })
 
         _proData.changespecial.forEach(item => {
-          _proData.special[item.changeIndex - 1] = JSON.parse(JSON.stringify(item))
+          _proData.special[item.changeIndex - 1] = {...item}
 
           _proData.special[item.changeIndex - 1].cardwho = _proData.name
           _proData.special[item.changeIndex - 1].cardwhojp = _proData.namejp
@@ -129,13 +129,13 @@ export function formatDefaultCardData(data, changeCards) {
 
         //特殊毒牌
         if (data[i].list[0].poison) {
-          _proData.poison = JSON.parse(JSON.stringify(data[i].list[0].poison))
+          _proData.poison = [...data[i].list[0].poison]
         }
         //骑a的transform
         if (_proData.changeTransform) {
-          _proData.transform = JSON.parse(JSON.stringify(data[i].list[0].transform))
+          _proData.transform = [...data[i].list[0].transform]
           for (let o = 0; o < _proData.changeTransform.length; o++) {
-            _proData.transform[_proData.changeTransform[o].changeIndex - 1] = JSON.parse(JSON.stringify(_proData.changeTransform[o]))
+            _proData.transform[_proData.changeTransform[o].changeIndex - 1] = {..._proData.changeTransform[o]}
             _proData.transform[_proData.changeTransform[o].changeIndex - 1].cardwho = _proData.name
             _proData.transform[_proData.changeTransform[o].changeIndex - 1].cardwhojp = _proData.namejp
             _proData.transform[_proData.changeTransform[o].changeIndex - 1].cardwhokr = _proData.namekr
@@ -147,7 +147,7 @@ export function formatDefaultCardData(data, changeCards) {
           //   data[i].list[0].extra = [];
           // }
           for (let o = 0; o < _proData.changeExtra.length; o++) {
-            _proData.changeExtra[o] = JSON.parse(JSON.stringify(_proData.changeExtra[o]))
+            _proData.changeExtra[o] = {..._proData.changeExtra[o]}
             _proData.changeExtra[o].cardwho = _proData.name
             _proData.changeExtra[o].cardwhojp = _proData.namejp
             _proData.changeExtra[o].cardwhokr = _proData.namekr

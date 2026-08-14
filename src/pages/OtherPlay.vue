@@ -185,7 +185,8 @@
       <!-- E 卡片详情 -->
     </div>
     <!-- E 连携 -->
-    <!-- S 故事模式 -->
+    <!-- S 故事模式（暂禁用：数据源 sakuraStoryData 为空数组且 Story tab 已隐藏，代码保留以备复用） -->
+    <!--
     <div
       class="panel-item__child"
       v-if="storyCardData && storyCardData.length > 0"
@@ -211,7 +212,7 @@
         </div>
         <div class="story__item">
           <div class="card-wrap card-wrap--noscrollinm">
-            <!-- <p>{{getCardKeyValInLang(storyCardData[curStoryIndex])}}</p> -->
+            [原注释：<p>{{getCardKeyValInLang(storyCardData[curStoryIndex])}}</p>]
             <div
               v-for="(item, index) in storyCardData[curStoryIndex].list"
               v-bind:key="index"
@@ -268,7 +269,7 @@
             </div>
           </div>
         </div>
-        <!-- S 卡片详情 -->
+        [原注释：S 卡片详情]
         <CardDetail
           :curlang="curlang"
           :isNaChVer="isNaChVer"
@@ -278,9 +279,10 @@
           :item="cardDetail"
           v-if="cardDetail && (cardDetail.name || cardDetail.namejp)"
         />
-        <!-- E 卡片详情 -->
+        [原注释：E 卡片详情]
       </div>
     </div>
+    -->
     <!-- E 故事模式 -->
     <!-- S 祭札2019 -->
     <div
@@ -500,7 +502,7 @@ export default defineComponent({
     'panelTab',
     'sakuraWithData',
     'defaultData',
-    'storyCardData',
+    // 'storyCardData', //故事模式（暂禁用，保留以备复用）
     'sakuraOtherData',
     'sakuraCMData',
     'cardDetail',
@@ -518,13 +520,13 @@ export default defineComponent({
     return {
       isLXVs: 0,
       lxVsResultList: [],
-      curStoryIndex: 0, //故事模式
+      // curStoryIndex: 0, //故事模式（暂禁用，保留以备复用）
       curCMIndex: 0 //原初模式
     }
   },
   setup(props, context) {
     function randomGetLx(count) {
-      const dataCopy = JSON.parse(JSON.stringify(this.sakuraWithData[0].list))
+      const dataCopy = [...this.sakuraWithData[0].list]
       this.lxVsResultList = []
       const randomList = []
       for (let i = 0; i < count; i++) {

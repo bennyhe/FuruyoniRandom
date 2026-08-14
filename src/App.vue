@@ -1142,10 +1142,10 @@
         class="panel-item panel-item--otherplay"
         :class="{ cur: showPanelIndex === 3 }"
       >
+        <!-- :storyCardData="storyCardData" 故事模式（暂禁用，保留以备复用） -->
         <PageOtherPlay
           :curlang="curlang"
           :sakuraWithData="sakuraWithData"
-          :storyCardData="storyCardData"
           :defaultData="defaultData"
           :sakuraOtherData="sakuraOtherData"
           :sakuraCMData="sakuraCMData"
@@ -1512,7 +1512,7 @@ import {
   formatCardname
 } from './utils/cards.js'
 const {
-  sakuraStoryData,
+  // sakuraStoryData, //故事模式（暂禁用，保留以备复用）
   sakuraWithData,
   sakuraOtherData,
   sakuraCMData,
@@ -1757,11 +1757,11 @@ export default {
       showPanelGirls: JSON.parse(JSON.stringify(defaultData)),
       randomUseData: [],
       changePanelData: JSON.parse(JSON.stringify(defaultData)),
-      storyCardData: JSON.parse(JSON.stringify(sakuraStoryData)),
-      sakuraWithData: JSON.parse(JSON.stringify(sakuraWithData)),
-      sakuraOtherData: JSON.parse(JSON.stringify(sakuraOtherData)),
+      // storyCardData: JSON.parse(JSON.stringify(sakuraStoryData)), //故事模式（暂禁用，保留以备复用）
+      sakuraWithData: sakuraWithData,
+      sakuraOtherData: sakuraOtherData,
       sakuraCMData: JSON.parse(JSON.stringify(sakuraCMData)),
-      sakuraChangeCardsData: JSON.parse(JSON.stringify(nSakuraChangeCardsData)),
+      sakuraChangeCardsData: nSakuraChangeCardsData,
       isCompleteGroup: false,
       selectedNormalCount: 0,
       selectedSpecialCount: 0,
@@ -2793,7 +2793,7 @@ export default {
         }
       }
       this.resultGirls = []
-      this.randomUseData = JSON.parse(JSON.stringify(this.showPanelGirls))
+      this.randomUseData = [...this.showPanelGirls]
 
       let temp = {}
       if (this.isLockName) {
