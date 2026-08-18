@@ -25,6 +25,9 @@ const props = defineProps({
     <span class="i-tag i-tag--season" v-if="item.isSeason">{{
       lang[curlang].seasonUse ? lang[curlang].seasonUse : lang[1].seasonUse
     }}</span>
+    <span class="i-tag i-tag--season2" v-if="item.isClassicBattle">{{
+      lang[curlang].classicalUse ? lang[curlang].classicalUse : lang[1].classicalUse
+    }}</span>
     <span class="deck-author">@{{ item.author }}</span>
   </div>
 </template>

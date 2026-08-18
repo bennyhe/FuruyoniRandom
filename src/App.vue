@@ -2212,6 +2212,13 @@ export default {
                 seasonVersion['rejp'].verlink.toUpperCase().replace('RE', '')
               ) > -1
           )
+          // 卡组中含有古典战女神则打古典战标记
+          // isClassicBattle 标记在女神组对象上，newGroupCardData 是女神个体，通过个体 index 反查女神组上的标记
+          item.isClassicBattle = newGroupCardData.some(
+            gitem =>
+              this.defaultData[gitem.index] &&
+              this.defaultData[gitem.index].isClassicBattle
+          )
         } else {
           item.ver =
             ver.toUpperCase().indexOf('CH') > -1
