@@ -1593,7 +1593,7 @@ cardSum = {
 
 const fnCopyCards = wantData => {
   //a旗复制原来的卡
-  if (wantData[13] && wantData[13].namejp === '旗' && wantData[13].list[1]) {
+  if (wantData[13] && wantData[13].namejp === 'ホノカ' && wantData[13].list[1]) {
     wantData[13].list[1].changeExtra.unshift(wantData[13].list[0].extra[4])
     wantData[13].list[1].changeExtra.unshift(wantData[13].list[0].extra[3])
   }
