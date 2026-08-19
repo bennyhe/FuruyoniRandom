@@ -26,6 +26,7 @@ const props = defineProps({
   getCanBeStrong: [Function],
   isOldVer: [Boolean],
   isNaChVer: [Boolean],
+  isReVer: [Boolean],
   isShowCardPic: [Boolean],
   getImgUrl: [Function],
   updateTime: [String],
@@ -783,6 +784,7 @@ const handleClickSelectedCancel = girlItem => {
           <CardDetail
             :curlang="curlang"
             :isNaChVer="isNaChVer"
+            :isReVer="isReVer"
             :getTypeName="getTypeName"
             :getCardKeyValInLang="getCardKeyValInLang"
             :getCanBeStrong="getCanBeStrong"

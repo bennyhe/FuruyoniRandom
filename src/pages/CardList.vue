@@ -243,6 +243,7 @@ const localShowA = computed({
               <CardDetail
                 :curlang="curlang"
                 :isNaChVer="isNaChVer"
+                :isReVer="isReVer"
                 :getTypeName="getTypeName"
                 :getCardKeyValInLang="getCardKeyValInLang"
                 :getCanBeStrong="getCanBeStrong"
@@ -257,6 +258,7 @@ const localShowA = computed({
                 <CardDetail
                   :curlang="curlang"
                   :isNaChVer="isNaChVer"
+                  :isReVer="isReVer"
                   :getTypeName="getTypeName"
                   :getCardKeyValInLang="getCardKeyValInLang"
                   :getCanBeStrong="getCanBeStrong"
@@ -283,6 +285,7 @@ const localShowA = computed({
               <CardDetail
                 :curlang="curlang"
                 :isNaChVer="isNaChVer"
+                :isReVer="isReVer"
                 :getTypeName="getTypeName"
                 :getCardKeyValInLang="getCardKeyValInLang"
                 :getCanBeStrong="getCanBeStrong"
@@ -295,6 +298,7 @@ const localShowA = computed({
               <CardDetail
                 :curlang="curlang"
                 :isNaChVer="isNaChVer"
+                :isReVer="isReVer"
                 :getTypeName="getTypeName"
                 :getCardKeyValInLang="getCardKeyValInLang"
                 :getCanBeStrong="getCanBeStrong"
@@ -307,6 +311,7 @@ const localShowA = computed({
               <CardDetail
                 :curlang="curlang"
                 :isNaChVer="isNaChVer"
+                :isReVer="isReVer"
                 :getTypeName="getTypeName"
                 :getCardKeyValInLang="getCardKeyValInLang"
                 :getCanBeStrong="getCanBeStrong"
@@ -319,6 +324,7 @@ const localShowA = computed({
               <CardDetail
                 :curlang="curlang"
                 :isNaChVer="isNaChVer"
+                :isReVer="isReVer"
                 :getTypeName="getTypeName"
                 :getCardKeyValInLang="getCardKeyValInLang"
                 :getCanBeStrong="getCanBeStrong"
@@ -331,6 +337,7 @@ const localShowA = computed({
               <CardDetail
                 :curlang="curlang"
                 :isNaChVer="isNaChVer"
+                :isReVer="isReVer"
                 :getTypeName="getTypeName"
                 :getCardKeyValInLang="getCardKeyValInLang"
                 :getCanBeStrong="getCanBeStrong"
@@ -474,6 +481,7 @@ const localShowA = computed({
           <CardDetail
             :curlang="curlang"
             :isNaChVer="isNaChVer"
+            :isReVer="isReVer"
             :getTypeName="getTypeName"
             :getCardKeyValInLang="getCardKeyValInLang"
             :getCanBeStrong="getCanBeStrong"
@@ -488,6 +496,7 @@ const localShowA = computed({
             <CardDetail
               :curlang="curlang"
               :isNaChVer="isNaChVer"
+              :isReVer="isReVer"
               :getTypeName="getTypeName"
               :getCardKeyValInLang="getCardKeyValInLang"
               :getCanBeStrong="getCanBeStrong"
@@ -514,6 +523,7 @@ const localShowA = computed({
           <CardDetail
             :curlang="curlang"
             :isNaChVer="isNaChVer"
+            :isReVer="isReVer"
             :getTypeName="getTypeName"
             :getCardKeyValInLang="getCardKeyValInLang"
             :getCanBeStrong="getCanBeStrong"
@@ -526,6 +536,7 @@ const localShowA = computed({
           <CardDetail
             :curlang="curlang"
             :isNaChVer="isNaChVer"
+            :isReVer="isReVer"
             :getTypeName="getTypeName"
             :getCardKeyValInLang="getCardKeyValInLang"
             :getCanBeStrong="getCanBeStrong"
@@ -538,6 +549,7 @@ const localShowA = computed({
           <CardDetail
             :curlang="curlang"
             :isNaChVer="isNaChVer"
+            :isReVer="isReVer"
             :getTypeName="getTypeName"
             :getCardKeyValInLang="getCardKeyValInLang"
             :getCanBeStrong="getCanBeStrong"
@@ -550,6 +562,7 @@ const localShowA = computed({
           <CardDetail
             :curlang="curlang"
             :isNaChVer="isNaChVer"
+            :isReVer="isReVer"
             :getTypeName="getTypeName"
             :getCardKeyValInLang="getCardKeyValInLang"
             :getCanBeStrong="getCanBeStrong"
@@ -562,6 +575,7 @@ const localShowA = computed({
           <CardDetail
             :curlang="curlang"
             :isNaChVer="isNaChVer"
+            :isReVer="isReVer"
             :getTypeName="getTypeName"
             :getCardKeyValInLang="getCardKeyValInLang"
             :getCanBeStrong="getCanBeStrong"

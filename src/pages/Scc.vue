@@ -88,6 +88,7 @@
     <CardDetail
       :curlang="curlang"
       :isNaChVer="isNaChVer"
+      :isReVer="isReVer"
       :getTypeName="getTypeName"
       :getCardKeyValInLang="getCardKeyValInLang"
       :getCanBeStrong="getCanBeStrong"
@@ -106,6 +107,7 @@
           <CardDetail
             :curlang="curlang"
             :isNaChVer="isNaChVer"
+            :isReVer="isReVer"
             :getTypeName="getTypeName"
             :getCardKeyValInLang="getCardKeyValInLang"
             :getCanBeStrong="getCanBeStrong"
@@ -157,6 +159,7 @@ export default defineComponent({
     'getCanBeStrong',
     'isOldVer',
     'isNaChVer',
+    'isReVer',
     'isShowCardPic',
     'getImgUrl'
   ],

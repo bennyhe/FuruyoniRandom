@@ -138,6 +138,7 @@
           <CardDetail
             :curlang="curlang"
             :isNaChVer="isNaChVer"
+            :isReVer="isReVer"
             :getTypeName="getTypeName"
             :getCardKeyValInLang="getCardKeyValInLang"
             :getCanBeStrong="getCanBeStrong"
@@ -827,6 +828,7 @@
               <CardDetail
                 :curlang="curlang"
                 :isNaChVer="isNaChVer"
+                :isReVer="isReVer"
                 :getTypeName="getTypeName"
                 :getCardKeyValInLang="getCardKeyValInLang"
                 :getCanBeStrong="getCanBeStrong"
@@ -1077,6 +1079,7 @@
                 <CardDetail
                   :curlang="curlang"
                   :isNaChVer="isNaChVer"
+                  :isReVer="isReVer"
                   :getTypeName="getTypeName"
                   :getCardKeyValInLang="getCardKeyValInLang"
                   :getCanBeStrong="getCanBeStrong"
@@ -1158,6 +1161,7 @@
           :getCanBeStrong="getCanBeStrong"
           :isOldVer="isOldVer"
           :isNaChVer="isNaChVer"
+          :isReVer="isReVer"
           :isShowCardPic="isShowCardPic"
           :getImgUrl="getImgUrl"
         />
@@ -1330,6 +1334,7 @@
                     <CardDetail
                       :curlang="curlang"
                       :isNaChVer="isNaChVer"
+                      :isReVer="isReVer"
                       :getTypeName="getTypeName"
                       :getCardKeyValInLang="getCardKeyValInLang"
                       :getCanBeStrong="getCanBeStrong"
@@ -1382,6 +1387,7 @@
           :getCanBeStrong="getCanBeStrong"
           :isOldVer="isOldVer"
           :isNaChVer="isNaChVer"
+          :isReVer="isReVer"
           :isShowCardPic="isShowCardPic"
           :getImgUrl="getImgUrl"
         />
@@ -1400,6 +1406,7 @@
           :getCanBeStrong="getCanBeStrong"
           :isOldVer="isOldVer"
           :isNaChVer="isNaChVer"
+          :isReVer="isReVer"
           :isShowCardPic="isShowCardPic"
           :getImgUrl="getImgUrl"
         />
