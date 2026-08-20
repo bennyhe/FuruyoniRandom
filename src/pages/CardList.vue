@@ -25,6 +25,9 @@ const props = defineProps({
   },
   getCanBeStrong: {
     type: Function
+  },
+  seasonVersion: {
+    type: Object
   }
 })
 const { isOldVer, isNaChVer, isNaVer, isReVer, isShowA, curlang } = storeToRefs(
@@ -40,11 +43,11 @@ const { isOldVer, isNaChVer, isNaVer, isReVer, isShowA, curlang } = storeToRefs(
         v-if="!isOldVer && +curlang === 0"
       >
         <input type="checkbox" v-model="isNaChVer" />
-        <span>新幕官中S8</span>
+        <span>新幕官中{{seasonVersion['cn'].vername}}</span>
       </label>
       <label class="checkbox" :class="{ cur: isNaVer }" v-if="!isOldVer">
         <input type="checkbox" v-model="isNaVer" />
-        <span>新幕S10-2</span>
+        <span>新幕{{seasonVersion['jp'].vername}}</span>
       </label>
       <label class="checkbox" :class="{ cur: isReVer }" v-if="!isOldVer">
         <input type="checkbox" v-model="isReVer" />

@@ -233,11 +233,11 @@
               v-if="!isOldVer && +curlang === 0"
             >
               <input type="checkbox" v-model="isNaChVer" />
-              <span>新幕官中S8</span>
+              <span>新幕官中{{seasonVersion['cn'].vername}}</span>
             </label>
             <label class="checkbox" :class="{ cur: isNaVer }" v-if="!isOldVer">
               <input type="checkbox" v-model="isNaVer" />
-              <span>新幕S10-2</span>
+              <span>新幕{{seasonVersion['jp'].vername}}</span>
             </label>
             <label class="checkbox" :class="{ cur: isReVer }" v-if="!isOldVer">
               <input type="checkbox" v-model="isReVer" />
@@ -383,7 +383,7 @@
                       v-if="!isOldVer && +curlang === 0"
                     >
                       <input type="checkbox" v-model="isNaChVer" />
-                      <span>新幕官中S8</span>
+                      <span>新幕官中{{seasonVersion['cn'].vername}}</span>
                     </label>
                     <label
                       class="checkbox"
@@ -391,7 +391,7 @@
                       v-if="!isOldVer"
                     >
                       <input type="checkbox" v-model="isNaVer" />
-                      <span>新幕S10-2</span>
+                      <span>新幕{{seasonVersion['jp'].vername}}</span>
                     </label>
                     <label
                       class="checkbox"
@@ -1048,6 +1048,7 @@
           :seasonGirls="seasonGirls"
           :getTypeName="getTypeName"
           :getCanBeStrong="getCanBeStrong"
+          :seasonVersion="seasonVersion"
         />
       </div>
       <!-- E 全卡表 -->
@@ -1371,7 +1372,7 @@ import {
 
 import sakuraDataNa from './js/sub/sakura/carddata/sakura-s10-2'
 import sakuraData from './js/sub/sakura/carddata/re/sakura-s1'
-import sakuraDataCh from './js/sub/sakura/carddata/sakura-s8-ch'
+import sakuraDataCh from './js/sub/sakura/carddata/sakura-s10-2-ch'
 import sakuraDataOldVer from './js/sub/sakura/carddata/sakura-old'
 import { QADATA } from './js/sub/import_roll_faq'
 
@@ -1468,9 +1469,10 @@ console.log(
 )
 
 const naChDataSum = getCardSum(naChData) // 新幕中文的牌数
-naChDataSum.other += 18
+naChDataSum.normal-- // 合奏减1
+naChDataSum.other += 25
 console.log(
-  '新幕中文牌数，other:伞面，5毒，6transform，4兵牌，岚之力，2集中力，6幕任务，2潜水，5伪证，1镜aa1任务牌',
+  '新幕中文牌数，other:伞面，5毒，6transform，4兵牌，岚之力，2集中力，6幕任务，2潜水，5伪证，1镜aa1任务牌，7张电子追加',
   naChDataSum
 )
 const naDataSum = getCardSum(naData) // 新幕的牌数
