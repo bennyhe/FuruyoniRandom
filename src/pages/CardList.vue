@@ -1,16 +1,13 @@
 <script setup>
-import { defineProps, defineEmits, computed } from 'vue'
+import { defineProps } from 'vue'
 import { storeToRefs } from 'pinia'
-import { useVersionStore } from '../store/version.js'
+import { useGlobalStore } from '../store/global.js'
 import configLang from '../config/lang.js'
 import { toChzh } from '../utils/lang.js'
 import CardDetail from '../components/CardDetail/DetailItem.vue'
 import GirlRange from '../components/GirlRange/index.vue'
 const lang = configLang
 const props = defineProps({
-  curlang: {
-    type: [String, Number]
-  },
   showPanelGirls: {
     type: Array
   },
@@ -19,9 +16,6 @@ const props = defineProps({
   },
   seasonGirls: {
     type: Object
-  },
-  isShowA: {
-    type: Boolean
   },
   getCardKeyValInLang: {
     type: Function
@@ -33,12 +27,9 @@ const props = defineProps({
     type: Function
   }
 })
-const emit = defineEmits(['update:isShowA'])
-const { isOldVer, isNaChVer, isNaVer, isReVer } = storeToRefs(useVersionStore())
-const localShowA = computed({
-  get: () => props.isShowA,
-  set: val => emit('update:isShowA', val)
-})
+const { isOldVer, isNaChVer, isNaVer, isReVer, isShowA, curlang } = storeToRefs(
+  useGlobalStore()
+)
 </script>
 <template>
   <div>
@@ -60,7 +51,7 @@ const localShowA = computed({
         <span>再演</span>
       </label>
       <label class="checkbox" :class="{ cur: isShowA }" v-if="!isOldVer">
-        <input type="checkbox" v-model="localShowA" />
+        <input type="checkbox" v-model="isShowA" />
         <span>{{ lang[curlang].btnIsShowA }}</span>
       </label>
     </div>
@@ -215,7 +206,6 @@ const localShowA = computed({
               ></div>
               <p class="allcards__type">NORMAL</p>
               <CardDetail
-                :curlang="curlang"
                 :getTypeName="getTypeName"
                 :getCardKeyValInLang="getCardKeyValInLang"
                 :getCanBeStrong="getCanBeStrong"
@@ -228,7 +218,6 @@ const localShowA = computed({
               <div class="allcards__special">
                 <p class="allcards__type">SPECIAL</p>
                 <CardDetail
-                  :curlang="curlang"
                   :getTypeName="getTypeName"
                   :getCardKeyValInLang="getCardKeyValInLang"
                   :getCanBeStrong="getCanBeStrong"
@@ -253,7 +242,6 @@ const localShowA = computed({
                 EXTRA
               </p>
               <CardDetail
-                :curlang="curlang"
                 :getTypeName="getTypeName"
                 :getCardKeyValInLang="getCardKeyValInLang"
                 :getCanBeStrong="getCanBeStrong"
@@ -264,7 +252,6 @@ const localShowA = computed({
                 v-bind:key="cardIndex"
               />
               <CardDetail
-                :curlang="curlang"
                 :getTypeName="getTypeName"
                 :getCardKeyValInLang="getCardKeyValInLang"
                 :getCanBeStrong="getCanBeStrong"
@@ -275,7 +262,6 @@ const localShowA = computed({
                 v-bind:key="cardIndex"
               />
               <CardDetail
-                :curlang="curlang"
                 :getTypeName="getTypeName"
                 :getCardKeyValInLang="getCardKeyValInLang"
                 :getCanBeStrong="getCanBeStrong"
@@ -286,7 +272,6 @@ const localShowA = computed({
                 v-bind:key="cardIndex"
               />
               <CardDetail
-                :curlang="curlang"
                 :getTypeName="getTypeName"
                 :getCardKeyValInLang="getCardKeyValInLang"
                 :getCanBeStrong="getCanBeStrong"
@@ -297,7 +282,6 @@ const localShowA = computed({
                 v-bind:key="cardIndex"
               />
               <CardDetail
-                :curlang="curlang"
                 :getTypeName="getTypeName"
                 :getCardKeyValInLang="getCardKeyValInLang"
                 :getCanBeStrong="getCanBeStrong"
@@ -439,7 +423,6 @@ const localShowA = computed({
           ></div>
           <p class="allcards__type">NORMAL</p>
           <CardDetail
-            :curlang="curlang"
             :getTypeName="getTypeName"
             :getCardKeyValInLang="getCardKeyValInLang"
             :getCanBeStrong="getCanBeStrong"
@@ -452,7 +435,6 @@ const localShowA = computed({
           <div class="allcards__special">
             <p class="allcards__type">SPECIAL</p>
             <CardDetail
-              :curlang="curlang"
               :getTypeName="getTypeName"
               :getCardKeyValInLang="getCardKeyValInLang"
               :getCanBeStrong="getCanBeStrong"
@@ -477,7 +459,6 @@ const localShowA = computed({
             EXTRA
           </p>
           <CardDetail
-            :curlang="curlang"
             :getTypeName="getTypeName"
             :getCardKeyValInLang="getCardKeyValInLang"
             :getCanBeStrong="getCanBeStrong"
@@ -488,7 +469,6 @@ const localShowA = computed({
             v-bind:key="cardIndex"
           />
           <CardDetail
-            :curlang="curlang"
             :getTypeName="getTypeName"
             :getCardKeyValInLang="getCardKeyValInLang"
             :getCanBeStrong="getCanBeStrong"
@@ -499,7 +479,6 @@ const localShowA = computed({
             v-bind:key="cardIndex"
           />
           <CardDetail
-            :curlang="curlang"
             :getTypeName="getTypeName"
             :getCardKeyValInLang="getCardKeyValInLang"
             :getCanBeStrong="getCanBeStrong"
@@ -510,7 +489,6 @@ const localShowA = computed({
             v-bind:key="cardIndex"
           />
           <CardDetail
-            :curlang="curlang"
             :getTypeName="getTypeName"
             :getCardKeyValInLang="getCardKeyValInLang"
             :getCanBeStrong="getCanBeStrong"
@@ -521,7 +499,6 @@ const localShowA = computed({
             v-bind:key="cardIndex"
           />
           <CardDetail
-            :curlang="curlang"
             :getTypeName="getTypeName"
             :getCardKeyValInLang="getCardKeyValInLang"
             :getCanBeStrong="getCanBeStrong"

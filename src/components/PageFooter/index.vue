@@ -91,7 +91,7 @@
 <script>
 import { defineComponent } from 'vue'
 import { storeToRefs } from 'pinia'
-import { useVersionStore } from '../../store/version.js'
+import { useGlobalStore } from '../../store/global.js'
 import configLang from '../../config/lang.js'
 
 export default defineComponent({
@@ -100,22 +100,24 @@ export default defineComponent({
     'defaultData',
     'naChData',
     'naData',
-    'curlang',
     'cardSum',
     'seasonVersion',
     'showPanelIndex',
     'getCardKeyValInLang'
   ],
   setup(props, context) {
-    const versionStore = useVersionStore()
-    const { isOldVer, isNaChVer, isNaVer, isReVer } = storeToRefs(versionStore)
+    const globalStore = useGlobalStore()
+    const { isOldVer, isNaChVer, isNaVer, isReVer, curlang } = storeToRefs(
+      globalStore
+    )
     // console.log(props.naData)
     return {
       lang: configLang,
       isOldVer,
       isNaChVer,
       isNaVer,
-      isReVer
+      isReVer,
+      curlang
     }
   }
 })

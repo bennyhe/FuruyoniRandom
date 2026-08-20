@@ -39,7 +39,6 @@
                   v-bind:key="cardIndex"
                 >
                   <CardItem
-                    :curlang="curlang"
                     :isShowCardPic="isShowCardPic"
                     :getCardKeyValInLang="getCardKeyValInLang"
                     :getImgUrl="getImgUrl"
@@ -111,7 +110,6 @@
                 v-bind:key="cardIndex"
               >
                 <CardItem
-                  :curlang="curlang"
                   :isShowCardPic="isShowCardPic"
                   :getCardKeyValInLang="getCardKeyValInLang"
                   :getImgUrl="getImgUrl"
@@ -147,7 +145,6 @@
       </div>
       <!-- S 卡片详情 -->
       <CardDetail
-        :curlang="curlang"
         :getTypeName="getTypeName"
         :getCardKeyValInLang="getCardKeyValInLang"
         :getCanBeStrong="getCanBeStrong"
@@ -226,7 +223,6 @@
                       v-bind:key="cardIndex"
                     >
                       <CardItem
-                        :curlang="curlang"
                         :isShowCardPic="isShowCardPic"
                         :getCardKeyValInLang="getCardKeyValInLang"
                         :getImgUrl="getImgUrl"
@@ -246,7 +242,6 @@
                       v-bind:key="cardIndex"
                     >
                       <CardItem
-                        :curlang="curlang"
                         :isShowCardPic="isShowCardPic"
                         :getCardKeyValInLang="getCardKeyValInLang"
                         :getImgUrl="getImgUrl"
@@ -262,7 +257,6 @@
         </div>
         [原注释：S 卡片详情]
         <CardDetail
-          :curlang="curlang"
           :getTypeName="getTypeName"
           :getCardKeyValInLang="getCardKeyValInLang"
           :getCanBeStrong="getCanBeStrong"
@@ -293,7 +287,6 @@
                   v-bind:key="cardIndex"
                 >
                   <CardItem
-                    :curlang="curlang"
                     :isShowCardPic="isShowCardPic"
                     :getCardKeyValInLang="getCardKeyValInLang"
                     :getImgUrl="getImgUrl"
@@ -313,7 +306,6 @@
       </div>
       <!-- S 卡片详情 -->
       <CardDetail
-        :curlang="curlang"
         :getTypeName="getTypeName"
         :getCardKeyValInLang="getCardKeyValInLang"
         :getCanBeStrong="getCanBeStrong"
@@ -371,7 +363,6 @@
                       @click="getCardDetail(cardItem)"
                     >
                       <CardItem
-                        :curlang="curlang"
                         :isShowCardPic="isShowCardPic"
                         :getCardKeyValInLang="getCardKeyValInLang"
                         :getImgUrl="getImgUrl"
@@ -391,7 +382,6 @@
                       @click="getCardDetail(cardItem)"
                     >
                       <CardItem
-                        :curlang="curlang"
                         :isShowCardPic="isShowCardPic"
                         :getCardKeyValInLang="getCardKeyValInLang"
                         :getImgUrl="getImgUrl"
@@ -411,7 +401,6 @@
                       @click="getCardDetail(cardItem)"
                     >
                       <CardItem
-                        :curlang="curlang"
                         :isShowCardPic="isShowCardPic"
                         :getCardKeyValInLang="getCardKeyValInLang"
                         :getImgUrl="getImgUrl"
@@ -429,7 +418,6 @@
                       @click="getCardDetail(cardItem)"
                     >
                       <CardItem
-                        :curlang="curlang"
                         :isShowCardPic="isShowCardPic"
                         :getCardKeyValInLang="getCardKeyValInLang"
                         :getImgUrl="getImgUrl"
@@ -445,7 +433,6 @@
         </div>
         <!-- S 卡片详情 -->
         <CardDetail
-          :curlang="curlang"
           :getTypeName="getTypeName"
           :getCardKeyValInLang="getCardKeyValInLang"
           :getCanBeStrong="getCanBeStrong"
@@ -461,7 +448,7 @@
 <script>
 import { defineComponent } from 'vue'
 import { storeToRefs } from 'pinia'
-import { useVersionStore } from '../store/version.js'
+import { useGlobalStore } from '../store/global.js'
 import configLang from '../config/lang.js'
 import { toChzh } from '../utils/lang.js'
 import { getCardClass } from '../utils/cards.js'
@@ -478,7 +465,6 @@ export default defineComponent({
     // GirlRange
   },
   props: [
-    'curlang',
     'panelTab',
     'sakuraWithData',
     'defaultData',
@@ -503,8 +489,8 @@ export default defineComponent({
     }
   },
   setup(props, context) {
-    const versionStore = useVersionStore()
-    const { isOldVer, isNaChVer, isReVer } = storeToRefs(versionStore)
+    const globalStore = useGlobalStore()
+    const { isOldVer, isNaChVer, isReVer, curlang } = storeToRefs(globalStore)
     function randomGetLx(count) {
       const dataCopy = [...this.sakuraWithData[0].list]
       this.lxVsResultList = []
@@ -529,6 +515,7 @@ export default defineComponent({
       isOldVer,
       isNaChVer,
       isReVer,
+      curlang,
       randomGetLx,
       handleClickSA,
       toChzh,

@@ -260,19 +260,18 @@
 <script setup>
 import { defineProps } from 'vue'
 import { storeToRefs } from 'pinia'
-import { useVersionStore } from '../../store/version.js'
+import { useGlobalStore } from '../../store/global.js'
 import lang from '../../config/lang.js'
 import { isShowStopIcon, getCardClass } from '../../utils/cards.js'
 import { toChzh } from '../../utils/lang.js'
 
 const props = defineProps({
   item: Object,
-  curlang: [Number, String],
   getTypeName: Function,
   getCardKeyValInLang: Function,
   getCanBeStrong: Function
 })
-const { isNaChVer, isReVer } = storeToRefs(useVersionStore())
+const { isNaChVer, isReVer, curlang } = storeToRefs(useGlobalStore())
 
 const getNewRange = (cardItem, range) => {
   // console.log(cardItem.range);

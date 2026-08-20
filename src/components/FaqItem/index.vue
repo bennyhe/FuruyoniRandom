@@ -70,15 +70,20 @@
 
 <script>
 import { defineComponent } from 'vue'
+import { storeToRefs } from 'pinia'
+import { useGlobalStore } from '../../store/global.js'
 import configLang from '../../config/lang.js'
 import { toChzh } from '../../utils/lang.js'
 
 export default defineComponent({
   name: 'faqItem',
-  props: ['item', 'curlang'],
+  props: ['item'],
   setup(props, context) {
+    const globalStore = useGlobalStore()
+    const { curlang } = storeToRefs(globalStore)
     return {
       lang: configLang,
+      curlang,
       toChzh
     }
   }

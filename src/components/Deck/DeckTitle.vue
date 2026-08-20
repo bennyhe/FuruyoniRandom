@@ -1,13 +1,15 @@
 <script setup>
 import { defineProps } from 'vue'
+import { storeToRefs } from 'pinia'
+import { useGlobalStore } from '../../store/global.js'
 import lang from '../../config/lang.js'
 import { toChzh } from '../../utils/lang.js'
 import { formatTime } from '../../utils/export.js'
 
 const props = defineProps({
-  item: Object,
-  curlang: [String, Number]
+  item: Object
 })
+const { curlang } = storeToRefs(useGlobalStore())
 </script>
 <template>
   <div class="allcards__title">

@@ -1,12 +1,14 @@
 <script setup>
 import { defineProps } from 'vue'
+import { storeToRefs } from 'pinia'
+import { useGlobalStore } from '../../store/global.js'
 import configLang from '../../config/lang.js'
 import { toChzh } from '../../utils/lang.js'
 const props = defineProps({
-  curlang: [String, Number],
   deckSum: Number,
   deckcount: Number
 })
+const { curlang } = storeToRefs(useGlobalStore())
 const lang = configLang
 </script>
 <template>

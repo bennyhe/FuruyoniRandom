@@ -1,14 +1,16 @@
 <script setup>
 import { defineProps } from 'vue'
+import { storeToRefs } from 'pinia'
+import { useGlobalStore } from '../../store/global.js'
 import lang from '../../config/lang.js'
 import { toChzh } from '../../utils/lang.js'
 import { formatTime } from '../../utils/export.js'
 import GirlRange from '../GirlRange/index.vue'
 
 const props = defineProps({
-  item: Object,
-  curlang: [String, Number]
+  item: Object
 })
+const { curlang } = storeToRefs(useGlobalStore())
 </script>
 <template>
   <div class="md faq-about deck-info">

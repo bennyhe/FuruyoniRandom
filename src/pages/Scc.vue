@@ -62,7 +62,6 @@
                   @click="getCardDetail(citem)"
                 >
                   <CardItem
-                    :curlang="curlang"
                     :isShowCardPic="isShowCardPic"
                     :getCardKeyValInLang="getCardKeyValInLang"
                     :getImgUrl="getImgUrl"
@@ -84,7 +83,6 @@
     </div>
     <!-- S 卡片详情 -->
     <CardDetail
-      :curlang="curlang"
       :getTypeName="getTypeName"
       :getCardKeyValInLang="getCardKeyValInLang"
       :getCanBeStrong="getCanBeStrong"
@@ -101,7 +99,6 @@
       <div class="change-girl-ani">
         <div class="change-girl-ctn">
           <CardDetail
-            :curlang="curlang"
             :getTypeName="getTypeName"
             :getCardKeyValInLang="getCardKeyValInLang"
             :getCanBeStrong="getCanBeStrong"
@@ -133,7 +130,7 @@
 <script>
 import { defineComponent } from 'vue'
 import { storeToRefs } from 'pinia'
-import { useVersionStore } from '../store/version.js'
+import { useGlobalStore } from '../store/global.js'
 import configLang from '../config/lang.js'
 import { toChzh } from '../utils/lang.js'
 import { getCardClass } from '../utils/cards.js'
@@ -148,7 +145,6 @@ export default defineComponent({
     CardDetail
   },
   props: [
-    'curlang',
     'sakuraChangeCardsData',
     'getCardKeyValInLang',
     'getTypeName',
@@ -164,8 +160,8 @@ export default defineComponent({
     }
   },
   setup(props, context) {
-    const versionStore = useVersionStore()
-    const { isOldVer, isNaChVer, isReVer } = storeToRefs(versionStore)
+    const globalStore = useGlobalStore()
+    const { isOldVer, isNaChVer, isReVer, curlang } = storeToRefs(globalStore)
     function getCardDetail(item) {
       this.cardDetail = item
     }
@@ -178,6 +174,7 @@ export default defineComponent({
       isOldVer,
       isNaChVer,
       isReVer,
+      curlang,
       getCardDetail,
       handleClickChangeGirlBtn,
       toChzh,

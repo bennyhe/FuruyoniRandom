@@ -117,7 +117,6 @@
                 v-bind:key="cardIndex"
               >
                 <CardItem
-                  :curlang="curlang"
                   :isShowCardPic="isShowCardPic"
                   :getCardKeyValInLang="getCardKeyValInLang"
                   :getImgUrl="getImgUrl"
@@ -134,7 +133,6 @@
             No Result.
           </div>
           <CardDetail
-            :curlang="curlang"
             :getTypeName="getTypeName"
             :getCardKeyValInLang="getCardKeyValInLang"
             :getCanBeStrong="getCanBeStrong"
@@ -531,7 +529,6 @@
                   v-bind:key="cardIndex"
                 >
                   <CardItem
-                    :curlang="curlang"
                     :isShowCardPic="isShowCardPic"
                     :getCardKeyValInLang="getCardKeyValInLang"
                     :getImgUrl="getImgUrl"
@@ -555,7 +552,6 @@
                   v-bind:key="cardIndex"
                 >
                   <CardItem
-                    :curlang="curlang"
                     :isShowCardPic="isShowCardPic"
                     :getCardKeyValInLang="getCardKeyValInLang"
                     :getImgUrl="getImgUrl"
@@ -576,7 +572,6 @@
                     v-bind:key="cardIndex"
                   >
                     <CardItem
-                      :curlang="curlang"
                       :isShowCardPic="isShowCardPic"
                       :getCardKeyValInLang="getCardKeyValInLang"
                       :getImgUrl="getImgUrl"
@@ -608,7 +603,6 @@
                       v-bind:key="cardIndex"
                     >
                       <CardItem
-                        :curlang="curlang"
                         :isShowCardPic="isShowCardPic"
                         :getCardKeyValInLang="getCardKeyValInLang"
                         :getImgUrl="getImgUrl"
@@ -632,7 +626,6 @@
                         v-bind:key="cardIndex"
                       >
                         <CardItem
-                          :curlang="curlang"
                           :isShowCardPic="isShowCardPic"
                           :getCardKeyValInLang="getCardKeyValInLang"
                           :getImgUrl="getImgUrl"
@@ -663,7 +656,6 @@
                     v-bind:key="cardIndex"
                   >
                     <CardItem
-                      :curlang="curlang"
                       :isShowCardPic="isShowCardPic"
                       :getCardKeyValInLang="getCardKeyValInLang"
                       :getImgUrl="getImgUrl"
@@ -680,7 +672,6 @@
                     v-bind:key="cardIndex"
                   >
                     <CardItem
-                      :curlang="curlang"
                       :isShowCardPic="isShowCardPic"
                       :getCardKeyValInLang="getCardKeyValInLang"
                       :getImgUrl="getImgUrl"
@@ -697,7 +688,6 @@
                     v-bind:key="cardIndex"
                   >
                     <CardItem
-                      :curlang="curlang"
                       :isShowCardPic="isShowCardPic"
                       :getCardKeyValInLang="getCardKeyValInLang"
                       :getImgUrl="getImgUrl"
@@ -713,7 +703,6 @@
                     v-bind:key="cardIndex"
                   >
                     <CardItem
-                      :curlang="curlang"
                       :isShowCardPic="isShowCardPic"
                       :getCardKeyValInLang="getCardKeyValInLang"
                       :getImgUrl="getImgUrl"
@@ -729,7 +718,6 @@
                     v-bind:key="cardIndex"
                   >
                     <CardItem
-                      :curlang="curlang"
                       :isShowCardPic="isShowCardPic"
                       :getCardKeyValInLang="getCardKeyValInLang"
                       :getImgUrl="getImgUrl"
@@ -802,7 +790,6 @@
               "
             >
               <CardDetail
-                :curlang="curlang"
                 :getTypeName="getTypeName"
                 :getCardKeyValInLang="getCardKeyValInLang"
                 :getCanBeStrong="getCanBeStrong"
@@ -865,7 +852,6 @@
             </button> -->
             <div class="md">
               <FaqItem
-                :curlang="curlang"
                 v-for="(item, key) in cardDetail.faq"
                 :item="item"
                 v-bind:key="key"
@@ -882,7 +868,6 @@
             style="max-width: 1024px; margin: 0 auto"
           >
             <DeckCount
-              :curlang="curlang"
               :deckSum="deckSum"
               :deckcount="beGroupDeck.length"
             ></DeckCount>
@@ -897,11 +882,11 @@
                   class="allcards-tab__item allcards-item"
                   :class="{ show: item.isSelect }"
                 >
-                  <DeckTitle :item="item" :curlang="curlang"></DeckTitle>
+                  <DeckTitle :item="item"></DeckTitle>
                 </div>
               </div>
               <div class="allcards__content" :class="{ hide: !item.isSelect }">
-                <DeckInfo :item="item" :curlang="curlang"></DeckInfo>
+                <DeckInfo :item="item"></DeckInfo>
                 <div class="cgroup cgroup--old">
                   <div class="card-wrap">
                     <div class="card-list">
@@ -915,7 +900,6 @@
                           @click="getCardDetailInDeck(cardItem)"
                         >
                           <CardItem
-                            :curlang="curlang"
                             :isShowCardPic="isShowCardPic"
                             :getCardKeyValInLang="getCardKeyValInLang"
                             :getImgUrl="getImgUrl"
@@ -936,7 +920,6 @@
                         v-bind:key="cardIndex"
                       >
                         <CardItem
-                          :curlang="curlang"
                           :isShowCardPic="isShowCardPic"
                           :getCardKeyValInLang="getCardKeyValInLang"
                           :getImgUrl="getImgUrl"
@@ -956,7 +939,6 @@
                           v-bind:key="cardIndex"
                         >
                           <CardItem
-                            :curlang="curlang"
                             :isShowCardPic="isShowCardPic"
                             :getCardKeyValInLang="getCardKeyValInLang"
                             :getImgUrl="getImgUrl"
@@ -973,7 +955,6 @@
                           v-bind:key="cardIndex"
                         >
                           <CardItem
-                            :curlang="curlang"
                             :isShowCardPic="isShowCardPic"
                             :getCardKeyValInLang="getCardKeyValInLang"
                             :getImgUrl="getImgUrl"
@@ -989,7 +970,6 @@
                           v-bind:key="cardIndex"
                         >
                           <CardItem
-                            :curlang="curlang"
                             :isShowCardPic="isShowCardPic"
                             :getCardKeyValInLang="getCardKeyValInLang"
                             :getImgUrl="getImgUrl"
@@ -1005,7 +985,6 @@
                           v-bind:key="cardIndex"
                         >
                           <CardItem
-                            :curlang="curlang"
                             :isShowCardPic="isShowCardPic"
                             :getCardKeyValInLang="getCardKeyValInLang"
                             :getImgUrl="getImgUrl"
@@ -1022,7 +1001,6 @@
                           v-bind:key="cardIndex"
                         >
                           <CardItem
-                            :curlang="curlang"
                             :isShowCardPic="isShowCardPic"
                             :getCardKeyValInLang="getCardKeyValInLang"
                             :getImgUrl="getImgUrl"
@@ -1037,7 +1015,6 @@
                 </div>
                 <!-- S 卡片详情 -->
                 <CardDetail
-                  :curlang="curlang"
                   :getTypeName="getTypeName"
                   :getCardKeyValInLang="getCardKeyValInLang"
                   :getCanBeStrong="getCanBeStrong"
@@ -1083,8 +1060,6 @@
         :class="{ cur: showPanelIndex === 1 }"
       >
         <PageCardList
-          :curlang="curlang"
-          v-model:isShowA="isShowA"
           :showPanelGirls="showPanelGirls"
           :getCardKeyValInLang="getCardKeyValInLang"
           :qiyuanGirls="qiyuanGirls"
@@ -1101,7 +1076,6 @@
       >
         <!-- :storyCardData="storyCardData" 故事模式（暂禁用，保留以备复用） -->
         <PageOtherPlay
-          :curlang="curlang"
           :sakuraWithData="sakuraWithData"
           :defaultData="defaultData"
           :sakuraOtherData="sakuraOtherData"
@@ -1223,7 +1197,6 @@
                     }}</template>
                   </h2>
                   <FaqItem
-                    :curlang="curlang"
                     v-for="(item, key) in litem.list"
                     :item="item"
                     v-bind:key="key"
@@ -1283,7 +1256,6 @@
                     v-bind:key="`${lkey}ajp`"
                   >
                     <CardDetail
-                      :curlang="curlang"
                       :getTypeName="getTypeName"
                       :getCardKeyValInLang="getCardKeyValInLang"
                       :getCanBeStrong="getCanBeStrong"
@@ -1291,7 +1263,6 @@
                     />
                   </div>
                   <FaqItem
-                    :curlang="curlang"
                     v-for="(item, key) in litem.list"
                     :item="item"
                     v-bind:key="key"
@@ -1320,7 +1291,6 @@
           v-model:deckAvatarList="deckAvatarList"
           @reset-deck-selection="sakuraPlayerDeckData.forEach(item => { item.isSelect = false })"
           @reset-child-tab="panelTab[4].childTabIndex = 0"
-          :curlang="curlang"
           :updateTime="sakuraPlayerDeckData[0].date"
           :sakuraPlayerDeckData="sakuraPlayerDeckData"
           :panelTab="panelTab"
@@ -1345,7 +1315,6 @@
         :class="{ cur: showPanelIndex === 2 }"
       >
         <PageScc
-          :curlang="curlang"
           :sakuraChangeCardsData="sakuraChangeCardsData"
           :getCardKeyValInLang="getCardKeyValInLang"
           :getTypeName="getTypeName"
@@ -1364,7 +1333,6 @@
     </div>
     <!-- S footer&copyright -->
     <PageFooter
-      :curlang="curlang"
       :cardSum="cardSum"
       :seasonVersion="seasonVersion"
       :showPanelIndex="showPanelIndex"
@@ -1441,7 +1409,7 @@ import PageOtherPlay from './pages/OtherPlay.vue'
 import PageCardList from './pages/CardList.vue'
 import PageScc from './pages/Scc.vue'
 import { mapWritableState } from 'pinia'
-import { useVersionStore } from './store/version.js'
+import { useGlobalStore } from './store/global.js'
 import configLang from './config/lang.js'
 import configNav from './config/nav.js'
 import {
@@ -1690,7 +1658,6 @@ export default {
       lockCount: 0,
       isStart: false,
       isQuick: false,
-      isShowA: true,
       isShowPic: true,
       isLockName: false,
       lockNameIndex: null,
@@ -1749,7 +1716,6 @@ export default {
       panelTab: configNav,
 
       lang: configLang,
-      curlang: 0,
 
       seasonTags: [],
 
@@ -1758,11 +1724,13 @@ export default {
   },
   computed: {
     // 版本参数全局化：仅 App.vue 保留互斥 watch 与数据重置副作用，子组件直接读写 store
-    ...mapWritableState(useVersionStore, [
+    ...mapWritableState(useGlobalStore, [
       'isOldVer',
       'isNaChVer',
       'isNaVer',
-      'isReVer'
+      'isReVer',
+      'isShowA',
+      'curlang'
     ])
   },
   watch: {
