@@ -117,7 +117,6 @@
                 v-bind:key="cardIndex"
               >
                 <CardItem
-                  :isShowCardPic="isShowCardPic"
                   :getCardKeyValInLang="getCardKeyValInLang"
                   :getImgUrl="getImgUrl"
                   :getTypeName="getTypeName"
@@ -529,7 +528,6 @@
                   v-bind:key="cardIndex"
                 >
                   <CardItem
-                    :isShowCardPic="isShowCardPic"
                     :getCardKeyValInLang="getCardKeyValInLang"
                     :getImgUrl="getImgUrl"
                     :getTypeName="getTypeName"
@@ -552,7 +550,6 @@
                   v-bind:key="cardIndex"
                 >
                   <CardItem
-                    :isShowCardPic="isShowCardPic"
                     :getCardKeyValInLang="getCardKeyValInLang"
                     :getImgUrl="getImgUrl"
                     :getTypeName="getTypeName"
@@ -572,7 +569,6 @@
                     v-bind:key="cardIndex"
                   >
                     <CardItem
-                      :isShowCardPic="isShowCardPic"
                       :getCardKeyValInLang="getCardKeyValInLang"
                       :getImgUrl="getImgUrl"
                       :getTypeName="getTypeName"
@@ -603,7 +599,6 @@
                       v-bind:key="cardIndex"
                     >
                       <CardItem
-                        :isShowCardPic="isShowCardPic"
                         :getCardKeyValInLang="getCardKeyValInLang"
                         :getImgUrl="getImgUrl"
                         :getTypeName="getTypeName"
@@ -626,7 +621,6 @@
                         v-bind:key="cardIndex"
                       >
                         <CardItem
-                          :isShowCardPic="isShowCardPic"
                           :getCardKeyValInLang="getCardKeyValInLang"
                           :getImgUrl="getImgUrl"
                           :getTypeName="getTypeName"
@@ -656,7 +650,6 @@
                     v-bind:key="cardIndex"
                   >
                     <CardItem
-                      :isShowCardPic="isShowCardPic"
                       :getCardKeyValInLang="getCardKeyValInLang"
                       :getImgUrl="getImgUrl"
                       :getTypeName="getTypeName"
@@ -672,7 +665,6 @@
                     v-bind:key="cardIndex"
                   >
                     <CardItem
-                      :isShowCardPic="isShowCardPic"
                       :getCardKeyValInLang="getCardKeyValInLang"
                       :getImgUrl="getImgUrl"
                       :getTypeName="getTypeName"
@@ -688,7 +680,6 @@
                     v-bind:key="cardIndex"
                   >
                     <CardItem
-                      :isShowCardPic="isShowCardPic"
                       :getCardKeyValInLang="getCardKeyValInLang"
                       :getImgUrl="getImgUrl"
                       :getTypeName="getTypeName"
@@ -703,7 +694,6 @@
                     v-bind:key="cardIndex"
                   >
                     <CardItem
-                      :isShowCardPic="isShowCardPic"
                       :getCardKeyValInLang="getCardKeyValInLang"
                       :getImgUrl="getImgUrl"
                       :getTypeName="getTypeName"
@@ -718,7 +708,6 @@
                     v-bind:key="cardIndex"
                   >
                     <CardItem
-                      :isShowCardPic="isShowCardPic"
                       :getCardKeyValInLang="getCardKeyValInLang"
                       :getImgUrl="getImgUrl"
                       :getTypeName="getTypeName"
@@ -900,7 +889,6 @@
                           @click="getCardDetailInDeck(cardItem)"
                         >
                           <CardItem
-                            :isShowCardPic="isShowCardPic"
                             :getCardKeyValInLang="getCardKeyValInLang"
                             :getImgUrl="getImgUrl"
                             :getTypeName="getTypeName"
@@ -920,7 +908,6 @@
                         v-bind:key="cardIndex"
                       >
                         <CardItem
-                          :isShowCardPic="isShowCardPic"
                           :getCardKeyValInLang="getCardKeyValInLang"
                           :getImgUrl="getImgUrl"
                           :getTypeName="getTypeName"
@@ -939,7 +926,6 @@
                           v-bind:key="cardIndex"
                         >
                           <CardItem
-                            :isShowCardPic="isShowCardPic"
                             :getCardKeyValInLang="getCardKeyValInLang"
                             :getImgUrl="getImgUrl"
                             :getTypeName="getTypeName"
@@ -955,7 +941,6 @@
                           v-bind:key="cardIndex"
                         >
                           <CardItem
-                            :isShowCardPic="isShowCardPic"
                             :getCardKeyValInLang="getCardKeyValInLang"
                             :getImgUrl="getImgUrl"
                             :getTypeName="getTypeName"
@@ -970,7 +955,6 @@
                           v-bind:key="cardIndex"
                         >
                           <CardItem
-                            :isShowCardPic="isShowCardPic"
                             :getCardKeyValInLang="getCardKeyValInLang"
                             :getImgUrl="getImgUrl"
                             :getTypeName="getTypeName"
@@ -985,7 +969,6 @@
                           v-bind:key="cardIndex"
                         >
                           <CardItem
-                            :isShowCardPic="isShowCardPic"
                             :getCardKeyValInLang="getCardKeyValInLang"
                             :getImgUrl="getImgUrl"
                             :getTypeName="getTypeName"
@@ -1001,7 +984,6 @@
                           v-bind:key="cardIndex"
                         >
                           <CardItem
-                            :isShowCardPic="isShowCardPic"
                             :getCardKeyValInLang="getCardKeyValInLang"
                             :getImgUrl="getImgUrl"
                             :getTypeName="getTypeName"
@@ -1087,7 +1069,6 @@
           :getTypeName="getTypeName"
           :getCardDetail="getCardDetail"
           :getCanBeStrong="getCanBeStrong"
-          :isShowCardPic="isShowCardPic"
           :getImgUrl="getImgUrl"
         />
       </div>
@@ -1304,7 +1285,6 @@
           :getCardDetailInDeck="getCardDetailInDeck"
           :selectedDeckShow="selectedDeckShow"
           :getCanBeStrong="getCanBeStrong"
-          :isShowCardPic="isShowCardPic"
           :getImgUrl="getImgUrl"
         />
       </div>
@@ -1319,7 +1299,6 @@
           :getCardKeyValInLang="getCardKeyValInLang"
           :getTypeName="getTypeName"
           :getCanBeStrong="getCanBeStrong"
-          :isShowCardPic="isShowCardPic"
           :getImgUrl="getImgUrl"
         />
       </div>
@@ -1680,7 +1659,6 @@ export default {
       shareGirls: [],
       shareLink: '',
       randomSet: [2, 3, 4, 6],
-      isShowCardPic: false,
       debug: 0, //默认0
 
       searchType: 'all',
@@ -1730,6 +1708,7 @@ export default {
       'isNaVer',
       'isReVer',
       'isShowA',
+      'isShowCardPic',
       'curlang'
     ])
   },

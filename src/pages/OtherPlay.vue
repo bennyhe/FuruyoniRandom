@@ -39,7 +39,6 @@
                   v-bind:key="cardIndex"
                 >
                   <CardItem
-                    :isShowCardPic="isShowCardPic"
                     :getCardKeyValInLang="getCardKeyValInLang"
                     :getImgUrl="getImgUrl"
                     :getTypeName="getTypeName"
@@ -110,7 +109,6 @@
                 v-bind:key="cardIndex"
               >
                 <CardItem
-                  :isShowCardPic="isShowCardPic"
                   :getCardKeyValInLang="getCardKeyValInLang"
                   :getImgUrl="getImgUrl"
                   :getTypeName="getTypeName"
@@ -223,7 +221,6 @@
                       v-bind:key="cardIndex"
                     >
                       <CardItem
-                        :isShowCardPic="isShowCardPic"
                         :getCardKeyValInLang="getCardKeyValInLang"
                         :getImgUrl="getImgUrl"
                         :getTypeName="getTypeName"
@@ -242,7 +239,6 @@
                       v-bind:key="cardIndex"
                     >
                       <CardItem
-                        :isShowCardPic="isShowCardPic"
                         :getCardKeyValInLang="getCardKeyValInLang"
                         :getImgUrl="getImgUrl"
                         :getTypeName="getTypeName"
@@ -287,7 +283,6 @@
                   v-bind:key="cardIndex"
                 >
                   <CardItem
-                    :isShowCardPic="isShowCardPic"
                     :getCardKeyValInLang="getCardKeyValInLang"
                     :getImgUrl="getImgUrl"
                     :getTypeName="getTypeName"
@@ -363,7 +358,6 @@
                       @click="getCardDetail(cardItem)"
                     >
                       <CardItem
-                        :isShowCardPic="isShowCardPic"
                         :getCardKeyValInLang="getCardKeyValInLang"
                         :getImgUrl="getImgUrl"
                         :getTypeName="getTypeName"
@@ -382,7 +376,6 @@
                       @click="getCardDetail(cardItem)"
                     >
                       <CardItem
-                        :isShowCardPic="isShowCardPic"
                         :getCardKeyValInLang="getCardKeyValInLang"
                         :getImgUrl="getImgUrl"
                         :getTypeName="getTypeName"
@@ -401,7 +394,6 @@
                       @click="getCardDetail(cardItem)"
                     >
                       <CardItem
-                        :isShowCardPic="isShowCardPic"
                         :getCardKeyValInLang="getCardKeyValInLang"
                         :getImgUrl="getImgUrl"
                         :getTypeName="getTypeName"
@@ -418,7 +410,6 @@
                       @click="getCardDetail(cardItem)"
                     >
                       <CardItem
-                        :isShowCardPic="isShowCardPic"
                         :getCardKeyValInLang="getCardKeyValInLang"
                         :getImgUrl="getImgUrl"
                         :getTypeName="getTypeName"
@@ -477,7 +468,6 @@ export default defineComponent({
     'getTypeName',
     'getCardDetail',
     'getCanBeStrong',
-    'isShowCardPic',
     'getImgUrl'
   ],
   data() {
@@ -490,7 +480,8 @@ export default defineComponent({
   },
   setup(props, context) {
     const globalStore = useGlobalStore()
-    const { isOldVer, isNaChVer, isReVer, curlang } = storeToRefs(globalStore)
+    const { isOldVer, isNaChVer, isReVer, curlang, isShowCardPic } =
+      storeToRefs(globalStore)
     function randomGetLx(count) {
       const dataCopy = [...this.sakuraWithData[0].list]
       this.lxVsResultList = []
@@ -516,6 +507,7 @@ export default defineComponent({
       isNaChVer,
       isReVer,
       curlang,
+      isShowCardPic,
       randomGetLx,
       handleClickSA,
       toChzh,

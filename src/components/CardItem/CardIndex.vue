@@ -102,10 +102,11 @@ import { useGlobalStore } from '../../store/global.js'
 import lang from '../../config/lang.js'
 import { isShowStopIcon, getIsShowCardPicIn } from '../../utils/cards.js'
 
-const { isOldVer, isNaChVer, curlang } = storeToRefs(useGlobalStore())
+const { isOldVer, isNaChVer, curlang, isShowCardPic } = storeToRefs(
+  useGlobalStore()
+)
 const props = defineProps({
   item: Object,
-  isShowCardPic: Boolean,
   getCardKeyValInLang: Function,
   getImgUrl: Function,
   getTypeName: Function

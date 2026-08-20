@@ -62,7 +62,6 @@
                   @click="getCardDetail(citem)"
                 >
                   <CardItem
-                    :isShowCardPic="isShowCardPic"
                     :getCardKeyValInLang="getCardKeyValInLang"
                     :getImgUrl="getImgUrl"
                     :getTypeName="getTypeName"
@@ -149,7 +148,6 @@ export default defineComponent({
     'getCardKeyValInLang',
     'getTypeName',
     'getCanBeStrong',
-    'isShowCardPic',
     'getImgUrl'
   ],
   data() {
@@ -161,7 +159,8 @@ export default defineComponent({
   },
   setup(props, context) {
     const globalStore = useGlobalStore()
-    const { isOldVer, isNaChVer, isReVer, curlang } = storeToRefs(globalStore)
+    const { isOldVer, isNaChVer, isReVer, curlang, isShowCardPic } =
+      storeToRefs(globalStore)
     function getCardDetail(item) {
       this.cardDetail = item
     }
@@ -175,6 +174,7 @@ export default defineComponent({
       isNaChVer,
       isReVer,
       curlang,
+      isShowCardPic,
       getCardDetail,
       handleClickChangeGirlBtn,
       toChzh,

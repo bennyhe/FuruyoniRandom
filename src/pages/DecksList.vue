@@ -13,7 +13,9 @@ import DeckTitle from '../components/Deck/DeckTitle.vue'
 import DeckInfo from '../components/Deck/DeckInfo.vue'
 
 const lang = configLang
-const { isOldVer, isNaChVer, isReVer } = storeToRefs(useGlobalStore())
+const { isOldVer, isNaChVer, isReVer, isShowCardPic } = storeToRefs(
+  useGlobalStore()
+)
 const props = defineProps({
   deckAvatarList: [Array],
   panelTab: [Array],
@@ -26,7 +28,6 @@ const props = defineProps({
   getCardDetailInDeck: [Function],
   selectedDeckShow: [Function],
   getCanBeStrong: [Function],
-  isShowCardPic: [Boolean],
   getImgUrl: [Function],
   updateTime: [String],
   resDecks: [Array],
@@ -342,7 +343,6 @@ const handleClickSelectedCancel = girlItem => {
             >
               <div class="card-list__item" :class="getCardClass(cardItem.card)">
                 <CardItem
-                  :isShowCardPic="isShowCardPic"
                   :getCardKeyValInLang="getCardKeyValInLang"
                   :getImgUrl="getImgUrl"
                   :getTypeName="getTypeName"
@@ -365,7 +365,6 @@ const handleClickSelectedCancel = girlItem => {
             >
               <div class="card-list__item" :class="getCardClass(cardItem.card)">
                 <CardItem
-                  :isShowCardPic="isShowCardPic"
                   :getCardKeyValInLang="getCardKeyValInLang"
                   :getImgUrl="getImgUrl"
                   :getTypeName="getTypeName"
@@ -388,7 +387,6 @@ const handleClickSelectedCancel = girlItem => {
             >
               <div class="card-list__item" :class="getCardClass(cardItem.card)">
                 <CardItem
-                  :isShowCardPic="isShowCardPic"
                   :getCardKeyValInLang="getCardKeyValInLang"
                   :getImgUrl="getImgUrl"
                   :getTypeName="getTypeName"
@@ -468,7 +466,6 @@ const handleClickSelectedCancel = girlItem => {
                       :class="getCardClass(cardItem.card)"
                     >
                       <CardItem
-                        :isShowCardPic="isShowCardPic"
                         :getCardKeyValInLang="getCardKeyValInLang"
                         :getImgUrl="getImgUrl"
                         :getTypeName="getTypeName"
@@ -528,7 +525,6 @@ const handleClickSelectedCancel = girlItem => {
                       :class="getCardClass(cardItem.card)"
                     >
                       <CardItem
-                        :isShowCardPic="isShowCardPic"
                         :getCardKeyValInLang="getCardKeyValInLang"
                         :getImgUrl="getImgUrl"
                         :getTypeName="getTypeName"
@@ -629,7 +625,6 @@ const handleClickSelectedCancel = girlItem => {
                     @click="getCardDetailInDeck(cardItem)"
                   >
                     <CardItem
-                      :isShowCardPic="isShowCardPic"
                       :getCardKeyValInLang="getCardKeyValInLang"
                       :getImgUrl="getImgUrl"
                       :getTypeName="getTypeName"
@@ -649,7 +644,6 @@ const handleClickSelectedCancel = girlItem => {
                   @click="getCardDetailInDeck(cardItem)"
                 >
                   <CardItem
-                    :isShowCardPic="isShowCardPic"
                     :getCardKeyValInLang="getCardKeyValInLang"
                     :getImgUrl="getImgUrl"
                     :getTypeName="getTypeName"
@@ -668,7 +662,6 @@ const handleClickSelectedCancel = girlItem => {
                     @click="getCardDetailInDeck(cardItem)"
                   >
                     <CardItem
-                      :isShowCardPic="isShowCardPic"
                       :getCardKeyValInLang="getCardKeyValInLang"
                       :getImgUrl="getImgUrl"
                       :getTypeName="getTypeName"
@@ -684,7 +677,6 @@ const handleClickSelectedCancel = girlItem => {
                     @click="getCardDetailInDeck(cardItem)"
                   >
                     <CardItem
-                      :isShowCardPic="isShowCardPic"
                       :getCardKeyValInLang="getCardKeyValInLang"
                       :getImgUrl="getImgUrl"
                       :getTypeName="getTypeName"
@@ -699,7 +691,6 @@ const handleClickSelectedCancel = girlItem => {
                     @click="getCardDetailInDeck(cardItem)"
                   >
                     <CardItem
-                      :isShowCardPic="isShowCardPic"
                       :getCardKeyValInLang="getCardKeyValInLang"
                       :getImgUrl="getImgUrl"
                       :getTypeName="getTypeName"
@@ -714,7 +705,6 @@ const handleClickSelectedCancel = girlItem => {
                     @click="getCardDetailInDeck(cardItem)"
                   >
                     <CardItem
-                      :isShowCardPic="isShowCardPic"
                       :getCardKeyValInLang="getCardKeyValInLang"
                       :getImgUrl="getImgUrl"
                       :getTypeName="getTypeName"
@@ -730,7 +720,6 @@ const handleClickSelectedCancel = girlItem => {
                     @click="getCardDetailInDeck(cardItem)"
                   >
                     <CardItem
-                      :isShowCardPic="isShowCardPic"
                       :getCardKeyValInLang="getCardKeyValInLang"
                       :getImgUrl="getImgUrl"
                       :getTypeName="getTypeName"
