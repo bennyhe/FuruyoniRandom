@@ -1,5 +1,7 @@
 <script setup>
 import { defineProps, ref, defineEmits } from 'vue'
+import { storeToRefs } from 'pinia'
+import { useVersionStore } from '../store/version.js'
 import configLang from '../config/lang.js'
 import { toChzh } from '../utils/lang.js'
 import { getCardClass } from '../utils/cards.js'
@@ -11,6 +13,7 @@ import DeckTitle from '../components/Deck/DeckTitle.vue'
 import DeckInfo from '../components/Deck/DeckInfo.vue'
 
 const lang = configLang
+const { isOldVer, isNaChVer, isReVer } = storeToRefs(useVersionStore())
 const props = defineProps({
   curlang: [String, Number],
   deckAvatarList: [Array],
@@ -24,9 +27,6 @@ const props = defineProps({
   getCardDetailInDeck: [Function],
   selectedDeckShow: [Function],
   getCanBeStrong: [Function],
-  isOldVer: [Boolean],
-  isNaChVer: [Boolean],
-  isReVer: [Boolean],
   isShowCardPic: [Boolean],
   getImgUrl: [Function],
   updateTime: [String],
@@ -343,9 +343,7 @@ const handleClickSelectedCancel = girlItem => {
             >
               <div class="card-list__item" :class="getCardClass(cardItem.card)">
                 <CardItem
-                  :isOldVer="isOldVer"
                   :curlang="curlang"
-                  :isNaChVer="isNaChVer"
                   :isShowCardPic="isShowCardPic"
                   :getCardKeyValInLang="getCardKeyValInLang"
                   :getImgUrl="getImgUrl"
@@ -369,9 +367,7 @@ const handleClickSelectedCancel = girlItem => {
             >
               <div class="card-list__item" :class="getCardClass(cardItem.card)">
                 <CardItem
-                  :isOldVer="isOldVer"
                   :curlang="curlang"
-                  :isNaChVer="isNaChVer"
                   :isShowCardPic="isShowCardPic"
                   :getCardKeyValInLang="getCardKeyValInLang"
                   :getImgUrl="getImgUrl"
@@ -395,9 +391,7 @@ const handleClickSelectedCancel = girlItem => {
             >
               <div class="card-list__item" :class="getCardClass(cardItem.card)">
                 <CardItem
-                  :isOldVer="isOldVer"
                   :curlang="curlang"
-                  :isNaChVer="isNaChVer"
                   :isShowCardPic="isShowCardPic"
                   :getCardKeyValInLang="getCardKeyValInLang"
                   :getImgUrl="getImgUrl"
@@ -478,9 +472,7 @@ const handleClickSelectedCancel = girlItem => {
                       :class="getCardClass(cardItem.card)"
                     >
                       <CardItem
-                        :isOldVer="isOldVer"
                         :curlang="curlang"
-                        :isNaChVer="isNaChVer"
                         :isShowCardPic="isShowCardPic"
                         :getCardKeyValInLang="getCardKeyValInLang"
                         :getImgUrl="getImgUrl"
@@ -541,9 +533,7 @@ const handleClickSelectedCancel = girlItem => {
                       :class="getCardClass(cardItem.card)"
                     >
                       <CardItem
-                        :isOldVer="isOldVer"
                         :curlang="curlang"
-                        :isNaChVer="isNaChVer"
                         :isShowCardPic="isShowCardPic"
                         :getCardKeyValInLang="getCardKeyValInLang"
                         :getImgUrl="getImgUrl"
@@ -646,9 +636,7 @@ const handleClickSelectedCancel = girlItem => {
                     @click="getCardDetailInDeck(cardItem)"
                   >
                     <CardItem
-                      :isOldVer="isOldVer"
                       :curlang="curlang"
-                      :isNaChVer="isNaChVer"
                       :isShowCardPic="isShowCardPic"
                       :getCardKeyValInLang="getCardKeyValInLang"
                       :getImgUrl="getImgUrl"
@@ -669,9 +657,7 @@ const handleClickSelectedCancel = girlItem => {
                   @click="getCardDetailInDeck(cardItem)"
                 >
                   <CardItem
-                    :isOldVer="isOldVer"
                     :curlang="curlang"
-                    :isNaChVer="isNaChVer"
                     :isShowCardPic="isShowCardPic"
                     :getCardKeyValInLang="getCardKeyValInLang"
                     :getImgUrl="getImgUrl"
@@ -691,9 +677,7 @@ const handleClickSelectedCancel = girlItem => {
                     @click="getCardDetailInDeck(cardItem)"
                   >
                     <CardItem
-                      :isOldVer="isOldVer"
                       :curlang="curlang"
-                      :isNaChVer="isNaChVer"
                       :isShowCardPic="isShowCardPic"
                       :getCardKeyValInLang="getCardKeyValInLang"
                       :getImgUrl="getImgUrl"
@@ -710,9 +694,7 @@ const handleClickSelectedCancel = girlItem => {
                     @click="getCardDetailInDeck(cardItem)"
                   >
                     <CardItem
-                      :isOldVer="isOldVer"
                       :curlang="curlang"
-                      :isNaChVer="isNaChVer"
                       :isShowCardPic="isShowCardPic"
                       :getCardKeyValInLang="getCardKeyValInLang"
                       :getImgUrl="getImgUrl"
@@ -728,9 +710,7 @@ const handleClickSelectedCancel = girlItem => {
                     @click="getCardDetailInDeck(cardItem)"
                   >
                     <CardItem
-                      :isOldVer="isOldVer"
                       :curlang="curlang"
-                      :isNaChVer="isNaChVer"
                       :isShowCardPic="isShowCardPic"
                       :getCardKeyValInLang="getCardKeyValInLang"
                       :getImgUrl="getImgUrl"
@@ -746,9 +726,7 @@ const handleClickSelectedCancel = girlItem => {
                     @click="getCardDetailInDeck(cardItem)"
                   >
                     <CardItem
-                      :isOldVer="isOldVer"
                       :curlang="curlang"
-                      :isNaChVer="isNaChVer"
                       :isShowCardPic="isShowCardPic"
                       :getCardKeyValInLang="getCardKeyValInLang"
                       :getImgUrl="getImgUrl"
@@ -765,9 +743,7 @@ const handleClickSelectedCancel = girlItem => {
                     @click="getCardDetailInDeck(cardItem)"
                   >
                     <CardItem
-                      :isOldVer="isOldVer"
                       :curlang="curlang"
-                      :isNaChVer="isNaChVer"
                       :isShowCardPic="isShowCardPic"
                       :getCardKeyValInLang="getCardKeyValInLang"
                       :getImgUrl="getImgUrl"
@@ -783,8 +759,6 @@ const handleClickSelectedCancel = girlItem => {
           <!-- S 卡片详情 -->
           <CardDetail
             :curlang="curlang"
-            :isNaChVer="isNaChVer"
-            :isReVer="isReVer"
             :getTypeName="getTypeName"
             :getCardKeyValInLang="getCardKeyValInLang"
             :getCanBeStrong="getCanBeStrong"

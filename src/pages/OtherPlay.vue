@@ -39,9 +39,7 @@
                   v-bind:key="cardIndex"
                 >
                   <CardItem
-                    :isOldVer="isOldVer"
                     :curlang="curlang"
-                    :isNaChVer="isNaChVer"
                     :isShowCardPic="isShowCardPic"
                     :getCardKeyValInLang="getCardKeyValInLang"
                     :getImgUrl="getImgUrl"
@@ -113,9 +111,7 @@
                 v-bind:key="cardIndex"
               >
                 <CardItem
-                  :isOldVer="isOldVer"
                   :curlang="curlang"
-                  :isNaChVer="isNaChVer"
                   :isShowCardPic="isShowCardPic"
                   :getCardKeyValInLang="getCardKeyValInLang"
                   :getImgUrl="getImgUrl"
@@ -152,8 +148,6 @@
       <!-- S 卡片详情 -->
       <CardDetail
         :curlang="curlang"
-        :isNaChVer="isNaChVer"
-        :isReVer="isReVer"
         :getTypeName="getTypeName"
         :getCardKeyValInLang="getCardKeyValInLang"
         :getCanBeStrong="getCanBeStrong"
@@ -232,9 +226,7 @@
                       v-bind:key="cardIndex"
                     >
                       <CardItem
-                        :isOldVer="isOldVer"
                         :curlang="curlang"
-                        :isNaChVer="isNaChVer"
                         :isShowCardPic="isShowCardPic"
                         :getCardKeyValInLang="getCardKeyValInLang"
                         :getImgUrl="getImgUrl"
@@ -254,9 +246,7 @@
                       v-bind:key="cardIndex"
                     >
                       <CardItem
-                        :isOldVer="isOldVer"
                         :curlang="curlang"
-                        :isNaChVer="isNaChVer"
                         :isShowCardPic="isShowCardPic"
                         :getCardKeyValInLang="getCardKeyValInLang"
                         :getImgUrl="getImgUrl"
@@ -273,7 +263,6 @@
         [原注释：S 卡片详情]
         <CardDetail
           :curlang="curlang"
-          :isNaChVer="isNaChVer"
           :getTypeName="getTypeName"
           :getCardKeyValInLang="getCardKeyValInLang"
           :getCanBeStrong="getCanBeStrong"
@@ -304,9 +293,7 @@
                   v-bind:key="cardIndex"
                 >
                   <CardItem
-                    :isOldVer="isOldVer"
                     :curlang="curlang"
-                    :isNaChVer="isNaChVer"
                     :isShowCardPic="isShowCardPic"
                     :getCardKeyValInLang="getCardKeyValInLang"
                     :getImgUrl="getImgUrl"
@@ -327,8 +314,6 @@
       <!-- S 卡片详情 -->
       <CardDetail
         :curlang="curlang"
-        :isNaChVer="isNaChVer"
-        :isReVer="isReVer"
         :getTypeName="getTypeName"
         :getCardKeyValInLang="getCardKeyValInLang"
         :getCanBeStrong="getCanBeStrong"
@@ -386,9 +371,7 @@
                       @click="getCardDetail(cardItem)"
                     >
                       <CardItem
-                        :isOldVer="isOldVer"
                         :curlang="curlang"
-                        :isNaChVer="isNaChVer"
                         :isShowCardPic="isShowCardPic"
                         :getCardKeyValInLang="getCardKeyValInLang"
                         :getImgUrl="getImgUrl"
@@ -408,9 +391,7 @@
                       @click="getCardDetail(cardItem)"
                     >
                       <CardItem
-                        :isOldVer="isOldVer"
                         :curlang="curlang"
-                        :isNaChVer="isNaChVer"
                         :isShowCardPic="isShowCardPic"
                         :getCardKeyValInLang="getCardKeyValInLang"
                         :getImgUrl="getImgUrl"
@@ -430,9 +411,7 @@
                       @click="getCardDetail(cardItem)"
                     >
                       <CardItem
-                        :isOldVer="isOldVer"
                         :curlang="curlang"
-                        :isNaChVer="isNaChVer"
                         :isShowCardPic="isShowCardPic"
                         :getCardKeyValInLang="getCardKeyValInLang"
                         :getImgUrl="getImgUrl"
@@ -450,9 +429,7 @@
                       @click="getCardDetail(cardItem)"
                     >
                       <CardItem
-                        :isOldVer="isOldVer"
                         :curlang="curlang"
-                        :isNaChVer="isNaChVer"
                         :isShowCardPic="isShowCardPic"
                         :getCardKeyValInLang="getCardKeyValInLang"
                         :getImgUrl="getImgUrl"
@@ -469,8 +446,6 @@
         <!-- S 卡片详情 -->
         <CardDetail
           :curlang="curlang"
-          :isNaChVer="isNaChVer"
-          :isReVer="isReVer"
           :getTypeName="getTypeName"
           :getCardKeyValInLang="getCardKeyValInLang"
           :getCanBeStrong="getCanBeStrong"
@@ -485,6 +460,8 @@
 </template>
 <script>
 import { defineComponent } from 'vue'
+import { storeToRefs } from 'pinia'
+import { useVersionStore } from '../store/version.js'
 import configLang from '../config/lang.js'
 import { toChzh } from '../utils/lang.js'
 import { getCardClass } from '../utils/cards.js'
@@ -514,9 +491,6 @@ export default defineComponent({
     'getTypeName',
     'getCardDetail',
     'getCanBeStrong',
-    'isOldVer',
-    'isNaChVer',
-    'isReVer',
     'isShowCardPic',
     'getImgUrl'
   ],
@@ -529,6 +503,8 @@ export default defineComponent({
     }
   },
   setup(props, context) {
+    const versionStore = useVersionStore()
+    const { isOldVer, isNaChVer, isReVer } = storeToRefs(versionStore)
     function randomGetLx(count) {
       const dataCopy = [...this.sakuraWithData[0].list]
       this.lxVsResultList = []
@@ -550,6 +526,9 @@ export default defineComponent({
 
     return {
       lang: configLang,
+      isOldVer,
+      isNaChVer,
+      isReVer,
       randomGetLx,
       handleClickSA,
       toChzh,

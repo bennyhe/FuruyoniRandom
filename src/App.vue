@@ -117,9 +117,7 @@
                 v-bind:key="cardIndex"
               >
                 <CardItem
-                  :isOldVer="isOldVer"
                   :curlang="curlang"
-                  :isNaChVer="isNaChVer"
                   :isShowCardPic="isShowCardPic"
                   :getCardKeyValInLang="getCardKeyValInLang"
                   :getImgUrl="getImgUrl"
@@ -137,8 +135,6 @@
           </div>
           <CardDetail
             :curlang="curlang"
-            :isNaChVer="isNaChVer"
-            :isReVer="isReVer"
             :getTypeName="getTypeName"
             :getCardKeyValInLang="getCardKeyValInLang"
             :getCanBeStrong="getCanBeStrong"
@@ -535,9 +531,7 @@
                   v-bind:key="cardIndex"
                 >
                   <CardItem
-                    :isOldVer="isOldVer"
                     :curlang="curlang"
-                    :isNaChVer="isNaChVer"
                     :isShowCardPic="isShowCardPic"
                     :getCardKeyValInLang="getCardKeyValInLang"
                     :getImgUrl="getImgUrl"
@@ -561,9 +555,7 @@
                   v-bind:key="cardIndex"
                 >
                   <CardItem
-                    :isOldVer="isOldVer"
                     :curlang="curlang"
-                    :isNaChVer="isNaChVer"
                     :isShowCardPic="isShowCardPic"
                     :getCardKeyValInLang="getCardKeyValInLang"
                     :getImgUrl="getImgUrl"
@@ -584,9 +576,7 @@
                     v-bind:key="cardIndex"
                   >
                     <CardItem
-                      :isOldVer="isOldVer"
                       :curlang="curlang"
-                      :isNaChVer="isNaChVer"
                       :isShowCardPic="isShowCardPic"
                       :getCardKeyValInLang="getCardKeyValInLang"
                       :getImgUrl="getImgUrl"
@@ -618,9 +608,7 @@
                       v-bind:key="cardIndex"
                     >
                       <CardItem
-                        :isOldVer="isOldVer"
                         :curlang="curlang"
-                        :isNaChVer="isNaChVer"
                         :isShowCardPic="isShowCardPic"
                         :getCardKeyValInLang="getCardKeyValInLang"
                         :getImgUrl="getImgUrl"
@@ -644,9 +632,7 @@
                         v-bind:key="cardIndex"
                       >
                         <CardItem
-                          :isOldVer="isOldVer"
                           :curlang="curlang"
-                          :isNaChVer="isNaChVer"
                           :isShowCardPic="isShowCardPic"
                           :getCardKeyValInLang="getCardKeyValInLang"
                           :getImgUrl="getImgUrl"
@@ -677,9 +663,7 @@
                     v-bind:key="cardIndex"
                   >
                     <CardItem
-                      :isOldVer="isOldVer"
                       :curlang="curlang"
-                      :isNaChVer="isNaChVer"
                       :isShowCardPic="isShowCardPic"
                       :getCardKeyValInLang="getCardKeyValInLang"
                       :getImgUrl="getImgUrl"
@@ -696,9 +680,7 @@
                     v-bind:key="cardIndex"
                   >
                     <CardItem
-                      :isOldVer="isOldVer"
                       :curlang="curlang"
-                      :isNaChVer="isNaChVer"
                       :isShowCardPic="isShowCardPic"
                       :getCardKeyValInLang="getCardKeyValInLang"
                       :getImgUrl="getImgUrl"
@@ -715,9 +697,7 @@
                     v-bind:key="cardIndex"
                   >
                     <CardItem
-                      :isOldVer="isOldVer"
                       :curlang="curlang"
-                      :isNaChVer="isNaChVer"
                       :isShowCardPic="isShowCardPic"
                       :getCardKeyValInLang="getCardKeyValInLang"
                       :getImgUrl="getImgUrl"
@@ -733,9 +713,7 @@
                     v-bind:key="cardIndex"
                   >
                     <CardItem
-                      :isOldVer="isOldVer"
                       :curlang="curlang"
-                      :isNaChVer="isNaChVer"
                       :isShowCardPic="isShowCardPic"
                       :getCardKeyValInLang="getCardKeyValInLang"
                       :getImgUrl="getImgUrl"
@@ -751,9 +729,7 @@
                     v-bind:key="cardIndex"
                   >
                     <CardItem
-                      :isOldVer="isOldVer"
                       :curlang="curlang"
-                      :isNaChVer="isNaChVer"
                       :isShowCardPic="isShowCardPic"
                       :getCardKeyValInLang="getCardKeyValInLang"
                       :getImgUrl="getImgUrl"
@@ -827,8 +803,6 @@
             >
               <CardDetail
                 :curlang="curlang"
-                :isNaChVer="isNaChVer"
-                :isReVer="isReVer"
                 :getTypeName="getTypeName"
                 :getCardKeyValInLang="getCardKeyValInLang"
                 :getCanBeStrong="getCanBeStrong"
@@ -941,9 +915,7 @@
                           @click="getCardDetailInDeck(cardItem)"
                         >
                           <CardItem
-                            :isOldVer="isOldVer"
                             :curlang="curlang"
-                            :isNaChVer="isNaChVer"
                             :isShowCardPic="isShowCardPic"
                             :getCardKeyValInLang="getCardKeyValInLang"
                             :getImgUrl="getImgUrl"
@@ -964,9 +936,7 @@
                         v-bind:key="cardIndex"
                       >
                         <CardItem
-                          :isOldVer="isOldVer"
                           :curlang="curlang"
-                          :isNaChVer="isNaChVer"
                           :isShowCardPic="isShowCardPic"
                           :getCardKeyValInLang="getCardKeyValInLang"
                           :getImgUrl="getImgUrl"
@@ -986,9 +956,7 @@
                           v-bind:key="cardIndex"
                         >
                           <CardItem
-                            :isOldVer="isOldVer"
                             :curlang="curlang"
-                            :isNaChVer="isNaChVer"
                             :isShowCardPic="isShowCardPic"
                             :getCardKeyValInLang="getCardKeyValInLang"
                             :getImgUrl="getImgUrl"
@@ -1005,9 +973,7 @@
                           v-bind:key="cardIndex"
                         >
                           <CardItem
-                            :isOldVer="isOldVer"
                             :curlang="curlang"
-                            :isNaChVer="isNaChVer"
                             :isShowCardPic="isShowCardPic"
                             :getCardKeyValInLang="getCardKeyValInLang"
                             :getImgUrl="getImgUrl"
@@ -1023,9 +989,7 @@
                           v-bind:key="cardIndex"
                         >
                           <CardItem
-                            :isOldVer="isOldVer"
                             :curlang="curlang"
-                            :isNaChVer="isNaChVer"
                             :isShowCardPic="isShowCardPic"
                             :getCardKeyValInLang="getCardKeyValInLang"
                             :getImgUrl="getImgUrl"
@@ -1041,9 +1005,7 @@
                           v-bind:key="cardIndex"
                         >
                           <CardItem
-                            :isOldVer="isOldVer"
                             :curlang="curlang"
-                            :isNaChVer="isNaChVer"
                             :isShowCardPic="isShowCardPic"
                             :getCardKeyValInLang="getCardKeyValInLang"
                             :getImgUrl="getImgUrl"
@@ -1060,9 +1022,7 @@
                           v-bind:key="cardIndex"
                         >
                           <CardItem
-                            :isOldVer="isOldVer"
                             :curlang="curlang"
-                            :isNaChVer="isNaChVer"
                             :isShowCardPic="isShowCardPic"
                             :getCardKeyValInLang="getCardKeyValInLang"
                             :getImgUrl="getImgUrl"
@@ -1078,8 +1038,6 @@
                 <!-- S 卡片详情 -->
                 <CardDetail
                   :curlang="curlang"
-                  :isNaChVer="isNaChVer"
-                  :isReVer="isReVer"
                   :getTypeName="getTypeName"
                   :getCardKeyValInLang="getCardKeyValInLang"
                   :getCanBeStrong="getCanBeStrong"
@@ -1126,10 +1084,6 @@
       >
         <PageCardList
           :curlang="curlang"
-          :isOldVer="isOldVer"
-          v-model:isNaChVer="isNaChVer"
-          v-model:isNaVer="isNaVer"
-          v-model:isReVer="isReVer"
           v-model:isShowA="isShowA"
           :showPanelGirls="showPanelGirls"
           :getCardKeyValInLang="getCardKeyValInLang"
@@ -1159,9 +1113,6 @@
           :getTypeName="getTypeName"
           :getCardDetail="getCardDetail"
           :getCanBeStrong="getCanBeStrong"
-          :isOldVer="isOldVer"
-          :isNaChVer="isNaChVer"
-          :isReVer="isReVer"
           :isShowCardPic="isShowCardPic"
           :getImgUrl="getImgUrl"
         />
@@ -1333,8 +1284,6 @@
                   >
                     <CardDetail
                       :curlang="curlang"
-                      :isNaChVer="isNaChVer"
-                      :isReVer="isReVer"
                       :getTypeName="getTypeName"
                       :getCardKeyValInLang="getCardKeyValInLang"
                       :getCanBeStrong="getCanBeStrong"
@@ -1385,9 +1334,6 @@
           :getCardDetailInDeck="getCardDetailInDeck"
           :selectedDeckShow="selectedDeckShow"
           :getCanBeStrong="getCanBeStrong"
-          :isOldVer="isOldVer"
-          :isNaChVer="isNaChVer"
-          :isReVer="isReVer"
           :isShowCardPic="isShowCardPic"
           :getImgUrl="getImgUrl"
         />
@@ -1404,9 +1350,6 @@
           :getCardKeyValInLang="getCardKeyValInLang"
           :getTypeName="getTypeName"
           :getCanBeStrong="getCanBeStrong"
-          :isOldVer="isOldVer"
-          :isNaChVer="isNaChVer"
-          :isReVer="isReVer"
           :isShowCardPic="isShowCardPic"
           :getImgUrl="getImgUrl"
         />
@@ -1421,10 +1364,6 @@
     </div>
     <!-- S footer&copyright -->
     <PageFooter
-      :isOldVer="isOldVer"
-      :isNaChVer="isNaChVer"
-      :isNaVer="isNaVer"
-      :isReVer="isReVer"
       :curlang="curlang"
       :cardSum="cardSum"
       :seasonVersion="seasonVersion"
@@ -1501,6 +1440,8 @@ import PageDecks from './pages/DecksList.vue'
 import PageOtherPlay from './pages/OtherPlay.vue'
 import PageCardList from './pages/CardList.vue'
 import PageScc from './pages/Scc.vue'
+import { mapWritableState } from 'pinia'
+import { useVersionStore } from './store/version.js'
 import configLang from './config/lang.js'
 import configNav from './config/nav.js'
 import {
@@ -1737,10 +1678,6 @@ export default {
       isGroupOldVer: true, //是否构筑界面老版本
       isFirstGetResult: true, //是否第一次使用
       resultGirls: [],
-      isOldVer: false, //第二幕
-      isNaChVer: false, //中文版本
-      isNaVer: false,
-      isReVer: true,
       cardDetail: {},
       cardDetailInDeck: {},
       groupCardData: [],
@@ -1818,6 +1755,15 @@ export default {
 
       isDeckLoading: false
     }
+  },
+  computed: {
+    // 版本参数全局化：仅 App.vue 保留互斥 watch 与数据重置副作用，子组件直接读写 store
+    ...mapWritableState(useVersionStore, [
+      'isOldVer',
+      'isNaChVer',
+      'isNaVer',
+      'isReVer'
+    ])
   },
   watch: {
     searchType(val) {

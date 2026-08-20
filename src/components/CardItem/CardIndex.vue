@@ -97,14 +97,15 @@
 
 <script setup>
 import { defineProps } from 'vue'
+import { storeToRefs } from 'pinia'
+import { useVersionStore } from '../../store/version.js'
 import lang from '../../config/lang.js'
 import { isShowStopIcon, getIsShowCardPicIn } from '../../utils/cards.js'
 
+const { isOldVer, isNaChVer } = storeToRefs(useVersionStore())
 const props = defineProps({
   item: Object,
   curlang: [String, Number],
-  isOldVer: Boolean,
-  isNaChVer: Boolean,
   isShowCardPic: Boolean,
   getCardKeyValInLang: Function,
   getImgUrl: Function,

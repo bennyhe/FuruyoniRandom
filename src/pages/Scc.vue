@@ -62,9 +62,7 @@
                   @click="getCardDetail(citem)"
                 >
                   <CardItem
-                    :isOldVer="isOldVer"
                     :curlang="curlang"
-                    :isNaChVer="isNaChVer"
                     :isShowCardPic="isShowCardPic"
                     :getCardKeyValInLang="getCardKeyValInLang"
                     :getImgUrl="getImgUrl"
@@ -87,8 +85,6 @@
     <!-- S 卡片详情 -->
     <CardDetail
       :curlang="curlang"
-      :isNaChVer="isNaChVer"
-      :isReVer="isReVer"
       :getTypeName="getTypeName"
       :getCardKeyValInLang="getCardKeyValInLang"
       :getCanBeStrong="getCanBeStrong"
@@ -106,8 +102,6 @@
         <div class="change-girl-ctn">
           <CardDetail
             :curlang="curlang"
-            :isNaChVer="isNaChVer"
-            :isReVer="isReVer"
             :getTypeName="getTypeName"
             :getCardKeyValInLang="getCardKeyValInLang"
             :getCanBeStrong="getCanBeStrong"
@@ -138,6 +132,8 @@
 </template>
 <script>
 import { defineComponent } from 'vue'
+import { storeToRefs } from 'pinia'
+import { useVersionStore } from '../store/version.js'
 import configLang from '../config/lang.js'
 import { toChzh } from '../utils/lang.js'
 import { getCardClass } from '../utils/cards.js'
@@ -157,9 +153,6 @@ export default defineComponent({
     'getCardKeyValInLang',
     'getTypeName',
     'getCanBeStrong',
-    'isOldVer',
-    'isNaChVer',
-    'isReVer',
     'isShowCardPic',
     'getImgUrl'
   ],
@@ -171,6 +164,8 @@ export default defineComponent({
     }
   },
   setup(props, context) {
+    const versionStore = useVersionStore()
+    const { isOldVer, isNaChVer, isReVer } = storeToRefs(versionStore)
     function getCardDetail(item) {
       this.cardDetail = item
     }
@@ -180,6 +175,9 @@ export default defineComponent({
 
     return {
       lang: configLang,
+      isOldVer,
+      isNaChVer,
+      isReVer,
       getCardDetail,
       handleClickChangeGirlBtn,
       toChzh,

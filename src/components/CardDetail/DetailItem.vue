@@ -259,6 +259,8 @@
 
 <script setup>
 import { defineProps } from 'vue'
+import { storeToRefs } from 'pinia'
+import { useVersionStore } from '../../store/version.js'
 import lang from '../../config/lang.js'
 import { isShowStopIcon, getCardClass } from '../../utils/cards.js'
 import { toChzh } from '../../utils/lang.js'
@@ -266,12 +268,11 @@ import { toChzh } from '../../utils/lang.js'
 const props = defineProps({
   item: Object,
   curlang: [Number, String],
-  isNaChVer: Boolean,
-  isReVer: Boolean,
   getTypeName: Function,
   getCardKeyValInLang: Function,
   getCanBeStrong: Function
 })
+const { isNaChVer, isReVer } = storeToRefs(useVersionStore())
 
 const getNewRange = (cardItem, range) => {
   // console.log(cardItem.range);
@@ -310,7 +311,7 @@ const getNewDamage = (cardItem, damage) => {
       // 打盾
       let afterStrong = cardItem.beStrong
       // 以版本来判断（兼容再演的古典战女神等非 re 前缀卡），而非再按卡 id 判断
-      if (props.isReVer && cardItem.beStrong > 1) {
+      if (isReVer.value && cardItem.beStrong > 1) {
         // 再演
         // 大於等於0……+1/+0和距離擴大（遠1）
         // 大於等於1……+0/+1和距離擴大（遠1）

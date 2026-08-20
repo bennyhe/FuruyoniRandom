@@ -1,10 +1,12 @@
 import { createApp } from 'vue'
+import { createPinia } from 'pinia'
 import VueLazyload from 'vue3-lazyload'
 // import fastclick from 'fastclick'
 // import 'babel-polyfill'
 import App from './App.vue'
 
 const app = createApp(App)
+app.use(createPinia())
 app.use(VueLazyload, {
   preLoad: 1.3,
   error: 'img/null.png',
