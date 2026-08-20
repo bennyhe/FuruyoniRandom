@@ -13,9 +13,8 @@ import DeckTitle from '../components/Deck/DeckTitle.vue'
 import DeckInfo from '../components/Deck/DeckInfo.vue'
 
 const lang = configLang
-const { isOldVer, isNaChVer, isReVer, isShowCardPic } = storeToRefs(
-  useGlobalStore()
-)
+const { isOldVer, isNaChVer, isReVer, isShowCardPic, curlang } =
+  storeToRefs(useGlobalStore())
 const props = defineProps({
   deckAvatarList: [Array],
   panelTab: [Array],
