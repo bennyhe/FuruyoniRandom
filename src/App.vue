@@ -2656,7 +2656,7 @@ export default {
           this.isShowResultGirls = true
         }
         if (this.isQuick) {
-          window.intA = setInterval(function () {
+          window.intA = setInterval(() => {
             this.startRandom(count)
           }, 100)
         } else {
