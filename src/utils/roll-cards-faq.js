@@ -2,7 +2,7 @@
 // formatSubStr / getDataFromValue / onload 输入框监听为生成与核对 FAQ 数据的工具代码，完整保留。
 // 使用方式：本地调试时在页面放置 <textarea id="exportfaq"> 与 <textarea id="exportfaqSub"> 输入框，
 // 并在 index.html 临时恢复本文件入口；元素缺失时 onload 静默跳过，不会报错。
-import { QADATA } from './sub/import_roll_faq'
+// import { QADATA } from '../config/sakura/import_roll_faq'
 // window.QADATA = QADATA
 
 // initFAQ();

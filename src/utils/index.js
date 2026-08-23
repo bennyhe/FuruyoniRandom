@@ -1,4 +1,4 @@
-import { QADATA } from '../js/sub/import_roll_faq'
+import { QADATA } from '../config/sakura/import_roll_faq.js'
 import {
   getKrrDouzi,
   sortInObjectOptions,

@@ -1370,11 +1370,11 @@ import {
   randomGetDeck
 } from './utils/decks.js'
 
-import sakuraDataNa from './js/sub/sakura/carddata/sakura-s10-2'
-import sakuraData from './js/sub/sakura/carddata/re/sakura-s1'
-import sakuraDataCh from './js/sub/sakura/carddata/sakura-s10-2-ch'
-import sakuraDataOldVer from './js/sub/sakura/carddata/sakura-old'
-import { QADATA } from './js/sub/import_roll_faq'
+import sakuraDataNa from './config/sakura/carddata/sakura-s10-2'
+import sakuraData from './config/sakura/carddata/re/sakura-s1'
+import sakuraDataCh from './config/sakura/carddata/sakura-s10-2-ch'
+import sakuraDataOldVer from './config/sakura/carddata/sakura-old'
+import { QADATA } from './config/sakura/import_roll_faq'
 
 import PageFooter from './components/PageFooter/index.vue'
 import CardItem from './components/CardItem/CardIndex.vue'

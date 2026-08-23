@@ -62,13 +62,13 @@ export default defineConfig({
             return 'roll-other-data'
           } else if (id.includes('sakura-old')) {
             return 'sakura-carddata-old'
-          } else if (id.includes('js/sub/sakura/decks/')) {
+          } else if (id.includes('sakura/decks/')) {
             return 'sakura-decks'
-          } else if (id.includes('js/sub/sakura/carddata/re')) {
+          } else if (id.includes('sakura/carddata/re')) {
             return 'sakura-carddata-re'
-          } else if (id.includes('js/sub/sakura/carddata/')) {
+          } else if (id.includes('sakura/carddata/')) {
             return 'sakura-carddata-na'
-          } else if (id.includes('js/sub/import_roll_faq.js')) {
+          } else if (id.includes('import_roll_faq.js')) {
             return 'sakura-faq-na'
           }
         }
