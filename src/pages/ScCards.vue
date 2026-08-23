@@ -13,7 +13,7 @@
           <option
             :value="storyIndex"
             v-for="(item, storyIndex) in sakuraChangeCardsData"
-            v-bind:key="storyIndex"
+            :key="storyIndex"
           >
             {{ getCardKeyValInLang(item) }}({{
               item.list.filter((sitem) => sitem.clist).length
@@ -49,11 +49,11 @@
             <div
               class="card-list scc-list__item"
               v-if="cardItem.clist && cardItem.clist.length > 0"
-              v-bind:key="cardIndex"
+              :key="cardIndex"
             >
               <div
                 v-for="(citem, ckey) in cardItem.clist"
-                v-bind:key="ckey"
+                :key="ckey"
                 style="display: inline-block; vertical-align: top"
               >
                 <div

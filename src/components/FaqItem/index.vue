@@ -3,7 +3,7 @@
     <ul
       v-if="item.type === 'subdesc' && item.sublist && item.sublist.length > 0"
     >
-      <li v-for="(listitem, listkey) in item.sublist" v-bind:key="listkey">
+      <li v-for="(listitem, listkey) in item.sublist" :key="listkey">
         <p
           v-if="
             listitem.ajp &&

@@ -19,7 +19,7 @@
       }}<em class="laceration" v-if="item.isLacerationCost">}</em>
     </div>
     <div class="type">
-      <span v-for="(typeItem, typeIndex) in item.types" v-bind:key="typeIndex">
+      <span v-for="(typeItem, typeIndex) in item.types" :key="typeIndex">
         <template v-if="typeIndex > 0">/</template>
         <span :class="'cardtype--' + typeItem">{{
           getTypeName(typeItem)
@@ -45,12 +45,12 @@
           <i
             class="i-bean"
             v-if="ColorMainIndex > 0"
-            v-bind:key="ColorMainIndex"
+            :key="ColorMainIndex"
             >/</i
           ><i
             :class="'i-bean i-bean--' + getColorClass(ColorItem)"
             v-for="(ColorItem, ColorIndex) in ColorMainItem"
-            v-bind:key="ColorIndex"
+            :key="ColorIndex"
           ></i>
         </template>
       </p>
@@ -96,7 +96,6 @@
 </template>
 
 <script setup>
-import { defineProps } from 'vue'
 import { storeToRefs } from 'pinia'
 import { useGlobalStore } from '../../store/global.js'
 import lang from '../../config/lang.js'

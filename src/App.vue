@@ -13,7 +13,7 @@
                 item.show &&
                 (!item.onlyCn || (item.onlyCn && lang[curlang].id === 'cn'))
               "
-              v-bind:key="index"
+              :key="index"
             >
               <template v-if="lang[curlang].id === 'cn'">{{
                 toChzh(item.name)
@@ -60,7 +60,7 @@
           <option
             :value="index"
             v-for="(item, index) in lang"
-            v-bind:key="index"
+            :key="index"
           >
             {{ item.name }}
           </option>
@@ -84,7 +84,7 @@
               <option
                 :value="item.value"
                 v-for="(item, index) in searchTypeOptions"
-                v-bind:key="index"
+                :key="index"
               >
                 {{ item.label }}
               </option>
@@ -114,7 +114,7 @@
                 :class="getCardClass(cardItem)"
                 v-for="(cardItem, cardIndex) in searchResult"
                 @click="getCardDetail(cardItem, '', cardIndex)"
-                v-bind:key="cardIndex"
+                :key="cardIndex"
               >
                 <CardItem
                   :getCardKeyValInLang="getCardKeyValInLang"
@@ -163,7 +163,7 @@
                 class="result__item"
                 v-for="(item, index) in resultGirls"
                 @click="goToGroupInResultArea(item)"
-                v-bind:key="index"
+                :key="index"
               >
                 <div class="result__pic">
                   <img
@@ -203,7 +203,7 @@
                   v-if="girlItem.isInArea"
                   @click="lockThis(girlItem)"
                   :class="{ 'random-item--nouse': !girlItem.isSelect }"
-                  v-bind:key="girlIndex"
+                  :key="girlIndex"
                 >
                   <span class="random-item__pic" v-if="isShowPic">
                     <img v-lazy="`../img/avatar/${girlItem.pic}`" />
@@ -278,7 +278,7 @@
                   class="btn"
                   @click="randomGet(btnItem)"
                   v-for="(btnItem, btnIndex) in randomSet"
-                  v-bind:key="btnIndex"
+                  :key="btnIndex"
                 >
                   {{ lang[curlang].btnRandomItem + btnItem
                   }}<span class="lock">{{
@@ -290,7 +290,7 @@
                 <button
                   class="btn disabled"
                   v-for="(btnItem, btnIndex) in randomSet"
-                  v-bind:key="btnIndex"
+                  :key="btnIndex"
                 >
                   {{ lang[curlang].btnRandomItem + btnItem
                   }}<span class="lock">{{
@@ -362,7 +362,7 @@
                       v-for="(girlItem, girlIndex) in item.list"
                       @click="banThisGirl(girlItem)"
                       :class="{ 'random-item--nouse': !girlItem.isInArea }"
-                      v-bind:key="girlIndex"
+                      :key="girlIndex"
                     >
                       <span class="random-item__pic" v-if="isShowPic">
                         <img v-lazy="`../img/avatar/${girlItem.pic}`" />
@@ -468,7 +468,7 @@
               <div
                 class="select-group__item"
                 v-for="(item, index) in groupCardData"
-                v-bind:key="index"
+                :key="index"
               >
                 <div class="random-item">
                   <span class="random-item__pic">
@@ -503,7 +503,7 @@
               <img
                 v-lazy="`../img/furuyoni/mini/${item.picq}`"
                 v-for="(item, index) in groupCardData"
-                v-bind:key="index"
+                :key="index"
               />
             </div>
             <div
@@ -517,7 +517,7 @@
               <div
                 class="card-list"
                 v-for="(item, index) in groupCardData"
-                v-bind:key="index"
+                :key="index"
               >
                 <!-- <span class="card-list__name">{{item.name}}</span> -->
                 <div
@@ -525,7 +525,7 @@
                   :class="getCardClass(cardItem)"
                   v-for="(cardItem, cardIndex) in item.normal"
                   @click="selectCard(cardItem, 'normal', item, cardIndex)"
-                  v-bind:key="cardIndex"
+                  :key="cardIndex"
                 >
                   <CardItem
                     :getCardKeyValInLang="getCardKeyValInLang"
@@ -539,7 +539,7 @@
               <div
                 class="card-list"
                 v-for="(item, index) in groupCardData"
-                v-bind:key="index"
+                :key="index"
               >
                 <!-- <span class="card-list__name">{{item.name}}</span> -->
                 <div
@@ -547,7 +547,7 @@
                   :class="getCardClass(cardItem)"
                   v-for="(cardItem, cardIndex) in item.special"
                   @click="selectCard(cardItem, 'special', item, cardIndex)"
-                  v-bind:key="cardIndex"
+                  :key="cardIndex"
                 >
                   <CardItem
                     :getCardKeyValInLang="getCardKeyValInLang"
@@ -566,7 +566,7 @@
                     :class="getCardClass(cardItem)"
                     v-for="(cardItem, cardIndex) in item.special"
                     @click="selectCard(cardItem, 'special', item, cardIndex)"
-                    v-bind:key="cardIndex"
+                    :key="cardIndex"
                   >
                     <CardItem
                       :getCardKeyValInLang="getCardKeyValInLang"
@@ -588,7 +588,7 @@
                   <div
                     class="card-list"
                     v-for="(item, index) in groupCardData"
-                    v-bind:key="index"
+                    :key="index"
                   >
                     <span class="card-list__name">切</span>
                     <div
@@ -596,7 +596,7 @@
                       :class="getCardClass(cardItem)"
                       v-for="(cardItem, cardIndex) in item.special"
                       @click="selectCard(cardItem, 'special', item, cardIndex)"
-                      v-bind:key="cardIndex"
+                      :key="cardIndex"
                     >
                       <CardItem
                         :getCardKeyValInLang="getCardKeyValInLang"
@@ -618,7 +618,7 @@
                         @click="
                           selectCard(cardItem, 'special', item, cardIndex)
                         "
-                        v-bind:key="cardIndex"
+                        :key="cardIndex"
                       >
                         <CardItem
                           :getCardKeyValInLang="getCardKeyValInLang"
@@ -647,7 +647,7 @@
                     :class="getCardClass(cardItem, 1)"
                     v-for="(cardItem, cardIndex) in item.girlBoard"
                     @click="getCardDetail(cardItem, item, cardIndex)"
-                    v-bind:key="cardIndex"
+                    :key="cardIndex"
                   >
                     <CardItem
                       :getCardKeyValInLang="getCardKeyValInLang"
@@ -662,7 +662,7 @@
                     :data-extrafrom="cardItem.extraFrom"
                     v-for="(cardItem, cardIndex) in item.extra"
                     @click="getCardDetail(cardItem, item, cardIndex)"
-                    v-bind:key="cardIndex"
+                    :key="cardIndex"
                   >
                     <CardItem
                       :getCardKeyValInLang="getCardKeyValInLang"
@@ -677,7 +677,7 @@
                     :class="getCardClass(cardItem, 1)"
                     v-for="(cardItem, cardIndex) in item.changeExtra"
                     @click="getCardDetail(cardItem, item, cardIndex)"
-                    v-bind:key="cardIndex"
+                    :key="cardIndex"
                   >
                     <CardItem
                       :getCardKeyValInLang="getCardKeyValInLang"
@@ -691,7 +691,7 @@
                     :class="getCardClass(cardItem)"
                     v-for="(cardItem, cardIndex) in item.poison"
                     @click="getCardDetail(cardItem, item, cardIndex)"
-                    v-bind:key="cardIndex"
+                    :key="cardIndex"
                   >
                     <CardItem
                       :getCardKeyValInLang="getCardKeyValInLang"
@@ -705,7 +705,7 @@
                     :class="getCardClass(cardItem)"
                     v-for="(cardItem, cardIndex) in item.transform"
                     @click="getCardDetail(cardItem, item, cardIndex)"
-                    v-bind:key="cardIndex"
+                    :key="cardIndex"
                   >
                     <CardItem
                       :getCardKeyValInLang="getCardKeyValInLang"
@@ -843,7 +843,7 @@
               <FaqItem
                 v-for="(item, key) in cardDetail.faq"
                 :item="item"
-                v-bind:key="key"
+                :key="key"
               ></FaqItem>
             </div>
           </div>
@@ -864,7 +864,7 @@
             <div
               class="allcards-list__item"
               v-for="(item, index) in beGroupDeck"
-              v-bind:key="index"
+              :key="index"
             >
               <div class="allcards-tab" @click="selectedDeckShowInGroup(index)">
                 <div
@@ -881,7 +881,7 @@
                     <div class="card-list">
                       <template
                         v-for="(cardItem, cardIndex) in item.deck.normal"
-                        v-bind:key="cardIndex"
+                        :key="cardIndex"
                       >
                         <div
                           class="card-list__item normal"
@@ -905,7 +905,7 @@
                         :class="getCardClass(cardItem)"
                         v-for="(cardItem, cardIndex) in item.deck.special"
                         @click="getCardDetailInDeck(cardItem)"
-                        v-bind:key="cardIndex"
+                        :key="cardIndex"
                       >
                         <CardItem
                           :getCardKeyValInLang="getCardKeyValInLang"
@@ -923,7 +923,7 @@
                           :class="getCardClass(cardItem, 1)"
                           v-for="(cardItem, cardIndex) in item.deck.girlBoard"
                           @click="getCardDetailInDeck(cardItem)"
-                          v-bind:key="cardIndex"
+                          :key="cardIndex"
                         >
                           <CardItem
                             :getCardKeyValInLang="getCardKeyValInLang"
@@ -938,7 +938,7 @@
                           :data-extrafrom="cardItem.extraFrom"
                           v-for="(cardItem, cardIndex) in item.deck.extra"
                           @click="getCardDetailInDeck(cardItem)"
-                          v-bind:key="cardIndex"
+                          :key="cardIndex"
                         >
                           <CardItem
                             :getCardKeyValInLang="getCardKeyValInLang"
@@ -952,7 +952,7 @@
                           :class="getCardClass(cardItem)"
                           v-for="(cardItem, cardIndex) in item.deck.poison"
                           @click="getCardDetailInDeck(cardItem)"
-                          v-bind:key="cardIndex"
+                          :key="cardIndex"
                         >
                           <CardItem
                             :getCardKeyValInLang="getCardKeyValInLang"
@@ -966,7 +966,7 @@
                           :class="getCardClass(cardItem)"
                           v-for="(cardItem, cardIndex) in item.deck.transform"
                           @click="getCardDetailInDeck(cardItem)"
-                          v-bind:key="cardIndex"
+                          :key="cardIndex"
                         >
                           <CardItem
                             :getCardKeyValInLang="getCardKeyValInLang"
@@ -981,7 +981,7 @@
                           :class="getCardClass(cardItem, 1)"
                           v-for="(cardItem, cardIndex) in item.deck.changeExtra"
                           @click="getCardDetailInDeck(cardItem)"
-                          v-bind:key="cardIndex"
+                          :key="cardIndex"
                         >
                           <CardItem
                             :getCardKeyValInLang="getCardKeyValInLang"
@@ -1086,7 +1086,7 @@
               <div
                 class="faq-nav__item"
                 v-if="qadataindex < 2"
-                v-bind:key="qadataindex"
+                :key="qadataindex"
               >
                 <a :href="`#${qadataitem.id}`"
                   ><span
@@ -1104,7 +1104,7 @@
                 <div
                   class="faq-nav__item"
                   v-if="firstItem.list[0].QADATA"
-                  v-bind:key="fristIndex"
+                  :key="fristIndex"
                 >
                   <a :href="`#faq${fristIndex + 2}`">
                     <span class="avatar">
@@ -1163,13 +1163,13 @@
               class="allcards-list__item"
               :id="qadataitem.id"
               v-if="qadataindex < 2"
-              v-bind:key="qadataindex"
+              :key="qadataindex"
             >
               <div class="allcards__name">
                 <h2>{{ getCardKeyValInLang(qadataitem, "name") }}</h2>
               </div>
               <div class="allcards__content md">
-                <div v-for="(litem, lkey) in qadataitem.list" v-bind:key="lkey">
+                <div v-for="(litem, lkey) in qadataitem.list" :key="lkey">
                   <h2>
                     <template v-if="litem.name">{{
                       toChzh(litem.name)
@@ -1181,7 +1181,7 @@
                   <FaqItem
                     v-for="(item, key) in litem.list"
                     :item="item"
-                    v-bind:key="key"
+                    :key="key"
                   ></FaqItem>
                 </div>
               </div>
@@ -1192,7 +1192,7 @@
               class="allcards-list__item"
               :id="`faq${fristIndex + 2}`"
               v-if="firstItem.list[0].QADATA"
-              v-bind:key="fristIndex"
+              :key="fristIndex"
             >
               <div class="allcards__name">
                 <span class="avatar">
@@ -1210,7 +1210,7 @@
               <div class="allcards__content md">
                 <div
                   v-for="(litem, lkey) in firstItem.list[0].QADATA"
-                  v-bind:key="lkey"
+                  :key="lkey"
                 >
                   <h2>
                     <template
@@ -1235,7 +1235,7 @@
                       litem.nameCard.namejp &&
                       litem.list[0].ajp !== 'このカードへのFAQはありません。'
                     "
-                    v-bind:key="`${lkey}ajp`"
+                    :key="`${lkey}ajp`"
                   >
                     <CardDetail
                       :getTypeName="getTypeName"
@@ -1247,7 +1247,7 @@
                   <FaqItem
                     v-for="(item, key) in litem.list"
                     :item="item"
-                    v-bind:key="key"
+                    :key="key"
                   ></FaqItem>
                 </div>
               </div>

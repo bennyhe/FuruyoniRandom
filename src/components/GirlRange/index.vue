@@ -13,7 +13,7 @@
       >
       <i
         v-for="keys in [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]"
-        v-bind:key="keys"
+        :key="keys"
         :class="`girls-range-item girls-range-item--${
           item.girlExtra.ranges.find((item) => item.name === keys)
             ? item.girlExtra.ranges.find((item) => item.name === keys).count
@@ -40,7 +40,7 @@
       >
       <i
         v-for="keys in [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]"
-        v-bind:key="keys"
+        :key="keys"
         :class="`girls-range-item girls-range-item--${
           item.girlExtra.rangeOpened.find((item) => item.name === keys)
             ? item.girlExtra.rangeOpened.find((item) => item.name === keys)

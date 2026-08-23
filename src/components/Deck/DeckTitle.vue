@@ -1,5 +1,4 @@
 <script setup>
-import { defineProps } from 'vue'
 import { storeToRefs } from 'pinia'
 import { useGlobalStore } from '../../store/global.js'
 import lang from '../../config/lang.js'
@@ -17,7 +16,7 @@ const { curlang } = storeToRefs(useGlobalStore())
     <span
       class="avatar"
       v-for="(item2, index2) in item.groupCardData"
-      v-bind:key="index2"
+      :key="index2"
     >
       <img v-lazy="`../img/avatar/${item2.pic}`" />
     </span>

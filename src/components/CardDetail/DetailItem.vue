@@ -11,7 +11,7 @@
       <span class="type">
         <span
           v-for="(typeItem, typeIndex) in item.types"
-          v-bind:key="typeIndex"
+          :key="typeIndex"
         >
           <span v-if="typeIndex > 0">/</span>
           <span :class="'cardtype--' + typeItem">{{
@@ -173,24 +173,24 @@
       "
     >
       <template v-for="(subItem, subKey) in item.textkururu">
-        <div class="kururu" v-if="subItem.if" v-bind:key="subKey">
+        <div class="kururu" v-if="subItem.if" :key="subKey">
           <p class="kururu__if" v-html="subItem.if"></p>
           <pre v-if="subItem.ctn" v-html="toChzh(subItem.ctn)"></pre>
         </div>
         <pre
           v-else
           v-html="toChzh(subItem.ctn)"
-          v-bind:key="`${subKey}else`"
+          :key="`${subKey}else`"
         ></pre>
       </template>
     </template>
     <template v-else-if="item.textkururujp && item.textkururujp.length > 0">
       <template v-for="(subItem, subKey) in item.textkururujp">
-        <div class="kururu" v-if="subItem.if" v-bind:key="subKey">
+        <div class="kururu" v-if="subItem.if" :key="subKey">
           <p class="kururu__if" v-html="subItem.if"></p>
           <pre v-if="subItem.ctn" v-html="subItem.ctn"></pre>
         </div>
-        <pre v-else v-html="subItem.ctn" v-bind:key="`${subKey}else`"></pre>
+        <pre v-else v-html="subItem.ctn" :key="`${subKey}else`"></pre>
       </template>
     </template>
     <div
@@ -228,7 +228,7 @@
       <p class="id">
         {{ item.id }}
         <template v-if="item.changeCardCount">
-          <span v-for="(a, akey) in item.changeCardCount" v-bind:key="akey"
+          <span v-for="(a, akey) in item.changeCardCount" :key="akey"
             >|</span
           >
         </template>
@@ -248,7 +248,7 @@
         <option
           :value="index2 + 1"
           v-for="(item2, index2) in 3"
-          v-bind:key="index2"
+          :key="index2"
         >
           錬{{ index2 + 1 }}
         </option>
@@ -258,7 +258,6 @@
 </template>
 
 <script setup>
-import { defineProps } from 'vue'
 import { storeToRefs } from 'pinia'
 import { useGlobalStore } from '../../store/global.js'
 import lang from '../../config/lang.js'

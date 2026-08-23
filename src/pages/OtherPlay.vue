@@ -10,7 +10,7 @@
             item.show &&
             (!item.onlyCn || (item.onlyCn && lang[curlang].id === 'cn'))
           "
-          v-bind:key="index"
+          :key="index"
         >
           <template v-if="lang[curlang].id === 'cn'">{{
             toChzh(item.name)
@@ -36,7 +36,7 @@
                   :class="getCardClass(cardItem)"
                   v-for="(cardItem, cardIndex) in sakuraWithData[0].list"
                   @click="getCardDetail(cardItem)"
-                  v-bind:key="cardIndex"
+                  :key="cardIndex"
                 >
                   <CardItem
                     :getCardKeyValInLang="getCardKeyValInLang"
@@ -54,7 +54,7 @@
                       <div
                         class="avatar avatar--small"
                         v-for="(gitem, gkey) in cardItem.returnloopGirls"
-                        v-bind:key="gkey"
+                        :key="gkey"
                       >
                         <img
                           v-lazy="
@@ -106,7 +106,7 @@
                 :class="getCardClass(cardItem)"
                 v-for="(cardItem, cardIndex) in lxVsResultList"
                 @click="getCardDetail(cardItem)"
-                v-bind:key="cardIndex"
+                :key="cardIndex"
               >
                 <CardItem
                   :getCardKeyValInLang="getCardKeyValInLang"
@@ -124,7 +124,7 @@
                     <div
                       class="avatar avatar--small"
                       v-for="(gitem, gkey) in cardItem.returnloopGirls"
-                      v-bind:key="gkey"
+                      :key="gkey"
                     >
                       <img
                         v-lazy="
@@ -158,7 +158,7 @@
           <div
             class="avatar"
             v-for="(gitem, gkey) in cardDetail.returnloopGirls"
-            v-bind:key="gkey"
+            :key="gkey"
           >
             <img
               v-lazy="
@@ -193,7 +193,7 @@
               <option
                 :value="storyIndex"
                 v-for="(storyItem, storyIndex) in storyCardData"
-                v-bind:key="storyIndex"
+                :key="storyIndex"
               >
                 {{ getCardKeyValInLang(storyItem) }}
               </option>
@@ -205,7 +205,7 @@
             [原注释：<p>{{getCardKeyValInLang(storyCardData[curStoryIndex])}}</p>]
             <div
               v-for="(item, index) in storyCardData[curStoryIndex].list"
-              v-bind:key="index"
+              :key="index"
             >
               <div class="card-list__name">
                 <span>{{ getCardKeyValInLang(item) }}</span>
@@ -218,7 +218,7 @@
                       :class="getCardClass(cardItem)"
                       v-if="item.normal && item.normal.length > 0"
                       @click="getCardDetail(cardItem)"
-                      v-bind:key="cardIndex"
+                      :key="cardIndex"
                     >
                       <CardItem
                         :getCardKeyValInLang="getCardKeyValInLang"
@@ -236,7 +236,7 @@
                       :class="getCardClass(cardItem)"
                       v-if="item.special && item.special.length > 0"
                       @click="getCardDetail(cardItem)"
-                      v-bind:key="cardIndex"
+                      :key="cardIndex"
                     >
                       <CardItem
                         :getCardKeyValInLang="getCardKeyValInLang"
@@ -280,7 +280,7 @@
                   :class="getCardClass(cardItem)"
                   v-for="(cardItem, cardIndex) in sakuraOtherData[0].list"
                   @click="getCardDetail(cardItem)"
-                  v-bind:key="cardIndex"
+                  :key="cardIndex"
                 >
                   <CardItem
                     :getCardKeyValInLang="getCardKeyValInLang"
@@ -324,7 +324,7 @@
               v-for="(storyItem, storyIndex) in sakuraCMData"
               :class="{ cur: storyIndex === curCMIndex }"
               @click="handleClickSA(storyIndex)"
-              v-bind:key="storyIndex"
+              :key="storyIndex"
             >
               <span class="avatar">
                 <img v-lazy="`../img/avatar/${storyItem.pic}`" />
@@ -341,7 +341,7 @@
             <!-- <p>{{getCardKeyValInLang(sakuraCMData[curCMIndex])}}</p> -->
             <div
               v-for="(item, index) in sakuraCMData[curCMIndex].list"
-              v-bind:key="index"
+              :key="index"
             >
               <div class="card-list__name">
                 <span>{{ getCardKeyValInLang(item) }}</span>
@@ -353,7 +353,7 @@
                     <div
                       class="card-list__item normal"
                       :class="getCardClass(cardItem)"
-                      v-bind:key="cardIndex"
+                      :key="cardIndex"
                       v-if="item.normal && item.normal.length > 0"
                       @click="getCardDetail(cardItem)"
                     >
@@ -371,7 +371,7 @@
                     <div
                       class="card-list__item special"
                       :class="getCardClass(cardItem)"
-                      v-bind:key="cardIndex"
+                      :key="cardIndex"
                       v-if="item.special && item.special.length > 0"
                       @click="getCardDetail(cardItem)"
                     >
@@ -389,7 +389,7 @@
                     <div
                       class="card-list__item"
                       :class="getCardClass(cardItem)"
-                      v-bind:key="cardIndex"
+                      :key="cardIndex"
                       v-if="item.extra && item.extra.length > 0"
                       @click="getCardDetail(cardItem)"
                     >
@@ -405,7 +405,7 @@
                     <div
                       class="card-list__item"
                       :class="getCardClass(cardItem)"
-                      v-bind:key="cardIndex"
+                      :key="cardIndex"
                       v-if="item.poison && item.poison.length > 0"
                       @click="getCardDetail(cardItem)"
                     >

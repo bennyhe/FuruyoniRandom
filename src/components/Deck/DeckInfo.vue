@@ -1,5 +1,4 @@
 <script setup>
-import { defineProps } from 'vue'
 import { storeToRefs } from 'pinia'
 import { useGlobalStore } from '../../store/global.js'
 import lang from '../../config/lang.js'

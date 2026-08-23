@@ -1,5 +1,5 @@
 <script setup>
-import { defineProps, ref, defineEmits } from 'vue'
+import { ref } from 'vue'
 import { storeToRefs } from 'pinia'
 import { useGlobalStore } from '../store/global.js'
 import configLang from '../config/lang.js'
@@ -241,7 +241,7 @@ const handleClickSelectedCancel = girlItem => {
         v-for="(girlItem, girlIndex) in deckAvatarList"
         :class="{ 'random-item--nouse': !girlItem.isSelect }"
         @click="handleClickSelectedCancel(girlItem)"
-        v-bind:key="girlIndex"
+        :key="girlIndex"
       >
         <span class="random-item__pic">
           <img v-lazy="`../img/avatar/${girlItem.pic}`" />
@@ -297,7 +297,7 @@ const handleClickSelectedCancel = girlItem => {
             item.show &&
             (!item.onlyCn || (item.onlyCn && lang[curlang].id === 'cn'))
           "
-          v-bind:key="index"
+          :key="index"
         >
           <template v-if="lang[curlang].id === 'cn'">{{
             toChzh(item.name)
@@ -317,7 +317,7 @@ const handleClickSelectedCancel = girlItem => {
       <div
         class="deck-anal__item"
         v-for="(statisticesItem, key) in statisticsDeckCards"
-        v-bind:key="key"
+        :key="key"
       >
         <h3>
           {{
@@ -338,7 +338,7 @@ const handleClickSelectedCancel = girlItem => {
             <span
               style="display: inline-block"
               v-for="(cardItem, cardIndex) in statisticesItem.afNormal"
-              v-bind:key="cardIndex"
+              :key="cardIndex"
             >
               <div class="card-list__item" :class="getCardClass(cardItem.card)">
                 <CardItem
@@ -360,7 +360,7 @@ const handleClickSelectedCancel = girlItem => {
             <span
               style="display: inline-block"
               v-for="(cardItem, cardIndex) in statisticesItem.afSpecial"
-              v-bind:key="cardIndex"
+              :key="cardIndex"
             >
               <div class="card-list__item" :class="getCardClass(cardItem.card)">
                 <CardItem
@@ -382,7 +382,7 @@ const handleClickSelectedCancel = girlItem => {
             <span
               style="display: inline-block"
               v-for="(cardItem, cardIndex) in statisticesItem.afAll"
-              v-bind:key="cardIndex"
+              :key="cardIndex"
             >
               <div class="card-list__item" :class="getCardClass(cardItem.card)">
                 <CardItem
@@ -404,7 +404,7 @@ const handleClickSelectedCancel = girlItem => {
         <div
           v-for="(girlItem, girlIndex) in anyCardsData"
           class="allcards-list__item"
-          v-bind:key="girlIndex"
+          :key="girlIndex"
         >
           <div class="allcards-tab">
             <div class="allcards-tab__item allcards-item">
@@ -446,7 +446,7 @@ const handleClickSelectedCancel = girlItem => {
                     }%`"
                     v-for="(pitem, pkey) in girlItem.giCards.normalCardTypes
                       .resultList"
-                    v-bind:key="pkey"
+                    :key="pkey"
                   >
                     {{ pitem.count }}
                   </div>
@@ -458,7 +458,7 @@ const handleClickSelectedCancel = girlItem => {
                     v-for="(
                       cardItem, cardIndex
                     ) in girlItem.giCards.normalMostCard.slice(0, 2)"
-                    v-bind:key="cardIndex"
+                    :key="cardIndex"
                   >
                     <div
                       class="card-list__item"
@@ -505,7 +505,7 @@ const handleClickSelectedCancel = girlItem => {
                     }%`"
                     v-for="(pitem, pkey) in girlItem.giCards.specialCardTypes
                       .resultList"
-                    v-bind:key="pkey"
+                    :key="pkey"
                   >
                     {{ pitem.count }}
                   </div>
@@ -517,7 +517,7 @@ const handleClickSelectedCancel = girlItem => {
                     v-for="(
                       cardItem, cardIndex
                     ) in girlItem.giCards.specialMostCard.slice(0, 2)"
-                    v-bind:key="cardIndex"
+                    :key="cardIndex"
                   >
                     <div
                       class="card-list__item"
@@ -556,7 +556,7 @@ const handleClickSelectedCancel = girlItem => {
       <div
         class="allcards-list__item"
         v-for="(item, index) in resDecks"
-        v-bind:key="index"
+        :key="index"
       >
         <div class="allcards-tab" @click="selectedDeckShow(index)">
           <div
@@ -577,7 +577,7 @@ const handleClickSelectedCancel = girlItem => {
               <div
                 class="select-group__item"
                 v-for="(item, index) in item.groupCardData"
-                v-bind:key="index"
+                :key="index"
               >
                 <div class="random-item">
                   <span class="random-item__pic">
@@ -609,14 +609,14 @@ const handleClickSelectedCancel = girlItem => {
               <img
                 v-lazy="`../img/furuyoni/mini/${item.picq}`"
                 v-for="(item, index) in item.groupCardData"
-                v-bind:key="index"
+                :key="index"
               />
             </div>
             <div class="card-wrap">
               <div class="card-list">
                 <template
                   v-for="(cardItem, cardIndex) in item.deck.normal"
-                  v-bind:key="cardIndex"
+                  :key="cardIndex"
                 >
                   <div
                     class="card-list__item normal"
@@ -639,7 +639,7 @@ const handleClickSelectedCancel = girlItem => {
                   class="card-list__item special"
                   :class="getCardClass(cardItem)"
                   v-for="(cardItem, cardIndex) in item.deck.special"
-                  v-bind:key="cardIndex"
+                  :key="cardIndex"
                   @click="getCardDetailInDeck(cardItem)"
                 >
                   <CardItem
@@ -657,7 +657,7 @@ const handleClickSelectedCancel = girlItem => {
                     class="card-list__item"
                     :class="getCardClass(cardItem, 1)"
                     v-for="(cardItem, cardIndex) in item.deck.girlBoard"
-                    v-bind:key="cardIndex"
+                    :key="cardIndex"
                     @click="getCardDetailInDeck(cardItem)"
                   >
                     <CardItem
@@ -671,7 +671,7 @@ const handleClickSelectedCancel = girlItem => {
                     class="card-list__item"
                     :class="getCardClass(cardItem, 1)"
                     :data-extrafrom="cardItem.extraFrom"
-                    v-bind:key="cardIndex"
+                    :key="cardIndex"
                     v-for="(cardItem, cardIndex) in item.deck.extra"
                     @click="getCardDetailInDeck(cardItem)"
                   >
@@ -686,7 +686,7 @@ const handleClickSelectedCancel = girlItem => {
                     class="card-list__item"
                     :class="getCardClass(cardItem)"
                     v-for="(cardItem, cardIndex) in item.deck.poison"
-                    v-bind:key="cardIndex"
+                    :key="cardIndex"
                     @click="getCardDetailInDeck(cardItem)"
                   >
                     <CardItem
@@ -700,7 +700,7 @@ const handleClickSelectedCancel = girlItem => {
                     class="card-list__item"
                     :class="getCardClass(cardItem)"
                     v-for="(cardItem, cardIndex) in item.deck.transform"
-                    v-bind:key="cardIndex"
+                    :key="cardIndex"
                     @click="getCardDetailInDeck(cardItem)"
                   >
                     <CardItem
@@ -714,7 +714,7 @@ const handleClickSelectedCancel = girlItem => {
                     class="card-list__item"
                     :data-extrafrom="cardItem.extraFrom"
                     :class="getCardClass(cardItem, 1)"
-                    v-bind:key="cardIndex"
+                    :key="cardIndex"
                     v-for="(cardItem, cardIndex) in item.deck.changeExtra"
                     @click="getCardDetailInDeck(cardItem)"
                   >

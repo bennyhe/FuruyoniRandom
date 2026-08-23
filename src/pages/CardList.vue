@@ -1,5 +1,4 @@
 <script setup>
-import { defineProps } from 'vue'
 import { storeToRefs } from 'pinia'
 import { useGlobalStore } from '../store/global.js'
 import configLang from '../config/lang.js'
@@ -59,7 +58,7 @@ const { isOldVer, isNaChVer, isNaVer, isReVer, isShowA, curlang } = storeToRefs(
       </label>
     </div>
     <div class="allcards-list pcsee">
-      <div class="allcards-list__col" v-for="(item, key) in 2" v-bind:key="key">
+      <div class="allcards-list__col" v-for="(item, key) in 2" :key="key">
         <template v-for="(firstItem, fristIndex) in showPanelGirls">
           <div
             class="allcards-list__item"
@@ -67,7 +66,7 @@ const { isOldVer, isNaChVer, isNaVer, isReVer, isShowA, curlang } = storeToRefs(
               (key == 0 && fristIndex % 2 === 0) ||
               (key != 0 && fristIndex % 2 !== 0)
             "
-            v-bind:key="fristIndex"
+            :key="fristIndex"
           >
             <div class="allcards__name">
               <span v-if="getCardKeyValInLang(firstItem, 'name')"
@@ -90,7 +89,7 @@ const { isOldVer, isNaChVer, isNaVer, isReVer, isShowA, curlang } = storeToRefs(
                     : ''
                 "
                 v-for="(item, index) in firstItem.list"
-                v-bind:key="index"
+                :key="index"
                 @click="
                   () => {
                     firstItem.showAllCards =
@@ -195,7 +194,7 @@ const { isOldVer, isNaChVer, isNaVer, isReVer, isShowA, curlang } = storeToRefs(
                 class="allcards__bg"
                 :class="{ hide: imgKey !== firstItem.showAllCardsIndex }"
                 v-for="(img, imgKey) in firstItem.list"
-                v-bind:key="imgKey"
+                :key="imgKey"
               >
                 <img
                   v-lazy="`../img/furuyoni/mini/${firstItem.list[imgKey].picq}`"
@@ -216,7 +215,7 @@ const { isOldVer, isNaChVer, isNaVer, isReVer, isShowA, curlang } = storeToRefs(
                   firstItem.showAllCardsIndex
                 ].normal"
                 :item="cardItem"
-                v-bind:key="cardIndex"
+                :key="cardIndex"
               />
               <div class="allcards__special">
                 <p class="allcards__type">SPECIAL</p>
@@ -228,7 +227,7 @@ const { isOldVer, isNaChVer, isNaVer, isReVer, isShowA, curlang } = storeToRefs(
                     firstItem.showAllCardsIndex
                   ].special"
                   :item="cardItem"
-                  v-bind:key="cardIndex"
+                  :key="cardIndex"
                 />
               </div>
               <!-- S 追加 -->
@@ -252,7 +251,7 @@ const { isOldVer, isNaChVer, isNaVer, isReVer, isShowA, curlang } = storeToRefs(
                   firstItem.showAllCardsIndex
                 ].extra"
                 :item="cardItem"
-                v-bind:key="cardIndex"
+                :key="cardIndex"
               />
               <CardDetail
                 :getTypeName="getTypeName"
@@ -262,7 +261,7 @@ const { isOldVer, isNaChVer, isNaVer, isReVer, isShowA, curlang } = storeToRefs(
                   firstItem.showAllCardsIndex
                 ].poison"
                 :item="cardItem"
-                v-bind:key="cardIndex"
+                :key="cardIndex"
               />
               <CardDetail
                 :getTypeName="getTypeName"
@@ -272,7 +271,7 @@ const { isOldVer, isNaChVer, isNaVer, isReVer, isShowA, curlang } = storeToRefs(
                   firstItem.showAllCardsIndex
                 ].transform"
                 :item="cardItem"
-                v-bind:key="cardIndex"
+                :key="cardIndex"
               />
               <CardDetail
                 :getTypeName="getTypeName"
@@ -282,7 +281,7 @@ const { isOldVer, isNaChVer, isNaVer, isReVer, isShowA, curlang } = storeToRefs(
                   firstItem.showAllCardsIndex
                 ].changeExtra"
                 :item="cardItem"
-                v-bind:key="cardIndex"
+                :key="cardIndex"
               />
               <CardDetail
                 :getTypeName="getTypeName"
@@ -292,7 +291,7 @@ const { isOldVer, isNaChVer, isNaVer, isReVer, isShowA, curlang } = storeToRefs(
                   firstItem.showAllCardsIndex
                 ].girlBoard"
                 :item="cardItem"
-                v-bind:key="cardIndex"
+                :key="cardIndex"
               />
               <!-- E 追加 -->
             </div>
@@ -304,7 +303,7 @@ const { isOldVer, isNaChVer, isNaVer, isReVer, isShowA, curlang } = storeToRefs(
       <div
         class="allcards-list__item"
         v-for="(firstItem, fristIndex) in showPanelGirls"
-        v-bind:key="fristIndex"
+        :key="fristIndex"
       >
         <div class="allcards__name">
           <span v-if="getCardKeyValInLang(firstItem, 'name')"
@@ -323,7 +322,7 @@ const { isOldVer, isNaChVer, isNaVer, isReVer, isShowA, curlang } = storeToRefs(
                 : ''
             "
             v-for="(item, index) in firstItem.list"
-            v-bind:key="index"
+            :key="index"
             @click="
               () => {
                 firstItem.showAllCards =
@@ -409,7 +408,7 @@ const { isOldVer, isNaChVer, isNaVer, isReVer, isShowA, curlang } = storeToRefs(
             class="allcards__bg"
             :class="{ hide: imgKey !== firstItem.showAllCardsIndex }"
             v-for="(img, imgKey) in firstItem.list"
-            v-bind:key="imgKey"
+            :key="imgKey"
           >
             <img
               v-lazy="`../img/furuyoni/mini/${firstItem.list[imgKey].picq}`"
@@ -433,7 +432,7 @@ const { isOldVer, isNaChVer, isNaVer, isReVer, isShowA, curlang } = storeToRefs(
               firstItem.showAllCardsIndex
             ].normal"
             :item="cardItem"
-            v-bind:key="cardIndex"
+            :key="cardIndex"
           />
           <div class="allcards__special">
             <p class="allcards__type">SPECIAL</p>
@@ -445,7 +444,7 @@ const { isOldVer, isNaChVer, isNaVer, isReVer, isShowA, curlang } = storeToRefs(
                 firstItem.showAllCardsIndex
               ].special"
               :item="cardItem"
-              v-bind:key="cardIndex"
+              :key="cardIndex"
             />
           </div>
           <!-- S 追加 -->
@@ -469,7 +468,7 @@ const { isOldVer, isNaChVer, isNaVer, isReVer, isShowA, curlang } = storeToRefs(
               firstItem.showAllCardsIndex
             ].extra"
             :item="cardItem"
-            v-bind:key="cardIndex"
+            :key="cardIndex"
           />
           <CardDetail
             :getTypeName="getTypeName"
@@ -479,7 +478,7 @@ const { isOldVer, isNaChVer, isNaVer, isReVer, isShowA, curlang } = storeToRefs(
               firstItem.showAllCardsIndex
             ].poison"
             :item="cardItem"
-            v-bind:key="cardIndex"
+            :key="cardIndex"
           />
           <CardDetail
             :getTypeName="getTypeName"
@@ -489,7 +488,7 @@ const { isOldVer, isNaChVer, isNaVer, isReVer, isShowA, curlang } = storeToRefs(
               firstItem.showAllCardsIndex
             ].transform"
             :item="cardItem"
-            v-bind:key="cardIndex"
+            :key="cardIndex"
           />
           <CardDetail
             :getTypeName="getTypeName"
@@ -499,7 +498,7 @@ const { isOldVer, isNaChVer, isNaVer, isReVer, isShowA, curlang } = storeToRefs(
               firstItem.showAllCardsIndex
             ].changeExtra"
             :item="cardItem"
-            v-bind:key="cardIndex"
+            :key="cardIndex"
           />
           <CardDetail
             :getTypeName="getTypeName"
@@ -509,7 +508,7 @@ const { isOldVer, isNaChVer, isNaVer, isReVer, isShowA, curlang } = storeToRefs(
               firstItem.showAllCardsIndex
             ].girlBoard"
             :item="cardItem"
-            v-bind:key="cardIndex"
+            :key="cardIndex"
           />
           <!-- E 追加 -->
         </div>
