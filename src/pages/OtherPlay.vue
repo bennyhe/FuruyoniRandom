@@ -436,8 +436,8 @@
     <!-- E 原初挑战 -->
   </div>
 </template>
-<script>
-import { defineComponent } from 'vue'
+<script setup>
+import { ref } from 'vue'
 import { storeToRefs } from 'pinia'
 import { useGlobalStore } from '../store/global.js'
 import configLang from '../config/lang.js'
@@ -448,71 +448,47 @@ import CardItem from '../components/CardItem/CardIndex.vue'
 import CardDetail from '../components/CardDetail/DetailItem.vue'
 // import GirlRange from '../components/GirlRange/index.vue';
 
-export default defineComponent({
-  name: 'PageOtherPlay',
-  components: {
-    CardItem,
-    CardDetail
-    // GirlRange
-  },
-  props: [
-    'panelTab',
-    'sakuraWithData',
-    'defaultData',
-    // 'storyCardData', //故事模式（暂禁用，保留以备复用）
-    'sakuraOtherData',
-    'sakuraCMData',
-    'cardDetail',
-    'getCardKeyValInLang',
-    'tabChangedInChild',
-    'getTypeName',
-    'getCardDetail',
-    'getCanBeStrong',
-    'getImgUrl'
-  ],
-  data() {
-    return {
-      isLXVs: 0,
-      lxVsResultList: [],
-      // curStoryIndex: 0, //故事模式（暂禁用，保留以备复用）
-      curCMIndex: 0 //原初模式
-    }
-  },
-  setup(props, context) {
-    const globalStore = useGlobalStore()
-    const { isOldVer, isNaChVer, isReVer, curlang, isShowCardPic } =
-      storeToRefs(globalStore)
-    function randomGetLx(count) {
-      const dataCopy = [...this.sakuraWithData[0].list]
-      this.lxVsResultList = []
-      const randomList = []
-      for (let i = 0; i < count; i++) {
-        const _random = parseInt(Math.random() * dataCopy.length, 10)
-        // console.log(_random, dataCopy.length)
-        randomList.push(dataCopy[_random])
+const props = defineProps([
+  'panelTab',
+  'sakuraWithData',
+  'defaultData',
+  // 'storyCardData', //故事模式（暂禁用，保留以备复用）
+  'sakuraOtherData',
+  'sakuraCMData',
+  'cardDetail',
+  'getCardKeyValInLang',
+  'tabChangedInChild',
+  'getTypeName',
+  'getCardDetail',
+  'getCanBeStrong',
+  'getImgUrl'
+])
 
-        if (!this.isLXVs) {
-          dataCopy.splice(_random, 1)
-        }
-      }
-      this.lxVsResultList = randomList
-    }
-    function handleClickSA(index) {
-      this.curCMIndex = index
-    }
+const lang = configLang
+const { curlang } = storeToRefs(useGlobalStore())
 
-    return {
-      lang: configLang,
-      isOldVer,
-      isNaChVer,
-      isReVer,
-      curlang,
-      isShowCardPic,
-      randomGetLx,
-      handleClickSA,
-      toChzh,
-      getCardClass
+const isLXVs = ref(0)
+const lxVsResultList = ref([])
+// const curStoryIndex = ref(0) //故事模式（暂禁用，保留以备复用）
+const curCMIndex = ref(0) //原初模式
+
+const randomGetLx = count => {
+  const dataCopy = [...props.sakuraWithData[0].list]
+  lxVsResultList.value = []
+  const randomList = []
+  for (let i = 0; i < count; i++) {
+    const _random = parseInt(Math.random() * dataCopy.length, 10)
+    // console.log(_random, dataCopy.length)
+    randomList.push(dataCopy[_random])
+
+    if (!isLXVs.value) {
+      dataCopy.splice(_random, 1)
     }
   }
-})
+  lxVsResultList.value = randomList
+}
+
+const handleClickSA = index => {
+  curCMIndex.value = index
+}
 </script>

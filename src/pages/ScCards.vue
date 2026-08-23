@@ -126,8 +126,8 @@
     <!-- E 卡片详情 -->
   </div>
 </template>
-<script>
-import { defineComponent } from 'vue'
+<script setup>
+import { ref } from 'vue'
 import { storeToRefs } from 'pinia'
 import { useGlobalStore } from '../store/global.js'
 import configLang from '../config/lang.js'
@@ -137,51 +137,28 @@ import { getCardClass } from '../utils/cards.js'
 import CardItem from '../components/CardItem/CardIndex.vue'
 import CardDetail from '../components/CardDetail/DetailItem.vue'
 
-export default defineComponent({
-  name: 'PageScc',
-  components: {
-    CardItem,
-    CardDetail
-  },
-  props: [
-    'sakuraChangeCardsData',
-    'getCardKeyValInLang',
-    'getTypeName',
-    'getCanBeStrong',
-    'getImgUrl'
-  ],
-  data() {
-    return {
-      isShowChangeGirl: 0,
-      curSCCIndex: 0, // 当前赛季
-      cardDetail: {}
-    }
-  },
-  setup(props, context) {
-    const globalStore = useGlobalStore()
-    const { isOldVer, isNaChVer, isReVer, curlang, isShowCardPic } =
-      storeToRefs(globalStore)
-    function getCardDetail(item) {
-      this.cardDetail = item
-    }
-    function handleClickChangeGirlBtn() {
-      this.isShowChangeGirl = !this.isShowChangeGirl
-    }
+defineProps([
+  'sakuraChangeCardsData',
+  'getCardKeyValInLang',
+  'getTypeName',
+  'getCanBeStrong',
+  'getImgUrl'
+])
 
-    return {
-      lang: configLang,
-      isOldVer,
-      isNaChVer,
-      isReVer,
-      curlang,
-      isShowCardPic,
-      getCardDetail,
-      handleClickChangeGirlBtn,
-      toChzh,
-      getCardClass
-    }
-  }
-})
+const lang = configLang
+const { curlang } = storeToRefs(useGlobalStore())
+
+const isShowChangeGirl = ref(0)
+const curSCCIndex = ref(0) // 当前赛季
+const cardDetail = ref({})
+
+const getCardDetail = item => {
+  cardDetail.value = item
+}
+
+const handleClickChangeGirlBtn = () => {
+  isShowChangeGirl.value = !isShowChangeGirl.value
+}
 </script>
 <style scoped lang="scss">
 .change-girl--scc {
