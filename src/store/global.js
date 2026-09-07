@@ -7,6 +7,7 @@ export const useGlobalStore = defineStore('global', {
     isNaChVer: false, // 新幕官中（中文版本）
     isNaVer: false, // 新幕
     isReVer: true, // 再演（默认）
+    isClassicUse: false, // 再演下是否包含古典战女神（默认不包含）
     isShowA: true, // 是否显示范围 A
     isShowCardPic: false, // 是否在卡牌上显示卡图
     curlang: 0 // 语言（0=日文，从 localStorage 的 sakuraLang 恢复）

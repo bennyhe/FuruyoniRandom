@@ -200,7 +200,7 @@
               <template v-for="(girlItem, girlIndex) in item.list">
                 <span
                   class="random-item"
-                  v-if="girlItem.isInArea"
+                  v-if="girlItem.isInArea && (isClassicUse || !item.isClassicBattle)"
                   @click="lockThis(girlItem)"
                   :class="{ 'random-item--nouse': !girlItem.isSelect }"
                   :key="girlIndex"
@@ -243,7 +243,13 @@
               <input type="checkbox" v-model="isReVer" />
               <span>再演</span>
             </label>
-            <div class="msee"></div>
+            <p></p>
+            <label class="checkbox" :class="{ cur: isClassicUse }" v-if="isReVer">
+              <input type="checkbox" v-model="isClassicUse" />
+              <span>{{
+      lang[curlang].classicalUse ? lang[curlang].classicalUse : lang[1].classicalUse
+    }}</span>
+            </label>
             <!-- <label class="checkbox hide" :class="{'cur':isShowPic}" v-if="!isOldVer">
               <input type="checkbox" v-model="isShowPic" />
               <span>显示头像</span>
@@ -357,22 +363,24 @@
               <div class="change-girl-ctn">
                 <div class="random-list">
                   <template v-for="item in changePanelData">
-                    <span
-                      class="random-item"
-                      v-for="(girlItem, girlIndex) in item.list"
-                      @click="banThisGirl(girlItem)"
-                      :class="{ 'random-item--nouse': !girlItem.isInArea }"
-                      :key="girlIndex"
-                    >
-                      <span class="random-item__pic" v-if="isShowPic">
-                        <img v-lazy="`../img/avatar/${girlItem.pic}`" />
+                    <template v-for="(girlItem, girlIndex) in item.list">
+                      <span
+                        class="random-item"
+                        v-if="isClassicUse || !item.isClassicBattle"
+                        @click="banThisGirl(girlItem)"
+                        :class="{ 'random-item--nouse': !girlItem.isInArea }"
+                        :key="girlIndex"
+                      >
+                        <span class="random-item__pic" v-if="isShowPic">
+                          <img v-lazy="`../img/avatar/${girlItem.pic}`" />
+                        </span>
+                        <span class="random-item__name">
+                          <template v-if="getCardKeyValInLang(girlItem)">{{
+                            getCardKeyValInLang(girlItem)
+                          }}</template>
+                        </span>
                       </span>
-                      <span class="random-item__name">
-                        <template v-if="getCardKeyValInLang(girlItem)">{{
-                          getCardKeyValInLang(girlItem)
-                        }}</template>
-                      </span>
-                    </span>
+                    </template>
                   </template>
                 </div>
                 <div class="change-girl-panel">
@@ -400,6 +408,18 @@
                     >
                       <input type="checkbox" v-model="isReVer" />
                       <span>再演</span>
+                    </label>
+                    <label
+                      class="checkbox"
+                      :class="{ cur: isClassicUse }"
+                      v-if="isReVer"
+                    >
+                      <input type="checkbox" v-model="isClassicUse" />
+                      <span>{{
+                        lang[curlang].classicalUse
+                          ? lang[curlang].classicalUse
+                          : lang[1].classicalUse
+                      }}</span>
                     </label>
                     <label
                       class="checkbox"
@@ -1709,6 +1729,7 @@ export default {
       'isNaChVer',
       'isNaVer',
       'isReVer',
+      'isClassicUse',
       'isShowA',
       'isShowCardPic',
       'curlang'
@@ -2732,6 +2753,10 @@ export default {
     getRandomGirlItem() {
       const newRandomList = []
       for (let i = 0; i < this.randomUseData.length; i++) {
+        // 不勾选古典战时，再演抽取不包含古典战女神
+        if (!this.isClassicUse && this.randomUseData[i].isClassicBattle) {
+          continue
+        }
         for (let k = 0; k < this.randomUseData[i].list.length; k++) {
           if (this.randomUseData[i].list[k].isInArea) {
             newRandomList.push(this.randomUseData[i].list[k])

@@ -29,9 +29,8 @@ const props = defineProps({
     type: Object
   }
 })
-const { isOldVer, isNaChVer, isNaVer, isReVer, isShowA, curlang } = storeToRefs(
-  useGlobalStore()
-)
+const { isOldVer, isNaChVer, isNaVer, isReVer, isClassicUse, isShowA, curlang } =
+  storeToRefs(useGlobalStore())
 </script>
 <template>
   <div>
@@ -52,6 +51,12 @@ const { isOldVer, isNaChVer, isNaVer, isReVer, isShowA, curlang } = storeToRefs(
         <input type="checkbox" v-model="isReVer" />
         <span>再演</span>
       </label>
+      <label class="checkbox" :class="{ cur: isClassicUse }" v-if="isReVer">
+        <input type="checkbox" v-model="isClassicUse" />
+        <span>{{
+          lang[curlang].classicalUse ? lang[curlang].classicalUse : lang[1].classicalUse
+        }}</span>
+      </label>
       <label class="checkbox" :class="{ cur: isShowA }" v-if="!isOldVer">
         <input type="checkbox" v-model="isShowA" />
         <span>{{ lang[curlang].btnIsShowA }}</span>
@@ -63,8 +68,9 @@ const { isOldVer, isNaChVer, isNaVer, isReVer, isShowA, curlang } = storeToRefs(
           <div
             class="allcards-list__item"
             v-if="
-              (key == 0 && fristIndex % 2 === 0) ||
-              (key != 0 && fristIndex % 2 !== 0)
+              ((key == 0 && fristIndex % 2 === 0) ||
+                (key != 0 && fristIndex % 2 !== 0)) &&
+              (isClassicUse || !firstItem.isClassicBattle)
             "
             :key="fristIndex"
           >
