@@ -77,7 +77,7 @@ export default [
         textjp: '隙　設置 \n【破棄時】あなたの使用済の切札を1枚選び、それを未使用に戻す。'
       }
     },{
-      id: 're-06-yukihi-A1-n-4',
+      id: 're-06-yukihi-a1-n-4',
       to: {
         changeIndex: '4',
         id: 're-06-yukihi-a1-n-4',
