@@ -516,8 +516,8 @@ const Sakura = [{
     },
     {
       id: 're-03-himika-o-n-3',
-      name: '燃气后坐',
-      namejp: 'リコイルバーン',
+      name: '麦林加农炮',
+      namejp: 'マグナムカノン',
       baseType: 'normal',
       types: ['attack'],
       range: '4-8',
