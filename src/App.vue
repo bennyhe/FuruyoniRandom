@@ -1391,7 +1391,7 @@ import {
 } from './utils/decks.js'
 
 import sakuraDataNa from './config/sakura/carddata/sakura-s10-2'
-import sakuraData from './config/sakura/carddata/re/sakura-s1'
+import sakuraData from './config/sakura/carddata/re/sakura-s1-2'
 import sakuraDataCh from './config/sakura/carddata/sakura-s10-2-ch'
 import sakuraDataOldVer from './config/sakura/carddata/sakura-old'
 import { QADATA } from './config/sakura/import_roll_faq'
@@ -1451,6 +1451,7 @@ const nSakuraChangeCardsData = SCCDATA.sakuraChangeCardsData
 // const noMatchSSCards = addSSTagInCards(defaultData, seasonVersion['jp'])
 const noMatchSSCards = addSSTagInCards(naData, seasonVersion['jp'])
 const noMatchSSCardsCh = addSSTagInCards(naChData, seasonVersion['cn'])
+const noMatchSSCardsRe = addSSTagInCards(defaultData, seasonVersion['rejp'])
 // console.log(noMatchSSCards, noMatchSSCardsCh)
 
 //格式化新幕数据
@@ -1578,6 +1579,15 @@ addSSTagInCards(
   {
     changeCards: noMatchSSCardsCh,
     vername: seasonVersion['cn'].vername
+  },
+  1
+)
+addSSTagInCards(
+  defaultData,
+  {
+    changeCards: noMatchSSCardsRe,
+    vername: seasonVersion['rejp'].vername,
+    tagname: seasonVersion['rejp'].tagname
   },
   1
 )
@@ -2494,6 +2504,21 @@ export default {
       }
       // console.log(keywords)
       if (
+        this.isReVer &&
+        keywords ===
+          this.seasonVersion['rejp'].vername
+            .toLowerCase()
+            .replace('再演 ', '')
+            .replace(' preview', '') &&
+        this.seasonVersion['rejp'].changeCards.length > 0
+      ) {
+        //修正卡特别显示
+        this.seasonVersion['rejp'].changeCards.forEach(item => {
+          result.push(orginData[item[0]].list[item[1]][item[2]][item[3]])
+        })
+        this.searchResult = result
+        return result
+      } else if (
         !this.isNaChVer &&
         keywords ===
           this.seasonVersion['jp'].vername

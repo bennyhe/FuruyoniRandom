@@ -108,9 +108,9 @@ export function initChangeCardsData(sakuraChangeCardsData) {
     allChangeCards = getCounts(allChangeCards)
 
     sakuraChangeCardsData.push({
-      id: 'all',
-      name: 'ALL赛季更新',
-      namejp: 'ALLカード更新',
+      id: 'allna',
+      name: 'ALL NA 赛季更新',
+      namejp: 'ALL NA カード更新',
       list: sortInObjectOptions(allccData, ['index', 'subIndex', 'cardMainIndex', 'cardSubIndex'], 'up')
     })
   }
@@ -168,17 +168,19 @@ export function initSakuraCMDATA(sakuraCMData, defaultData) {
 export function addSSTagInCards(sakuraData, changeCardsData, isSub) {
   const noMatchSSCards = []
   if (get('changeCards', changeCardsData, 1)) {
+    // 打标文字优先用 tagname，未配置则沿用 vername
+    const tagname = changeCardsData.tagname || changeCardsData.vername
     changeCardsData.changeCards.forEach(scitem => {
       const cardItem = get(`list[${scitem[1]}][${scitem[2]}][${scitem[3]}]`, sakuraData[scitem[0]])
       if (cardItem) {
         if (isSub) {
-          cardItem.cardwho = `${cardItem.cardwho ? `${cardItem.cardwho}/` : ''}${changeCardsData.vername}`
-          cardItem.cardwhojp = `${cardItem.cardwhojp ? `${cardItem.cardwhojp}/` : ''}${changeCardsData.vername}`
-          cardItem.cardwhokr = `${cardItem.cardwhokr ? `${cardItem.cardwhokr}/` : ''}${changeCardsData.vername}`
+          cardItem.cardwho = `${cardItem.cardwho ? `${cardItem.cardwho}/` : ''}${tagname}`
+          cardItem.cardwhojp = `${cardItem.cardwhojp ? `${cardItem.cardwhojp}/` : ''}${tagname}`
+          cardItem.cardwhokr = `${cardItem.cardwhokr ? `${cardItem.cardwhokr}/` : ''}${tagname}`
         } else {
-          cardItem.cardwho = changeCardsData.vername
-          cardItem.cardwhojp = changeCardsData.vername
-          cardItem.cardwhokr = changeCardsData.vername
+          cardItem.cardwho = tagname
+          cardItem.cardwhojp = tagname
+          cardItem.cardwhokr = tagname
         }
       } else {
         noMatchSSCards.push(scitem)
