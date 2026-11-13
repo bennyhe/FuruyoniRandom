@@ -40,8 +40,8 @@ export default [
         types: ['attack'],
         range: '4-8',
         damage: '2/2',
-        text: '【攻击后】自命（1）→距',
-        textjp: '【攻撃後】自ライフ→間合：1'
+        text: '【攻击后】自命（1）→虚',
+        textjp: '【攻撃後】自ライフ→ダスト：1'
       },
       from: {
         id: 're-03-himika-o-n-3',
